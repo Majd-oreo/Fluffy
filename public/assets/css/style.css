@@ -1,0 +1,7594 @@
+/* 
+Author: TezcoWeb
+Template Name: Petnest
+Author URI: https://tezcoweb.com/
+Description: Petnest HTML site template
+Version: 1.0
+*/
+
+/* 
+TABLE OF CONTENTS
+-----------------
+1. Color Variable
+2. Base CSS
+3. Header CSS
+4. Hero CSS
+5. Petnest Services CSS
+6. Meet Petnest Team CSS
+7. Petnest Story CSS
+8. Petnest Trusted Compnay CSS
+9. Petnest Clients Feedback CSS
+10. Petnest Faq CSS
+11. Home Petnest Newsletter CSS
+12. Petnest Blog CSS
+13. Petnest Instagram Feed CSS
+14. Petnest Footer CSS
+15. About US Page CSS
+16. Contact US Page CSS
+17. Our Team Page CSS
+18. Our Gallery Page CSS
+19. Login Page CSS
+20. Error Page CSS
+21. Book Scheduel Page CSS
+22. Blog Page CSS
+23. Shop Page CSS
+24. Product Details Page CSS
+25. Services Page Page CSS
+26. Home Version 2 CSS
+*/
+
+
+/* Color Variable */
+:root {
+    --color-body: #FFF8F6;
+    --color-white: #ffffff;
+    --black-primary: #040937;
+    --black-primary-snd: #333333;
+    --orange-primary: #FF5B2E;
+    --color-rose-white: #FFEFEA;
+    --color-yellow: #F8BF44;
+    --color-green: #05EB05;
+    --color-menthol: #B1FFA5;
+    --color-lavender: #EDA5FF;
+    --color-vodka: #B2B9FF;
+    --color-pastel-orange: #FFB24D;
+    --color-fluorescent-blue: #24E9FF;
+    --color-peach: #FFE7B7;
+    --color-wild-blue-yonder: #9BB7D4;
+    --color-blue-jeans: #5EB0F6;
+    --color-gamboge: #EDA70F;
+    --color-electric-blue: #7EF0FB;
+    --color-white-sha: #FCFCFE;
+    --color-misty-rose: #FFE3DA;
+    --color-floral-white: #FFF6F4;
+    --color-light-red: #FFD0C1;
+    --color-snow: #FEFAFA;
+    --color-bluebonnet-snd: #2621FF;
+    --color-bluebonnet: #2931FF;
+    --color-spiro-disco-ball: #0EC3FC;
+    --color-roman-silver: #818A9C;
+    --color-brandeis-blue: #0C75FF;
+    --color-cool-grey: #8687A8;
+    --color-cetacean-blue: #02044A;
+    --color-seashell: #FFF1EC;
+    --color-snow-snd: #FFF6F6;
+    --color-cultured: #F5F5F5;
+    --color-floral-white-snd: #FFF6F3;
+    --color-bright-gray: #EBEBEB;
+    --color-anti-flash-white: #F3F3F3;
+    --color-lavender-blush: #FFF5F5;
+    --color-moonstone: #35A6C7;
+    --color-ghost-white: #F9F9FB;
+    --color-american-silver: #D2CFCE;
+    --color-melon: #FFC2B0;
+    --color-gray: #7B7B7B;
+    --color-white-coffee: #EAD8D3;
+    --color-princeton-orange: #F58722;
+    --color-rich-black: #071311;
+    --color-misty-rose-snd: #FFE5DE;
+    --color-american-silver-snd: #D1CFCF;
+    --color-cultured-snd: #F7F7F7;
+    --color-red-pigment: #EE1E1E;
+    --color-vivid-malachite: #0FD122;
+    --color-malachite: #08DD6A;
+    --color-lotion: #FAFAFA;
+    --color-light-red-snd: #FFD4C6;
+    --color-zaffre: #0414A3;
+    --color-blue-crayola: #205CF5;
+    --color-light-red-third: #FFD3C8;
+    --color-lust: #E61717;
+    --color-green-snd: #048309;
+    --color-isabelline: #F0EDED;
+    --color-black: #020000;
+    --color-linen: #FAEDE9;
+    --color-snow-third: #FFFAF8;
+    --color-alice-blue: #E9F0FE;
+    --color-ghost-white-snd: #FDF6FF;
+    --color-honeydew: #F2FFF0;
+    --color-ghost-white-third: #F5F6FF;
+    --color-old-lace: #FFF4E5;
+    --color-bubbles: #E5FCFF;
+    --color-cornsilk: #FFF4DF;
+    --color-thistle: #CFC3D8;
+    --color-amethyst: #9B63C6;
+    --color-coral-reef: #FA786B;
+    --color-lavender-web: #F1E0FD;
+    --color-imperial: #54316F;
+    --color-jacarta: #4A2E5F;
+    --color-seashell-snd: #FFEFED;
+    --color-columbia-blue: #C7DFF3;
+    --color-anti-flash-white-snd: #F5EFF9;
+    --color-magnolia: #FBF4FF;
+    --color-pale-lavender: #EDD2FF;
+}
+
+/* Base CSS */
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.home-bg {
+    background-color: var(--color-body);
+}
+
+.btn-primay {
+    text-decoration: none;
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+    display: inline-block;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 36px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primay:hover {
+    color: var(--color-white);
+    background-color: var(--color-yellow);
+}
+
+.btn-primay-v2 {
+    text-decoration: none;
+    background-color: var(--color-amethyst);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    display: inline-block;
+    padding: 12.5px 22.1px;
+    border-radius: 4px;
+    -webkit-filter: drop-shadow(0px 18px 60px rgba(155, 99, 198, 0.48));
+            filter: drop-shadow(0px 18px 60px rgba(155, 99, 198, 0.48));
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primay-v2:hover {
+    color: var(--color-white);
+    filter: none;
+    background-color: var(--color-coral-reef);
+}
+
+.petnest-serach-ui {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: var(--color-light-red);
+    -webkit-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.petnest-serach-ui.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.petnest-search-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+}
+
+.petnest-search-close {
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 15px;
+    background-color: var(--color-white);
+    text-align: center;
+    line-height: 28px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.petnest-search-close:hover {
+    background-color: var(--color-yellow);
+}
+
+.petnest-search-close figure {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.petnest-search-wrap {
+    text-align: center;
+}
+
+.petnest-search-wrap h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 35px;
+    margin-bottom: 20px;
+    color: var(--black-primary);
+}
+
+.petnest-search-wrap form input[type='search'] {
+    background-color: var(--color-snow);
+    color: var(--black-primary-snd);
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    padding: 10px 25px;
+    padding-right: 115px;
+    height: 55px;
+    outline: none;
+    border-radius: 62px;
+    width: 100%;
+}
+
+.petnest-search-wrap form button[type='submit'] {
+    position: absolute;
+    right: 4.5%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    border: none;
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21.79px;
+    padding: 8px 20px;
+    border-radius: 36px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-search-wrap form {
+    position: relative;
+    z-index: 1;
+    width: 405px;
+}
+
+.petnest-search-wrap form button[type='submit']:hover {
+    background-color: var(--color-yellow);
+}
+
+/* Petnest Basket On Hover */
+.petnest-basket {
+    position: absolute;
+    width: 360px;
+    right: 13%;
+    top: 100px;
+    background-color: var(--color-white);
+    -webkit-box-shadow: 0px 10px 30px var(--color-light-red-third);
+            box-shadow: 0px 10px 30px var(--color-light-red-third);
+    padding: 30px 40px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-header-user-info .basket-top:hover .petnest-basket {
+    top: 68px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-in-basket {
+    padding-bottom: 12px;
+}
+
+.petnest-basket-inner-left figure img {
+    width: 85px;
+    height: 85px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.petnest-basket-inner-right h4 {
+    color: var(--black-primary);
+    font-size: 20px;
+    line-height: 26px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 14px;
+    text-align: right;
+}
+
+.petnest-total-ammount-home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+}
+
+.qty-home {
+    padding-right: 48px;
+}
+
+.qty-home span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--black-primary-snd);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.qty-home span strong {
+    color: var(--black-primary);
+    font-weight: 600;
+}
+
+.total-price-qty span {
+    color: var(--orange-primary);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.divider-qty-home {
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 14px;
+    width: 92%;
+    background-color: var(--black-primary);
+    height: 1px;
+    opacity: 0.7;
+}
+
+.petnest-total-title h5 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+    opacity: 0.7;
+}
+
+.petnest-total-sum span {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--black-primary);
+}
+
+.petnest-total-sum {
+    text-align: right;
+}
+
+.basket-short-btn-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 36px;
+}
+
+.basket-short-btn-wrap>div {
+    margin-right: 25px;
+}
+
+.basket-short-btn-wrap>div:last-child {
+    margin-right: 0;
+}
+
+.btn-primay.btn-view-cart {
+    background-color: var(--black-primary-snd);
+    font-size: 14px;
+    padding: 10px 26px;
+}
+
+.btn-primay.btn-view-chekout {
+    padding: 10px 26px;
+    font-size: 14px;
+}
+
+.btn-primay.btn-view-cart:hover {
+    background-color: var(--color-yellow);
+}
+
+/* Animation CSS */
+@-webkit-keyframes animationFramesOne {
+    0% {
+        transform: translate(-0px, 60px) rotate(0deg);
+        -webkit-transform: translate(-0px, 60px) rotate(0deg);
+        -moz-transform: translate(-0px, 60px) rotate(0deg);
+        -ms-transform: translate(-0px, 60px) rotate(0deg);
+        -o-transform: translate(-0px, 60px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-100px, -100px) rotate(180deg);
+        -webkit-transform: translate(-100px, -100px) rotate(180deg);
+        -moz-transform: translate(-100px, -100px) rotate(180deg);
+        -ms-transform: translate(-100px, -100px) rotate(180deg);
+        -o-transform: translate(-100px, -100px) rotate(180deg);
+    }
+}
+@keyframes animationFramesOne {
+    0% {
+        transform: translate(-0px, 60px) rotate(0deg);
+        -webkit-transform: translate(-0px, 60px) rotate(0deg);
+        -moz-transform: translate(-0px, 60px) rotate(0deg);
+        -ms-transform: translate(-0px, 60px) rotate(0deg);
+        -o-transform: translate(-0px, 60px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-100px, -100px) rotate(180deg);
+        -webkit-transform: translate(-100px, -100px) rotate(180deg);
+        -moz-transform: translate(-100px, -100px) rotate(180deg);
+        -ms-transform: translate(-100px, -100px) rotate(180deg);
+        -o-transform: translate(-100px, -100px) rotate(180deg);
+    }
+}
+
+@-webkit-keyframes animationFramesTwo {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+                transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    20% {
+        -webkit-transform: translate(73px, -1px) rotate(36deg);
+                transform: translate(73px, -1px) rotate(36deg);
+    }
+
+    40% {
+        -webkit-transform: translate(120px, 72px) rotate(72deg);
+                transform: translate(120px, 72px) rotate(72deg);
+    }
+
+    60% {
+        -webkit-transform: translate(70px, 30px) rotate(108deg);
+                transform: translate(70px, 30px) rotate(108deg);
+    }
+
+    80% {
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
+                transform: translate(-40px, 72px) rotate(144deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+                transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@keyframes animationFramesTwo {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+                transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    20% {
+        -webkit-transform: translate(73px, -1px) rotate(36deg);
+                transform: translate(73px, -1px) rotate(36deg);
+    }
+
+    40% {
+        -webkit-transform: translate(120px, 72px) rotate(72deg);
+                transform: translate(120px, 72px) rotate(72deg);
+    }
+
+    60% {
+        -webkit-transform: translate(70px, 30px) rotate(108deg);
+                transform: translate(70px, 30px) rotate(108deg);
+    }
+
+    80% {
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
+                transform: translate(-40px, 72px) rotate(144deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+                transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-webkit-keyframes animationFramesThree {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        -moz-transform: translate(0px, 0px) rotate(0deg);
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        -o-transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(35px, -1px) rotate(36deg);
+        -webkit-transform: translate(35px, -1px) rotate(36deg);
+        -moz-transform: translate(35px, -1px) rotate(36deg);
+        -ms-transform: translate(35px, -1px) rotate(36deg);
+        -o-transform: translate(35px, -1px) rotate(36deg);
+    }
+
+    40% {
+        transform: translate(60px, -20px) rotate(72deg);
+        -webkit-transform: translate(60px, -20px) rotate(72deg);
+        -moz-transform: translate(60px, -20px) rotate(72deg);
+        -ms-transform: translate(60px, -20px) rotate(72deg);
+        -o-transform: translate(60px, -20px) rotate(72deg);
+    }
+
+    60% {
+        transform: translate(55px, -60px) rotate(108deg);
+        -webkit-transform: translate(55px, -60px) rotate(108deg);
+        -moz-transform: translate(55px, -60px) rotate(108deg);
+        -ms-transform: translate(55px, -60px) rotate(108deg);
+        -o-transform: translate(55px, -60px) rotate(108deg);
+    }
+
+    80% {
+        transform: translate(-40px, 72px) rotate(144deg);
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
+        -moz-transform: translate(-40px, 72px) rotate(144deg);
+        -ms-transform: translate(-40px, 72px) rotate(144deg);
+        -o-transform: translate(-40px, 72px) rotate(144deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        -moz-transform: translate(0px, 0px) rotate(0deg);
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        -o-transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@keyframes animationFramesThree {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        -moz-transform: translate(0px, 0px) rotate(0deg);
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        -o-transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(35px, -1px) rotate(36deg);
+        -webkit-transform: translate(35px, -1px) rotate(36deg);
+        -moz-transform: translate(35px, -1px) rotate(36deg);
+        -ms-transform: translate(35px, -1px) rotate(36deg);
+        -o-transform: translate(35px, -1px) rotate(36deg);
+    }
+
+    40% {
+        transform: translate(60px, -20px) rotate(72deg);
+        -webkit-transform: translate(60px, -20px) rotate(72deg);
+        -moz-transform: translate(60px, -20px) rotate(72deg);
+        -ms-transform: translate(60px, -20px) rotate(72deg);
+        -o-transform: translate(60px, -20px) rotate(72deg);
+    }
+
+    60% {
+        transform: translate(55px, -60px) rotate(108deg);
+        -webkit-transform: translate(55px, -60px) rotate(108deg);
+        -moz-transform: translate(55px, -60px) rotate(108deg);
+        -ms-transform: translate(55px, -60px) rotate(108deg);
+        -o-transform: translate(55px, -60px) rotate(108deg);
+    }
+
+    80% {
+        transform: translate(-40px, 72px) rotate(144deg);
+        -webkit-transform: translate(-40px, 72px) rotate(144deg);
+        -moz-transform: translate(-40px, 72px) rotate(144deg);
+        -ms-transform: translate(-40px, 72px) rotate(144deg);
+        -o-transform: translate(-40px, 72px) rotate(144deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        -moz-transform: translate(0px, 0px) rotate(0deg);
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        -o-transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+.petnest-bounce-animate {
+    -webkit-animation-name: petnest-float-bob;
+            animation-name: petnest-float-bob;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -moz-animation-name: petnest-float-bob;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: petnest-float-bob;
+    -ms-animation-duration: 2s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -o-animation-name: petnest-float-bob;
+    -o-animation-duration: 2s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+}
+
+@-webkit-keyframes petnest-float-bob {
+    0% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+
+
+/* Header CSS */
+.petnest-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--color-white);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.petnest-header-sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+            animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+.petnest-logo figure a {
+    outline: none;
+}
+
+.petnest-header-menu ul {
+    text-align: center;
+}
+
+.petnest-header-menu ul>li {
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-header-menu ul>li>a {
+    text-decoration: none;
+    color: var(--black-primary);
+    opacity: 0.5;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.petnest-header-menu ul>li.active>a {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.petnest-header-menu ul>li:first-child {
+    margin-left: 0;
+}
+
+.petnest-header-menu ul>li>a:hover {
+    opacity: 1;
+}
+
+/* Submenu CSS */
+.petnest-header-menu ul>li.submenu {
+    position: absolute;
+}
+
+.petnest-header-menu ul>li .submenu {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    min-width: 250px;
+    background-color: var(--color-white);
+    transition: 0.4s ease-in-out;
+    border-radius: 4px;
+    text-align: left;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.petnest-header-menu ul>li .submenu > li {
+    display: block;
+    margin: 0;
+}
+
+.petnest-header-menu ul>li .submenu > li > a {
+    padding: 10px 25px;
+    display: inline-block;
+    opacity: 1;
+}
+
+.petnest-header-menu ul>li .submenu > li > a:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-header-menu ul>li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 55px;
+}
+
+.petnest-header-user-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+.petnest-header-user-info>div {
+    margin-left: 15px;
+}
+
+.petnest-header-user-info>div:first-child {
+    margin-left: 0;
+}
+
+.petnest-header-user-info .search-top button,
+.petnest-header-user-info .user-top button,
+.petnest-header-user-info .basket-top button {
+    border: none;
+    background-color: var(--color-rose-white);
+    color: var(--black-primary-snd);
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    font-size: 18px;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-header-user-info .basket-top button {
+    color: var(--black-primary);
+}
+
+.petnest-header-user-info .search-top button {
+    color: var(--orange-primary);
+}
+
+.petnest-header-user-info .search-top button:hover,
+.petnest-header-user-info .user-top button:hover,
+.petnest-header-user-info .basket-top button:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-header-user-info .basket-top button .on-basket::after {
+    position: absolute;
+    content: '';
+    top: 32%;
+    right: 32%;
+    height: 3px;
+    width: 3px;
+    background-color: var(--color-green);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Hero CSS */
+.petnest-hero {
+    padding-top: 165px;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-hero-left {
+    padding-top: 15px;
+}
+
+.petnest-hero-left h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 76px;
+    margin-bottom: 18px;
+}
+
+.petnest-hero-left-img span {
+    position: absolute;
+    right: 82px;
+    top: 20px;
+    color: var(--color-wild-blue-yonder);
+    line-height: 0;
+}
+
+.petnest-hero-left-img figure:first-child img {
+    width: 48px;
+    height: 48px;
+    margin-left: 60px;
+}
+
+.petnest-hero-left-img {
+    position: relative;
+    z-index: 1;
+    padding-top: 26px;
+    padding-left: 12px;
+}
+
+.petnest-hero-left-img figure img {
+    width: auto;
+    height: 150px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-top-left-radius: 62%;
+    border-top-right-radius: 84%;
+    border-bottom-left-radius: 84%;
+    border-bottom-right-radius: 62%;
+}
+
+.petnest-hero-description {
+    margin-left: 0;
+    padding-right: 0;
+}
+
+.petnest-hero-description p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary);
+    margin-bottom: 35px;
+}
+
+.petnest-hero-btns a:last-child {
+    margin-left: 7px;
+}
+
+.btn-primay-white {
+    background-color: var(--color-white);
+    color: var(--orange-primary);
+}
+
+.petnest-hero-right {
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-hero-img figure:last-child {
+    position: absolute;
+}
+
+.petnest-hero-img figure:last-child {
+    top: 10px;
+    left: 25px;
+    width: 84px;
+    border-radius: 50%;
+}
+
+.petnest-hero-blob {
+    width: 115%;
+    margin: 0 auto;
+}
+
+.petnest-hero-img figure:last-child img {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.animation-bubble figure {
+    position: absolute;
+    z-index: -1;
+}
+
+.animation-bubble figure:nth-child(1) {
+    right: 42%;
+    top: 43%;
+    animation: animationFramesOne 30s alternate infinite linear;
+    -webkit-animation: animationFramesOne 30s alternate infinite linear;
+}
+
+.animation-bubble figure:nth-child(2) {
+    right: 35%;
+    top: 15%;
+    animation: animationFramesTwo 30s alternate infinite linear;
+    -webkit-animation: animationFramesTwo 30s alternate infinite linear;
+}
+
+.animation-bubble figure:nth-child(3) {
+    right: 24%;
+    top: 28%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.animation-bubble figure:nth-child(4) {
+    right: 24%;
+    top: 28%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+/* Petnest Services CSS */
+.petnest-services {
+    padding-top: 138px;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-services-buble figure {
+    position: absolute;
+    z-index: -1;
+}
+
+.petnest-services-buble figure:nth-child(1) {
+    right: 25%;
+    top: 15%;
+    animation: animationFramesTwo 30s alternate infinite linear;
+    -webkit-animation: animationFramesTwo 30s alternate infinite linear;
+}
+
+.petnest-services-buble figure:nth-child(2) {
+    left: 38.2%;
+    top: 30%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.petnest-services-animation div:nth-child(1) {
+    left: 30%;
+    top: 20%;
+}
+
+.petnest-services-animation div:nth-child(1) figure img {
+    width: 56px;
+    height: 56px;
+}
+
+.petnest-services-animation div {
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+}
+
+.petnest-services-animation div:nth-child(2) {
+    right: 30.5%;
+    top: 22%;
+}
+
+.petnest-services-animation div:nth-child(2) figure img {
+    width: 68px;
+    height: 68px;
+}
+
+.petnest-heading h5,
+.section-heading-v2 h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black-primary);
+    opacity: 0.7;
+    line-height: 16px;
+    margin-bottom: 21px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-heading h2,
+.section-heading-v2 h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    color: var(--black-primary);
+    margin-bottom: 61px;
+}
+
+.petnest-options-list {
+    padding-top: 65px;
+}
+
+.petnest-options-list.petnest-options-list-right {
+    margin-left: -31px;
+}
+
+.petnest-options-info {
+    background-color: var(--color-pastel-orange);
+    width: 300px;
+    border-radius: 64px;
+    padding: 27.5px 38px;
+    padding-left: 99px;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    margin-bottom: 58px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(1):hover span {
+    color: var(--color-pastel-orange);
+}
+
+.petnest-options-info span {
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(2):hover span {
+    color: var(--color-fluorescent-blue);
+}
+
+.petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(3):hover span {
+    color: var(--color-peach);
+}
+
+.petnest-options-list.petnest-options-list-left .petnest-options-info:nth-child(1):hover span {
+    color: var(--color-lavender);
+}
+
+.petnest-options-list.petnest-options-list-left .petnest-options-info:nth-child(2):hover span {
+    color: var(--color-menthol);
+}
+
+.petnest-options-list.petnest-options-list-left .petnest-options-info:nth-child(3):hover span {
+    color: var(--color-vodka);
+}
+
+.petnest-options figure {
+    height: 621px;
+}
+
+.petnest-options figure.friendly-pet img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 224px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.petnest-options-info span {
+    position: absolute;
+    left: 40px;
+    top: 24%;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 45px;
+    border-radius: 50%;
+    color: var(--orange-primary);
+    background-color: var(--color-white);
+    -webkit-box-shadow: 0px 7px 30px rgba(172, 167, 167, 0.25);
+            box-shadow: 0px 7px 30px rgba(172, 167, 167, 0.25);
+}
+
+.petnest-options-info h3 {
+    color: var(--black-primary-snd);
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+    -webkit-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+}
+
+.petnest-options-info:hover h3 {
+    color: var(--color-white);
+}
+
+.petnest-options-list .petnest-options-info:last-child {
+    margin-bottom: 0;
+}
+
+.petnest-options-list.petnest-options-list-left .petnest-options-info:nth-child(1) {
+    background-color: var(--color-lavender);
+}
+
+.petnest-options-list.petnest-options-list-left .petnest-options-info:nth-child(2) {
+    margin-left: 70px;
+    background-color: var(--color-menthol);
+}
+
+.petnest-options-list.petnest-options-list-left .petnest-options-info:nth-child(3) {
+    background-color: var(--color-vodka);
+}
+
+.petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(1) {
+    background-color: var(--color-pastel-orange);
+}
+
+.petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(2) {
+    margin-left: -70px;
+    background-color: var(--color-fluorescent-blue);
+}
+
+.petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(3) {
+    background-color: var(--color-peach);
+}
+
+/* Meet Petnest Team CSS */
+.meet-petnest-team {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.petnest-team-animation div,
+.petnest-team-animation-snd div {
+    position: absolute;
+    z-index: -1;
+    right: 35%;
+    top: 17%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.petnest-team-animation div figure img {
+    width: 70px;
+    height: 70px;
+}
+
+.petnest-member-single {
+    text-align: center;
+    -webkit-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    transition: 0.6s ease;
+}
+
+.slider-team.owl-carousel .owl-stage .owl-item.active.center .petnest-member-single {
+    margin-top: -10px;
+}
+
+.petnest-member-single figure {
+    width: 292px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    -webkit-transition: 0.6s ease-in-out;
+    -o-transition: 0.6s ease-in-out;
+    transition: 0.6s ease-in-out;
+}
+
+.slider-team.owl-carousel .owl-item .petnest-member-single figure img,
+.slider-team-page.owl-carousel .owl-item .petnest-member-single figure img {
+    width: 100%;
+    height: 312.5px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.slider-team.owl-carousel .owl-stage .owl-item.active.center .petnest-member-single figure {
+    -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+            transform: scale(1.15);
+    margin-top: -28px;
+    margin-bottom: 25px;
+}
+
+.petnest-member-single h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black-primary-snd);
+    margin-bottom: 0;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--black-primary);
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.petnest-member-single h3 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 0;
+    color: var(--black-primary);
+}
+
+.slider-team,
+.slider-team-page {
+    padding-top: 56px;
+}
+
+.slider-team.owl-carousel .owl-stage-outer,
+.slider-team-page.owl-carousel .owl-stage-outer {
+    overflow: visible;
+}
+
+.slider-team.owl-carousel .owl-item,
+.slider-team-page.owl-carousel .owl-item {
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.slider-team.owl-carousel .owl-item.active,
+.slider-team-page.owl-carousel .owl-item.active {
+    opacity: 1;
+}
+
+.slider-team .owl-nav div,
+.slider-team-page .owl-nav div {
+    position: absolute;
+    right: 66px;
+    top: -105px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid var(--black-primary-snd);
+    width: 36px;
+    height: 36px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+.slider-team .owl-nav div i {
+    margin-left: -1px;
+}
+
+.slider-team .owl-nav .owl-next i {
+    margin-left: -2px;
+}
+.slider-team .owl-nav div.owl-next,
+.slider-team-page .owl-nav div.owl-next {
+    right: 0;
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+        -ms-transform: matrix(-1, 0, 0, 1, 0, 0);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+    border-color: var(--orange-primary);
+    color: var(--orange-primary);
+}
+
+.slider-team .owl-nav div i:before,
+.slider-team-page .owl-nav div i:before {
+    font-weight: 600 !important;
+}
+
+.slider-team .owl-nav div:hover,
+.slider-team-page .owl-nav div:hover {
+    color: var(--color-white);
+    border-color: var(--orange-primary);
+    background-color: var(--orange-primary);
+}
+
+/* Petnest Story CSS */
+.inspire-story {
+    width: 358px;
+    height: 463px;
+}
+
+.inspire-story img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 62%;
+    border-top-right-radius: 84%;
+    border-bottom-left-radius: 84%;
+    border-bottom-right-radius: 62%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.cat-dogs-petnest {
+    position: absolute;
+    bottom: -20px;
+    right: 14%;
+    width: 305px;
+}
+
+.petnest-story-left {
+    position: relative;
+    z-index: 1;
+    padding-top: 100px;
+}
+
+.petnest-story-left > div {
+    color: var(--color-wild-blue-yonder);
+    position: absolute;
+    right: 22%;
+    top: 0;
+}
+
+.petnest-story-left > div figure img {
+    width: 181px;
+    height: 181px;
+}
+
+.cat-dogs-petnest.petnest-bounce-animate img {
+    width: auto;
+    height: auto;
+}
+
+.petnest-story {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.petnest-heading.petnest-heading-story h2 {
+    margin-bottom: 12px;
+}
+
+.petnest-heading.petnest-heading-story p {
+    color: var(--black-primary);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+.petnest-journey-count {
+    background-color: var(--color-rose-white);
+    border-radius: 23px;
+    padding: 46px;
+    margin-top: 36px;
+}
+
+.petnest-wrapper-count {
+    border-radius: 16px;
+    padding: 16px 12px;
+    background: rgba(255, 255, 255, 0.78);
+    -webkit-box-shadow: 0 4px 30px rgb(0 0 0 / 2%);
+            box-shadow: 0 4px 30px rgb(0 0 0 / 2%);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+}
+
+.petnest-wrapper-count .award-petnest {
+    background-color: var(--orange-primary);
+    height: 36px;
+    width: 36px;
+    display: inline-block;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.petnest-wrapper-count.petnest-cl-1-count .award-petnest {
+    box-shadow: 1px 0px 44px 16px rgb(219 130 106 / 30%);
+    -webkit-box-shadow: 1px 0px 44px 16px rgb(219 130 106 / 30%);
+    -moz-box-shadow: 1px 0px 44px 16px rgb(219 130 106 / 30%);
+    background-color: var(--orange-primary);
+}
+
+.petnest-wrapper-count.petnest-cl-2-count .award-petnest {
+    box-shadow: 1px 0px 44px 16px rgb(94 176 246 / 30%);
+    -webkit-box-shadow: 1px 0px 44px 16px rgb(94 176 246 / 30%);
+    -moz-box-shadow: 1px 0px 44px 16px rgb(94 176 246 / 30%);
+    background-color: var(--color-blue-jeans);
+}
+
+.petnest-wrapper-count.petnest-cl-3-count .award-petnest {
+    box-shadow: 1px 0px 44px 16px rgb(248 191 68 / 30%);
+    -webkit-box-shadow: 1px 0px 44px 16px rgb(248 191 68 / 30%);
+    -moz-box-shadow: 1px 0px 44px 16px rgb(248 191 68 / 30%);
+    background-color: var(--color-gamboge);
+}
+
+.petnest-wrapper-count.petnest-cl-4-count .award-petnest {
+    box-shadow: 1px 0px 44px 16px rgb(126 240 251 / 30%);
+    -webkit-box-shadow: 1px 0px 44px 16px rgb(126 240 251 / 30%);
+    -moz-box-shadow: 1px 0px 44px 16px rgb(126 240 251 / 30%);
+    background-color: var(--color-electric-blue);
+}
+
+.petnest-wrapper-count h3,
+.petnest-wrapper-count h3 span {
+    color: var(--black-primary);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 1px;
+    height: initial;
+    width: initial;
+}
+
+.petnest-wrapper-count h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.petnest-wrapper-count p {
+    margin-bottom: 0;
+    color: var(--black-primary);
+    opacity: 0.7;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+/* Petnest Trusted Compnay CSS */
+.petnest-trusted-company {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--color-white-sha);
+}
+
+.petnest-showcase-company {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.petnest-trusted-company-wrapper h4 {
+    font-size: 20px;
+    color: var(--black-primary);
+    font-weight: 600;
+    line-height: 24px;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.petnest-showcase-company.owl-carousel .owl-item .petnest-showcase-company-logo figure img {
+    width: 110px;
+}
+
+/* Petnest Clients Feedback CSS */
+.petnest-client-feedback {
+    padding-top: 100px;
+    padding-bottom: 165px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+}
+.petnest-feedback-animation div {
+    position: absolute;
+    z-index: -1;
+}
+
+.petnest-feedback-animation div:first-child {
+    left: 46.5%;
+    top: 24%;
+}
+
+.petnest-feedback-animation div:first-child figure img {
+    width: 58px;
+    height: 58px;
+}
+
+.petnest-feedback-animation div:last-child {
+    bottom: 16%;
+    left: 30%;
+}
+
+.petnest-feedback-animation div:last-child figure img {
+    width: 129px;
+    height: 129px;
+}
+
+.petnest-client-feedback-left {
+    padding-top: 95px;
+}
+
+.petnest-client-feedback-left h5 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: var(--black-primary);
+    opacity: 0.7;
+    margin-bottom: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-client-feedback-left h2 {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 700;
+    color: var(--black-primary);
+    margin-bottom: 11px;
+}
+
+.petnest-client-feedback-left p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary);
+    margin-bottom: 0;
+    padding-right: 300px;
+}
+
+.petnest-client-feedback-right {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.petnest-client-feedback-right .petnest-client-feedback-description {
+    text-align: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.petnest-client-feedback-right figure {
+    width: 357px;
+    float: right;
+}
+
+.petnest-client-feedback-right figure img {
+    border-radius: 224px;
+    width: 100%;
+    height: 478px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+/* .petnest-client-feedback-description {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    -webkit-transform: translateX(-26%);
+        -ms-transform: translateX(-26%);
+            transform: translateX(-26%);
+    background-color: var(--color-fluorescent-blue);
+    padding: 11px 42px;
+    padding-top: 15px;
+    display: inline-block;
+    border-bottom-left-radius: 78px;
+    min-width: 285px;
+} */
+
+.petnest-client-feedback-description h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--black-primary);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.petnest-client-feedback-description p {
+    font-size: 18px;
+    color: var(--black-primary);
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.petnest-client-feedback-slide.owl-carousel .owl-stage-outer {
+    overflow: visible;
+}
+
+.petnest-client-feedback-slide.owl-carousel .owl-item {
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.petnest-client-feedback-slide.owl-carousel .owl-item.active {
+    opacity: 1;
+}
+
+.petnest-client-feedback-slide.owl-carousel .owl-dots,
+.slider-client-v2.owl-carousel .owl-dots {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -65px;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.petnest-client-feedback-slide.owl-carousel .owl-dots div,
+.slider-client-v2.owl-carousel .owl-dots div {
+    height: 21px;
+    width: 4px;
+    display: inline-block;
+    background-color: var(--color-misty-rose);
+    margin: 0 6.5px;
+    border-radius: 3.75px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-client-feedback-slide.owl-carousel .owl-dots div.active,
+.slider-client-v2.owl-carousel .owl-dots div.active {
+    background-color: var(--orange-primary);
+    width: 8px;
+    height: 30px;
+}
+
+/* Petnest Faq CSS */
+.petnest-faq-inner {
+    background-color: var(--color-white);
+    padding: 100px 55px;
+    padding-bottom: 85px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-faq-buble-animation figure,
+.petnest-faq-animation div {
+    position: absolute;
+    z-index: -1;
+}
+
+.petnest-faq-buble-animation figure:first-child {
+    right: 20%;
+    top: 12%;
+    animation: animationFramesTwo 30s alternate infinite linear;
+    -webkit-animation: animationFramesTwo 30s alternate infinite linear;
+}
+
+.petnest-faq-buble-animation figure:last-child {
+    left: 32.5%;
+    top: 26%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.petnest-faq-animation div:first-child {
+    left: 10.5%;
+    top: 10.9%;
+}
+
+.petnest-faq-animation div:first-child figure img {
+    width: 110px;
+    height: 110px;
+}
+
+.petnest-faq-animation div:last-child {
+    right: 7%;
+    top: 9%;
+}
+
+.petnest-faq-animation div:last-child figure img {
+    width: 56px;
+    height: 56px;
+}
+
+.petnest-heading.petnest-heading-faq {
+    text-align: center;
+}
+
+.petnest-faq-left {
+    padding-top: 20px;
+}
+
+.petnest-faq-left figure img {
+    border-radius: 224px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.petnest-faq-right {
+    padding-left: 60px;
+}
+
+.petnest-faq-right .accordion .accordion-item {
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 4px 10px rgb(255 187 187 / 25%);
+            box-shadow: 0px 4px 10px rgb(255 187 187 / 25%);
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+.petnest-faq-right .accordion .accordion-item .accordion-header .accordion-button {
+    color: var(--black-primary);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.petnest-faq-right .accordion .accordion-item .accordion-body {
+    padding-top: 0;
+    padding-bottom: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black-primary);
+    opacity: 0.7;
+}
+
+.petnest-faq-right .accordion-button::after {
+    content: '\f11e';
+    font-family: 'flaticon';
+}
+
+.petnest-faq-right .accordion-button:not(.collapsed)::after {
+    content: '\f124';
+}
+
+.petnest-faq-right .accordion-button:not(.collapsed)::after,
+.petnest-faq-right .accordion-button::after {
+    background-image: none;
+    color: var(--orange-primary);
+}
+
+.petnest-faq-right .accordion .accordion-item .accordion-button,
+.accordion-collapse.collapse.show {
+    background-color: var(--color-white);
+}
+
+.petnest-faq-right .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+    background-color: var(--color-floral-white);
+}
+
+/* Home Petnest Newsletter CSS */
+
+.petnest-newsletter {
+    padding-top: 100px;
+}
+
+.petnest-news-form {
+    background-color: var(--color-light-red);
+    border-radius: 22px;
+    text-align: center;
+    padding: 50px 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.petnest-newsletter-animation div {
+    position: absolute;
+    z-index: -1;
+}
+
+.petnest-newsletter-animation div:first-child figure img {
+    width: 95px;
+    height: 95px;
+}
+
+.petnest-newsletter-animation div:first-child {
+    left: 11.5%;
+    top: 27%;
+    -webkit-transform: rotate(-20.97deg);
+        -ms-transform: rotate(-20.97deg);
+            transform: rotate(-20.97deg);
+}
+
+.petnest-newsletter-animation div:last-child {
+    right: 12%;
+    top: 30%;
+}
+
+.petnest-newsletter-animation div:last-child figure img {
+    width: 92px;
+    height: 92px;
+}
+
+.petnest-news-form h2 {
+    color: var(--black-primary);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 42px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-news-form form input[type='email'] {
+    background-color: var(--color-snow);
+    color: var(--black-primary-snd);
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    padding: 10px 29px;
+    padding-right: 195px;
+    height: 77px;
+    outline: none;
+    border-radius: 62px;
+    width: 100%;
+}
+
+.petnest-news-form form input[type='email']::-webkit-input-placeholder {
+    color: var(--black-primary-snd);
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.petnest-news-form form input[type='email']::-moz-placeholder {
+    color: var(--black-primary-snd);
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.petnest-news-form form input[type='email']:-ms-input-placeholder {
+    color: var(--black-primary-snd);
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.petnest-news-form form input[type='email']::-ms-input-placeholder {
+    color: var(--black-primary-snd);
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.petnest-news-form form input[type='email']::placeholder {
+    color: var(--black-primary-snd);
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.petnest-news-form form {
+    width: 560px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.petnest-news-form form input[type='submit'] {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    border: none;
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21.79px;
+    padding: 12px 22px;
+    border-radius: 36px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-news-form form input[type='email'],
+.petnest-news-form form input[type='submit'] {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-news-form form input[type='submit']:hover {
+    background-color: var(--color-yellow);
+}
+
+/* Petnest Blog CSS */
+.petnest-blog {
+    padding-top: 100px;
+    padding-bottom: 175px;
+    overflow: hidden;
+}
+
+.single-petnest-blog {
+    background-color: var(--color-white);
+    width: 100%;
+    padding: 25px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.single-petnest-blog:hover {
+    -webkit-box-shadow: 0px 10px 63px rgb(168 159 159 / 25%);
+            box-shadow: 0px 10px 63px rgb(168 159 159 / 25%);
+}
+
+.single-petnest-blog figure img {
+    height: 232px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 4px;
+}
+
+.single-petnest-blog .petnest-blog-short-top {
+    position: relative;
+    z-index: 1;
+}
+
+.single-petnest-blog .petnest-blog-short-top .category-blog {
+    background-color: var(--orange-primary);
+    color: var(--color-snow-snd);
+    padding: 7px 12px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    border-radius: 15px;
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    position: absolute;
+    bottom: 14px;
+    right: 20px;
+}
+
+.petnest-blog-short-description {
+    padding-top: 10px;
+}
+
+.petnest-blog-short-description h5 {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: 0.7;
+}
+
+.petnest-blog-short-description h3 {
+    font-size: 22px;
+    line-height: 31px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.petnest-blog-short-description h5,
+.petnest-blog-short-description h3,
+.petnest-blog-short-description h4 {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black-primary);
+}
+
+.petnest-blog-short-description h4 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    margin-bottom: 0;
+}
+
+.petnest-blog-short-description h4>span {
+    color: var(--color-bluebonnet-snd);
+}
+
+.petnest-blog-listing-slider.owl-carousel .owl-stage-outer {
+    overflow: visible;
+}
+
+.petnest-blog-listing-slider.owl-carousel .owl-stage-outer .owl-item {
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.petnest-blog-listing-slider.owl-carousel .owl-stage-outer .owl-item.active {
+    opacity: 1;
+}
+
+.petnest-blog-listing-slider .owl-nav div {
+    position: absolute;
+    right: 54px;
+    bottom: -77px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid var(--black-primary-snd);
+    width: 36px;
+    height: 36px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-blog-listing-slider .owl-nav div.owl-next {
+    right: -12px;
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+        -ms-transform: matrix(-1, 0, 0, 1, 0, 0);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+    border-color: var(--orange-primary);
+    color: var(--orange-primary);
+}
+
+.petnest-blog-listing-slider .owl-nav div i:before {
+    font-weight: 600 !important;
+}
+
+.petnest-blog-listing-slider .owl-nav div:hover {
+    color: var(--color-white);
+    border-color: var(--orange-primary);
+    background-color: var(--orange-primary);
+}
+
+/* Petnest Instagram Feed CSS */
+.petnest-heading.petnest-heading-follow-insta h2 {
+    margin-bottom: 45px;
+}
+
+.petnest-instagram {
+    background-color: var(--color-rose-white);
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.petnest-insta-story figure img {
+    height: 320px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 16px;
+}
+
+.petnest-insta-story {
+    margin-bottom: 25px;
+}
+
+.petnest-insta-profile a {
+    font-size: 32px;
+    color: var(--black-primary);
+    font-weight: 600;
+    line-height: 32px;
+    text-decoration: none;
+    margin-top: 25px;
+    opacity: 0.7;
+    display: inline-block;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-insta-profile a:hover {
+    opacity: 1;
+    color: var(--orange-primary);
+}
+
+/* Petnest Footer CSS */
+.footer-petnest {
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-petnest-main {
+    background-color: var(--color-white);
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.petnest-footer-des figure {
+    margin-bottom: 15px;
+}
+
+.petnest-footer-des p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--black-primary);
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.petnest-footer-des {
+    padding-right: 30px;
+}
+
+.petnest-footer-des ul {
+    margin-top: 30px;
+}
+
+.petnest-footer-des ul>li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.petnest-footer-des ul>li>a {
+    font-size: 13px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    background-color: var(--color-rose-white);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 14px;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.petnest-footer-des ul>li:last-child {
+    margin-right: 0;
+}
+
+.petnest-footer-des ul>li:nth-child(1)>a {
+    color: var(--color-bluebonnet);
+}
+
+.petnest-footer-des ul>li:nth-child(2)>a {
+    color: var(--orange-primary);
+}
+
+.petnest-footer-des ul>li:nth-child(3)>a {
+    color: var(--color-spiro-disco-ball);
+}
+
+.petnest-footer-link h4 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1.25px;
+    margin-bottom: 15px;
+}
+
+.petnest-footer-link ul>li {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.petnest-footer-link ul>li>a {
+    color: var(--black-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    margin-bottom: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.petnest-footer-link ul>li>a:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-footer-link ul>li:last-child {
+    margin-bottom: 0;
+}
+
+.petnest-address-footer p {
+    margin-bottom: 26px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--black-primary);
+}
+
+.petnest-address-footer p>span {
+    opacity: 0.7;
+}
+
+.petnest-address-footer a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--black-primary);
+    opacity: 0.7;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.petnest-address-footer a:hover {
+    opacity: 1;
+    color: var(--orange-primary);
+}
+
+
+.petnest-address-footer p:first-child>strong {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.petnest-address-footer p>strong {
+    opacity: 0.7;
+}
+
+.petnest-address-footer h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.copyright-petnest {
+    border-top: 1px solid var(--color-rose-white);
+    margin-top: 80px;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.copyright-petnest p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--color-roman-silver);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.footer-animation figure {
+    position: absolute;
+}
+
+.footer-animation figure:nth-child(1) {
+    bottom: 28%;
+    left: 23%;
+}
+
+.footer-animation figure:nth-child(1) img {
+    width: 35px;
+    height: 35px;
+}
+
+.footer-animation figure:nth-child(2) {
+    bottom: 1%;
+    left: 36%;
+}
+
+.footer-animation figure:nth-child(2) img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-animation figure:nth-child(3) {
+    right: 37%;
+    bottom: 1%;
+}
+
+.footer-animation figure:nth-child(3) img {
+    width: 65px;
+    height: 65px;
+}
+
+.footer-animation figure:nth-child(4) {
+    right: 28%;
+    bottom: 21%;
+}
+
+.footer-animation figure:nth-child(4) img {
+    width: 35px;
+    height: 35px;
+}
+
+/* ---------------------- About US Page CSS ---------------------- */
+
+/* About us page --> Hero CSS */
+.petnest-about-us {
+    padding-top: 185px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.about-petnest-left {
+    padding-right: 15px;
+}
+
+.petnest-about-us .animation-bubble figure:nth-child(3) {
+    bottom: 10%;
+    top: auto;
+}
+
+.about-petnest-left h5 {
+    color: var(--black-primary);
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.7;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15px;
+}
+
+.about-petnest-left h1 {
+    color: var(--black-primary);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    margin-bottom: 11px;
+}
+
+.about-petnest-left p {
+    color: var(--black-primary);
+    opacity: 0.7;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 0;
+}
+
+.about-petnest-right {
+    position: relative;
+    z-index: 1;
+}
+
+.about-petnest-right::after {
+    position: absolute;
+    content: '';
+    right: -122px;
+    top: 2px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/about/about-us-blob.svg);
+    background-size: 97% 97%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.about-petnest-right figure {
+    width: 260px;
+    margin: 0 auto;
+}
+
+.about-petnest-right figure img {
+    border-radius: 50%;
+}
+
+/* About Us Page --> Our Story CSS  */
+
+.about-petnest-story {
+    padding-bottom: 30px;
+}
+
+.story-petnest-about {
+    padding-top: 50px;
+}
+
+.petnest-pets {
+    display: inline-block;
+}
+
+.petnest-pets.petnest-pets-right figure {
+    float: right;
+}
+
+.petnest-pets.petnest-pets-left figure {
+    float: left;
+}
+
+.about-petnest-story .petnest-heading.petnest-heading-story {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.petnest-success-count {
+    background-color: var(--color-rose-white);
+    border-radius: 25px;
+    padding: 45px;
+}
+
+.petnest-pets figure {
+    width: 230px;
+}
+
+/* About Us Page --> Meet Our Team CSS */
+
+.meet-petnest-team.meet-petnest-team-about {
+    padding-bottom: 100px;
+}
+
+/* About Us Page --> Newsletter CSS */
+
+.petnest-newsletter.petnest-newsletter-about {
+    padding-top: 2px;
+    padding-bottom: 100px;
+}
+
+
+/* ---------------------- Contact US Page CSS ---------------------- */
+
+/* Contact US Page --> Contact Form CSS */
+
+.petnest-contact-wrapper {
+    background-color: var(--color-white);
+    padding: 65px 70px;
+    border-radius: 16px;
+}
+.petnest-about-us.petnest-about-contact {
+    padding-bottom: 100px;
+}
+.petnest-contact-form {
+    padding-bottom: 100px;
+}
+
+.petnest-contact-left {
+    background-color: var(--color-seashell);
+    padding: 40px 40px;
+    padding-bottom: 97px;
+    border-radius: 16px;
+}
+
+.petnest-contact-left form label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--color-cetacean-blue);
+    margin-bottom: 8px;
+}
+
+.petnest-contact-left form {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-contact-left form input[type='text'],
+.petnest-contact-left form input[type='email'],
+.petnest-contact-left form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black-primary);
+    background-color: var(--color-white);
+    outline: none;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+}
+
+.petnest-contact-left form textarea {
+    resize: none;
+    height: 180px;
+    margin-bottom: 35px;
+}
+
+.petnest-contact-left form input[type='text']::-webkit-input-placeholder, .petnest-contact-left form input[type='email']::-webkit-input-placeholder, .petnest-contact-left form textarea::-webkit-input-placeholder {
+    color: var(--color-cool-grey);
+}
+
+.petnest-contact-left form input[type='text']::-moz-placeholder, .petnest-contact-left form input[type='email']::-moz-placeholder, .petnest-contact-left form textarea::-moz-placeholder {
+    color: var(--color-cool-grey);
+}
+
+.petnest-contact-left form input[type='text']:-ms-input-placeholder, .petnest-contact-left form input[type='email']:-ms-input-placeholder, .petnest-contact-left form textarea:-ms-input-placeholder {
+    color: var(--color-cool-grey);
+}
+
+.petnest-contact-left form input[type='text']::-ms-input-placeholder, .petnest-contact-left form input[type='email']::-ms-input-placeholder, .petnest-contact-left form textarea::-ms-input-placeholder {
+    color: var(--color-cool-grey);
+}
+
+.petnest-contact-left form input[type='text']::placeholder,
+.petnest-contact-left form input[type='email']::placeholder,
+.petnest-contact-left form textarea::placeholder {
+    color: var(--color-cool-grey);
+}
+
+.petnest-contact-left form input[type='submit'] {
+    float: right;
+    border: none;
+    color: var(--color-white);
+    background-color: var(--orange-primary);
+    -webkit-box-shadow: 0px 4px 16px rgba(12, 117, 255, 0.16);
+            box-shadow: 0px 4px 16px rgba(12, 117, 255, 0.16);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 40px;
+    border-radius: 8px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-contact-left form input[type='submit']:hover {
+    background-color: var(--color-yellow);
+}
+
+.petnest-contact-right h3 {
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 700;
+    color: var(--black-primary);
+    margin-bottom: 15px;
+}
+
+.petnest-contact-right p {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    color: var(--black-primary);
+    opacity: 0.7;
+    margin-bottom: 45px;
+}
+
+.list-info-contact a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 20px 15px;
+    padding-left: 58px;
+    margin-bottom: 20px;
+    color: var(--black-primary);
+    border-radius: 8px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.list-info-contact a::after {
+    position: absolute;
+    content: '';
+    background-color: var(--color-brandeis-blue);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    border-radius: 8px;
+}
+
+.list-info-contact a span,
+.list-info-contact a figure {
+    position: absolute;
+    left: 20px;
+}
+
+.list-info-contact a span {
+    color: var(--orange-primary);
+    font-size: 16px;
+}
+
+.list-info-contact a:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-contact-right {
+    padding-left: 60px;
+    padding-top: 35px;
+    padding-right: 30px;
+}
+
+.list-info-contact {
+    margin-right: 55px;
+}
+
+.contact-page-social ul>li {
+    display: inline-block;
+}
+
+.contact-page-social ul>li>a {
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--color-rose-white);
+    width: 60px;
+    height: 60px;
+    line-height: 65px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.contact-page-social ul {
+    margin-top: 55px;
+}
+
+.contact-page-social ul>li:nth-child(1)>a {
+    color: var(--color-bluebonnet);
+}
+
+.contact-page-social ul>li:nth-child(2)>a {
+    color: var(--orange-primary);
+    font-size: 23px;
+}
+
+.contact-page-social ul>li:nth-child(3)>a {
+    color: var(--color-spiro-disco-ball);
+}
+
+/* Contact US Page --> Map CSS */
+.petnest-contact-map-wrapper {
+    padding: 30px 30px;
+    padding-bottom: 23px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+}
+.petnest-contact-map-wrapper iframe {
+    width: 100%;
+}
+/* Contact US Page --> Newsletter CSS */
+.petnest-newsletter.petnest-newsletter-contact,
+.petnest-newsletter.petnest-newsletter-shop {
+    padding-bottom: 100px;
+}
+
+/* ---------------------- Our Team Page CSS ---------------------- */
+
+/* Our Team Page --> Meet Our Team CSS */
+.meet-petnest-team.meet-petnest-team-page {
+    padding-top: 0;
+}
+
+.petnest-team-animation-snd div {
+    right: auto;
+    left: 20%;
+    top: 8%;
+}
+
+.meet-petnest-team.meet-petnest-team-page .petnest-heading h2 {
+    margin-bottom: 10px;
+}
+
+.our-team-page-slider>div {
+    margin-bottom: 70px;
+}
+
+.our-team-page-slider .petnest-member-single:hover figure,
+.slider-team-page.owl-carousel .owl-stage .owl-item.active.center .our-team-page-slider .petnest-member-single figure {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.our-team-page-slider .petnest-member-single:hover,
+.slider-team-page.owl-carousel .owl-stage .owl-item.active.center .our-team-page-slider .petnest-member-single {
+    margin-top: 0;
+}
+
+.slider-team-page .owl-nav div {
+    top: auto;
+    bottom: -30px;
+}
+
+/* ---------------------- Our Gallery Page CSS ---------------------- */
+
+/* Our Gallery Page --> Our Gallery CSS */
+.meet-petnest-team.gallery-pet-page {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.petnest-heading.petnest-heading-gallery h2 {
+    margin-bottom: 10px;
+}
+
+.gallery-filter {
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 80px;
+}
+
+.gallery-filter>li {
+    display: inline-block;
+    width: auto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    padding: 12px 35px;
+    border-radius: 28px;
+    color: var(--black-primary-snd);
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.gallery-filter>li.active {
+    color: var(--color-white);
+    background-color: var(--orange-primary);
+}
+
+.gallery-filter>li:last-child {
+    margin-right: 0;
+}
+
+.single-gallery-photo {
+    float: left;
+    width: 30.3333%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.single-gallery-photo::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black-primary);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.single-gallery-photo:hover::after {
+    opacity: 0.5;
+    visibility: visible;
+}
+
+.gallery-list .single-gallery-photo:nth-child(n+3) {
+    margin-right: 0px;
+}
+
+.single-gallery-photo img {
+    height: 350px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 4px;
+}
+
+.single-gallery-photo.gallery-large img {
+    height: 510px;
+}
+
+.single-gallery-photo.gallery-medium img {
+    height: 430px;
+}
+
+.gallery-list {
+    overflow: hidden;
+    left: 2%;
+}
+
+.show-image-gallery {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.show-image-gallery a {
+    text-decoration: none;
+    color: var(--color-white);
+    border: 1px solid transparent;
+    font-size: 16px;
+    height: 43px;
+    width: 43px;
+    line-height: 43px;
+    display: inline-block;
+    border-radius: 50%;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.show-image-gallery a i {
+    position: absolute;
+    top: 0%;
+    left: 35%;
+    -webkit-transform: rotate(-95deg);
+        -ms-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+}
+
+.show-image-gallery a:hover {
+    border-color: var(--color-white);
+}
+
+.single-gallery-photo:hover .show-image-gallery {
+    opacity: 1;
+    visibility: visible;
+}
+
+.petnest-newsletter.petnest-newsletter-gallery {
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+/* ---------------------- Login Page CSS ---------------------- */
+
+/* Login Page --> Login CSS */
+.petnest-login-wrapper {
+    background-color: var(--color-white);
+}
+
+.login-page-slider.owl-carousel .owl-item .single-petnest-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 751px;
+}
+
+.login-page-slider.owl-carousel .owl-dots div {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    background-color: var(--color-melon);
+    margin-right: 8px;
+    border-radius: 4px;
+    margin-bottom: 11px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.login-page-slider.owl-carousel .owl-dots {
+    position: absolute;
+    height: 24px;
+    bottom: 45px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: var(--color-white);
+    padding: 8px 10px;
+    border-radius: 12px;
+}
+
+.login-page-slider.owl-carousel .owl-dots div:last-child {
+    margin-right: 0;
+}
+
+.login-page-slider.owl-carousel .owl-dots div.active {
+    width: 16px;
+    background-color: var(--orange-primary);
+}
+
+.petnest-login-right {
+    padding: 82px 75px;
+}
+
+.petnest-login-right h5 {
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 1.25px;
+    color: var(--black-primary-snd);
+    margin-bottom: 17px;
+}
+
+.petnest-login-right h5,
+.petnest-login-right h3,
+.petnest-login-right a,
+.petnest-login-right span,
+.petnest-login-right form,
+.petnest-login-right p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-login-right h3 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    color: var(--black-primary);
+    margin-bottom: 35px;
+}
+
+.petnest-login-right .continue-with-google {
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-primary-snd);
+    background-color: var(--color-cultured);
+    border-radius: 4px;
+    padding: 12px 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-login-right .continue-with-google>figure {
+    margin-right: 6px;
+}
+
+.petnest-login-right .continue-with-google:hover {
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+}
+
+.login-or-divider {
+    display: block;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-or-divider::after,
+.login-or-divider::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 45%;
+    width: 40%;
+    height: 1px;
+    background: var(--color-cultured);
+    z-index: -1;
+}
+
+.login-or-divider::before {
+    left: auto;
+    right: 0;
+}
+
+.petnest-login-right form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-primary);
+    margin-bottom: 3px;
+}
+
+.petnest-login-right form input[type='password'],
+.petnest-login-right form input[type='email'],
+.name-field-left input[type='text'],
+.name-field-right input[type='text'] {
+    width: 100%;
+    background-color: var(--color-cultured);
+    border: none;
+    padding: 12px 12px;
+    padding-left: 49px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-login-right form>div {
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-login-right form>.email-field::after,
+.petnest-login-right form>.password-field::after,
+.petnest-login-right form>.password-field-new::after,
+.petnest-login-right form>.password-field-confirm::after {
+    position: absolute;
+    content: '';
+    left: 15px;
+    top: 25%;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: translateY(-15%);
+        -ms-transform: translateY(-15%);
+            transform: translateY(-15%);
+    background-image: url(../images/icon/envolve.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.petnest-login-right form>.password-field::after {
+    background-image: url(../images/icon/lock.svg);
+}
+
+.petnest-login-right form input[type='password']::-webkit-input-placeholder, .petnest-login-right form input[type='email']::-webkit-input-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-login-right form input[type='password']::-moz-placeholder, .petnest-login-right form input[type='email']::-moz-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-login-right form input[type='password']:-ms-input-placeholder, .petnest-login-right form input[type='email']:-ms-input-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-login-right form input[type='password']::-ms-input-placeholder, .petnest-login-right form input[type='email']::-ms-input-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-login-right form input[type='password']::placeholder,
+.petnest-login-right form input[type='email']::placeholder {
+    opacity: 0.7;
+}
+
+.petnest-login-right form input[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13.5px 12px;
+    border-radius: 4px;
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-login-right form input[type="submit"]:hover {
+    background-color: var(--color-yellow);
+}
+
+.petnest-login-right p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-top: 53px;
+}
+
+.petnest-login-right p>a {
+    color: var(--orange-primary);
+    text-decoration: underline;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.petnest-login-right p>a:hover {
+    color: var(--color-green);
+}
+
+/* Sign UP --> Sign UP CSS */
+.name-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.name-field .name-field-left,
+.name-field .name-field-right {
+    width: 47.5%;
+}
+
+.name-field-left input[type='text'],
+.name-field-right input[type='text'] {
+    padding-left: 12px;
+}
+
+.login-page-slider.signup-slider.owl-carousel .owl-item .single-petnest-image img {
+    height: 949px;
+}
+
+.petnest-login-right form>.password-field-new::after,
+.petnest-login-right form>.password-field-confirm::after {
+    background-image: url(../images/icon/eye.svg);
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+
+.petnest-login-right form>.password-field-confirm::after {
+    background-image: url(../images/icon/eye-close.svg);
+}
+
+.petnest-login-right form .password-field-new input[type='password'],
+.petnest-login-right form .password-field-confirm input[type='password'] {
+    padding-left: 12px;
+    padding-right: 49px;
+}
+
+/* ---------------------- Error Page CSS ---------------------- */
+
+/* Error Page --> Error CSS */
+.error-page .animation-bubble figure:nth-child(1) {
+    right: auto;
+    left: 36%;
+    top: 62%;
+}
+
+.error-page .animation-bubble figure:nth-child(2) {
+    right: auto;
+    left: 36%;
+    top: 20%;
+}
+
+.error-page .animation-bubble figure:nth-child(3) {
+    right: 37%;
+    top: 45%;
+}
+
+.error-page .animation-bubble figure:nth-child(4) {
+    right: 42%;
+    top: 20%;
+}
+
+.error-page {
+    padding-top: 186px;
+    position: relative;
+    z-index: 1;
+}
+
+.error-page-wrap {
+    text-align: center;
+}
+
+.error-page-wrap figure img {
+    width: 175px;
+}
+
+.error-page-wrap figure {
+    padding-bottom: 53px;
+}
+
+.error-page-wrap h1,
+.error-page-wrap h2,
+.error-page-wrap p {
+    color: var(--black-primary);
+}
+
+.error-page-wrap h1 {
+    font-size: 164px;
+    font-weight: 700;
+    line-height: 164px;
+}
+
+.error-page-wrap h2 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 74px;
+}
+
+.error-page-wrap p {
+    opacity: 0.7;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 50px;
+    margin-bottom: 50px;
+}
+
+.btn-primay.btn-back-home {
+    font-size: 20px;
+    padding: 20px 48px;
+    line-height: 27px;
+}
+
+/* ---------------------- Book Scheduel Page CSS ---------------------- */
+
+/* Book Scheduel Page --> Book Scheduel CSS */
+.book-schedule {
+    padding-top: 178px;
+    padding-bottom: 90px;
+    position: relative;
+    z-index: 1;
+}
+
+.book-schedule-heading h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.book-schedule-heading {
+    text-align: center;
+}
+
+.book-schedule-heading h2,
+.book-schedule-heading p {
+    color: var(--black-primary);
+}
+
+.book-schedule-heading p {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.schedule-form {
+    background-color: var(--color-seashell);
+    padding: 85px 85px;
+    margin-top: 55px;
+    -webkit-box-shadow: 0px 6px 30px var(--color-american-silver);
+            box-shadow: 0px 6px 30px var(--color-american-silver);
+}
+
+.schedule-form form input[type='text'],
+.schedule-form form input[type='email'],
+.schedule-form form input[type='date'],
+.schedule-form form input[type='time'],
+.schedule-form form textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-primary);
+    margin-bottom: 25px;
+}
+
+.schedule-form form textarea {
+    resize: none;
+    height: 180px;
+    background-color: var(--color-ghost-white);
+}
+
+.schedule-form form input[type='text']::Placeholder,
+.schedule-form form input[type='email']::Placeholder,
+.schedule-form form input[type='date']::Placeholder,
+.schedule-form form input[type='time']::Placeholder,
+.schedule-form form textarea::Placeholder {
+    opacity: 0.7;
+}
+
+.schedule-form form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-cetacean-blue);
+    margin-bottom: 8px;
+}
+
+.schedule-form form .form-select {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black-primary);
+    outline: none;
+    padding: 16px 20px;
+    background-size: 15px;
+}
+
+.schedule-form form .form-select:hover,
+.schedule-form form .form-select:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.schedule-form form .form-select option,
+.schedule-form form .form-select option:checked {
+    color: var(--black-primary);
+    opacity: 0.7;
+}
+
+.pet-form-sep {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.pet-form-sep>div {
+    width: 48%;
+}
+
+.schedule-form form input[type='submit'] {
+    background-color: var(--orange-primary);
+    border: none;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: var(--color-white);
+    padding: 16px 48px;
+    border-radius: 8px;
+    display: inline-block;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+
+.schedule-form form input[type='submit']:hover {
+    background-color: var(--color-yellow);
+}
+
+.submit-schedule {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.submit-schedule input[type=submit]:first-child {
+    background-color: var(--black-primary-snd);
+    margin-right: 24px;
+}
+
+.book-sch-element figure {
+    position: absolute;
+    z-index: -1;
+}
+
+.book-sch-element figure:first-child {
+    left: 15%;
+    bottom: 28%;
+    -webkit-transform: rotate(-26.63deg);
+        -ms-transform: rotate(-26.63deg);
+            transform: rotate(-26.63deg);
+}
+
+.book-sch-element figure:last-child {
+    right: 13%;
+    bottom: 35%;
+}
+
+.book-sch-element figure:last-child img {
+    width: 180px;
+}
+
+/* Book Scheduel Page --> Get a quote CSS */
+.petnest-sch-quote-wrapper h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 10px;
+}
+
+.petnest-sch-quote-wrapper h3,
+.petnest-sch-quote-wrapper p {
+    text-align: center;
+    color: var(--black-primary);
+}
+
+.petnest-sch-quote-wrapper p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 0;
+}
+
+.petnest-option-contact {
+    padding-top: 52px;
+}
+
+.petnest-sch-quote-wrapper {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.list-info-contact.list-info-contact-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.petnest-option-contact .list-info-contact {
+    margin-right: 0;
+}
+
+.list-info-contact.list-info-contact-flex a {
+    width: 44.8%;
+    margin-bottom: 44px;
+}
+
+.list-info-contact.list-info-contact-location {
+    margin-left: 65px;
+    margin-right: 65px;
+}
+
+.contact-page-social.contact-schedule-social ul {
+    text-align: center;
+}
+
+/* ---------------------- Blog Page CSS ---------------------- */
+
+/* Blog Grid Page --> Blog Grid CSS */
+
+.single-petnest-blog.single-petnest-blog-page {
+    margin-bottom: 25px;
+}
+
+.petnest-blog-pagination .pagination {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: transparent;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.petnest-blog-pagination .pagination .page-item .page-link {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: var(--black-primary);
+    padding: 5px 20px;
+    font-weight: 500;
+}
+
+.petnest-blog-pagination .pagination .page-item .page-link:hover,
+.petnest-blog-pagination .pagination .page-item .page-link:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    outline: none;
+}
+
+.petnest-blog-pagination .pagination .page-item.active .page-link {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--orange-primary);
+}
+
+.petnest-blog-pagination .pagination .page-item .page-link span {
+    font-size: 20px;
+    margin-top: 0;
+    position: absolute;
+    left: -27px;
+    top: 2px;
+}
+
+.petnest-blog-pagination .pagination .page-item .page-link span i::before {
+    font-weight: bold !important;
+}
+
+.petnest-blog-pagination .pagination .page-item {
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-blog-pagination .pagination .page-item:last-child .page-link span {
+    right: -27px;
+    top: 0px;
+    left: auto;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.petnest-blog-pagination .pagination .page-item:last-child {
+    padding-left: 30px;
+}
+
+.petnest-blog-pagination .pagination .page-item:first-child {
+    padding-right: 30px;
+}
+
+.petnest-blog-pagination .pagination .page-item .page-link:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-blog-pagination {
+    margin-top: 46px;
+}
+
+/* Blog Standard Page --> Blog Standard Left CSS */
+
+.blog-standard-left figure img {
+    height: 425px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.blog-standard-left .blog-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.blog-standard-left .blog-info>div>span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black-primary);
+    line-height: 22px;
+    margin-right: 25px;
+    opacity: 0.7;
+}
+
+.blog-standard-left .blog-info {
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
+.blog-standard-left .blog-info .blog-post-by span {
+    font-weight: 400;
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.blog-standard-left .blog-info .blog-post-by {
+    color: var(--color-bluebonnet-snd);
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 1;
+}
+
+.blog-standard-left .blog-info .blog-post-comments {
+    margin-left: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.blog-standard-left .blog-info .blog-post-comments i {
+    color: var(--orange-primary);
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.blog-liner {
+    width: 18px;
+    height: 1px;
+    background: var(--black-primary-snd);
+}
+
+.blog-standard-left h3 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 20px;
+}
+
+.blog-standard-left p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.blog-standard-left h3,
+.blog-standard-left p {
+    color: var(--black-primary);
+}
+
+.blog-share-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.blog-share-option .blog-share-option-left a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    color: var(--orange-primary);
+    position: relative;
+    z-index: 1;
+}
+
+.blog-share-option .blog-share-option-left a,
+.blog-share-option .blog-share-option-right a {
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.blog-share-option .blog-share-option-left a:hover {
+    color: var(--color-bluebonnet-snd);
+}
+
+.blog-share-option .blog-share-option-right a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--color-moonstone);
+    padding-right: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.blog-share-option .blog-share-option-right a span {
+    font-size: 16px;
+    color: var(--black-primary);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.blog-share-option .blog-share-option-right a:hover {
+    color: var(--color-bluebonnet-snd);
+}
+
+.blog-standard-left .blog-info .blog-post-time span {
+    margin-right: 15px;
+}
+
+.blog-standard {
+    background-color: var(--color-white);
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.blog-standard-left .single-blog-standard {
+    margin-bottom: 65px;
+}
+
+.blog-standard-left .petnest-blog-pagination .pagination {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+}
+
+.blog-standard-left .petnest-blog-pagination .pagination .page-item:last-child .page-link span {
+    right: 0;
+}
+
+.blog-standard-left .petnest-blog-pagination .pagination .page-item:last-child .page-link {
+    padding-right: 48px;
+}
+
+.blog-standard-left .petnest-blog-pagination {
+    margin-top: 0;
+}
+
+/* Blog Standard Page --> Blog Standard Right CSS */
+
+.blog-search-bar input[type='search'] {
+    border: none;
+    width: 100%;
+    background-color: var(--color-lavender-blush);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: var(--black-primary);
+    opacity: 1;
+    outline: none;
+    padding: 13px 20px;
+    padding-right: 45px;
+    border-radius: 5px;
+}
+
+.blog-search-bar input[type='search']::-webkit-input-placeholder {
+    opacity: 0.7;
+}
+
+.blog-search-bar input[type='search']::-moz-placeholder {
+    opacity: 0.7;
+}
+
+.blog-search-bar input[type='search']:-ms-input-placeholder {
+    opacity: 0.7;
+}
+
+.blog-search-bar input[type='search']::-ms-input-placeholder {
+    opacity: 0.7;
+}
+
+.blog-search-bar input[type='search']::placeholder {
+    opacity: 0.7;
+}
+
+.blog-search-bar button[type=submit] {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: var(--orange-primary);
+    font-size: 19px;
+    padding: 5px 10px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.blog-search-bar button[type=submit] span i::before {
+    font-weight: bold !important;
+}
+
+.blog-search-bar button[type=submit]:hover {
+    color: var(--color-gamboge);
+}
+
+.blog-standard-right {
+    padding-left: 15px;
+}
+
+.blog-search-bar {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.blog-author figure img {
+    width: 208px;
+    height: 208px;
+}
+
+.blog-author {
+    text-align: center;
+}
+
+.blog-author figure {
+    margin-bottom: 35px;
+}
+
+.blog-author h3,
+.blog-author p {
+    color: var(--black-primary);
+}
+
+.blog-author h3 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    margin-bottom: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.blog-author p {
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.blog-category {
+    margin-top: 65px;
+}
+
+.blog-category h3,
+.blog-recent-post h3,
+.blog-tags h3 {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 42px;
+    color: var(--black-primary);
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.blog-category ul>li {
+    display: block;
+    margin-bottom: 25px;
+}
+
+.blog-category ul>li>a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary-snd);
+    background-color: var(--color-cultured);
+    display: block;
+    padding: 11px 20px;
+    padding-right: 55px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.blog-category ul>li>a:hover {
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+}
+
+.blog-category ul>li>a>span {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.blog-recent-post,
+.blog-tags {
+    margin-top: 62px;
+}
+
+.blog-recent-post a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 23px;
+    text-decoration: none;
+}
+
+.blog-recent-post a .blog-recent-post-left figure img {
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+}
+
+.blog-recent-post a .blog-recent-post-left {
+    width: 24%;
+}
+
+.blog-recent-post a .blog-recent-post-right {
+    width: 76%;
+    margin-left: 20px;
+}
+
+.blog-recent-post a .blog-recent-post-right h4,
+.blog-recent-post a .blog-recent-post-right span {
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.blog-recent-post a .blog-recent-post-right h4 {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.blog-recent-post a .blog-recent-post-right span {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+.blog-recent-post a:hover .blog-recent-post-right h4,
+.blog-recent-post a:hover .blog-recent-post-right span {
+    color: var(--orange-primary);
+}
+
+.blog-tags .blog-tags-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.blog-tags .blog-tags-list>a {
+    margin-right: 10px;
+}
+
+.blog-tags .blog-tags-list a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--black-primary-snd);
+    background-color: var(--color-anti-flash-white);
+    padding: 6px 13px;
+    display: inline-block;
+    margin-bottom: 12px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.blog-tags .blog-tags-list a:hover {
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+}
+
+/* Blog Single Page --> Blog Single left CSS */
+.single-blog-standard.single-blog-single-post .quote {
+    position: relative;
+    z-index: 1;
+    padding-top: 85px;
+}
+
+.single-blog-standard.single-blog-single-post .quote h3 {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 38px;
+    opacity: 0.7;
+    margin-bottom: 35px;
+}
+
+.single-blog-standard.single-blog-single-post {
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.single-blog-standard.single-blog-single-post .quote h3,
+.single-blog-standard.single-blog-single-post .quote h4,
+.single-blog-standard.single-blog-single-post h3 {
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.single-blog-standard.single-blog-single-post h3 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.single-blog-standard.single-blog-single-post .quote h4 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 55px;
+}
+
+.single-blog-standard.single-blog-single-post .quote::after {
+    position: absolute;
+    content: '\f127';
+    font-family: "flaticon";
+    left: 0;
+    top: 15%;
+    -webkit-transform: translateY(-5%);
+        -ms-transform: translateY(-5%);
+            transform: translateY(-5%);
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    color: var(--orange-primary);
+}
+
+.single-blog-standard.single-blog-single-post .care-option {
+    margin-bottom: 25px;
+}
+
+.single-blog-standard.single-blog-single-post .care-option ul>li {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    color: var(--black-primary-snd);
+    margin-bottom: 10px;
+    padding-left: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.single-blog-standard.single-blog-single-post .care-option ul>li::before {
+    position: absolute;
+    content: '\f128';
+    font-family: "flaticon";
+    left: 0;
+    top: 1px;
+    width: 100%;
+    height: 100%;
+    color: var(--black-primary);
+    font-size: 20px;
+}
+
+.single-blog-standard.single-blog-single-post .care-option ul>li:last-child {
+    margin-bottom: 0;
+}
+
+.single-blog-standard.single-blog-single-post .pet-blog-shots {
+    margin-top: 34px;
+    margin-bottom: 15px;
+}
+
+.blog-share-option.blog-single-share-option {
+    border-top: 1px solid var(--color-bright-gray);
+    border-bottom: 1px solid var(--color-bright-gray);
+    padding-top: 23px;
+    padding-bottom: 27px;
+    margin-top: 36px;
+}
+
+.blog-share-option-left-tags p {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary-snd);
+    opacity: 1;
+}
+
+.blog-share-option-left-tags p span {
+    color: var(--orange-primary);
+}
+
+/* Blog Single Page --> Blog Single Comments CSS */
+.petnest-blog-comments h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 47px;
+}
+
+.petnest-blog-s-left figure img {
+    width: 94px;
+    height: 94px;
+}
+
+.petnest-blog-s-right h4 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 5px;
+}
+
+.petnest-blog-s-right h4,
+.petnest-blog-s-right p,
+.petnest-blog-s-right a {
+    font-family: 'Open Sans', sans-serif;
+    opacity: 1;
+}
+
+.petnest-blog-s-right p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--black-primary-snd);
+    margin-bottom: 20px;
+}
+
+.petnest-blog-s-right a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--black-primary-snd);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-blog-s-right a:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-blog-s-comment {
+    margin-bottom: 28px;
+}
+
+.petnest-blog-s-comment.petnest-blog-right-replay {
+    background-color: var(--color-floral-white-snd);
+    padding: 24px 28px;
+    margin-left: 95px;
+}
+
+.blog-comments-petnest {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.blog-comments-petnest h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--black-primary);
+}
+
+.blog-comments-petnest h3,
+.blog-comments-petnest form label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.blog-comments-petnest form {
+    margin-top: 50px;
+}
+
+.blog-comments-petnest form label {
+    display: block;
+    color: var(--black-primary-snd);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.blog-comments-petnest form input[type='text'], .blog-comments-petnest form input[type='email'],
+.blog-comments-petnest form textarea {
+    width: 100%;
+    padding: 12.5px 15px;
+    border: none;
+    background-color: var(--color-cultured);
+    color: var(--black-primary);
+    margin-bottom: 15px;
+    outline: none;
+    font-size: 16px;
+}
+
+.blog-comments-petnest form textarea {
+    resize: none;
+    height: 170px;
+    margin-bottom: 39px;
+}
+
+.comment-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.comment-flex>div {
+    width: 48.8%;
+}
+
+.blog-comments-petnest form input[type='submit'] {
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14.5px 23px;
+    display: inline-block;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.blog-comments-petnest form input[type='submit']:hover {
+    background-color: var(--color-yellow);
+}
+/* ---------------------- Shop Page CSS ---------------------- */
+.petnest-shop {
+    background-color: var(--color-white);
+    padding-top: 100px;
+}
+
+.petnest-shop-search input[type='search'] {
+    background-color: var(--color-lavender-blush);
+    border: none;
+    outline: none;
+    padding: 13.5px 14px;
+    padding-right: 30px;
+    color: var(--black-primary);
+    font-size: 14px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.petnest-shop-search input[type='search']:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.petnest-shop-search input[type='search']::-webkit-input-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-shop-search input[type='search']::-moz-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-shop-search input[type='search']:-ms-input-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-shop-search input[type='search']::-ms-input-placeholder {
+    opacity: 0.7;
+}
+
+.petnest-shop-search input[type='search']::placeholder {
+    opacity: 0.7;
+}
+
+.petnest-shop-search {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 55px;
+}
+
+.petnest-shop-search button[type='submit'] {
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: var(--orange-primary);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-shop-search button[type='submit']:hover {
+    color: var(--color-yellow);
+}
+
+.petnest-shop-left h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+.petnest-shop-pricerange,
+.petnest-product-cheking,
+.petnest-sells-product-left,
+.petnest-sells-product-tags {
+    background-color: var(--color-white);
+    -webkit-box-shadow: 0px 16px 36px var(--color-white-coffee);
+            box-shadow: 0px 16px 36px var(--color-white-coffee);
+    padding: 25px 15px;
+    overflow: hidden;
+    margin-bottom: 45px;
+}
+
+.petnest-shop-pricerange .slider {
+    height: 6px;
+    position: relative;
+    background-color: var(--color-rose-white);
+    border-radius: 100px;
+}
+
+.petnest-shop-pricerange .slider .progress {
+    background-color: var(--orange-primary);
+    height: 100%;
+    left: 0;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.petnest-shop-pricerange .range-input {
+    position: relative;
+}
+
+.petnest-shop-pricerange .range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.petnest-shop-pricerange .range-input input[type="range"]::-webkit-slider-thumb {
+    height: 11.18px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--orange-primary);
+    pointer-events: auto;
+    -webkit-appearance: none;
+}
+
+.petnest-shop-pricerange .range-input input[type="range"]::-moz-range-thumb {
+    height: 11.18px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--orange-primary);
+    pointer-events: auto;
+    -moz-appearance: none;
+}
+
+.petnest-shop-pricerange .price-input {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.petnest-shop-pricerange .price-input .field input[type='number'] {
+    width: 60px;
+    height: 36px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--color-cultured);
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    pointer-events: auto;
+    outline: none;
+    color: var(--color-gray);
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.petnest-shop-pricerange .price-input .field {
+    font-size: 16px;
+    color: var(--color-gray);
+    font-weight: 600;
+}
+
+.petnest-shop-pricerange .price-input .field:last-child {
+    color: var(--orange-primary);
+}
+
+.petnest-shop-pricerange .price-input .field input[type='number'].input-max {
+    color: var(--orange-primary);
+}
+
+.petnest-product-cheking label {
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--black-primary);
+    opacity: 0.7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.petnest-product-cheking label:last-child {
+    margin-bottom: 0;
+}
+
+.petnest-product-cheking {
+    padding: 20px 25px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.petnest-product-cheking label input[type="checkbox"],
+.additional-info form>.multi-field>div>label input[type="checkbox"],
+.payment-methods label input[type="checkbox"],
+.single-petnest-inculde label input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    background-color: var(--color-light-red-snd);
+    margin: 0;
+    color: var(--orange-primary);
+    width: 16px;
+    height: 16px;
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.petnest-product-cheking label input[type="checkbox"]::before,
+.additional-info form>.multi-field>div>label input[type="checkbox"]::before,
+.payment-methods label input[type="checkbox"]::before,
+.single-petnest-inculde label input[type="checkbox"]::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+    -webkit-transition: 120ms -webkit-transform ease-in-out;
+    transition: 120ms -webkit-transform ease-in-out;
+    -o-transition: 120ms transform ease-in-out;
+    transition: 120ms transform ease-in-out;
+    transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+    background-color: var(--color-lotion);
+}
+
+.petnest-product-cheking label input[type="checkbox"]:checked::before,
+.additional-info form>.multi-field>div>label input[type="checkbox"]:checked::before,
+.payment-methods label input[type="checkbox"]:checked::before,
+.single-petnest-inculde label input[type="checkbox"]:checked::before {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+
+.petnest-product-cheking label input[type="checkbox"]:checked,
+.additional-info form>.multi-field>div>label input[type="checkbox"]:checked,
+.payment-methods label input[type="checkbox"]:checked,
+.single-petnest-inculde label input[type="checkbox"]:checked {
+    background: var(--color-malachite);
+}
+
+.petnest-product-cheking label input[type="checkbox"]:focus,
+.additional-info form>.multi-field>div>label input[type="checkbox"]:focus,
+.payment-methods label input[type="checkbox"]:focus,
+.single-petnest-inculde label input[type="checkbox"]:focus {
+    outline-offset: max(2px, 2px);
+}
+
+.petnest-sells-product-single {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 25px;
+    text-decoration: none;
+}
+
+.petnest-sells-product-left .petnest-sells-product-single:last-child {
+    margin-bottom: 0;
+}
+
+.petnest-sells-product-single figure img {
+    width: 35px;
+    height: 26px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.petnest-sells-product-single figure {
+    background-color: var(--color-bright-gray);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 52px;
+    border-radius: 50%;
+    margin-right: 17px;
+}
+
+.petnest-sells-product-single h4,
+.petnest-sells-product-single span {
+    font-size: 16px;
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-sells-product-single h4 {
+    line-height: 26px;
+    opacity: 0.7;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.petnest-sells-product-single:hover h4,
+.petnest-sells-product-single:hover span {
+    color: var(--orange-primary);
+    opacity: 1;
+}
+
+.petnest-sells-product-single span {
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.petnest-sells-product-tags a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black-primary-snd);
+    font-size: 11px;
+    font-weight: 400;
+    display: inline-block;
+    background-color: var(--color-anti-flash-white);
+    padding: 4px 10px;
+    margin-bottom: 10px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-sells-product-tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 45px 45px;
+    padding-bottom: 35px;
+}
+
+.petnest-sells-product-tags a:hover {
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+}
+
+.petnest-shop-top-sh-result h4,
+.petnest-shop-top-sorting h4,
+.petnest-shop-top-sorting select {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-shop-top-sh-result h4,
+.petnest-shop-top-sorting h4 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+.petnest-shop-top-sorting h4 {
+    opacity: 0.7;
+}
+
+.petnest-shop-top-sorting {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.petnest-shop-top-sorting select {
+    width: 255px;
+    cursor: pointer;
+    margin-left: 15px;
+    border: none;
+    background-color: var(--color-lavender-blush);
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 4px;
+}
+
+.petnest-shop-top-sorting select:hover,
+.petnest-shop-top-sorting select:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    outline: none;
+}
+
+.petnest-shop-all-product {
+    padding-top: 55px;
+}
+
+.petnest-shop-single-product .petnest-shop-pro-img {
+    background-color: var(--color-cultured-snd);
+    text-align: center;
+    padding: 70px 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-shop-single-product .petnest-shop-pro-img figure img {
+    width: 160px;
+    height: 160px;
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+
+.petnest-shop-pro-desc {
+    text-align: center;
+    padding: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-shop-pro-rev {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 11px;
+}
+
+.petnest-shop-pro-star span {
+    color: var(--color-princeton-orange);
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.petnest-shop-pro-star span.fourth-star {
+    color: var(--color-rose-white);
+}
+
+.petnest-shop-pro-star span:last-child {
+    margin-right: 0;
+}
+
+.petnest-shop-pro-rev span.review-have {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    color: var(--black-primary);
+    margin-left: 10px;
+}
+
+.petnest-shop-pro-desc a {
+    text-decoration: none;
+}
+
+.petnest-shop-pro-desc h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10px;
+    display: inline-block;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-shop-pro-desc h3:hover {
+    color: var(--orange-primary);
+}
+
+.previous-price {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--orange-primary);
+    text-decoration: line-through;
+}
+
+.discount-price {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--black-primary);
+}
+
+.petnest-shop-pro-price span {
+    margin-right: 10px;
+}
+
+.petnest-shop-pro-price span:last-child {
+    margin-right: 0;
+}
+
+.petnest-shop-single-product {
+    margin-bottom: 35px;
+}
+
+.add-to-wistlist a {
+    position: absolute;
+    text-decoration: none;
+}
+
+.add-to-wistlist .save-for-later,
+.add-to-wistlist .add-to-cart {
+    right: 30px;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    font-size: 12.5px;
+    color: var(--black-primary);
+    text-align: center;
+    line-height: 26px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.add-to-wistlist .add-to-cart {
+    top: 65px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.add-to-wistlist .save-for-later:hover,
+.add-to-wistlist .add-to-cart:hover {
+    color: var(--orange-primary);
+    background-color: var(--color-rose-white);
+}
+
+.add-to-wistlist .save-for-later.active,
+.add-to-wistlist .add-to-cart.active {
+    color: var(--orange-primary);
+}
+
+.add-to-wistlist .save-for-later span,
+.add-to-wistlist .add-to-cart span {
+    opacity: 0.7;
+    margin-left: -2px;
+}
+
+.add-to-wistlist .save-for-later:hover span,
+.add-to-wistlist .add-to-cart:hover span,
+.add-to-wistlist .save-for-later.active span,
+.add-to-wistlist .add-to-cart.active span {
+    opacity: 1;
+}
+
+.view-to-full a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: var(--orange-primary);
+    background-color: var(--color-rose-white);
+    font-size: 13px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.petnest-shop-single-product .petnest-shop-pro-img:hover .view-to-full a {
+    opacity: 1;
+    visibility: visible;
+}
+
+.petnest-shop-single-product .petnest-shop-pro-img:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-primary);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-shop-single-product .petnest-shop-pro-img:hover:before {
+    opacity: 0.7;
+    visibility: visible;
+}
+
+.ribbon-new span,
+.ribbon-sell span {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    min-width: 60px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 600;
+    color: var(--black-primary);
+    background-color: var(--color-vivid-malachite);
+    padding: 8px 15px;
+    z-index: -1;
+}
+
+.ribbon-sell span {
+    background-color: var(--color-red-pigment);
+    color: var(--color-white);
+}
+
+.petnest-newsletter.petnest-newsletter-shop {
+    background-color: var(--color-white);
+    padding-top: 20px;
+}
+
+.petnest-blog-pagination.petnest-shop-pagination {
+    margin-bottom: 47px;
+}
+
+.petnest-filter a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-lavender-blush);
+    color: var(--black-primary);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 20px;
+    border-radius: 4px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-filter a span {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.petnest-filter a:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-shop-top-sh-result.petnest-shop-top-sh-result-g {
+    margin-left: -30px;
+}
+
+/* ---------------------- Product Details Page CSS ---------------------- */
+
+/* Product Details Page --> Product Details CSS */
+.about-petnest-left.inner-page h5 {
+    opacity: 1;
+}
+
+.about-petnest-left.inner-page h5>span {
+    opacity: 0.7;
+}
+
+.product-details {
+    background-color: var(--color-white);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.product-details-left .product-highlight {
+    background-color: var(--color-cultured-snd);
+    text-align: center;
+    height: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.product-details-left .product-highlight img {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    width: 300px !important;
+    height: 300px;
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+
+.product-details-left .xzoom-thumbs {
+    margin-bottom: 0;
+}
+
+.product-details-left .xzoom-thumbs a img {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0;
+    border: none;
+    -o-object-fit: contain;
+       object-fit: contain;
+    padding: 15px 20px;
+    width: 115px;
+    height: 115px;
+    background-color: var(--color-cultured-snd);
+}
+
+.product-details-left .xzoom-thumbs a {
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.product-details-left .xzoom-thumbs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 25px;
+}
+
+.product-details-left .xzoom-thumbs a .xactive {
+    -webkit-filter: drop-shadow(0px 16px 36px var(--color-american-silver-snd));
+            filter: drop-shadow(0px 16px 36px var(--color-american-silver-snd));
+}
+
+.product-details-right h2 {
+    font-size: 32px;
+    line-height: 44px;
+    color: var(--black-primary);
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.product-details-right h3 {
+    font-size: 25px;
+    line-height: 36px;
+    font-weight: 700;
+    color: var(--orange-primary);
+    margin-bottom: 10px;
+}
+
+.product-details-right h3,
+.product-details-right h5,
+.product-details-right h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-total-rev {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 37px;
+}
+
+.product-details-right .star-of-product span {
+    color: var(--color-princeton-orange);
+    font-size: 14px;
+    margin-right: 2px;
+    margin-left: 0;
+    opacity: 1;
+}
+
+.product-total-rev span {
+    color: var(--black-primary);
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-left: 10px;
+}
+
+.product-details-right p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--black-primary);
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.product-details-right h5,
+.product-details-right h6 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: var(--black-primary);
+    margin-bottom: 12px;
+}
+
+.product-details-right h5>span {
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+.product-details-right h6>span {
+    font-weight: 700;
+}
+
+.pet-food-quantity {
+    margin-top: 52px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+.pet-food-quantity input[type='text'] {
+    background-color: var(--color-white);
+    color: var(--black-primary);
+    font-weight: 600;
+    font-size: 15px;
+    height: 45px;
+    width: 45px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.pet-food-quantity .input-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 74px;
+    -webkit-filter: drop-shadow(0px 2px 6px var(--color-misty-rose-snd));
+            filter: drop-shadow(0px 2px 6px var(--color-misty-rose-snd));
+    margin-right: 17px;
+}
+
+.pet-food-quantity button {
+    position: absolute;
+    right: 6px;
+    border: none;
+    height: 22.8px;
+    width: 23px;
+    font-size: 14px;
+    background-color: var(--color-rose-white);
+}
+
+.pet-food-quantity button.quantity-right-plus {
+    top: 22px;
+    font-size: 13px;
+    width: 23px;
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+}
+
+.btn-add-to-cart {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    background-color: var(--black-primary-snd);
+    color: var(--color-white);
+    padding: 10px 28.5px;
+    border-radius: 4px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.product-details-btns a {
+    margin-right: 20px;
+}
+
+.btn-add-to-cart:hover,
+.btn-add-to-cart.btn-buy-nw:hover {
+    color: var(--color-white);
+    background-color: var(--color-gamboge);
+}
+
+.btn-add-to-cart.btn-buy-nw {
+    background-color: var(--orange-primary);
+}
+
+.product-details-btns a:last-child {
+    margin-right: 0;
+}
+
+/* Product Details Page --> Product Details Tab CSS */
+.product-desc-page {
+    background-color: var(--color-white);
+    padding-bottom: 100px;
+}
+
+.prduct-desc-wrap ul>li>button {
+    background-color: var(--color-rose-white) !important;
+    color: var(--black-primary-snd);
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 16px 24px;
+    display: inline-block;
+    border-radius: unset !important;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.prduct-desc-wrap ul>li>button:hover,
+.prduct-desc-wrap ul>li>button.active {
+    background-color: var(--orange-primary) !important;
+    color: var(--color-white);
+}
+
+.prduct-desc-wrap ul>li {
+    margin-right: 35px;
+}
+
+.prduct-desc-wrap ul {
+    margin-bottom: 40px !important;
+}
+
+.prduct-desc-wrap .product-description p,
+.prduct-desc-wrap .prodcut-add-info p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary);
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+.prduct-desc-wrap .product-description p:last-child,
+.prduct-desc-wrap .prodcut-add-info p:last-child {
+    margin-bottom: 0;
+}
+
+.prduct-desc-wrap .prodcut-add-info ul>li {
+    list-style: auto;
+    font-size: 14px;
+    line-height: 28px;
+    color: var(--black-primary);
+    margin-bottom: 8px;
+    opacity: 0.7;
+}
+
+.prduct-desc-wrap .prodcut-add-info ul>li:last-child {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.prduct-desc-wrap .prodcut-add-info ul {
+    margin-bottom: 31px !important;
+}
+
+.product-table h3 {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 38px;
+    color: var(--color-rich-black);
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 37px;
+}
+
+.product-table {
+    margin-top: 76px;
+    display: inline-block;
+}
+
+.petnest-table table>tbody>tr {
+    border-color: var(--color-rose-white);
+}
+
+.petnest-table table>tbody>tr>th,
+.petnest-table table>tbody>tr>td {
+    padding: 17.5px 10px;
+    padding-left: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.petnest-table table>tbody>tr>td {
+    padding-left: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-primary);
+    opacity: 0.7;
+}
+
+.petnest-table table>tbody>tr>th {
+    color: var(--black-primary);
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.petnest-table table {
+    margin-bottom: 0;
+}
+
+.single-review-process-left figure img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+}
+
+.single-review-process {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.single-review-process-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.single-review-process-right {
+    padding-left: 130px;
+}
+
+.single-review-process-right h4 {
+    font-size: 20px;
+}
+
+.single-review-process-right h4,
+.single-review-process-right p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.single-review-process-right h4 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 34px;
+    opacity: 1;
+    color: var(--black-primary);
+    margin-bottom: 2px;
+}
+
+.single-review-process-right h4>span {
+    font-weight: 600;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.single-review-process-star span {
+    color: var(--color-princeton-orange);
+    font-size: 20px;
+    margin-right: 2px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.single-review-process-star span:last-child {
+    font-size: 18px;
+}
+
+.single-review-process-star {
+    margin-bottom: 5px;
+}
+
+.single-review-process-right p {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.petnest-product-reviews .single-review-process:last-child {
+    margin-bottom: 0;
+}
+
+.petnest-product-reviews {
+    margin-top: 70px;
+}
+
+.blog-comments-petnest.product-add-rev {
+    margin-top: 65px;
+    margin-bottom: 0;
+}
+
+.blog-comments-petnest.product-add-rev h3 {
+    margin-bottom: 10px;
+    color: var(--black-primary);
+}
+
+.blog-comments-petnest.product-add-rev p {
+    color: var(--black-primary);
+    opacity: 0.7;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.blog-comments-petnest.product-add-rev form {
+    margin-top: 35px;
+}
+
+.give-rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 41px;
+}
+
+.give-rating h4 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--black-primary);
+    margin-bottom: 0;
+}
+
+.give-rating .single-review-process-star {
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.petnest-related-product {
+    background-color: var(--color-white);
+    padding-bottom: 25px;
+}
+
+/* Petnest Cart Page --> Cart Page CSS */
+.petnest-cart-list {
+    background-color: var(--color-white);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.petnest-cart-table .table {
+    border-color: var(--color-rose-white);
+    text-align: center;
+}
+
+.petnest-cart-table .table thead {
+    background-color: var(--color-cultured-snd);
+}
+
+.petnest-cart-table .table thead>tr>th {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--black-primary-snd);
+    padding: 19.5px 10px;
+}
+
+.petnest-cart-table .table tbody>tr>td>button {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-cart-table .table tbody>tr>td>button .trash-bin-01 {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.petnest-cart-table .table tbody>tr>td>button:hover .trash-bin-00 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.petnest-cart-table .table tbody>tr>td>button:hover .trash-bin-01 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.petnest-cart-table .table tbody>tr>td>button img {
+    width: 24px;
+    height: 24px;
+}
+
+.petnest-cart-table .table tbody>tr>td .cart-visual {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black-primary);
+}
+
+.petnest-cart-table .table tbody>tr>td .cart-visual>figure {
+    margin-right: 25px;
+}
+
+.petnest-cart-table .table tbody>tr>td .cart-visual>figure>img {
+    width: 64px;
+    height: 64px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.petnest-cart-table .table tbody>tr>td {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--black-primary-snd);
+    padding: 35px 10px;
+}
+
+.petnest-cart-table .table tbody>tr>td .pet-food-quantity {
+    margin: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.petnest-cart-table .table tbody>tr>td .pet-food-quantity .input-group {
+    margin: 0;
+}
+
+.petnest-cart-table .table tbody>tr {
+    vertical-align: middle;
+}
+
+.continue-shop {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.btn-add-to-cart.btn-continue {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 14px 28.5px;
+}
+
+.cart-totals {
+    background-color: var(--color-white);
+    padding-bottom: 80px;
+}
+
+.cart-total-wrap {
+    background-color: var(--color-white);
+    -webkit-box-shadow: 0px 10px 30px var(--color-light-red-third);
+            box-shadow: 0px 10px 30px var(--color-light-red-third);
+    padding: 55px 55px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.cart-total-left h2,
+.cart-total-left p,
+.cart-total-left form,
+.cart-total-right h3,
+.cart-total-right .cart-subtotal h4,
+.cart-total-right .cart-subtotal span {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.cart-total-left h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 18px;
+}
+
+.cart-total-left p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 27px;
+}
+
+.cart-total-left form input[type='text'] {
+    background-color: var(--color-isabelline);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    height: 56px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.btn-add-to-cart.btn-coupon {
+    background-color: var(--color-princeton-orange);
+    padding: 16px 24.5px;
+    font-size: 18px;
+}
+
+.btn-add-to-cart.btn-coupon:hover {
+    background-color: var(--orange-primary);
+}
+
+.cart-total-right h3 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 50px;
+    margin-bottom: 0;
+}
+
+.cart-subtotal {
+    border-top: 1px solid var(--color-bright-gray);
+    padding-top: 30px;
+}
+
+.cart-subtotal .subtotal,
+.cart-subtotal .extra-fee,
+.cart-subtotal .cart-main-balance {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.cart-subtotal .subtotal h4,
+.cart-subtotal .extra-fee h4 {
+    font-size: 20px;
+    color: var(--black-primary);
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.cart-subtotal .subtotal div span,
+.cart-subtotal .extra-fee div span {
+    font-weight: 600;
+}
+
+.cart-subtotal .subtotal {
+    margin-bottom: 28px;
+}
+
+.cart-subtotal .extra-fee h4>span {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.cart-main-balance {
+    border-top: 1px solid var(--color-bright-gray);
+    padding-top: 22px;
+    margin-top: 22px;
+    padding-bottom: 40px;
+}
+
+.cart-subtotal .cart-main-balance h4 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.cart-subtotal .cart-main-balance span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--orange-primary);
+}
+
+.btn-add-to-cart.btn-checkout {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px 64.5px;
+    background-color: var(--orange-primary);
+}
+
+.btn-add-to-cart.btn-checkout:hover {
+    background-color: var(--color-yellow);
+}
+
+/* Petnest wishlist Page --> Wishlist Table CSS */
+
+.basktet {
+    text-decoration: none;
+}
+
+.basktet span {
+    font-size: 28px;
+    color: var(--black-primary-snd);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.basktet span:hover {
+    color: var(--orange-primary);
+}
+
+.petnest-cart-table .table tbody>tr>td.in-stock {
+    color: var(--color-green-snd);
+}
+
+.petnest-cart-table .table tbody>tr>td.out-stock {
+    color: var(--color-lust);
+}
+
+.petnest-cart-list.petnest-wish-list {
+    padding-bottom: 64px;
+}
+
+/* Petnest checkout Page --> Checkout CSS */
+.billing-details-right {
+    padding-left: 32px;
+}
+
+.petnest-billing-details {
+    background-color: var(--color-white);
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.billing-details-left p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--black-primary-snd);
+    margin-bottom: 52px;
+}
+
+.billing-details-left p>a {
+    text-decoration: none;
+    color: var(--orange-primary);
+    font-weight: 600;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.billing-details-left p>a:hover {
+    color: var(--color-malachite);
+}
+
+.billing-details h3,
+.additional-info h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: var(--black-primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.billing-details form>label,
+.billing-details form>.multi-field>div>label,
+.additional-info form>.multi-field>div>label,
+.additional-info form>label {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--black-primary-snd);
+    margin-bottom: 10px;
+}
+
+.billing-details form>input,
+.billing-details form>.multi-field>div>input,
+.additional-info form>.multi-field>div>input {
+    width: 100%;
+    background-color: var(--color-cultured-snd);
+    border: none;
+    padding: 13.5px 15px;
+    outline: none;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    color: var(--black-primary);
+    margin-bottom: 20px;
+}
+
+.multi-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.multi-field>div:first-child {
+    width: 65%;
+}
+
+.multi-field>div:last-child {
+    width: 32%;
+}
+
+.additional-info {
+    padding-top: 60px;
+}
+
+.additional-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.additional-info form>.multi-field>div:first-child,
+.additional-info form>.multi-field>div:last-child {
+    width: 48.5%;
+}
+
+.additional-info form>.multi-field>div>label.form-control {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    border: none;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.additional-info form>.multi-field>div>label input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.additional-info form>.multi-field>div>input {
+    margin-bottom: 7px;
+}
+
+.additional-info form>.multi-field>div>label input[type="checkbox"],
+.payment-methods label input[type="checkbox"] {
+    background-color: var(--color-rose-white);
+}
+
+.additional-info form>label {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.additional-info form .multi-field {
+    margin-bottom: 51px;
+}
+
+.additional-info form textarea {
+    width: 100%;
+    resize: none;
+    height: 170px;
+    background-color: var(--color-cultured-snd);
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 16px;
+    color: var(--black-primary);
+    display: block;
+}
+
+.your-order,
+.payment-methods {
+    background-color: var(--color-white);
+    -webkit-box-shadow: 0px 10px 30px var(--color-light-red-third);
+            box-shadow: 0px 10px 30px var(--color-light-red-third);
+    padding: 30px 30px;
+    padding-top: 35px;
+}
+
+.your-order h3,
+.your-order-heading>div>h4,
+.your-product>div h4,
+.your-product>div span,
+.subtotal-page>div h3,
+.subtotal-page>div span,
+.extra-fee-pay>div span,
+.total-sum>div h3,
+.total-sum>div span,
+.total-sum>div h3,
+.total-sum>div span {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black-primary);
+}
+
+.your-order h3 {
+    font-size: 28px;
+    line-height: 46px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.your-order-heading {
+    border-top: 1px solid var(--color-rose-white);
+    margin-top: 3px;
+    padding-top: 28px;
+    padding-bottom: 43px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.your-order-heading>div>h4 {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.your-order-heading>div:last-child>h4 {
+    font-weight: 600;
+}
+
+.your-product>div,
+.subtotal-page>div,
+.extra-fee-pay>div,
+.total-sum {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid var(--color-rose-white);
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+}
+
+.your-product>div h4 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.your-product>div span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.your-product>div:last-child {
+    margin-bottom: 0;
+}
+
+.subtotal-page>div h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    opacity: 0.7;
+}
+
+.subtotal-page>div span {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.subtotal-page {
+    padding-top: 18px;
+}
+
+.extra-fee-pay>div h3 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.extra-fee-pay>div span {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: var(--black-primary-snd);
+}
+
+.total-sum>div h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.total-sum {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.total-sum>div span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.total-sum>div h3,
+.total-sum>div span {
+    color: var(--orange-primary);
+}
+
+.payment-methods {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.payment-methods>div label,
+.single-petnest-inculde label {
+    width: 18px;
+    padding: 0;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.payment-methods>div {
+    position: relative;
+    z-index: 1;
+    padding-left: 29px;
+    margin-bottom: 30px;
+}
+
+.payment-methods h4 {
+    color: var(--black-primary);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: inherit;
+    margin-bottom: 0px;
+}
+
+.payment-methods p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--black-primary);
+    margin-bottom: 0;
+}
+
+.payment-methods figure>img {
+    position: absolute;
+    left: 25%;
+    top: 2px;
+    width: 108px;
+}
+
+.payment-methods div>.w-paypal {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--color-blue-crayola);
+    margin-top: 8px;
+    display: inline-block;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.payment-methods div>.w-paypal:hover {
+    color: var(--color-malachite);
+}
+
+.payment-methods p>a {
+    text-decoration: none;
+    color: var(--color-zaffre);
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.payment-methods p>a:hover {
+    color: var(--color-malachite);
+}
+
+.btn-add-to-cart.btn-checkout-main {
+    font-size: 18px;
+    padding: 10px 24.5px;
+    line-height: 28px;
+    border-radius: 0;
+    background-color: var(--orange-primary);
+}
+
+.btn-add-to-cart.btn-checkout-main:hover {
+    background-color: var(--color-malachite);
+}
+
+.pay-check {
+    text-align: center;
+}
+
+.payment-methods>div.pay-check {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* ---------------------- Services Page Page CSS ---------------------- */
+
+/* Service Page CSS */
+.petnest-services.petnest-services-page {
+    padding-bottom: 72px;
+    padding-top: 0;
+}
+.petnest-about-us.petnest-services-hero.petnest-services-daycare-hero {
+    padding-bottom: 40px;
+}
+.petnest-services-grid {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.petnest-services-wrapper {
+    text-align: center;
+    background-color: var(--color-alice-blue);
+    display: block;
+    padding: 65px 30px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-services-wrapper span {
+    color: var(--orange-primary);
+    background-color: var(--color-white);
+    font-size: 30px;
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-box-shadow: 0px 7px 30px rgb(172 167 167 / 25%);
+            box-shadow: 0px 7px 30px rgb(172 167 167 / 25%);
+    margin-bottom: 25px;
+}
+
+.petnest-services-wrapper h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: var(--black-primary-snd);
+    margin-bottom: 0;
+    word-break: break-all;
+}
+
+.petnest-services-wrapper.bg-lavender:hover {
+    background-color: var(--color-lavender);
+}
+
+.petnest-services-wrapper.bg-menthol:hover {
+    background-color: var(--color-menthol);
+}
+
+.petnest-services-wrapper.bg-vodka:hover {
+    background-color: var(--color-vodka);
+}
+
+.petnest-services-wrapper.bg-pastel-orange:hover {
+    background-color: var(--color-pastel-orange);
+}
+
+.petnest-services-wrapper.bg-fluorescent-blue:hover {
+    background-color: var(--color-fluorescent-blue);
+}
+
+.petnest-services-wrapper.bg-peach:hover {
+    background-color: var(--color-peach);
+}
+.petnest-services.petnest-services-page .petnest-services-animation div:nth-child(1), .petnest-services.petnest-services-page .petnest-services-animation div:nth-child(2) {
+    top: 15%;
+}
+.petnest-about-us.petnest-services-hero.petnest-services-training-hero {
+    padding-bottom: 70px;
+}
+/* Grooming Page CSS */
+.petnest-about-us.petnest-services-hero {
+    padding-bottom: 95px;
+}
+.petnest-about-us.petnest-services-hero.petnest-services-grooming-hero {
+    padding-bottom: 35px;
+}
+.about-petnest-right-wrapper.about-petnest-grooming .about-petnest-right figure img {
+    border-radius: 0;
+}
+
+.about-petnest-right-wrapper.about-petnest-grooming .about-petnest-right figure {
+    width: auto;
+}
+
+.about-petnest-right-wrapper.about-petnest-grooming .about-petnest-right::after {
+    right: -210px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 55%;
+}
+
+.about-petnest-right-wrapper.about-petnest-grooming .about-petnest-right {
+    padding-bottom: 65px;
+}
+
+.petnest-showcase-gallery figure img {
+    width: 100%;
+    height: 460px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 4px;
+}
+
+.petnest-showcase-gallery-bottom {
+    margin-top: 15px;
+}
+
+.petnest-showcase-gallery-bottom figure>img {
+    height: 160px;
+    width: 177px;
+}
+
+.petnest-showcase-gallery-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.petnest-showcase-gallery span {
+    font-size: 60px;
+    color: var(--color-white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-showcase-gallery .single-petnest-picture {
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-showcase-gallery .single-petnest-picture::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-primary);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.petnest-showcase-gallery .single-petnest-picture:hover::before,
+.petnest-showcase-gallery .single-petnest-picture:hover span {
+    opacity: 1;
+    visibility: visible;
+}
+
+.petnest-showcase-gallery .single-petnest-picture:hover::before {
+    opacity: 0.5;
+}
+
+.petnest-grooming-pay {
+    background-color: var(--color-white);
+    border-radius: 4px;
+    padding: 60px 45px;
+    position: relative;
+    z-index: 1;
+}
+
+.wishlist-grooming {
+    border: none;
+    color: var(--black-primary-snd);
+    font-size: 16px;
+    background-color: var(--color-rose-white);
+    width: 34px;
+    height: 34px;
+    line-height: 37px;
+    border-radius: 50%;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.wishlist-grooming:hover,
+.wishlist-grooming-added {
+    color: var(--orange-primary);
+}
+
+.button-right {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.petnest-grooming-pay h4 {
+    font-size: 16px;
+}
+
+.petnest-grooming-pay h4,
+.petnest-grooming-pay h2,
+.petnest-grooming-pay h5 {
+    color: var(--black-primary);
+}
+
+.petnest-grooming-pay h4 {
+    font-size: 16px;
+    line-height: 16px;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 0.7;
+    margin-bottom: 13px;
+}
+
+.petnest-grooming-pay h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 42px;
+    margin-bottom: 50px;
+}
+
+.petnest-grooming-pay h3 {
+    color: var(--orange-primary);
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.petnest-grooming-pay .grooming-cart h5,
+.petnest-grooming-pay .grooming-options h5 {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.petnest-grooming-pay .grooming-cart input,
+.petnest-grooming-pay .grooming-cart.rescue-input textarea {
+    background-color: var(--color-cultured);
+    color: var(--black-primary);
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 11px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    min-height: 50px;
+}
+
+.pet-grooming-quantity .btn-add-to-cart span {
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.pet-grooming-quantity .btn-add-to-cart {
+    padding: 8.5px 34.5px;
+}
+
+.pet-food-quantity.pet-grooming-quantity {
+    margin-top: 48px;
+}
+
+.all-incude-grooms .single-incude-grooms div h3 {
+    font-size: 18px;
+    color: var(--black-primary-snd);
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.all-incude-grooms .single-incude-grooms .service-given {
+    position: absolute;
+    top: 100%;
+    background-color: var(--color-snow-third);
+    width: 100%;
+    padding: 30px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.all-incude-grooms .single-incude-grooms.basic-bath:hover .service-given,
+.all-incude-grooms .single-incude-grooms.full-groom:hover .service-given {
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-given ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.service-given ul>li {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--black-primary);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.service-given ul>li:last-child {
+    margin-bottom: 0;
+}
+
+.product-desc-page.services-desc-page {
+    padding-top: 60px;
+    background-color: transparent;
+}
+
+.grooming-showcase-right h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    opacity: 1;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.grooming-showcase-right h3>span {
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.grooming-showcase-right figure {
+    margin-bottom: 8px;
+}
+
+.grooming-showcase-right figure img {
+    border-radius: 4px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.grooming-benifits h3 {
+    text-align: center;
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.grooming-benifits {
+    padding-top: 91px;
+    position: relative;
+}
+
+.grooming-benifits ul {
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+.grooming-benifits ul>li {
+    display: block;
+    margin-right: 0;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 600;
+    color: var(--black-primary);
+    opacity: 0.7;
+}
+
+.grooming-benifits ul>li>span {
+    position: relative;
+    z-index: 1;
+}
+
+.grooming-benifits ul>li>span::before {
+    position: absolute;
+    content: '';
+    left: -15px;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    background-color: var(--black-primary);
+    border-radius: 50%;
+}
+
+.grooming-benifits figure {
+    position: absolute;
+}
+
+.grooming-benifits figure:nth-child(2) {
+    left: auto;
+    right: 15%;
+    top: 50%;
+}
+
+.grooming-benifits figure:nth-child(1) {
+    top: 50%;
+    left: 10%;
+}
+
+.grooming-benifits figure:nth-child(2) img {
+    width: 100px;
+}
+
+.prduct-desc-wrap .prodcut-add-info .grooming-showcase-left ul>li {
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 0;
+    list-style: disc;
+    margin-bottom: 5px;
+}
+
+.prduct-desc-wrap .prodcut-add-info .grooming-showcase-left ul {
+    padding-left: 18px;
+}
+
+.grooming-requarement {
+    padding-top: 60px;
+}
+
+.grooming-requarement h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 34px;
+    color: var(--black-primary);
+    margin-bottom: 0;
+}
+
+.btn-petoptions {
+    width: 100%;
+    text-align: left;
+    background-color: var(--color-cultured);
+    border-radius: 4px;
+    border: none;
+    font-size: 13px;
+    color: var(--black-primary);
+    padding: 14.3px 22px;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-petoptions:hover,
+.btn-petoptions:focus,
+.btn.btn-petoptions:focus-visible {
+    background-color: var(--color-cultured);
+    outline: none;
+    border: none;
+}
+
+:not(.btn-check)+.btn.btn-petoptions:active {
+    background-color: var(--color-cultured);
+    border: none;
+    outline: none;
+    color: var(--black-primary);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.btn-petoptions::before {
+    content: "\f120";
+    position: absolute;
+    font-family: 'flaticon';
+    right: 20px;
+    top: auto;
+    font-size: 18px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.btn-petoptions:hover::before {
+    color: var(--color-malachite);
+}
+
+.single-petnest-inculde h3 {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: var(--black-primary-snd);
+    display: inline-block;
+}
+
+.single-petnest-inculde {
+    position: relative;
+    padding: 5px 25px;
+    padding-left: 48px;
+}
+
+.single-petnest-inculde label {
+    top: 9px;
+    left: 22px;
+}
+
+.petnest-op-name {
+    -webkit-box-shadow: 0px 4px 7px var(--color-linen);
+            box-shadow: 0px 4px 7px var(--color-linen);
+    background-color: var(--color-white);
+}
+
+.main-petnest-service .card.card-body {
+    border: none;
+    padding: 0;
+}
+
+.single-pet-options {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-down-to-show {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    padding: 0;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: var(--black-primary);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.btn-down-to-show:hover {
+    color: var(--color-malachite);
+    outline: none;
+}
+
+.btn-down-to-show:focus,
+:not(.btn-check)+.btn.btn-down-to-show:active {
+    outline: none;
+    border: none;
+}
+
+.service-given {
+    background-color: var(--color-snow-third);
+    padding: 30px 50px;
+}
+
+/* Walking Page CSS */
+.petnest-grooming-pay.petnest-walking-pay {
+    padding: 60px 45px;
+    padding-top: 40px;
+}
+
+.about-petnest-walking .about-petnest-right figure img {
+    border-radius: 0;
+    margin-left: 12px;
+}
+
+.walking-time {
+    margin-bottom: 24px;
+}
+
+.grooming-cart.service-pick-date>div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.grooming-cart.service-pick-date>div>span {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--black-primary);
+    opacity: 0.7;
+}
+
+.petnest-showcase-gallery.walking-showcase-gallery figure img {
+    height: 520px;
+}
+
+.petnest-showcase-gallery.walking-showcase-gallery .petnest-showcase-gallery-bottom figure>img {
+    height: 184px;
+}
+
+/* Service Training Page CSS */
+.about-petnest-right-wrapper.about-petnest-grooming.about-petnest-services .about-petnest-right {
+    padding-bottom: 30px;
+}
+
+.grooming-showcase-left.grooming-showcase-left-requirements.service-training-pick {
+    padding-bottom: 15px;
+}
+
+/* Service Veterinary Page CSS */
+.about-petnest-right-wrapper.about-petnest-veterinary-hero .about-petnest-right figure img {
+    border-radius: 0;
+    margin-left: 45px;
+}
+
+/* Service Rescue Page CSS */
+.petnest-emergency-bg figure {
+    position: absolute;
+}
+
+.petnest-emergency-bg figure:first-child {
+    bottom: 30%;
+    left: 5%;
+}
+
+.petnest-emergency-bg figure:last-child {
+    bottom: 30%;
+    right: 5%;
+}
+
+.petnest-emergency-bg figure:last-child img {
+    width: 96px;
+}
+
+.about-petnest-right-wrapper.rescue-petnest-right-wrapper .about-petnest-right figure img {
+    border-radius: 0;
+}
+
+.petnest-grooming-pay .grooming-cart.rescue-input input {
+    cursor: auto;
+}
+
+.petnest-grooming-pay .grooming-cart,
+.petnest-grooming-pay .grooming-options {
+    margin-bottom: 25px;
+}
+
+.petnest-grooming-pay .grooming-cart.rescue-input textarea {
+    resize: none;
+    height: 125px;
+    cursor: auto;
+}
+
+.btn-add-to-cart.btn-rescue {
+    border: none;
+    padding: 10px 36.5px;
+    margin-top: 16px;
+}
+
+.petnest-grooming-pay.rescue-right-box {
+    padding: 45px 45px;
+}
+
+.petnest-showcase-gallery.petnest-showcase-rescue-gallery .single-petnest-picture figure img {
+    height: 590px;
+}
+
+.petnest-showcase-gallery.petnest-showcase-rescue-gallery .petnest-showcase-gallery-bottom figure img {
+    height: auto;
+}
+
+.petnest-emergency {
+    padding-top: 110px;
+    padding-bottom: 10px;
+}
+
+.petnest-emergency-wrap {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.petnest-emergency-wrap h2 {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 700;
+    color: var(--black-primary);
+    margin-bottom: 42px;
+}
+
+.petnest-emergency-wrap h3 {
+    font-size: 32px;
+    line-height: 32px;
+    color: var(--black-primary);
+    opacity: 0.7;
+    margin-bottom: 12px;
+}
+
+.btn-emer-number {
+    text-decoration: none;
+    font-size: 48px;
+    color: var(--color-black);
+    line-height: 48px;
+    font-weight: 600;
+    background-color: var(--color-white);
+    padding: 38px 40px;
+    display: inline-block;
+    border-radius: 4px;
+    -webkit-filter: drop-shadow(0px 10px 30px rgba(163, 163, 163, 0.25));
+            filter: drop-shadow(0px 10px 30px rgba(163, 163, 163, 0.25));
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.btn-emer-number span {
+    background-color: var(--orange-primary);
+    color: var(--color-white);
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    line-height: 50px;
+    position: relative;
+    top: -5px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.btn-emer-number:hover {
+    color: var(--orange-primary);
+}
+
+/* ---------------------- Home Version 2 CSS ---------------------- */
+
+.petnest-header-user-info .basket-top:hover .petnest-basket.petnest-basket-v2 {
+    -webkit-box-shadow: 0px 10px 30px var(--color-thistle);
+            box-shadow: 0px 10px 30px var(--color-thistle);
+}
+
+.petnest-basket.petnest-basket-v2 .total-price-qty span {
+    color: var(--color-amethyst);
+}
+
+.petnest-basket.petnest-basket-v2 .btn-primay.btn-view-cart,
+.petnest-basket.petnest-basket-v2 .btn-primay.btn-view-chekout {
+    border-radius: 4px;
+}
+
+.petnest-basket.petnest-basket-v2 .btn-primay.btn-view-chekout {
+    background-color: var(--color-amethyst);
+}
+
+.petnest-basket.petnest-basket-v2 .btn-primay.btn-view-chekout:hover,
+.petnest-basket.petnest-basket-v2 .btn-primay.btn-view-cart:hover {
+    background-color: var(--color-coral-reef);
+}
+
+.petnest-serach-ui.petnest-serach-ui-snd {
+    background-color: var(--color-lavender-web);
+}
+
+.petnest-search-wrap.petnest-search-wrap-snd form button[type='submit'] {
+    background-color: var(--color-amethyst);
+}
+
+.petnest-serach-ui.petnest-serach-ui-snd .petnest-search-close:hover {
+    background-color: var(--color-amethyst);
+}
+
+.petnest-search-wrap.petnest-search-wrap-snd form button[type='submit']:hover {
+    background-color: var(--black-primary-snd);
+}
+
+.petnest-header-v2 {
+    background-color: var(--color-lavender-web);
+}
+
+.petnest-header-menu.petnest-header-menu-snd ul>li.active>a {
+    color: var(--color-amethyst);
+}
+
+.petnest-header-user-info.petnest-header-user-info-snd .search-top button {
+    background-color: transparent;
+    color: var(--black-primary);
+}
+
+.petnest-header-user-info.petnest-header-user-info-snd .basket-top button {
+    background-color: transparent;
+}
+
+.petnest-header-user-info.petnest-header-user-info-snd button:hover {
+    color: var(--color-amethyst);
+}
+
+.contact-us-top.contact-us-top-v2 .btn-primay {
+    background-color: transparent;
+    color: var(--black-primary);
+    font-size: 18px;
+    padding-right: 35px;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.contact-us-top.contact-us-top-v2 .btn-primay figure {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    height: 24px;
+    width: 24px;
+    background-color: var(--color-amethyst);
+    text-align: center;
+    display: inline-block;
+    line-height: 21px;
+    border-radius: 50%;
+}
+
+.contact-us-top.contact-us-top-v2 .btn-primay:hover {
+    color: var(--color-amethyst);
+}
+
+.petnest-header-user-info.petnest-header-user-info-snd>div {
+    margin-left: 24px;
+}
+
+.petnest-header-user-info.petnest-header-user-info-snd>.basket-top {
+    margin-left: 35px;
+}
+
+.petnest-header-menu.petnest-header-menu-snd ul>li .submenu > li > a:hover {
+    color: var(--color-amethyst);
+}
+
+.petnest-herov2 {
+    background-color: var(--color-lavender-web);
+    padding-top: 170px;
+    padding-bottom: 350px;
+    border-bottom-left-radius: 90% 15%;
+    border-bottom-right-radius: 60% 35%;
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-herov2-wrapper {
+    text-align: center;
+}
+
+.petnest-herov2-wrapper h1 {
+    font-family: 'Chicle', cursive;
+    font-size: 64px;
+    line-height: 84px;
+    color: var(--color-imperial);
+    letter-spacing: 2.5px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 45px;
+}
+
+.petnest-herov2-wrapper h1:before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: -35px;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background-image: url(../images/home-v2/hero-vactor.png);
+    width: 150px;
+    height: 13px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.petnest-herov2-wrapper p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary);
+    padding-left: 65px;
+    padding-right: 65px;
+    margin-bottom: 47px;
+}
+
+.petnest-hero-btns.petnest-hero-btnsv2 .btn-primay {
+    border-radius: 4px;
+    color: var(--color-white);
+    background-color: var(--color-amethyst);
+}
+
+.petnest-hero-btns.petnest-hero-btnsv2 .btn-primay:hover {
+    background-color: var(--color-coral-reef);
+}
+
+.petnest-hero-btns.petnest-hero-btnsv2 .btn-primay-white {
+    background-color: var(--color-white);
+    color: var(--color-amethyst);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    margin-left: 20px;
+}
+
+.petnest-hero-btns.petnest-hero-btnsv2 .btn-primay-white:hover {
+    background-color: var(--color-amethyst);
+    color: var(--color-white);
+}
+
+.petnest-feature-pets {
+    position: relative;
+    z-index: 1;
+}
+
+.petnest-feature-pets figure {
+    position: absolute;
+    top: 40px;
+}
+
+.animation-hero-v2 figure {
+    position: absolute;
+    z-index: -1;
+}
+
+.animation-hero-v2 figure:nth-child(1) {
+    left: 25%;
+    top: 46%;
+}
+
+.animation-hero-v2 figure:nth-child(2) {
+    right: 25%;
+    top: 46%;
+}
+
+.animation-hero-bubble-v2 figure {
+    position: absolute;
+    z-index: -1;
+}
+
+.animation-hero-bubble-v2 figure:nth-child(1) {
+    left: 30%;
+    top: 28%;
+    animation: animationFramesOne 30s alternate infinite linear;
+    -webkit-animation: animationFramesOne 30s alternate infinite linear;
+}
+
+.animation-hero-bubble-v2 figure:nth-child(2) {
+    left: 32%;
+    top: 62%;
+    animation: animationFramesTwo 30s alternate infinite linear;
+    -webkit-animation: animationFramesTwo 30s alternate infinite linear;
+}
+
+.animation-hero-bubble-v2 figure:nth-child(3) {
+    right: 29%;
+    top: 25%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.animation-hero-bubble-v2 figure:nth-child(4) {
+    right: 31%;
+    top: 61%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.our-servicesv2 {
+    padding-top: 200px;
+    padding-bottom: 75px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading-v2 h2 {
+    font-family: 'Chicle', cursive;
+    color: var(--color-jacarta);
+    letter-spacing: 3.5px;
+    font-weight: 400;
+}
+
+.bg-ghost-white {
+    background-color: var(--color-ghost-white-snd);
+}
+
+.bg-honeydew {
+    background-color: var(--color-honeydew);
+}
+
+.bg-ghost-w-snd {
+    background-color: var(--color-ghost-white-third);
+}
+
+.bg-old-lace {
+    background-color: var(--color-old-lace);
+}
+
+.bg-bubbles {
+    background-color: var(--color-bubbles);
+}
+
+.bg-cornsilk {
+    background-color: var(--color-cornsilk);
+}
+
+.petnest-services-wrapper-v2:hover {
+    background-color: var(--color-lavender-web);
+}
+
+.petnest-services-grid-v2 .petnest-services-wrapper span {
+    color: var(--color-amethyst);
+}
+
+.anim-service-v2 figure {
+    position: absolute;
+    width: 110px;
+    z-index: -1;
+}
+
+.anim-service-v2 figure:nth-child(1) {
+    left: 24%;
+    top: 29%;
+}
+
+.anim-service-v2 figure:nth-child(2) {
+    right: 24%;
+    top: 30%;
+}
+
+.meet-our-teamv2 {
+    background-color: rgba(250, 120, 107, 0.05);
+    padding-top: 100px;
+    padding-bottom: 90px;
+    position: relative;
+    z-index: 1;
+}
+
+.meet-our-teamv2 .section-heading-v2 h2 {
+    margin-bottom: 100px;
+}
+
+.team-singlev2 {
+    text-align: center;
+}
+
+.team-singlev2 h3 {
+    font-size: 38px;
+    color: var(--black-primary);
+    line-height: 38px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.team-singlev2 h5 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--black-primary-snd);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.team-singlev2 figure {
+    margin-bottom: 20px;
+    -webkit-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    transition: 0.6s ease;
+}
+
+.team-singlev2 figure:hover {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+}
+
+.team-singlev2.team-ontopv2 {
+    margin-top: -100px;
+}
+
+.anim-team-v2 figure {
+    position: absolute;
+    z-index: -1;
+}
+
+.anim-team-v2 figure:nth-child(1) {
+    left: 35%;
+    top: 28%;
+    animation: animationFramesThree 30s alternate infinite linear;
+    -webkit-animation: animationFramesThree 30s alternate infinite linear;
+}
+
+.anim-team-v2 figure:nth-child(2) {
+    right: 35%;
+    top: 28%;
+    animation: animationFramesOne 30s alternate infinite linear;
+    -webkit-animation: animationFramesOne 30s alternate infinite linear;
+}
+
+.our-storyv2 {
+    padding-top: 100px;
+    padding-bottom: 25px;
+}
+
+.our-storyv2-left .section-heading-v2 h5 {
+    margin-bottom: 10px;
+}
+
+.our-storyv2-left .section-heading-v2 h2 {
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.our-storyv2-left .section-heading-v2 h2::before {
+    position: absolute;
+    content: '';
+    left: 15%;
+    bottom: -7px;
+    width: 147px;
+    height: 13px;
+    -webkit-transform: translate(10%, 50%);
+        -ms-transform: translate(10%, 50%);
+            transform: translate(10%, 50%);
+    background-image: url(../images/home-v2/hero-vactor.png);
+    width: 150px;
+    height: 13px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.our-storyv2-left .section-heading-v2 p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary);
+    margin-bottom: 45px;
+}
+
+.our-storyv2-right figure img {
+    max-width: 100%;
+}
+
+.petnest-trusted-company-v2 {
+    background-color: var(--color-seashell-snd);
+}
+
+.single-slide-v2-left {
+    background-color: var(--color-columbia-blue);
+    border-radius: 70px;
+    padding: 35px 60px;
+    padding-bottom: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.single-slide-v2-left::before,
+.single-slide-v2-left::after {
+    position: absolute;
+    content: '';
+    left: 20%;
+    bottom: -95px;
+    width: auto;
+    height: auto;
+    border-top: 50px solid var(--color-columbia-blue);
+    border-left: 55px solid var(--color-columbia-blue);
+    border-right: 60px solid transparent;
+    border-bottom: 45px solid transparent;
+    border-bottom-left-radius: 8px;
+    z-index: -1;
+}
+
+.single-slide-v2-left::after {
+    background-image: url(../images/icon/review-slice.svg);
+    bottom: -34%;
+    left: auto;
+    right: 5%;
+    border: none;
+    width: 52px;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.client-feedback-v2 {
+    padding-top: 150px;
+    padding-bottom: 185px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-client-v2.owl-carousel .owl-dots {
+    bottom: -170px;
+}
+
+.slider-client-v2.owl-carousel .owl-stage-outer {
+    overflow: visible;
+}
+
+.slider-client-v2.owl-carousel .owl-item {
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.slider-client-v2.owl-carousel .owl-item.active {
+    opacity: 1;
+}
+
+.slider-client-v2.owl-carousel .owl-dots div.active {
+    background-color: var(--color-amethyst);
+}
+
+.slider-client-v2.owl-carousel .owl-dots div {
+    background-color: var(--color-anti-flash-white-snd);
+}
+
+.client-feedback-v2 .pet-feedback-anim figure {
+    position: absolute;
+}
+
+.client-feedback-v2 .pet-feedback-anim figure:nth-child(1) {
+    right: 15%;
+    bottom: 10%;
+}
+
+.single-slide-v2-left figure img {
+    width: 188px;
+    height: 188px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.single-slide-v2-left figure {
+    position: absolute;
+    top: -55px;
+    left: 55px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+.client-feedback-des {
+    padding-left: 195px;
+    margin-bottom: 32px;
+}
+
+.client-feedback-des h3 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+}
+
+.client-feedback-des h3,
+.client-feedback-des h4 {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black-primary);
+}
+
+.client-feedback-des h4 {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+
+.single-slide-v2-left p {
+    font-size: 16px;
+    margin-bottom: 0;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+.section-heading-v2.single-slide-v2-right h5 {
+    margin-bottom: 10px;
+}
+
+.section-heading-v2.single-slide-v2-right h2 {
+    margin-bottom: 30px;
+}
+
+.section-heading-v2.single-slide-v2-right p {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--black-primary);
+    opacity: 0.7;
+}
+
+.section-heading-v2.single-slide-v2-right {
+    padding-left: 40px;
+}
+
+.faq-v2 {
+    padding-top: 85px;
+}
+
+.petnest-faq-right.petnest-faq-v2 {
+    background-color: var(--color-magnolia);
+    padding-left: 0;
+    padding: 65px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.petnest-faq-right.petnest-faq-v2 .accordion-item {
+    margin-bottom: 0;
+    -webkit-box-shadow: 0px 4px 30px rgba(255, 187, 187, 0.25);
+            box-shadow: 0px 4px 30px rgba(255, 187, 187, 0.25);
+}
+
+.petnest-faq-right.petnest-faq-v2 .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+    background-color: var(--color-pale-lavender);
+}
+
+.petnest-faq-right.petnest-faq-v2 .accordion-button::after {
+    color: var(--color-coral-reef);
+}
+
+.petnest-news-form.petnest-news-form-v2 {
+    background-color: var(--color-coral-reef);
+}
+
+.petnest-news-form.petnest-news-form-v2 h2 {
+    color: var(--color-white);
+}
+
+.petnest-news-form.petnest-news-form-v2 form input[type='submit'] {
+    background-color: var(--color-amethyst);
+}
+
+.petnest-news-form.petnest-news-form-v2 form input[type='submit']:hover {
+    background-color: var(--color-coral-reef);
+}
+
+.petnest-news-form.petnest-news-form-v2 .petnest-newsletter-animation figure img {
+    opacity: 0.2;
+}
+
+.petnest-blog.petnest-blog-v2 {
+    padding-top: 100px;
+}
+
+.petnest-instagram.petnest-instagram-v2 {
+    background-color: var(--color-anti-flash-white-snd);
+}
+
+.petnest-heading-blog.petnest-heading-blog-v2 h2 {
+    font-family: 'Chicle', cursive;
+    color: var(--color-jacarta);
+    font-weight: 400;
+    letter-spacing: 3.5px;
+}
+
+.footer-petnest.footer-petnest-v2 {
+    margin-top: 80px;
+}

@@ -1,0 +1,194 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("../css/fonts/flaticon/flaticon.ttf") format("truetype"),
+    url("../css/fonts/flaticon/flaticon.woff") format("woff"),
+    url("../css/fonts/flaticon/flaticon.woff2") format("woff2"),
+    url("../css/fonts/flaticon/flaticon.eot#iefix") format("embedded-opentype"),
+    url("../css/fonts/flaticon/flaticon.svg#flaticon") format("svg");
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: "flaticon";
+        src: url("../css/fonts/flaticon/flaticon.svg#flaticon") format("svg");
+    }
+}
+
+[class^="flaticon-"]:before, [class*="flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-search:before {
+    content: "\f101";
+}
+.flaticon-user:before {
+    content: "\f102";
+}
+.flaticon-bag:before {
+    content: "\f103";
+}
+.flaticon-paws:before {
+    content: "\f104";
+}
+.flaticon-pet-toy:before {
+    content: "\f105";
+}
+.flaticon-pet-toy-1:before {
+    content: "\f106";
+}
+.flaticon-pet-grooming:before {
+    content: "\f107";
+}
+.flaticon-walking-with-dog:before {
+    content: "\f108";
+}
+.flaticon-rescue-dog:before {
+    content: "\f109";
+}
+.flaticon-dog-training:before {
+    content: "\f10a";
+}
+.flaticon-dog-house:before {
+    content: "\f10b";
+}
+.flaticon-paw:before {
+    content: "\f10c";
+}
+.flaticon-leash:before {
+    content: "\f10d";
+}
+.flaticon-medal:before {
+    content: "\f10e";
+}
+.flaticon-group:before {
+    content: "\f10f";
+}
+.flaticon-costumer:before {
+    content: "\f110";
+}
+.flaticon-shield:before {
+    content: "\f111";
+}
+.flaticon-love:before {
+    content: "\f112";
+}
+.flaticon-training:before {
+    content: "\f113";
+}
+.flaticon-pet-food:before {
+    content: "\f114";
+}
+.flaticon-twitter:before {
+    content: "\f115";
+}
+.flaticon-social-media:before {
+    content: "\f116";
+}
+.flaticon-dog-bowl:before {
+    content: "\f117";
+}
+.flaticon-leash-1:before {
+    content: "\f118";
+}
+.flaticon-cat-food:before {
+    content: "\f119";
+}
+.flaticon-cat:before {
+    content: "\f11a";
+}
+.flaticon-call:before {
+    content: "\f11b";
+}
+.flaticon-view:before {
+    content: "\f11c";
+}
+.flaticon-hidden:before {
+    content: "\f11d";
+}
+.flaticon-add:before {
+    content: "\f11e";
+}
+.flaticon-calendar:before {
+    content: "\f11f";
+}
+.flaticon-down-arrow:before {
+    content: "\f120";
+}
+.flaticon-left-chevron:before {
+    content: "\f121";
+}
+.flaticon-next:before {
+    content: "\f122";
+}
+.flaticon-up-arrow:before {
+    content: "\f123";
+}
+.flaticon-minus:before {
+    content: "\f124";
+}
+.flaticon-speech-bubble:before {
+    content: "\f125";
+}
+.flaticon-share:before {
+    content: "\f126";
+}
+.flaticon-left-quote:before {
+    content: "\f127";
+}
+.flaticon-checkmark:before {
+    content: "\f128";
+}
+.flaticon-heart:before {
+    content: "\f129";
+}
+.flaticon-shopping-cart:before {
+    content: "\f12a";
+}
+.flaticon-heart-1:before {
+    content: "\f12b";
+}
+.flaticon-star:before {
+    content: "\f12c";
+}
+.flaticon-star-1:before {
+    content: "\f12d";
+}
+.flaticon-filter-filled-tool-symbol:before {
+    content: "\f12e";
+}
+.flaticon-check:before {
+    content: "\f12f";
+}
+.flaticon-search-1:before {
+    content: "\f130";
+}
+.flaticon-star-2:before {
+    content: "\f131";
+}
+.flaticon-star-3:before {
+    content: "\f132";
+}
+.flaticon-star-half-empty:before {
+    content: "\f133";
+}
+.flaticon-incomming-call:before {
+    content: "\f134";
+}
+.flaticon-phone:before {
+    content: "\f135";
+}
+.flaticon-maps-and-flags:before {
+    content: "\f136";
+}
+.flaticon-place:before {
+    content: "\f137";
+}
+.flaticon-facebook-circular-logo:before {
+    content: "\f138";
+}

@@ -1,0 +1,2772 @@
+/* Laptop Layout: 1200px. */
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+
+    .animation-bubble figure:nth-child(1) {
+        right: 37%;
+    }
+
+    .animation-bubble figure:nth-child(3) {
+        right: 15%;
+        top: 25%;
+    }
+
+    .petnest-services-animation div:nth-child(1) {
+        left: 20%;
+    }
+
+    .petnest-services-animation div:nth-child(2) {
+        right: 22.5%;
+        top: 21%;
+    }
+
+    .petnest-options-list {
+        margin-left: -25px;
+    }
+
+    .petnest-options-list.petnest-options-list-left {
+        margin-left: -15px;
+    }
+
+    .book-sch-element figure:first-child {
+        left: 8%;
+    }
+
+    .book-sch-element figure:last-child {
+        right: 3%;
+    }
+
+    .animation-hero-v2 figure:nth-child(1) {
+        left: 15%;
+    }
+
+    .animation-hero-v2 figure:nth-child(2) {
+        right: 15%;
+    }
+    .petnest-services {
+        padding-top: 80px;
+    }
+}
+
+/* Medium Layout: 992px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .petnest-header-menu ul>li {
+        margin-left: 20px;
+    }
+
+    .petnest-header-menu ul>li>.menu-petnest>.megamenu {
+        min-width: 960px;
+        padding: 50px 45px;
+    }
+
+    .petnest-header-menu ul>li>.menu-petnest>.megamenu>.row>div>ul>li>a {
+        font-size: 18px;
+    }
+
+    .petnest-header-menu ul>li>.menu-petnest>.megamenu.megamenu-two-block {
+        min-width: 385px;
+    }
+
+    .petnest-hero-left h1 {
+        font-size: 52px;
+        line-height: 72px;
+    }
+
+    .petnest-hero-description {
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .petnest-hero-left-img span {
+        right: 45px;
+        top: 15px;
+    }
+
+    .animation-bubble figure:nth-child(1) {
+        right: 33%;
+        top: 45%;
+    }
+
+    .animation-bubble figure:nth-child(3) {
+        right: 12%;
+    }
+
+    .petnest-services-animation div:nth-child(1) {
+        left: 18%;
+    }
+
+    .petnest-services-animation div:nth-child(2) {
+        right: 16.5%;
+    }
+
+    .petnest-options-info {
+        width: 255px;
+        padding: 21.5px 25px;
+        padding-left: 80px;
+    }
+
+    .petnest-options-info span {
+        left: 25px;
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+        line-height: 42px;
+    }
+
+    .petnest-options-info h3 {
+        font-size: 30px;
+        line-height: 32px;
+    }
+
+    .petnest-options-list.petnest-options-list-right {
+        margin-left: -38px;
+    }
+
+    .petnest-member-single figure {
+        width: 250px;
+    }
+
+    .slider-team.owl-carousel .owl-item .petnest-member-single figure img,
+    .slider-team-page.owl-carousel .owl-item .petnest-member-single figure img {
+        height: 250px;
+    }
+
+    .petnest-story-left > div {
+        right: 4%;
+        top: 6%;
+    }
+
+    .cat-dogs-petnest {
+        bottom: -35px;
+        right: -6%;
+    }
+
+    .petnest-wrapper-count h3,
+    .petnest-wrapper-count h3 span {
+        font-size: 20px;
+    }
+
+    .petnest-wrapper-count p {
+        font-size: 11px;
+    }
+
+    .petnest-feedback-animation div:last-child figure img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .petnest-feedback-animation div:last-child {
+        bottom: 14%;
+    }
+
+    .petnest-newsletter-animation div:first-child {
+        left: 6.5%;
+    }
+
+    .petnest-newsletter-animation div:last-child {
+        right: 8%;
+    }
+
+    .single-petnest-blog {
+        min-height: 437px;
+    }
+
+    .petnest-footer-des {
+        padding-right: 20px;
+    }
+
+    .footer-animation figure:nth-child(1) {
+        bottom: 30%;
+        left: 8%;
+    }
+
+    .footer-animation figure:nth-child(4) {
+        right: 14%;
+        bottom: 22%;
+    }
+
+    .footer-animation figure:nth-child(2) {
+        bottom: 2%;
+        left: 27%;
+    }
+
+    .footer-animation figure:nth-child(3) {
+        right: 27%;
+        bottom: 1%;
+    }
+
+    .about-petnest-left {
+        padding-right: 0;
+    }
+
+    .about-petnest-right::after {
+        right: -75px;
+    }
+
+    .about-petnest-story .petnest-heading.petnest-heading-story {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .petnest-contact-right {
+        padding-left: 30px;
+        padding-top: 35px;
+        padding-right: 0;
+    }
+
+    .gallery-list {
+        left: 2.8%;
+    }
+
+    .single-gallery-photo {
+        width: 29.3333%;
+    }
+
+    .petnest-login-right {
+        padding: 45px 55px;
+    }
+
+    .login-page-slider.owl-carousel .owl-item .single-petnest-image img {
+        height: 677px;
+    }
+
+    .login-page-slider.signup-slider.owl-carousel .owl-item .single-petnest-image img {
+        height: 875px;
+    }
+
+    .book-sch-element figure:last-child {
+        right: 5%;
+    }
+
+    .book-sch-element figure:last-child img {
+        width: 100px;
+    }
+
+    .book-sch-element figure:first-child {
+        left: 3%;
+    }
+
+    .book-sch-element figure:first-child img {
+        width: 105px;
+    }
+
+    .petnest-sch-quote-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .blog-standard-right {
+        padding-left: 0;
+    }
+
+    .blog-recent-post a .blog-recent-post-left {
+        width: 31%;
+    }
+
+    .blog-recent-post a .blog-recent-post-right {
+        width: 69%;
+        margin-left: 10px;
+    }
+
+    .petnest-blog-s-comment.petnest-blog-right-replay {
+        margin-left: 65px;
+    }
+
+    .product-details-left .xzoom-thumbs a {
+        margin-right: 10px;
+    }
+
+    .product-details-left .xzoom-thumbs a:last-child {
+        margin-right: 0px;
+    }
+
+    .petnest-services-grid {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .petnest-services-wrapper {
+        padding: 55px 15px;
+    }
+
+    .all-incude-grooms .single-incude-grooms .service-given {
+        padding: 20px;
+    }
+
+    .service-given {
+        padding: 30px 25px;
+    }
+
+    .petnest-header-user-info.petnest-header-user-info-snd>div {
+        margin-left: 15px;
+    }
+
+    .animation-hero-v2 figure:nth-child(1) {
+        left: 10%;
+    }
+
+    .animation-hero-v2 figure:nth-child(2) {
+        right: 10%;
+    }
+
+    .our-servicesv2 {
+        padding-top: 125px;
+    }
+
+    .anim-service-v2 figure:nth-child(1) {
+        left: 13%;
+        top: 18%;
+    }
+
+    .anim-service-v2 figure:nth-child(2) {
+        right: 13%;
+        top: 18%;
+    }
+
+    .anim-team-v2 figure:nth-child(1) {
+        left: 20%;
+        top: 20%;
+    }
+
+    .anim-team-v2 figure:nth-child(2) {
+        right: 13%;
+        top: 20%;
+    }
+
+    .our-storyv2 {
+        padding-bottom: 100px;
+    }
+
+    .client-feedback-des h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .client-feedback-des h3 {
+        font-size: 45px;
+    }
+
+    .our-storyv2-left .section-heading-v2 h2::before {
+        left: 35%;
+        -webkit-transform: translate(25%, 50%);
+            -ms-transform: translate(25%, 50%);
+                transform: translate(25%, 50%);
+    }
+    .petnest-services {
+        padding-top: 118px;
+    }
+    .petnest-feedback-animation div:first-child {
+        top: 20%;
+    }
+    .petnest-client-feedback-right figure {
+        width: auto;
+    }
+    .petnest-client-feedback-right figure img {
+        height: 400px;
+    }
+    .footer-petnest {
+        margin-top: 80px;
+    }
+    .footer-animation figure:nth-child(1) {
+        bottom: 24%;
+    }
+    .petnest-client-feedback-left p {
+        padding-right: 200px;
+    }
+    .error-page {
+        padding-bottom: 20px;
+    }
+    .petnest-about-us.petnest-services-hero.petnest-services-daycare-hero {
+        padding-bottom: 70px;
+    }
+}
+
+/* Tablet & mobile Layout: 768px. */
+@media only screen and (max-width: 991px) {
+    .petnest-logo figure {
+        margin-top: 5px;
+    }
+
+    .mobile-menu.mean-container a.meanmenu-reveal span {
+        background-color: var(--black-primary);
+    }
+
+    .mobile-menu.mean-container a.meanmenu-reveal {
+        border: 1px solid var(--black-primary);
+        margin-top: -36px;
+    }
+
+    .mobile-menu.mean-container .mean-nav {
+        background-color: var(--black-primary);
+    }
+
+    .mobile-menu.mean-container .mean-nav ul li a.mean-expand:hover {
+        background-color: var(--black-primary);
+    }
+
+    .petnest-header-user-info {
+        position: absolute;
+        top: 4px;
+        right: 70px;
+    }
+
+    .petnest-header {
+        padding-bottom: 15px;
+    }
+
+    .petnest-hero-left-img {
+        padding-left: 0;
+    }
+
+    .petnest-hero-description {
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .btn-primay {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .petnest-hero-left-img span {
+        right: 4px;
+    }
+
+    .petnest-hero-img figure:last-child {
+        top: 0px;
+        left: 0px;
+        width: 75px;
+    }
+
+    .petnest-hero-img figure:last-child img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .petnest-hero-left h1 {
+        font-size: 50px;
+        line-height: 62px;
+        margin-bottom: 30px;
+    }
+
+    .animation-bubble figure:nth-child(1) {
+        right: 40%;
+    }
+
+    .animation-bubble figure:nth-child(3) {
+        right: 10%;
+    }
+
+    .petnest-heading h2 {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    .petnest-services {
+        padding-top: 100px;
+    }
+
+    .petnest-options-info {
+        width: 180px;
+        padding: 15.5px 25px;
+        padding-left: 52px;
+    }
+
+    .petnest-options-info span {
+        left: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .petnest-options-info h3 {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .petnest-options-list.petnest-options-list-right {
+        margin-left: -25px;
+    }
+
+    .petnest-options figure {
+        height: 485px;
+    }
+
+    .petnest-services-animation div:nth-child(2) {
+        right: 13.5%;
+    }
+
+    .petnest-services-animation div:nth-child(1) {
+        left: 12%;
+    }
+
+    .petnest-member-single figure {
+        width: 190px;
+    }
+
+    .slider-team.owl-carousel .owl-item .petnest-member-single figure img,
+    .slider-team-page.owl-carousel .owl-item .petnest-member-single figure img {
+        height: 190px;
+    }
+
+    .divider {
+        width: 190px;
+    }
+
+    .petnest-story-left {
+        padding-top: 0;
+    }
+
+    .petnest-story-left > div {
+        right: 33%;
+        top: -13%;
+    }
+
+    .cat-dogs-petnest {
+        bottom: -30px;
+        right: 30%;
+    }
+
+    .petnest-heading.petnest-heading-story {
+        padding-top: 40px;
+    }
+
+    .petnest-wrapper-count {
+        margin-bottom: 25px;
+    }
+
+    .petnest-journey-count {
+        padding-bottom: 21px;
+    }
+
+    .petnest-client-feedback-left h2 {
+        font-size: 38px;
+        line-height: 50px;
+    }
+
+    .petnest-client-feedback-right figure {
+        width: auto;
+    }
+
+    .petnest-client-feedback-right figure img {
+        height: 300px;
+    }
+
+    .petnest-client-feedback-description h3 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .petnest-client-feedback-description p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .petnest-client-feedback-left {
+        padding-top: 65px;
+    }
+
+    .petnest-feedback-animation div:first-child {
+        top: 20%;
+    }
+
+    .petnest-client-feedback-right .petnest-client-feedback-description {
+        padding-left: 0;
+    }
+    .petnest-client-feedback-left p {
+        padding-right: 0;
+    }
+    .petnest-feedback-animation div:last-child {
+        bottom: 15%;
+        left: 25%;
+    }
+
+    .petnest-feedback-animation div:last-child figure img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .petnest-faq-left {
+        padding-top: 0;
+        padding-bottom: 50px;
+    }
+
+    .petnest-faq-left figure {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .petnest-faq-right {
+        padding-left: 0;
+    }
+
+    .petnest-faq-animation div:first-child {
+        left: 3.5%;
+        top: 7%;
+    }
+
+    .petnest-faq-buble-animation figure:last-child {
+        left: 18.5%;
+        top: 20%;
+    }
+
+    .petnest-newsletter-animation div:first-child {
+        left: 2.5%;
+        top: 35%;
+    }
+
+    .petnest-newsletter-animation div:first-child figure img,
+    .petnest-newsletter-animation div:last-child figure img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .petnest-newsletter-animation div:last-child {
+        right: 3%;
+        top: 34%;
+    }
+
+    .single-petnest-blog {
+        min-height: 437px;
+    }
+
+    .petnest-insta-story figure img {
+        height: 210px;
+    }
+
+    .petnest-footer-link {
+        margin-bottom: 30px;
+    }
+
+    .copyright-petnest {
+        margin-top: 50px;
+    }
+
+    .footer-animation figure:nth-child(1) {
+        bottom: 16%;
+        left: 16%;
+    }
+
+    .footer-animation figure:nth-child(2) {
+        bottom: 1%;
+        left: 22%;
+    }
+
+    .footer-animation figure:nth-child(3) {
+        right: 20%;
+        bottom: 0%;
+    }
+
+    .footer-animation figure:nth-child(4) {
+        right: 15%;
+        bottom: 20%;
+    }
+
+    .about-petnest-left {
+        padding-right: 0;
+    }
+
+    .about-petnest-left h1 {
+        font-size: 42px;
+        line-height: 60px;
+    }
+
+    .petnest-about-us {
+        padding-bottom: 60px;
+    }
+    .petnest-about-us.petnest-cart-abut {
+        padding-bottom: 100px;
+    }
+    
+    .about-petnest-story {
+        padding-bottom: 50px;
+    }
+    .about-petnest-right::after {
+        right: -55px;
+        top: 15px;
+        background-size: 90% 90%;
+    }
+
+    .about-petnest-story .petnest-heading.petnest-heading-story {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .petnest-pets figure {
+        width: auto;
+    }
+
+    .petnest-success-count {
+        padding-bottom: 21px;
+    }
+
+    .petnest-contact-wrapper {
+        padding: 40px 30px;
+    }
+
+    .petnest-contact-left {
+        padding: 40px 30px;
+        padding-bottom: 85px;
+    }
+
+    .petnest-contact-left form input[type='submit'] {
+        font-size: 15px;
+        padding: 14px 22px;
+    }
+
+    .petnest-contact-left form textarea {
+        height: 180px;
+        margin-bottom: 25px;
+    }
+
+    .petnest-contact-right {
+        padding-left: 15px;
+        padding-right: 0;
+    }
+
+    .list-info-contact {
+        margin-right: 30px;
+    }
+
+    .petnest-contact-right p {
+        margin-bottom: 25px;
+    }
+
+    .contact-page-social ul {
+        margin-top: 35px;
+    }
+
+    .petnest-contact-map-wrapper iframe {
+        height: 355px;
+    }
+
+    .gallery-list {
+        left: 3.1%;
+    }
+
+    .single-gallery-photo {
+        width: 28.3333%;
+    }
+
+    .single-gallery-photo.gallery-large img {
+        height: 320px;
+    }
+
+    .single-gallery-photo.gallery-medium img {
+        height: 260px;
+    }
+
+    .single-gallery-photo img {
+        height: 210px;
+    }
+
+    .gallery-filter>li {
+        margin-bottom: 20px;
+    }
+
+    .petnest-login-right {
+        padding: 30px 30px;
+    }
+
+    .login-page-slider.owl-carousel .owl-item .single-petnest-image img {
+        height: 647px;
+    }
+
+    .login-page-slider.signup-slider.owl-carousel .owl-item .single-petnest-image img {
+        height: 845px;
+    }
+
+    .book-sch-element figure:first-child {
+        left: 2%;
+        bottom: auto;
+        top: 15%;
+    }
+
+    .book-sch-element figure:first-child img,
+    .book-sch-element figure:last-child img {
+        width: 85px;
+    }
+
+    .book-sch-element figure:last-child {
+        right: 1%;
+        bottom: auto;
+        top: 15%;
+    }
+
+    .blog-standard-right {
+        padding-left: 0;
+    }
+
+    .blog-author figure img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .blog-recent-post a .blog-recent-post-left {
+        width: 32%;
+    }
+
+    .blog-recent-post a .blog-recent-post-left figure img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .blog-recent-post a .blog-recent-post-right {
+        width: 58%;
+        margin-left: 10px;
+    }
+
+    .blog-recent-post a .blog-recent-post-right h4 {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 2px;
+    }
+
+    .blog-recent-post,
+    .blog-tags {
+        margin-top: 50px;
+    }
+
+    .petnest-blog-s-comment.petnest-blog-right-replay {
+        margin-left: 10px;
+    }
+
+    .petnest-shop-single-product .petnest-shop-pro-img figure img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .petnest-shop-single-product .petnest-shop-pro-img {
+        padding: 55px 25px;
+    }
+
+    .petnest-shop-pro-desc h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .petnest-shop-top-sh-result.petnest-shop-top-sh-result-g {
+        margin-left: 0;
+    }
+
+    .petnest-filter a {
+        padding: 10px 13px;
+    }
+
+    .product-details-left .xzoom-thumbs a img {
+        width: 100px;
+        height: 90px;
+        padding: 10px 10px;
+    }
+
+    .product-details-left .xzoom-thumbs a {
+        margin-right: 10px;
+    }
+
+    .product-details-left .xzoom-thumbs a:last-child {
+        margin-right: 0;
+    }
+
+    .product-details-right h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .btn-add-to-cart {
+        padding: 10px 17.5px;
+    }
+
+    .pet-food-quantity {
+        margin-top: 20px;
+    }
+
+    .product-details-right p {
+        margin-bottom: 20px;
+    }
+
+    .product-total-rev {
+        margin-bottom: 15px;
+    }
+
+    .cart-total-wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .petnest-cart-table .table thead>tr>th {
+        font-size: 15px;
+    }
+
+    .billing-details-right {
+        padding-left: 0;
+    }
+
+    .multi-field {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .multi-field>div:first-child,
+    .multi-field>div:last-child,
+    .additional-info form>.multi-field>div:first-child,
+    .additional-info form>.multi-field>div:last-child {
+        width: 100%;
+    }
+
+    .additional-info form>.multi-field>div {
+        margin-bottom: 15px;
+    }
+
+    .petnest-services-grid {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .petnest-services-wrapper {
+        padding: 50px 15px;
+    }
+
+    .about-petnest-right-wrapper.about-petnest-grooming .about-petnest-right::after {
+        right: -160px;
+    }
+
+    .petnest-showcase-gallery figure img {
+        height: 320px;
+    }
+
+    .petnest-showcase-gallery-bottom figure>img {
+        height: 110px;
+        width: 102px;
+    }
+
+    .petnest-grooming-pay {
+        padding: 30px 25px;
+    }
+
+    .petnest-grooming-pay h2 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .all-incude-grooms .single-incude-grooms .service-given {
+        padding: 20px;
+    }
+
+    .grooming-showcase-right h3 {
+        font-size: 18px;
+    }
+
+    .grooming-benifits figure:nth-child(1) {
+        left: 0;
+    }
+
+    .grooming-benifits figure:nth-child(2) {
+        right: 0;
+    }
+
+    .grooming-requarement {
+        padding-top: 40px;
+    }
+
+    .petnest-grooming-pay.petnest-walking-pay {
+        padding: 30px 25px;
+        padding-top: 30px;
+    }
+
+    .about-petnest-walking .about-petnest-right figure img {
+        margin-left: 0;
+    }
+
+    .petnest-showcase-gallery.walking-showcase-gallery .petnest-showcase-gallery-bottom figure>img {
+        height: 110px;
+    }
+
+    .petnest-emergency-bg figure:first-child {
+        left: 0;
+    }
+
+    .petnest-emergency-bg figure:last-child {
+        right: 0;
+    }
+
+    .service-given {
+        padding: 20px 15px;
+    }
+
+    .petnest-header-user-info.petnest-header-user-info-snd {
+        top: -6px;
+    }
+
+    .petnest-header-user-info.petnest-header-user-info-snd>div,
+    .petnest-header-user-info.petnest-header-user-info-snd>.basket-top {
+        margin-left: 0px;
+    }
+
+    .animation-hero-v2 figure:nth-child(1) {
+        left: 2%;
+    }
+
+    .animation-hero-v2 figure:nth-child(2) {
+        right: 2%;
+    }
+
+    .animation-hero-v2 figure img {
+        width: 55px;
+    }
+
+    .petnest-herov2 {
+        padding-bottom: 235px;
+        border-bottom-right-radius: 60% 20%;
+    }
+
+    .our-servicesv2 {
+        padding-top: 125px;
+    }
+
+    .anim-service-v2 figure:nth-child(1) {
+        left: 16%;
+        top: 27%;
+    }
+
+    .anim-service-v2 figure:nth-child(2) {
+        right: 10%;
+        top: 27%;
+    }
+
+    .anim-service-v2 figure img {
+        width: 75px;
+    }
+
+    .anim-team-v2 figure:nth-child(1) {
+        left: 10%;
+        top: 19%;
+    }
+
+    .anim-team-v2 figure:nth-child(2) {
+        right: 10%;
+        top: 20%;
+    }
+
+    .our-storyv2 {
+        padding-bottom: 100px;
+    }
+
+    .single-slide-v2-left figure img {
+        width: 110px;
+        height: 110px;
+        padding: 10px;
+    }
+
+    .single-slide-v2-left figure {
+        top: -10px;
+        left: 30px;
+    }
+
+    .client-feedback-des h3 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .single-slide-v2-left {
+        padding: 18px 45px;
+    }
+
+    .client-feedback-des {
+        padding-left: 110px;
+        margin-bottom: 15px;
+    }
+
+    .client-feedback-des h4 {
+        font-size: 17px;
+        line-height: 20px;
+    }
+
+    .section-heading-v2.single-slide-v2-right {
+        padding-left: 0;
+    }
+
+    .section-heading-v2.single-slide-v2-right h2 {
+        margin-bottom: 15px;
+    }
+
+    .petnest-faq-right.petnest-faq-v2 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .single-slide-v2-left::before {
+        bottom: -65px;
+    }
+
+    .client-feedback-v2 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .slider-client-v2.owl-carousel .owl-dots {
+        bottom: -85px;
+    }
+
+    .our-storyv2-left .section-heading-v2 h2::before {
+        left: 20%;
+        -webkit-transform: translate(15%, 50%);
+            -ms-transform: translate(15%, 50%);
+                transform: translate(15%, 50%);
+    }
+    .petnest-services {
+        padding-top: 100px;
+    }
+    .petnest-about-us.petnest-services-hero.petnest-services-daycare-hero, .petnest-about-us.petnest-services-hero.petnest-services-training-hero {
+        padding-bottom: 95px;
+    }
+    .petnest-about-us.petnest-hero-shop {
+        padding-bottom: 100px;
+    }
+}
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+    .petnest-search-wrap h3 {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .petnest-search-wrap form {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .petnest-logo figure {
+        margin-top: 5px;
+    }
+
+    .petnest-header-user-info .search-top button,
+    .petnest-header-user-info .user-top button,
+    .petnest-header-user-info .basket-top button {
+        width: 28px;
+        height: 28px;
+        font-size: 15px;
+    }
+
+    .petnest-header-user-info>div {
+        margin-left: 8px;
+    }
+
+    .mobile-menu.mean-container a.meanmenu-reveal span {
+        background-color: var(--black-primary);
+    }
+
+    .mobile-menu.mean-container a.meanmenu-reveal {
+        border: 1px solid var(--black-primary);
+        margin-top: -36px;
+    }
+
+    .mobile-menu.mean-container .mean-nav {
+        background-color: var(--black-primary);
+    }
+
+    .mobile-menu.mean-container .mean-nav ul li a.mean-expand:hover {
+        background-color: var(--black-primary);
+    }
+
+    .petnest-header-user-info {
+        position: absolute;
+        top: 10px;
+        right: 65px;
+    }
+
+    .petnest-header {
+        padding-bottom: 10px;
+        padding-top: 15px;
+    }
+
+    .petnest-hero {
+        padding-top: 120px;
+    }
+
+    .petnest-hero-left-img {
+        padding-left: 0;
+        padding-top: 45px;
+    }
+
+    .petnest-hero-description {
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .petnest-hero-description p {
+        margin-bottom: 20px;
+    }
+
+    .btn-primay {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .petnest-hero-left-img span {
+        left: 22%;
+        top: 0px;
+    }
+
+    .petnest-hero-right {
+        padding-top: 60px;
+    }
+
+    .petnest-hero-img figure:last-child {
+        top: 12.2%;
+        left: 0px;
+        width: 65px;
+    }
+
+    .petnest-hero-img figure:last-child img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .petnest-hero-left h1 {
+        font-size: 48px;
+        line-height: 58px;
+        margin-bottom: 20px;
+    }
+
+    .animation-bubble figure:nth-child(1) {
+        right: 40%;
+    }
+
+    .animation-bubble figure:nth-child(2) {
+        right: 40%;
+    }
+
+    .animation-bubble figure:nth-child(3) {
+        right: 20%;
+    }
+
+    .petnest-services {
+        padding-top: 75px;
+    }
+
+    .petnest-services-buble figure:nth-child(1) {
+        right: 40%;
+    }
+
+    .petnest-heading h2 {
+        font-size: 40px;
+        line-height: 52px;
+        margin-bottom: 50px;
+    }
+
+    .slider-team .owl-nav div {
+        top: 100%;
+        margin-top: 35px;
+        left: 0;
+        right: 0;
+    }
+
+    .slider-team .owl-nav div.owl-next {
+        right: auto;
+        left: 60px;
+    }
+
+    .petnest-options-info {
+        width: 180px;
+        padding: 15.5px 25px;
+        padding-left: 52px;
+        margin-bottom: 30px;
+    }
+
+    .petnest-options-info span {
+        left: 15px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .petnest-options-info h3 {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .petnest-options-list.petnest-options-list-right {
+        margin-left: 0;
+    }
+
+    .meet-petnest-team {
+        padding-top: 20px;
+        padding-bottom: 75px;
+    }
+
+    .petnest-options-list.petnest-options-list-right .petnest-options-info:nth-child(2) {
+        margin-left: 70px;
+    }
+
+    .petnest-team-animation div figure img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .petnest-team-animation div {
+        right: 25%;
+        top: 10%;
+    }
+
+    .petnest-options figure {
+        height: auto;
+    }
+
+    .petnest-options {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .petnest-services-animation div:nth-child(2) {
+        right: 5%;
+        top: 16%;
+    }
+
+    .petnest-services-animation div:nth-child(2) figure img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .petnest-services-animation div:nth-child(1) {
+        left: 5%;
+        top: 16%;
+    }
+
+    .petnest-options-list {
+        padding-top: 0;
+    }
+
+    .petnest-services-animation div:nth-child(1) figure img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .petnest-member-single figure {
+        width: 80%;
+    }
+
+    .slider-team.owl-carousel .owl-item .petnest-member-single figure img,
+    .slider-team-page.owl-carousel .owl-item .petnest-member-single figure img {
+        height: 100%;
+    }
+
+    .slider-team {
+        padding-top: 0px;
+    }
+
+    .petnest-member-single:hover figure,
+    .owl-carousel .owl-stage .owl-item.active.center .petnest-member-single figure {
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1);
+        margin-top: -15px;
+        margin-bottom: 18px;
+    }
+
+    .divider {
+        width: 190px;
+    }
+
+    .petnest-story-left {
+        padding-top: 0;
+    }
+
+    .inspire-story {
+        width: 100%;
+        height: 100%;
+    }
+
+    .petnest-story-left > div figure img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .petnest-story-left > div {
+        right: 0%;
+        top: -5%;
+    }
+
+    .cat-dogs-petnest.petnest-bounce-animate img {
+        width: 220px;
+        height: auto;
+    }
+
+    .petnest-story {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .cat-dogs-petnest {
+        bottom: -30px;
+        right: -20%;
+    }
+
+    .petnest-heading.petnest-heading-story {
+        padding-top: 40px;
+    }
+
+    .petnest-wrapper-count {
+        margin-bottom: 25px;
+    }
+
+    .petnest-journey-count {
+        padding: 30px;
+        padding-bottom: 5px;
+    }
+
+    .petnest-showcase-company.owl-carousel .owl-item .petnest-showcase-company-logo figure img {
+        margin: 0 auto;
+    }
+
+    .petnest-trusted-company {
+        padding-bottom: 65px;
+    }
+
+    .petnest-client-feedback {
+        padding-top: 65px;
+        padding-bottom: 140px;
+    }
+
+    .petnest-client-feedback-left {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+
+    .petnest-client-feedback-left h2 {
+        font-size: 38px;
+        line-height: 50px;
+    }
+
+    .petnest-client-feedback-right figure {
+        width: auto;
+    }
+
+    .petnest-client-feedback-right figure img {
+        height: auto;
+    }
+
+    .petnest-client-feedback-description h3 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .petnest-client-feedback-description p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .petnest-feedback-animation div:first-child {
+        top: 4.5%;
+        left: 75%;
+    }
+
+    .petnest-client-feedback-right .petnest-client-feedback-description {
+        padding-left: 0;
+    }
+
+    .petnest-feedback-animation div:last-child {
+        bottom: 6%;
+        left: 5%;
+    }
+
+    .petnest-feedback-animation div:last-child figure img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .petnest-faq-left {
+        padding-top: 0;
+        padding-bottom: 50px;
+    }
+
+    .petnest-faq-left figure {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .petnest-faq-inner {
+        padding: 50px 25px;
+    }
+
+    .petnest-faq-buble-animation figure:first-child {
+        right: 45%;
+        top: 3%;
+    }
+
+    .petnest-faq-right {
+        padding-left: 0;
+    }
+
+    .petnest-faq-animation div:first-child {
+        left: 3.5%;
+        top: 12%;
+    }
+
+    .petnest-faq-animation div:first-child figure img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .petnest-faq-animation div:last-child figure img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .petnest-faq-animation div:last-child {
+        right: 5%;
+        top: 13%;
+    }
+
+    .petnest-faq-buble-animation figure:last-child {
+        left: 18.5%;
+        top: 20%;
+    }
+
+    .petnest-newsletter {
+        padding-top: 65px;
+    }
+
+    .petnest-news-form {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .petnest-news-form h2 {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+
+    .petnest-news-form form {
+        width: 100%;
+    }
+
+    .petnest-news-form form input[type='email'] {
+        padding: 10px 15px;
+        padding-right: 10px;
+        height: 48px;
+    }
+
+    .petnest-news-form form input[type='submit'] {
+        position: inherit;
+        right: 0;
+        top: 0;
+        -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+                transform: translateY(0);
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .petnest-newsletter-animation div:first-child {
+        left: 2.5%;
+        top: 35%;
+    }
+
+    .petnest-newsletter-animation div:first-child figure img,
+    .petnest-newsletter-animation div:last-child figure img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .petnest-newsletter-animation div:last-child {
+        right: 3%;
+        top: 34%;
+    }
+
+    .single-petnest-blog {
+        min-height: 437px;
+    }
+
+    .petnest-blog {
+        padding-bottom: 135px;
+    }
+
+    .petnest-instagram {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .petnest-insta-story figure img {
+        height: 250px;
+    }
+
+    .petnest-footer-des {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .copyright-petnest {
+        margin-top: 40px;
+        padding-bottom: 0;
+        padding-top: 45px;
+    }
+
+    .petnest-footer-link {
+        margin-bottom: 30px;
+    }
+
+    .copyright-petnest {
+        margin-top: 50px;
+    }
+
+    .footer-animation figure:nth-child(1) {
+        top: 5.4%;
+        left: 40%;
+    }
+
+    .footer-animation figure:nth-child(2) {
+        bottom: 3%;
+        left: 2%;
+    }
+
+    .footer-animation figure:nth-child(3) {
+        right: 3%;
+        bottom: 2.5%;
+    }
+
+    .footer-animation figure:nth-child(4) {
+        right: 15%;
+        bottom: 11%;
+    }
+
+    .footer-petnest {
+        margin-top: 80px;
+    }
+
+    .petnest-about-us {
+        padding-top: 140px;
+    }
+
+    .about-petnest-left {
+        padding-right: 0;
+    }
+
+    .about-petnest-left h1 {
+        font-size: 42px;
+        line-height: 56px;
+    }
+
+    .about-petnest-right {
+        padding-top: 30px;
+    }
+
+    .about-petnest-right::after {
+        right: -30px;
+        top: 40px;
+        background-size: 90% 90%;
+    }
+
+    .petnest-about-us {
+        padding-bottom: 30px;
+    }
+    .petnest-about-us.petnest-blog-about {
+        padding-bottom: 60px;
+    }
+    .petnest-about-us.petnest-cart-abut {
+        padding-bottom: 60px;
+    }
+    .about-petnest-story .petnest-heading.petnest-heading-story {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .petnest-pets figure {
+        width: auto;
+    }
+
+    .petnest-pets.petnest-pets-left {
+        margin-bottom: 20px;
+    }
+
+    .petnest-pets {
+        display: inline-block;
+    }
+
+    .petnest-success-count {
+        padding: 30px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+
+    .petnest-basket {
+        width: 275px;
+        right: -45px;
+        top: 70px;
+        padding: 25px 25px;
+    }
+
+    .petnest-header-user-info .basket-top:hover .petnest-basket {
+        top: 55px;
+    }
+
+    .petnest-basket-inner-left figure img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .petnest-basket-inner-right h4 {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+
+    .total-price-qty span {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .qty-home {
+        padding-right: 30px;
+    }
+
+    .divider-qty-home {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .basket-short-btn-wrap {
+        margin-top: 25px;
+    }
+
+    .petnest-total-sum span {
+        font-size: 22px;
+    }
+
+    .basket-short-btn-wrap>div {
+        margin-right: 20px;
+    }
+
+    .btn-primay.btn-view-cart,
+    .btn-primay.btn-view-chekout {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .petnest-contact-wrapper {
+        padding: 30px 25px;
+    }
+
+    .petnest-contact-left {
+        padding: 25px 30px;
+        padding-bottom: 78px;
+    }
+
+    .petnest-contact-left form input[type='submit'] {
+        font-size: 14px;
+        padding: 14px 20px;
+    }
+
+    .petnest-contact-right {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .list-info-contact {
+        margin-right: 0;
+    }
+
+    .list-info-contact a {
+        padding: 20px 15px;
+        padding-left: 58px;
+    }
+
+    .contact-page-social ul>li>a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .petnest-contact-form {
+        padding-bottom: 80px;
+    }
+
+    .petnest-contact-map-wrapper iframe {
+        height: 350px;
+    }
+
+    .petnest-newsletter.petnest-newsletter-contact {
+        padding-bottom: 65px;
+    }
+
+    .meet-petnest-team.meet-petnest-team-page {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .slider-team-page .owl-nav div {
+        bottom: 0;
+    }
+
+    .petnest-team-animation-snd div {
+        right: auto;
+        left: 20%;
+        top: 12%;
+    }
+
+    .gallery-filter>li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        padding: 6px 24px;
+    }
+
+    .gallery-filter {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .single-gallery-photo {
+        width: 100%;
+    }
+
+    .single-gallery-photo {
+        margin-right: auto;
+    }
+
+    .single-gallery-photo.gallery-large img,
+    .single-gallery-photo.gallery-large img,
+    .single-gallery-photo img,
+    .single-gallery-photo.gallery-medium img {
+        height: 320px;
+    }
+
+    .gallery-list .single-gallery-photo:nth-child(n+3) {
+        margin-right: auto;
+    }
+
+    .gallery-list {
+        left: 0;
+    }
+
+    .petnest-newsletter.petnest-newsletter-gallery {
+        padding-top: 45px;
+        padding-bottom: 65px;
+    }
+
+    .petnest-login-right {
+        padding: 35px 25px;
+    }
+
+    .login-page-slider.owl-carousel .owl-item .single-petnest-image img {
+        height: 500px;
+    }
+
+    .name-field {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .name-field .name-field-left,
+    .name-field .name-field-right {
+        width: 100%;
+    }
+
+    .error-page-wrap h1 {
+        font-size: 110px;
+        line-height: 110px;
+    }
+
+    .error-page-wrap h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .error-page-wrap p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .btn-primay.btn-back-home {
+        font-size: 16px;
+        padding: 14px 32px;
+        line-height: 25px;
+    }
+
+    .book-sch-element figure:first-child {
+        left: 0;
+        bottom: auto;
+        top: 18%;
+    }
+
+    .book-sch-element figure:first-child img,
+    .book-sch-element figure:last-child img {
+        width: 50px;
+    }
+
+    .book-sch-element figure:last-child {
+        right: 0;
+        bottom: auto;
+        top: 18%;
+    }
+
+    .book-schedule-heading h2 {
+        font-size: 42px;
+        line-height: 56px;
+    }
+
+    .book-schedule-heading p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .book-schedule {
+        padding-top: 140px;
+        padding-bottom: 55px;
+    }
+
+    .schedule-form {
+        margin-top: 40px;
+        padding: 30px 30px;
+    }
+
+    .pet-form-sep {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .pet-form-sep>div {
+        width: 100%;
+    }
+
+    .submit-schedule input[type=submit]:first-child {
+        margin-right: 15px;
+    }
+
+    .schedule-form form input[type='submit'] {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 10px 25px;
+    }
+
+    .list-info-contact.list-info-contact-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .list-info-contact.list-info-contact-flex a {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .list-info-contact.list-info-contact-location {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .petnest-option-contact {
+        padding-top: 30px;
+    }
+
+    .petnest-sch-quote-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .petnest-blog-pagination .pagination .page-item:first-child {
+        padding-right: 0;
+    }
+
+    .petnest-blog-pagination .pagination .page-item:last-child {
+        padding-left: 0;
+    }
+
+    .petnest-blog-pagination .pagination .page-item .page-link {
+        padding: 5px 12px;
+    }
+
+    .petnest-blog-pagination .pagination .page-item:last-child .page-link span {
+        right: -15px;
+    }
+
+    .petnest-blog-pagination .pagination .page-item .page-link span {
+        left: -15px;
+    }
+
+    .petnest-blog-pagination {
+        margin-top: 30px;
+    }
+
+    .blog-standard-left figure img {
+        height: 240px;
+    }
+
+    .blog-standard-left .blog-info .blog-post-comments {
+        margin-left: 0;
+    }
+
+    .blog-standard-left .blog-info {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .blog-standard-left h3 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .blog-standard-left .single-blog-standard {
+        margin-bottom: 50px;
+    }
+
+    .petnest-blog-pagination {
+        padding-bottom: 50px;
+    }
+
+    .blog-recent-post a .blog-recent-post-left {
+        width: 24%;
+    }
+
+    .blog-recent-post a .blog-recent-post-right {
+        width: 76%;
+        margin-left: 10px;
+    }
+
+    .blog-standard {
+        padding-top: 65px;
+        padding-bottom: 50px;
+    }
+
+    .blog-standard-left .petnest-blog-pagination .pagination .page-item:last-child .page-link {
+        padding-right: 25px;
+    }
+
+    .single-blog-standard.single-blog-single-post .quote {
+        padding-top: 35px;
+    }
+
+    .single-blog-standard.single-blog-single-post .quote::after {
+        top: 5%;
+    }
+
+    .single-blog-standard.single-blog-single-post .quote h3 {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+
+    .single-blog-standard.single-blog-single-post .quote h4 {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 25px;
+    }
+
+    .single-blog-standard.single-blog-single-post .pet-blog-shots figure {
+        margin-bottom: 20px;
+    }
+
+    .single-blog-standard.single-blog-single-post .pet-blog-shots figure img {
+        height: auto;
+    }
+
+    .blog-share-option-left-tags p {
+        font-size: 16px;
+    }
+
+    .petnest-blog-comments {
+        margin-top: 30px;
+    }
+
+    .petnest-blog-s-left figure img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .petnest-blog-s-right h4 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .petnest-blog-s-right p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+
+    .petnest-blog-s-right a {
+        font-size: 15px;
+    }
+
+    .petnest-blog-s-comment.petnest-blog-right-replay {
+        margin-left: 0;
+        padding: 20px 20px;
+    }
+
+    .blog-comments-petnest {
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    .comment-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .comment-flex>div {
+        width: 100%;
+    }
+
+    .blog-comments-petnest form input[type='submit'] {
+        font-size: 15px;
+        padding: 13px 18px;
+    }
+
+    .blog-comments-petnest form textarea {
+        margin-bottom: 30px;
+    }
+
+    .petnest-shop-top-sh-result {
+        margin-bottom: 25px;
+    }
+
+    .petnest-shop-top-sorting select {
+        width: 150px;
+    }
+
+    .petnest-shop-top-sorting {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+
+    .petnest-sells-product-tags {
+        padding: 35px 35px;
+        padding-bottom: 25px;
+    }
+
+    .petnest-newsletter.petnest-newsletter-shop {
+        background-color: var(--color-white);
+        padding-top: 0;
+        padding-bottom: 70px;
+    }
+
+    .petnest-blog-pagination.petnest-shop-pagination {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .petnest-shop-single-product .petnest-shop-pro-img figure img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .petnest-shop-single-product .petnest-shop-pro-img {
+        padding: 55px 25px;
+    }
+
+    .petnest-shop-pro-desc h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .petnest-shop-top-sh-result.petnest-shop-top-sh-result-g {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .petnest-filter a {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+
+    .petnest-filter a span {
+        font-size: 11.5px;
+        margin-left: 3px;
+    }
+
+    .petnest-filter,
+    .petnest-shop-top-sh-result.petnest-shop-top-sh-result-g {
+        margin-bottom: 15px;
+    }
+
+    .petnest-shop {
+        padding-top: 50px;
+    }
+
+    .product-details-left .product-highlight {
+        height: 350px;
+    }
+
+    .product-details-left .product-highlight img {
+        width: 270px !important;
+        height: 270px;
+    }
+
+    .product-details-left .xzoom-thumbs a {
+        margin-right: 10px;
+    }
+
+    .product-details-left .xzoom-thumbs a:last-child {
+        margin-right: 0;
+    }
+
+    .product-details-left .xzoom-thumbs a img {
+        padding: 10px 10px;
+        width: 100px;
+        height: 90px;
+    }
+
+    .product-details-right {
+        margin-top: 40px;
+    }
+
+    .product-details-right h2 {
+        font-size: 25px;
+        line-height: 32px;
+        margin-bottom: 15px;
+    }
+
+    .btn-add-to-cart {
+        padding: 8px 13px;
+        font-size: 12px;
+        margin-right: 10px !important;
+    }
+
+    .pet-food-quantity .input-group {
+        margin-right: 10px;
+    }
+
+    .product-details-btns a:last-child {
+        margin-right: 0 !important;
+    }
+
+    .prduct-desc-wrap ul>li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .prduct-desc-wrap ul>li>button {
+        font-size: 13px;
+        line-height: 22px;
+        padding: 10px 10px;
+    }
+
+    .product-details {
+        padding-bottom: 70px;
+        padding-top: 70px;
+    }
+
+    .single-review-process-left figure img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .single-review-process-right {
+        padding-left: 90px;
+    }
+
+    .single-review-process-right h4 {
+        font-size: 13px;
+    }
+
+    .single-review-process-right h4>span {
+        font-size: 16px;
+    }
+
+    .single-review-process-star span {
+        font-size: 15px;
+    }
+
+    .single-review-process-star span:last-child {
+        font-size: 14px;
+    }
+
+    .single-review-process-left {
+        top: 0;
+        -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+                transform: translateY(10px);
+    }
+
+    .petnest-product-reviews {
+        margin-top: 50px;
+    }
+
+    .product-table {
+        margin-top: 45px;
+        display: block;
+    }
+
+    .petnest-table table>tbody>tr>th,
+    .petnest-table table>tbody>tr>td {
+        padding: 15px 10px;
+        padding-left: 15px;
+    }
+
+    .petnest-table table>tbody>tr>td {
+        padding-left: 15px;
+    }
+
+    .product-desc-page {
+        padding-bottom: 70px;
+    }
+
+    .petnest-cart-table .table tbody>tr>td .cart-visual {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .petnest-cart-table .table tbody>tr>td .cart-visual>figure {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .petnest-cart-table .table thead>tr>th {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .petnest-cart-table .table tbody>tr>td {
+        padding: 20px 10px;
+    }
+
+    .continue-shop {
+        margin-top: 45px;
+    }
+
+    .btn-add-to-cart.btn-continue {
+        font-size: 15px;
+        padding: 12px 20px;
+        margin-right: 0 !important;
+    }
+
+    .petnest-cart-list {
+        padding-bottom: 75px;
+        padding-top: 60px;
+    }
+
+    .cart-total-wrap {
+        padding: 35px 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .cart-total-left {
+        margin-bottom: 35px;
+    }
+
+    .btn-add-to-cart.btn-coupon {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .btn-add-to-cart.btn-checkout {
+        font-size: 15px;
+        line-height: 20px;
+        padding: 13px 20px;
+    }
+
+    .cart-total-left h2 {
+        font-size: 40px;
+        line-height: 42px;
+        margin-bottom: 15px;
+    }
+
+    .multi-field {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .multi-field>div:first-child,
+    .multi-field>div:last-child,
+    .additional-info form>.multi-field>div:first-child,
+    .additional-info form>.multi-field>div:last-child {
+        width: 100%;
+    }
+
+    .additional-info form>.multi-field>div {
+        margin-bottom: 15px;
+    }
+
+    .billing-details-left p {
+        margin-bottom: 35px;
+    }
+
+    .additional-info form .multi-field {
+        margin-bottom: 30px;
+    }
+
+    .billing-details-right {
+        padding-left: 0;
+        margin-top: 50px;
+    }
+
+    .btn-add-to-cart.btn-checkout-main {
+        font-size: 15px;
+        padding: 10px 18px;
+        line-height: 28px;
+    }
+
+    .petnest-services-grid {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .petnest-services-wrapper {
+        padding: 50px 15px;
+    }
+
+    .petnest-services.petnest-services-page .petnest-services-animation div:nth-child(1) {
+        top: 3.5%;
+    }
+
+    .petnest-services.petnest-services-page .petnest-services-animation div:nth-child(2) {
+        top: 2.5%;
+    }
+
+    .petnest-services.petnest-services-page .petnest-services-buble figure:nth-child(1) {
+        top: 6%;
+    }
+
+    .petnest-services.petnest-services-page .petnest-services-buble figure:nth-child(2) {
+        top: 16%;
+    }
+
+    .petnest-services.petnest-services-page {
+        padding-bottom: 35px;
+        padding-top: 38px;
+    }
+
+    .about-petnest-right-wrapper.about-petnest-grooming .about-petnest-right::after {
+        right: -100px;
+        top: 35px;
+    }
+
+    .petnest-about-us.petnest-services-hero, .petnest-about-us.petnest-services-hero.petnest-services-grooming-hero {
+        padding-bottom: 25px;
+    }
+
+    .petnest-showcase-gallery figure img,
+    .petnest-showcase-gallery-bottom figure>img {
+        height: auto;
+        width: auto;
+    }
+
+    .petnest-showcase-gallery span {
+        font-size: 25px;
+    }
+
+    .petnest-grooming-pay {
+        padding: 25px 20px;
+        padding-bottom: 35px;
+        margin-top: 30px;
+    }
+
+    .all-incude-grooms {
+        width: calc(100% - 40px);
+    }
+
+    .grooming-showcase-right {
+        margin-top: 25px;
+    }
+
+    .grooming-benifits {
+        padding-top: 60px;
+    }
+
+    .grooming-benifits figure:nth-child(1) {
+        left: 0;
+        width: 50px;
+        top: 20%;
+    }
+
+    .grooming-benifits figure:nth-child(2) {
+        right: 0;
+        top: 20%;
+        width: 50px;
+    }
+
+    .product-desc-page.services-desc-page {
+        padding-bottom: 50px;
+    }
+
+    .about-petnest-walking .about-petnest-right figure img {
+        margin-left: 0;
+    }
+
+    .petnest-showcase-gallery.walking-showcase-gallery figure img {
+        height: auto;
+        width: auto;
+    }
+
+    .petnest-showcase-gallery.walking-showcase-gallery .petnest-showcase-gallery-bottom figure>img {
+        width: 100%;
+        height: auto;
+    }
+
+    .petnest-showcase-gallery .petnest-showcase-gallery-bottom .single-petnest-picture {
+        width: 33.3333%;
+        height: 100%;
+    }
+
+    .grooming-cart.service-pick-date>div>span {
+        padding: 5px;
+    }
+
+    .petnest-showcase-gallery.petnest-showcase-rescue-gallery .single-petnest-picture figure img {
+        height: auto;
+    }
+
+    .petnest-grooming-pay.rescue-right-box {
+        padding: 30px 25px;
+    }
+
+    .petnest-emergency-bg figure:first-child,
+    .petnest-emergency-bg figure:last-child {
+        top: 0;
+    }
+
+    .petnest-emergency-bg figure:first-child img {
+        width: 50px;
+    }
+
+    .petnest-emergency-bg figure:last-child img {
+        width: 50px;
+    }
+
+    .btn-emer-number {
+        font-size: 34px;
+        line-height: 48px;
+        padding: 25px 25px;
+    }
+
+    .btn-emer-number span {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .service-given {
+        padding: 20px 25px;
+    }
+
+    .petnest-header-user-info.petnest-header-user-info-snd {
+        top: 5px;
+    }
+
+    .petnest-herov2 {
+        padding-bottom: 50px;
+        padding-top: 120px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .petnest-feature-pets figure {
+        position: inherit;
+        padding-top: 40px;
+        top: auto;
+    }
+
+    .petnest-herov2-wrapper h1 {
+        font-size: 48px;
+        line-height: 60px;
+        margin-bottom: 35px;
+    }
+
+    .petnest-herov2-wrapper h1:before {
+        width: 100px;
+    }
+
+    .petnest-herov2-wrapper p {
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .animation-hero-v2 figure:nth-child(1) {
+        left: 2%;
+        top: 35%;
+    }
+
+    .animation-hero-v2 figure:nth-child(2) {
+        right: 2%;
+        top: 36%;
+    }
+
+    .animation-hero-v2 figure img {
+        width: 40px;
+    }
+
+    .our-servicesv2 {
+        padding-top: 70px;
+        padding-bottom: 55px;
+    }
+
+    .section-heading-v2 h2 {
+        font-size: 40px;
+        line-height: 52px;
+        margin-bottom: 50px;
+    }
+
+    .anim-service-v2 figure:nth-child(1) {
+        left: 0%;
+        top: 4%;
+    }
+
+    .anim-service-v2 figure:nth-child(2) {
+        right: 0;
+        top: 4%;
+    }
+
+    .anim-service-v2 figure img {
+        width: 60px;
+    }
+
+    .anim-service-v2 figure {
+        width: auto;
+    }
+
+    .team-singlev2.team-ontopv2 {
+        margin-top: 0;
+    }
+
+    .team-singlev2 {
+        margin-bottom: 35px;
+    }
+
+    .meet-our-teamv2 .section-heading-v2 h2 {
+        margin-bottom: 55px;
+    }
+
+    .anim-team-v2 figure:nth-child(1) {
+        left: 10%;
+        top: 5%;
+    }
+
+    .anim-team-v2 figure:nth-child(2) {
+        right: 5%;
+        top: 10%;
+    }
+
+    .meet-our-teamv2 {
+        padding-bottom: 60px;
+    }
+
+    .our-storyv2 {
+        padding-bottom: 70px;
+        padding-top: 70px;
+    }
+
+    .client-feedback-v2 {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+    .single-slide-v2-left figure {
+        top: 20px;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+
+    .client-feedback-des {
+        padding-left: 0;
+        padding-top: 70px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .single-slide-v2-left {
+        padding: 18px 25px;
+        padding-bottom: 25px;
+        border-radius: 45px;
+    }
+
+    .single-slide-v2-left::after {
+        bottom: -40%;
+        right: 5%;
+        width: 35px;
+    }
+
+    .single-slide-v2-left::before {
+        bottom: -45px;
+    }
+
+    .section-heading-v2.single-slide-v2-right {
+        padding-left: 0;
+        padding-top: 90px;
+    }
+
+    .client-feedback-v2 .pet-feedback-anim figure:nth-child(1) {
+        right: 5%;
+        bottom: 4%;
+    }
+
+    .client-feedback-v2 .pet-feedback-anim figure:nth-child(1) img {
+        width: 50px;
+    }
+
+    .slider-client-v2.owl-carousel .owl-dots {
+        bottom: -70px;
+    }
+
+    .petnest-faq-right.petnest-faq-v2 {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .our-storyv2-left .section-heading-v2 h2::before {
+        left: 30%;
+        -webkit-transform: translate(20%, 50%);
+            -ms-transform: translate(20%, 50%);
+                transform: translate(20%, 50%);
+        width: 100px;
+    }
+
+    .footer-petnest.footer-petnest-v2 {
+        margin-top: 0;
+    }
+    .petnest-client-feedback-left p {
+        padding-right: 0;
+    }
+    .error-page {
+        padding-top: 140px;
+    }
+    .petnest-billing-details {
+        padding-bottom: 80px;
+    }
+    .petnest-about-us.petnest-about-contact, .petnest-about-us.petnest-hero-shop {
+        padding-bottom: 60px;
+    }
+    .petnest-about-us.petnest-services-hero.petnest-services-daycare-hero, .petnest-about-us.petnest-services-hero.petnest-services-training-hero {
+        padding-bottom: 30px;
+    }
+    .petnest-about-us.petnest-services-hero.petnest-services-rescue-hero, .petnest-about-us.petnest-services-hero.petnest-services-veterinary-hero {
+        padding-bottom: 70px;
+    }
+    .petnest-hero-img figure:first-child {
+        margin-top: -30px;
+    }
+}
+
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 394px) and (max-width: 767px) {
+    .blog-standard-left .blog-info .blog-post-comments {
+        margin-left: auto;
+    }
+}
