@@ -99,71 +99,41 @@
     <!-- About Petnest Story End -->
 
     <!-- Meet Petnest Team Start -->
-    <section class="meet-petnest-team meet-petnest-team-about">
-        <div class="petnest-team-animation">
-            <div>
-                <figure><img src="./assets/images/icon/leash03.svg" alt=""></figure>
-            </div>
+    <!-- Meet Petnest Team Start -->
+<section class="meet-petnest-team meet-petnest-team-about">
+    <div class="petnest-team-animation">
+        <div>
+            <figure><img src="./assets/images/icon/leash03.svg" alt=""></figure>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="petnest-heading petnest-heading-team">
-                        <h5>Meet Our Team</h5>
-                        <h2>Loving Care for Your<br class="d-lg-block d-md-block d-none"> Furry Friends</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="slider-team">
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-1.png" alt=""></figure>
-                            <h4>Nutritionists</h4>
-                                <div class="divider"></div>
-                                <h3>Noria</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-2.png" alt=""></figure>
-                            <h4>Veterinarians</h4>
-                                <div class="divider"></div>
-                                <h3>Zoras</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-3.png" alt=""></figure>
-                            <h4>Groomers</h4>
-                                <div class="divider"></div>
-                                <h3>Tania</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-4.png" alt=""></figure>
-                            <h4>Trainers</h4>
-                                <div class="divider"></div>
-                                <h3>Shahir</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-5.png" alt=""></figure>
-                            <h4>Behaviorists</h4>
-                                <div class="divider"></div>
-                                <h3>Zenifer</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-6.png" alt=""></figure>
-                            <h4>Technicians</h4>
-                                <div class="divider"></div>
-                                <h3>Rigan</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-7.png" alt=""></figure>
-                            <h4>Representatives</h4>
-                                <div class="divider"></div>
-                                <h3>Fateha</h3>
-                        </div>
-                    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="petnest-heading petnest-heading-team">
+                    <h5>Meet Our Team</h5>
+                    <h2>Loving Care for Your<br class="d-lg-block d-md-block d-none"> Furry Friends</h2>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="slider-team">
+                    @foreach ($employees as $employee)
+                        <div class="petnest-member-single">
+                        <figure>
+                        <img src="{{ asset('public/images/' . ($employee->image ?: 'Default.png')) }}" alt="">
+                        </figure>                           
+                            <div class="divider"></div>
+                            <h3>{{ $employee->name }}</h3>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Meet Petnest Team End -->
+
     <!-- Meet Petnest Team End -->
 
 
@@ -203,7 +173,7 @@
     <!-- Trusted By Greatest Company End -->
 
     <!-- Client Feedback Start -->
-    <section class="petnest-client-feedback">
+    <!-- <section class="petnest-client-feedback">
         <div class="petnest-feedback-animation">
             <div>
                 <figure><img src="./assets/images/icon/paws01.svg" alt=""></figure>
@@ -307,7 +277,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Client Feedback End -->
 
 

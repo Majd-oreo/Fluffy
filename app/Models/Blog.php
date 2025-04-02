@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Blog extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['user_id', 'service_id', 'title', 'content', 'image','pet_id','long_desc'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
+    }
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class);
+    }
+}

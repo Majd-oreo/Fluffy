@@ -125,73 +125,41 @@
     </section>
     <!-- Petnest Services End -->
 
-    <!-- Meet Petnest Team Start -->
-    <section class="meet-petnest-team">
-        <div class="petnest-team-animation">
-            <div>
-                <figure><img src="./assets/images/icon/leash03.svg" alt=""></figure>
-            </div>
+  <!-- Meet Petnest Team Start -->
+<section class="meet-petnest-team">
+    <div class="petnest-team-animation">
+        <div>
+            <figure><img src="./assets/images/icon/leash03.svg" alt=""></figure>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="petnest-heading petnest-heading-team">
-                        <h5>Meet Our Team</h5>
-                        <h2>Loving Care for Your<br class="d-lg-block d-md-block d-none"> Furry Friends</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="slider-team owl-carousel">
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-1.png" alt=""></figure>
-                            <h4>Nutritionists</h4>
-                                <div class="divider"></div>
-                                <h3>Noria</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-2.png" alt=""></figure>
-                            <h4>Veterinarians</h4>
-                                <div class="divider"></div>
-                                <h3>Zoras</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-3.png" alt=""></figure>
-                            <h4>Groomers</h4>
-                                <div class="divider"></div>
-                                <h3>Tania</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-4.png" alt=""></figure>
-                            <h4>Trainers</h4>
-                                <div class="divider"></div>
-                                <h3>Shahir</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-5.png" alt=""></figure>
-                            <h4>Behaviorists</h4>
-                                <div class="divider"></div>
-                                <h3>Zenifer</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-6.png" alt=""></figure>
-                            <h4>Technicians</h4>
-                                <div class="divider"></div>
-                                <h3>Rigan</h3>
-                        </div>
-                        <div class="petnest-member-single">
-                            <figure><img src="./assets/images/home/team-profile-7.png" alt=""></figure>
-                            <h4>Representatives</h4>
-                                <div class="divider"></div>
-                                <h3>Fateha</h3>
-                        </div>
-                    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="petnest-heading petnest-heading-team">
+                    <h5>Meet Our Team</h5>
+                    <h2>Loving Care for Your<br class="d-lg-block d-md-block d-none"> Furry Friends</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Meet Petnest Team End -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="slider-team owl-carousel">
+                    @foreach ($employees as $employee)
+                    <div class="petnest-member-single">
+                    <figure>
+            <img src="{{ asset('storage/' . ($employee->image ?: 'Default-image.png')) }}" alt="">
+        </figure>                                <h4>{{ $employee->role }}</h4>
+                        <div class="divider"></div>
+                        <h3>{{ $employee->name }}</h3>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Meet Petnest Team End -->
+
 
     <!-- Petnest Story Start -->
     <section class="petnest-story">
@@ -256,7 +224,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
     <!-- Petnest Story End -->
 
     <!-- Trusted By Greatest Company Start -->
-    <section class="petnest-trusted-company">
+    <!-- <section class="petnest-trusted-company">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -287,11 +255,11 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Trusted By Greatest Company End -->
 
     <!-- Client Feedback Start -->
-    <section class="petnest-client-feedback">
+    <!-- <section class="petnest-client-feedback">
         <div class="petnest-feedback-animation">
             <div>
                 <figure><img src="./assets/images/icon/paws01.svg" alt=""></figure>
@@ -308,8 +276,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                             <div class="row">
                                 <div class="col-lg-8 col-md-8">
                                     <div class="petnest-client-feedback-left">
-                                        <h5>Clients Feedback</h5>
-                                        <h2>My Preferred Pet <br class="d-xl-block d-none"> Care Services</h2>
+                                        <h5>Customers Feedback</h5>
                                         <p>I have been using this pet care agency for over a year now and I am
                                             thoroughly impressed with their service. My pets are always happy and well
                                             taken care of when I return home</p>
@@ -395,7 +362,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Client Feedback End -->
 
     <!-- Petnest Faq Start -->
@@ -565,102 +532,43 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
     <!-- Petnest Newsletter End -->
 
     <!-- Blog Stories Start -->
-    <section class="petnest-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="petnest-heading petnest-heading-blog">
-                        <h5>Blog Stories</h5>
-                        <h2>Loving Care for Every <br class="d-md-block d-none"> Whisker and Tail</h2>
-                    </div>
+    <section class="petnest-blog petnest-blog-v2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="petnest-heading petnest-heading-blog petnest-heading-blog-v2">
+                    <h5>Blog Stories</h5>
+                    <h2>Loving Care for Every <br class="d-md-block d-none"> Whisker and Tail</h2>
                 </div>
-                <div class="col-lg-12">
-                    <div class="petnest-blog-listing">
-                        <div class="row petnest-blog-listing-slider owl-carousel">
-                            <a href="blog-single.html" class="single-petnest-blog">
+            </div>
+            <div class="col-lg-12">
+                <div class="petnest-blog-listing">
+                    <div class="row petnest-blog-listing-slider owl-carousel">
+                        @foreach($blogs as $blog)
+                            <a href="{{ route('blog.show', $blog->id) }}" class="single-petnest-blog">
                                 <div class="petnest-blog-short-top">
-                                    <figure><img src="./assets/images/home/blog01.png" alt=""></figure>
-                                    <!-- Category Start -->
-                                    <span class="category-blog">Dog</span>
-                                    <!-- Category End -->
+                                    <figure>
+                                        <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}">
+                                    </figure>
+                                    <span class="category-blog">{{ $blog->pet->type }}</span>
+
+                                    <!-- Service Name Start -->
+                                    <!-- Service Name End -->
                                 </div>
                                 <div class="petnest-blog-short-description">
-                                    <h5>12 Jan 2023</h5>
-                                    <h3>Why it is worth having your dog groomed professionally</h3>
-                                    <h4>By <span>Rebeca robi</span></h4>
+                                    <h5>{{ $blog->created_at }}</h5>
+                                    <h3>{{ $blog->title }}</h3>
+                                    <h4>By <span>{{ $blog->user->name }}</span></h4>
                                 </div>
                             </a>
-                            <a href="blog-single.html" class="single-petnest-blog">
-                                <div class="petnest-blog-short-top">
-                                    <figure><img src="./assets/images/home/blog02.png" alt=""></figure>
-                                    <!-- Category Start -->
-                                    <span class="category-blog">Pet</span>
-                                    <!-- Category End -->
-                                </div>
-                                <div class="petnest-blog-short-description">
-                                    <h5>08 Jan 2023</h5>
-                                    <h3>How to buy safest toy for your pet?</h3>
-                                    <h4>By <span>Sami sarowar </span></h4>
-                                </div>
-                            </a>
-                            <a href="blog-single.html" class="single-petnest-blog">
-                                <div class="petnest-blog-short-top">
-                                    <figure><img src="./assets/images/home/blog03.png" alt=""></figure>
-                                    <!-- Category Start -->
-                                    <span class="category-blog">Cat</span>
-                                    <!-- Category End -->
-                                </div>
-                                <div class="petnest-blog-short-description">
-                                    <h5>09 Jan 2023</h5>
-                                    <h3>My cat sleeps constantly, when should i do?</h3>
-                                    <h4>By <span>Zakas rai</span></h4>
-                                </div>
-                            </a>
-                            <a href="blog-single.html" class="single-petnest-blog">
-                                <div class="petnest-blog-short-top">
-                                    <figure><img src="./assets/images/home/blog01.png" alt=""></figure>
-                                    <!-- Category Start -->
-                                    <span class="category-blog">Dog</span>
-                                    <!-- Category End -->
-                                </div>
-                                <div class="petnest-blog-short-description">
-                                    <h5>12 Jan 2023</h5>
-                                    <h3>Why it is worth having your dog groomed professionally</h3>
-                                    <h4>By <span>Rebeca robi</span></h4>
-                                </div>
-                            </a>
-                            <a href="blog-single.html" class="single-petnest-blog">
-                                <div class="petnest-blog-short-top">
-                                    <figure><img src="./assets/images/home/blog02.png" alt=""></figure>
-                                    <!-- Category Start -->
-                                    <span class="category-blog">Pet</span>
-                                    <!-- Category End -->
-                                </div>
-                                <div class="petnest-blog-short-description">
-                                    <h5>08 Jan 2023</h5>
-                                    <h3>How to buy safest toy for your pet?</h3>
-                                    <h4>By <span>Sami sarowar </span></h4>
-                                </div>
-                            </a>
-                            <a href="blog-single.html" class="single-petnest-blog">
-                                <div class="petnest-blog-short-top">
-                                    <figure><img src="./assets/images/home/blog03.png" alt=""></figure>
-                                    <!-- Category Start -->
-                                    <span class="category-blog">Cat</span>
-                                    <!-- Category End -->
-                                </div>
-                                <div class="petnest-blog-short-description">
-                                    <h5>09 Jan 2023</h5>
-                                    <h3>My cat sleeps constantly, when should i do?</h3>
-                                    <h4>By <span>Zakas rai</span></h4>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- Blog Stories End -->
 
     <!-- Follow Our Instagram Start -->

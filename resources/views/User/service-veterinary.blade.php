@@ -25,7 +25,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="about-petnest-right-wrapper about-petnest-veterinary-hero">
                         <div class="about-petnest-right">
-                            <figure><img src="./assets/images/services/services-hero06.png" alt=""></figure>
+                            <figure><img src="./assets/images/services/service1.png" alt=""></figure>
                         </div>
                     </div>
                 </div>

@@ -6,38 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/images/petnest-logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/petnest-logo.svg') }}" type="image/x-icon">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <!-- FlatIcon -->
-    <link rel="stylesheet" href="./assets/css/flaticon.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
     <!-- Magnafic CSS -->
-    <link rel="stylesheet" href="./assets/css/magnafic.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnafic.css') }}">
     <!-- Lightbox CSS -->
-    <link rel="stylesheet" href="./assets/css/xzoom.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/xzoom.css') }}">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <!-- Mobile Menu CSS -->
-    <link rel="stylesheet" href="./assets/css/meanmenu.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css') }}">
     <!-- Style Main CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- Site Title -->
     <title>Fluffy Friends</title>
+    
 </head>
 
 <body class="home-bg">
     <!-- Petnest Search Bar Start -->
     <div class="petnest-serach-ui">
         <div class="petnest-search-close">
-            <figure><img src="./assets/images/icon/close.svg" alt=""></figure>
+            <figure><img src="{{ asset('assets/images/icon/close.svg') }}" alt=""></figure>
         </div>
         <div class="petnest-search-wrapper">
             <div class="petnest-search-wrap">
@@ -50,6 +54,7 @@
         </div>
     </div>
     <!-- Petnest Search Bar End -->
+
     <!-- Header Start -->
     <header id="header-sticky" class="petnest-header">
         <div class="container position-relative">
@@ -57,8 +62,7 @@
                 <div class="col-lg-2">
                     <!-- Logo Start -->
                     <div class="petnest-logo">
-                        <figure><a href="index.html"><img src="./assets/images/fluffy-logo.png" alt="PetNest"></a>
-                        </figure>
+                        <figure><a href="index.html"><img src="{{ asset('assets/images/fluffy-logo.png') }}" alt="PetNest"></a></figure>
                     </div>
                      <!-- Logo End -->
                 </div>
@@ -66,14 +70,11 @@
                     <div class="petnest-header-menu">
                         <nav id="mobile-menu">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a>
-                                    <ul class="submenu">
-                                        <li><a href="index.html">Home V1</a></li>
-                                        <li><a href="index-02.html">Home V2</a></li>
-                                    </ul>
+                                <li class="active"><a href="{{ route('home') }}">Home</a>
+                                  
                                 </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="services.html">Services</a>
+                                <li><a href="{{ route('user.about-us') }}">About Us</li>
+                                <li><a href="{{ route('user.services') }}">Services</a>
                                     <ul class="submenu">
                                         <li><a href="service-grooming.html">Grooming</a></li>
                                         <li><a href="service-walking.html">Walking</a></li>
@@ -113,8 +114,32 @@
                         <div class="search-top">
                             <button class="search-trigger"><span><i class="flaticon-search"></i></span></button>
                         </div>
-                        <div class="user-top">
-                            <button><span><i class="flaticon-user"></i></span></button>
+                        <div class="user-top dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="flaticon-user"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                @auth
+                                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
+                                    </li>
+                                    <li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('userappointment') }}">Appointments</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('pets.index') }}">Pets</a>
+                                    </li>
+                                    
+
+                                    
+                                @else
+                                    <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                                @endauth
+                            </ul>
                         </div>
                         <div class="basket-top">
                             <button><span class="on-basket"><i class="flaticon-bag"></i></span></button>
@@ -127,8 +152,7 @@
                                                     <div class="row">
                                                         <div class="col-md-3 col-3">
                                                             <div class="petnest-basket-inner-left">
-                                                                <figure><img src="./assets/images/home/product01.png"
-                                                                        alt=""></figure>
+                                                                <figure><img src="{{ asset('assets/images/home/product01.png') }}" alt=""></figure>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-9 col-9">
@@ -176,10 +200,13 @@
                             </div>
                         </div>
                         <div class="contact-us-top d-md-block d-none">
-                            <a href="contact.html" class="btn-primay">Contact Us</a>
+                            <a  href="{{ route('contact') }}" class="btn-primay">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+</body>
+
+</html>
