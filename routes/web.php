@@ -8,13 +8,17 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\PetsController;
+
+
+
 
 
 use App\Models\Blog;
 use App\Models\User;
-
-
-
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,24 +37,14 @@ Route::get('/', function () {
 
     return view('user.index', compact('blogs', 'employees'));
 })->name('home');
-
-
-
 Route::get('/blogs/{id}', [IndexController::class, 'show'])->name('blog.show');
-
-
 Route::get('/team', [UserController::class, 'show'])->name('team.index');
 Route::get('/about', [UserController::class, 'showAboutUs'])->name('user.about-us');
 Route::get('/service', [ServiceController::class, 'index'])->name('user.services');
 // Route::get('services/{id}', [ServiceController::class, 'show'])->name('service.show');
-
-
-
-
 Route::get('/gallary', function () {
     return view('user.our-gallery');  
 })->name('gallary');
-
 Route::get('/rescue', function () {
     return view('user.service-rescue');  
 })->name('rescue');
@@ -62,18 +56,26 @@ Route::get('/grooming', function () {
 })->name('grooming');
 Route::middleware(['auth'])->group(function () {
     Route::post('/appointment/{id}', [AppointmentController::class, 'store'])->name('appointment.store');
-
     Route::get('/appointment/{id}', [AppointmentController::class, 'showAppointment'])->name('appointment.show');
-
-    Route::post('/appointments/book', [AppointmentController::class, 'bookAppointment'])->name('book.appointment');
-    
+    Route::post('/appointments/book', [AppointmentController::class, 'bookAppointment'])->name('book.appointment'); 
     Route::post('/appointments/{service_id}/review', [AppointmentController::class, 'storeReview'])->name('appointment.review');
-
     Route::get('/userappointment', [AppointmentController::class, 'userappointments'])->name('userappointment');
-
     Route::resource('pets', controller: PetController::class);
+});
+
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('users', UsersController::class);
+    Route::resource('pets', PetsController::class);
+
 
 });
+
+Route::middleware(['auth', 'role:employee'])->group(function () {
+});
+
+
 
 
 

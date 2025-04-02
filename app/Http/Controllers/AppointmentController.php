@@ -91,11 +91,8 @@ public function bookAppointment(Request $request)
     $appointment->category_id = $request->category_id; // Save the user-selected category
     
     $appointment->save();
-    
-    // Save the appointment to the database
-    // $appointment->save();
 
-    // Redirect back with a success message
+
     return redirect()->back()->with('success', 'Your appointment has been successfully booked.');
 }
 
