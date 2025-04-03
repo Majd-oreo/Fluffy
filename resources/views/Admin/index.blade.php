@@ -95,7 +95,7 @@
     <div class="col-lg-6 mb-4">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">{{ $totalAppointments }} Appointments</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ $totalAppointments }}Appointments</h6>
             </div>
             <div class="card-body">
                 <h4 class="small font-weight-bold">Canceled <span class="float-right">{{ number_format($canceledPercentage, 1) }}%</span></h4>
@@ -134,7 +134,7 @@
                 </div>
                 <h4 class="small font-weight-bold">Birds <span class="float-right">{{ number_format($birdsPercentage, 1) }}%</span></h4>
                 <div class="progress mb-4">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ $birdsPercentage }}%" aria-valuenow="{{ $birdsPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ $birdsPercentage }} %" aria-valuenow="{{ $birdsPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>

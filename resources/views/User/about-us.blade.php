@@ -121,7 +121,7 @@
                     @foreach ($employees as $employee)
                         <div class="petnest-member-single">
                         <figure>
-                        <img src="{{ asset('public/images/' . ($employee->image ?: 'Default.png')) }}" alt="">
+                        <img src="{{ asset('storage/' . ($employee->image ?: 'Default.png')) }}" alt="">
                         </figure>                           
                             <div class="divider"></div>
                             <h3>{{ $employee->name }}</h3>

@@ -83,24 +83,24 @@
                         <!-- Display Owner's Name -->
                         <p class="card-text text-muted"><strong>Owner:</strong> {{ $pet->user->name }}</p>
 
-                        <div class="d-flex justify-content-center">
-                            <!-- View Button triggers modal -->
-                            <button type="button" class="btn btn-info btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#petModal-{{ $pet->id }}">
-                                <i class="fas fa-eye"></i> View
-                            </button>
+                        <div class="d-flex justify-content-center align-items-center">
+    <button type="button" class="btn btn-info btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#petModal-{{ $pet->id }}">
+        <i class="fas fa-eye"></i> View
+    </button>
 
-                            <a href="{{ route('admin.pets.edit', $pet->id) }}" class="btn btn-warning btn-sm mx-2">
-                                <i class="fas fa-edit"></i> Edit
-                            </a>
+    <a href="{{ route('admin.pets.edit', $pet->id) }}" class="btn btn-warning btn-sm mx-2">
+        <i class="fas fa-edit"></i> Edit
+    </a>
 
-                            <form action="{{ route('admin.pets.destroy', $pet->id) }}" method="POST" class="d-inline-block" id="deleteForm-{{ $pet->id }}">
-                                @csrf
-                                @method('DELETE')
-                                <button type="button" class="btn btn-danger btn-sm mx-2" onclick="confirmDelete({{$pet->id}})">
-                                    <i class="fas fa-trash-alt"></i> Delete
-                                </button>
-                            </form>
-                        </div>
+    <form action="{{ route('admin.pets.destroy', $pet->id) }}" method="POST" class="d-inline-block" id="deleteForm-{{ $pet->id }}">
+        @csrf
+        @method('DELETE')
+        <button type="button" class="btn btn-danger btn-sm mx-2 delete-btn" data-id="{{ $pet->id }}">
+            <i class="fas fa-trash-alt"></i> Delete
+        </button>
+    </form>
+</div>
+
                     </div>
                 </div>
             </div>
@@ -141,22 +141,29 @@
 </div>
 
 <script>
-    function confirmDelete(petId) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#FF5B2E',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('deleteForm-' + petId).submit();
-            }
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".delete-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            let petId = this.getAttribute("data-id");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This action cannot be undone!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#FF5B2E",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("deleteForm-" + petId).submit();
+                }
+            });
         });
-    }
+    });
+});
+
 </script>
 
 @endsection

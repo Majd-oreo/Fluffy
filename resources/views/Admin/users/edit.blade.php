@@ -56,8 +56,8 @@
                         @endif
                     </div>
 
-                    <!-- Employee Specific Fields -->
-                    <div id="employeeFields" style="display: {{ old('role', $user->role) == 'employee' ? 'block' : 'none' }}">
+                    <div id="employeeFields" @if(old('role', $user->role) == 'employee') style="display: block;" @else style="display: none;" @endif>
+
                         <div class="mb-3">
                             <label for="job_title" class="form-label">Job Title</label>
                             <input type="text" id="job_title" name="job_title" class="form-control" value="{{ old('job_title', $user->employee ? $user->employee->job_title : '') }}">
@@ -104,7 +104,6 @@
 </div>
 
 <script>
-    // Toggle the visibility of employee-specific fields based on the selected role
     function toggleEmployeeFields() {
         var role = document.getElementById('role').value;
         var employeeFields = document.getElementById('employeeFields');

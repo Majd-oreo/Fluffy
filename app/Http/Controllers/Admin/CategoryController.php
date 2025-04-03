@@ -13,17 +13,24 @@ class CategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-    {
-        $query = Category::query();
-        
-        // Filter by name
-        if ($request->has('name') && !empty($request->name)) {
-            $query->where('name', 'like', '%' . $request->name . '%');
-        }
-        
-        $categories = $query->paginate(8);  
-        return view('admin.categories.index', compact('categories'));
+{
+    $query = Category::query();
+    
+    // Fetch all services for filtering
+    $services = Service::all();
+
+    // Filter by name
+    if ($request->has('name') && !empty($request->name)) {
+        $query->where('name', 'like', '%' . $request->name . '%');
     }
+    
+    if ($request->has('service_id') && !empty($request->service_id)) {
+        $query->where('service_id', $request->service_id);
+    }
+
+    $categories = $query->paginate(8);  
+    return view('admin.categories.index', compact('categories', 'services'));
+}
 
     /**
      * Show the form for creating a new category.
@@ -51,6 +58,7 @@ class CategoryController extends Controller
         $category->description = $request->description;
         $category->service_id = $request->service_id;
         
+        // Handle icon upload
         if ($request->hasFile('icon')) {
             $category->icon = $request->file('icon')->store('categories', 'public');
         }

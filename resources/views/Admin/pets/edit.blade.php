@@ -19,7 +19,7 @@
                 @endif
                 <form action="{{ route('admin.pets.update', $pet->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                     @csrf
-                    @method('PUT')  <!-- Update method for edit -->
+                    @method('PUT')  
                     
                     <div class="mb-3">
                         <label for="name" class="form-label">Pet Name</label>

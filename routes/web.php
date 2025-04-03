@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
@@ -68,6 +69,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', UsersController::class);
     Route::resource('pets', PetsController::class);
+    Route::resource('categories', CategoryController::class);
+
 
 
 });

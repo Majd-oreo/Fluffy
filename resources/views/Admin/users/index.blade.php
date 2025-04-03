@@ -67,26 +67,24 @@ class="rounded-circle mb-3" style="width: 100px; height: 100px;" alt="User Image
                             <h5 class="card-title">{{ $user->name }}</h5>
                             <p class="card-text text-muted">{{ $user->role }}</p>
 
-                            <div class="d-flex justify-content-center">
-                                <!-- View Button triggers modal -->
-                                <button type="button" class="btn btn-info btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#userModal-{{ $user->id }}">
-                                    <i class="fas fa-eye"></i> View
-                                </button>
+                            <div class="d-flex justify-content-center align-items-center">
+    <button type="button" class="btn btn-info btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#userModal-{{ $user->id }}">
+        <i class="fas fa-eye"></i> View
+    </button>
 
+    <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm mx-2">
+        <i class="fas fa-edit"></i> Edit
+    </a>
 
-                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm mx-2">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
+    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="d-inline-block" id="deleteForm-{{ $user->id }}">
+        @csrf
+        @method('DELETE')
+        <button type="button" class="btn btn-danger btn-sm mx-2 delete-btn" data-id="{{ $user->id }}">
+            <i class="fas fa-trash-alt"></i> Delete
+        </button>
+    </form>
+</div>
 
-                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="d-inline-block" id="deleteForm-{{ $user->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" class="btn btn-danger btn-sm mx-2" onclick="confirmDelete({{$user->id}})">
-    <i class="fas fa-trash-alt"></i> Delete
-</button>
-
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,22 +134,29 @@ class="rounded-circle mb-3" style="width: 100px; height: 100px;" alt="User Image
 </div>
 
 <script>
-    function confirmDelete(userId) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#FF5B2E',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('deleteForm-' + userId).submit();
-            }
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".delete-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            let userId = this.getAttribute("data-id");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This action cannot be undone!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#FF5B2E",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("deleteForm-" + userId).submit();
+                }
+            });
         });
-    }
+    });
+});
+
 </script>
 
 @endsection

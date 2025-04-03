@@ -24,9 +24,7 @@ class UsersController extends Controller
             $query->where('role', $request->role);
         }
         
-        // Use paginate() instead of get() to paginate results
-        $users = $query->paginate(8);  // This will paginate results, showing 8 users per page
-        
+        $users = $query->paginate(8); 
         return view('admin.users.index', compact('users'));
     }
     
@@ -54,7 +52,6 @@ class UsersController extends Controller
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
     ]);
 
-    // Handle image upload
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('uploads', 'public');
     } else {
@@ -71,7 +68,6 @@ class UsersController extends Controller
         'role' => $request->role,
     ]);
 
-    // If the user is an employee, store employee-related data
     if ($request->role === 'employee') {
         $user->employee()->create([
             'job_title' => $request->job_title,
@@ -87,21 +83,26 @@ class UsersController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'phone' => ['required', 'regex:/^07[7-9]{1}[0-9]{7}$/'], // Validates Jordanian phone numbers starting with 07
-            'password' => 'nullable|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*?&]/', // Password with uppercase, lowercase, number, and symbol
+            'phone' => ['required', 'regex:/^07[7-9]{1}[0-9]{7}$/'], 
+            'password' => 'nullable|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*?&]/', 
             'role' => 'required|in:user,admin,employee',
-            'job_title' => 'nullable|string|max:255', // Only required if role is employee
-            'salary' => 'nullable|numeric|min:0', // Only required if role is employee
+            'job_title' => 'nullable|string|max:255', 
+            'salary' => 'nullable|numeric|min:0', 
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
 
         ]);
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('uploads', 'public');
+        } else {
+            $imagePath = null;
+        }
     
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
-            'image' => $request->image,
+            'image' => $imagePath,
             'role' => $request->role,
         ]);
 
