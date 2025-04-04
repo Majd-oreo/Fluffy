@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('job_title');
             $table->decimal('salary', 10, 2)->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active'); 
+            $table->foreignId('service_id')->constrained('services')->onDelete('cascade');  
+
             $table->timestamps();
         });
     }

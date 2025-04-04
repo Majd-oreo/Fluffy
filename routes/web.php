@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AppointmentsController;
+use App\Http\Controllers\Admin\BlogsController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -12,11 +14,9 @@ use App\Http\Controllers\PetController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\PetsController;
-
-
-
-
-
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\ServicesController;
 use App\Models\Blog;
 use App\Models\User;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -70,6 +70,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('users', UsersController::class);
     Route::resource('pets', PetsController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('services', ServicesController::class);
+    Route::resource('blogs', BlogsController::class);
+    Route::resource('appointments', AppointmentsController::class);
+    Route::resource('reviews', ReviewController::class);
+
+
+
+
 
 
 

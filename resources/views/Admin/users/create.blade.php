@@ -62,6 +62,16 @@
                             <label for="salary" class="form-label">Salary</label>
                             <input type="number" id="salary" name="salary" class="form-control" step="0.01" value="{{ isset($employee) ? $employee->salary : '' }}">
                         </div>
+
+                        <div class="mb-3">
+                            <label for="service_id" class="form-label">Service</label>
+                            <select id="service_id" name="service_id" class="form-control">
+                                <option value="">Select Service</option>
+                                @foreach($services as $service)
+                                    <option value="{{ $service->id }}" {{ isset($employee) && $employee->service_id == $service->id ? 'selected' : '' }}>{{ $service->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     
                     <div class="mb-3">

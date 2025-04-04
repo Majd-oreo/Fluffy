@@ -1,122 +1,32 @@
 <?php
-namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Service;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CategoryController extends Controller
+return new class extends Migration
 {
     /**
-     * Display a listing of the resource.
+     * Run the migrations.
      */
-    public function index(Request $request)
+    public function up(): void
     {
-        $query = Category::query();
-        
-        // Filter by name
-        if ($request->has('name') && !empty($request->name)) {
-            $query->where('name', 'like', '%' . $request->name . '%');
-        }
-        
-        $categories = $query->paginate(8);  
-        return view('admin.categories.index', compact('categories'));
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('icon')->nullable(); 
+            $table->string('description')->nullable;
+            $table->foreignId('service_id')->constrained()->onDelete('cascade'); 
+
+            $table->timestamps();
+        });
     }
 
     /**
-     * Show the form for creating a new category.
+     * Reverse the migrations.
      */
-    public function create()
+    public function down(): void
     {
-        $services = Service::all();  
-        return view('admin.categories.create', compact('services'));   
+        Schema::dropIfExists('categories');
     }
-
-    /**
-     * Store a newly created category in storage.
-     */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'description' => 'nullable|string',
-            'service_id' => 'required|exists:services,id',
-        ]);
-        
-        $category = new Category();
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->service_id = $request->service_id;
-        
-        if ($request->hasFile('icon')) {
-            $category->icon = $request->file('icon')->store('categories', 'public');
-        }
-    
-        $category->save();
-    
-        return redirect()->route('admin.categories.index')->with('success', 'Category created successfully.');
-    }
-
-    /**
-     * Show the form for editing the specified category.
-     */
-    public function edit($id)
-    {
-        $category = Category::findOrFail($id);
-        $services = Service::all();  
-        return view('admin.categories.edit', compact('category', 'services'));
-    }
-
-    /**
-     * Update the specified category in storage.
-     */
-    public function update(Request $request, Category $category)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'description' => 'nullable|string',
-            'service_id' => 'required|exists:services,id',
-        ]);
-        
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->service_id = $request->service_id;
-        
-        // Handle icon upload
-        if ($request->hasFile('icon')) {
-            if ($category->icon) {
-                Storage::disk('public')->delete($category->icon);
-            }
-            $category->icon = $request->file('icon')->store('categories', 'public');
-        }
-    
-        $category->save();
-    
-        return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully.');
-    }
-    
-    /**
-     * Display the specified category.
-     */
-    public function show(Category $category)
-    {
-        return view('admin.categories.show', compact('category'));
-    }
-
-    /**
-     * Remove the specified category from storage.
-     */
-    public function destroy(Category $category)
-    {
-        if ($category->icon) {
-            Storage::disk('public')->delete($category->icon);
-        }
-
-        $category->delete();
-        return redirect()->route('admin.categories.index')->with('success', 'Category deleted successfully.');
-    }
-}
+};

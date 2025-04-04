@@ -28,5 +28,9 @@ class Service extends Model
     {
         return $this->hasMany(ServiceImage::class);
     }
+    public function employees()
+    {
+        return $this->hasMany(Employee::class); // One service has many employees
+    }
 }
 

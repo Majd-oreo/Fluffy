@@ -11,7 +11,7 @@
                 <form action="{{ route('admin.users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" name="name" class="form-control" value="{{ old('name', $user->name) }}" required>
@@ -27,7 +27,7 @@
                             <div class="text-danger">{{ $errors->first('email') }}</div>
                         @endif
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
                         <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', $user->phone) }}">
@@ -35,7 +35,7 @@
                             <div class="text-danger">{{ $errors->first('phone') }}</div>
                         @endif
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>
                         <input type="text" id="address" name="address" class="form-control" value="{{ old('address', $user->address) }}">
@@ -43,7 +43,7 @@
                             <div class="text-danger">{{ $errors->first('address') }}</div>
                         @endif
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="role" class="form-label">Role</label>
                         <select id="role" name="role" class="form-control" required onchange="toggleEmployeeFields()">
@@ -73,6 +73,20 @@
                                 <div class="text-danger">{{ $errors->first('salary') }}</div>
                             @endif
                         </div>
+
+                        <div class="mb-3">
+                            <label for="service_id" class="form-label">Service</label>
+                            <select id="service_id" name="service_id" class="form-control">
+                                <option value="">Select Service</option>
+                                @foreach($services as $service)
+                                    <option value="{{ $service->id }}" {{ old('service_id', $user->employee->service_id ?? '') == $service->id ? 'selected' : '' }}>{{ $service->name }}</option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('service_id'))
+                                <div class="text-danger">{{ $errors->first('service_id') }}</div>
+                            @endif
+                        </div>
+
                     </div>
                     
                     <div class="mb-3">

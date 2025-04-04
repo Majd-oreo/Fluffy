@@ -8,6 +8,30 @@
     background-image: none !important;
 }
 
+.pagination .page-link {
+        color: #ff5b2e;
+        border: 1px solid #ddd;
+    }
+
+    .pagination .page-link:hover {
+        background-color: #ff5b2e;
+        color: white;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #ff5b2e;
+        border-color: #ff5b2e;
+        color: white;
+    }
+
+
+
+
+
+
+
+
+
     </style>
 
     <meta charset="utf-8">
@@ -40,7 +64,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
               
-                <div class="sidebar-brand-text mx-4"><img src="{{ asset('assets/images/fluffy-logo.png')}}" style="width: 90%; height: 50%;">  </div>
+                <div class="sidebar-brand-text mx-4"> 
+                  Admin {{ Auth::user()->name }}
+                </div>
             </a>
 
             <!-- Divider -->
@@ -140,32 +166,14 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn" type="button" style="background-color:#FF5B2E">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <img src="{{ asset(path: 'assets/images/fluffy-logo.png')}}" style="width: 8%; height: 60%;"> 
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            
-                        </li>
-
+                        
                         <!-- Nav Item - Alerts -->
                         <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -217,28 +225,24 @@
 
                         <!-- Nav Item - Messages -->
                         <div class="user-top dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-{{ Auth::user()->name }}
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                @auth
-                                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
-                                    </li>
-                                    <li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item">Logout</button>
-                                        </form>
-                                   
-
-                                    
-                                @else
-                                    <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
-                                @endauth
-                            </ul>
-                        </div>
-
+    <button class="btn dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : asset('assets/images/default.png') }}" alt="User Image" class="rounded-circle" width="40" height="40">
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        @auth
+            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="dropdown-item">Logout</button>
+                </form>
+            </li>
+        @else
+            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+            <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+        @endauth
+    </ul>
+</div>
                         <!-- Nav Item - User Information -->
               
 

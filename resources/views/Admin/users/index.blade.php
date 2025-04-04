@@ -22,7 +22,6 @@
 
 <div class="container-fluid">
 
-    <!-- Filter and Search -->
     <form method="GET" action="{{ route('admin.users.index') }}" class="row mb-4">
         <div class="col-md-6">
             <input type="text" name="name" class="form-control" placeholder="Search by name..." value="{{ request('name') }}">
@@ -43,14 +42,12 @@
         </div>
     </form>
 
-    <!-- Add User Button -->
     <div class="mb-4">
         <a href="{{ route('admin.users.create') }}" class="btn btn-lg" style="background-color: #FF5B2E; color: white;">
             <i class="fas fa-plus-circle"></i> Add User
         </a>
     </div>
 
-    <!-- User Cards -->
     <div class="row" id="userList">
         @if($users->isEmpty())
             <div class="col-12 text-center">
@@ -89,8 +86,7 @@ class="rounded-circle mb-3" style="width: 100px; height: 100px;" alt="User Image
                     </div>
                 </div>
 
-              <!-- Modal for each user -->
-<!-- Modal for each user -->
+
 <div class="modal fade" id="userModal-{{ $user->id }}" tabindex="-1" aria-labelledby="userModalLabel-{{ $user->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -101,19 +97,24 @@ class="rounded-circle mb-3" style="width: 100px; height: 100px;" alt="User Image
             <div class="modal-body">
                 <p><strong>Image:</strong></p>
                 <img src="{{ $user->image ? asset('storage/'.$user->image) : asset('assets/images/Default.png') }}" 
-class="rounded-circle mb-3" style="width: 100px; height: 100px;" alt="User Image">
+                     class="rounded-circle mb-3" style="width: 100px; height: 100px;" alt="User Image">
                 
                 <p><strong>Name:</strong> {{ $user->name }}</p>
                 <p><strong>Role:</strong> {{ $user->role }}</p>
                 <p><strong>Email:</strong> {{ $user->email }}</p>
                 <p><strong>Phone:</strong> {{ $user->phone }}</p>
-
                 <p><strong>Address:</strong> {{ $user->address ?? 'No Address' }}</p>
 
-                <!-- Display additional employee information if the user is an employee -->
                 @if($user->role == 'employee')
                     <p><strong>Salary:</strong> {{ $user->salary ?? 'Not Available' }}</p>
                     <p><strong>Status:</strong> {{ $user->is_active ? 'Active' : 'Inactive' }}</p>
+                    <p><strong>Service ID:</strong> 
+                        @if($user->employee && $user->employee->service_id)
+                            {{ $user->employee->service->name ?? 'No Service Assigned' }}
+                        @else
+                            Not Available
+                        @endif
+                    </p>
                 @endif
 
             </div>

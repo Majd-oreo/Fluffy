@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Service;
+
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
@@ -33,7 +35,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        $services = Service::all();
+
+        return view('admin.users.create', compact('services'));
     }
 
     /**
@@ -49,6 +53,7 @@ class UsersController extends Controller
         'role' => 'required|in:user,admin,employee',
         'job_title' => 'nullable|string|max:255',
         'salary' => 'nullable|numeric|min:0',
+        'service_id' => 'nullable|exists:services,id',  // Ensure the service exists
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
     ]);
 
@@ -69,53 +74,56 @@ class UsersController extends Controller
     ]);
 
     if ($request->role === 'employee') {
-        $user->employee()->create([
+        $employee = $user->employee()->create([
             'job_title' => $request->job_title,
             'salary' => $request->salary,
+            'service_id' => $request->service_id,  // Add the service_id here
         ]);
     }
 
     return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
 }
 
-    public function update(Request $request, User $user)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'phone' => ['required', 'regex:/^07[7-9]{1}[0-9]{7}$/'], 
-            'password' => 'nullable|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*?&]/', 
-            'role' => 'required|in:user,admin,employee',
-            'job_title' => 'nullable|string|max:255', 
-            'salary' => 'nullable|numeric|min:0', 
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+public function update(Request $request, User $user)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+        'phone' => ['required', 'regex:/^07[7-9]{1}[0-9]{7}$/'],
+        'password' => 'nullable|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*?&]/',
+        'role' => 'required|in:user,admin,employee',
+        'job_title' => 'nullable|string|max:255',
+        'salary' => 'nullable|numeric|min:0',
+        'service_id' => 'nullable|exists:services,id',  // Ensure the service exists
+        'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+    ]);
 
-        ]);
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads', 'public');
-        } else {
-            $imagePath = null;
-        }
-    
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'address' => $request->address,
-            'image' => $imagePath,
-            'role' => $request->role,
-        ]);
-
-        if ($request->role === 'employee') {
-            $user->employee()->update([
-                'job_title' => $request->job_title,
-                'salary' => $request->salary,
-            ]);
-        }
-    
-        return redirect()->route('admin.users.index')->with('success', 'User updated successfully.');
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('uploads', 'public');
+    } else {
+        $imagePath = null;
     }
-    
+
+    $user->update([
+        'name' => $request->name,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'address' => $request->address,
+        'image' => $imagePath,
+        'role' => $request->role,
+    ]);
+
+    if ($request->role === 'employee') {
+        $user->employee()->update([
+            'job_title' => $request->job_title,
+            'salary' => $request->salary,
+            'service_id' => $request->service_id,  
+        ]);
+    }
+
+    return redirect()->route('admin.users.index')->with('success', 'User updated successfully.');
+}
+
     /**
      * Display the specified resource.
      */
@@ -129,8 +137,11 @@ class UsersController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(User $user)
+    
     {
-        return view('admin.users.edit', compact('user'));
+        $services = Service::all();
+
+        return view('admin.users.edit', compact('user','services'));
     }
 
     /**

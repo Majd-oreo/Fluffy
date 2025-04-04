@@ -28,7 +28,8 @@ class Appointment extends Model
   // In the Service model
   public function category()
   {
-      return $this->belongsToThrough(Category::class, Service::class);
+      return $this->belongsTo(Category::class);
   }
+  
 
 }

@@ -1,20 +1,4 @@
-<style>
-    .pagination .page-link {
-    color: #ff5b2e;
-    border: 1px solid #ddd;
-}
 
-.pagination .page-link:hover {
-    background-color: #ff5b2e;
-    color: white;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #ff5b2e;
-    border-color: #ff5b2e;
-    color: white;
-}
-</style>
 
 @extends('layouts.Admin-layout')
 
@@ -22,7 +6,6 @@
 
 <div class="container-fluid">
 
-    <!-- Filter and Search -->
     <form method="GET" action="{{ route('admin.pets.index') }}" class="row mb-4">
         <div class="col-md-3">
             <input type="text" name="name" class="form-control" placeholder="Search by name..." value="{{ request('name') }}">
@@ -57,14 +40,12 @@
       
     </form>
 
-    <!-- Add Pet Button -->
     <div class="mb-4">
         <a href="{{ route('admin.pets.create') }}" class="btn btn-lg" style="background-color: #FF5B2E; color: white;">
             <i class="fas fa-plus-circle"></i> Add Pet
         </a>
     </div>
 
-    <!-- Pet Cards -->
     <div class="row" id="petList">
     @if($pets->isEmpty())
         <div class="col-12 text-center">
@@ -80,7 +61,6 @@
 
                         <h5 class="card-title">{{ $pet->name }}</h5>
                         <p class="card-text text-muted">{{ $pet->type }}</p>
-                        <!-- Display Owner's Name -->
                         <p class="card-text text-muted"><strong>Owner:</strong> {{ $pet->user->name }}</p>
 
                         <div class="d-flex justify-content-center align-items-center">
@@ -105,7 +85,6 @@
                 </div>
             </div>
 
-            <!-- Modal for each pet -->
             <div class="modal fade" id="petModal-{{ $pet->id }}" tabindex="-1" aria-labelledby="petModalLabel-{{ $pet->id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -123,7 +102,6 @@
                             <p><strong>Age:</strong> {{ $pet->age ?? 'Not Available' }}</p>
                             <p><strong>Weight:</strong> {{ $pet->weight ?? 'Not Available' }} kg</p>
                             <p><strong>Medical History:</strong> {{ $pet->medical_history ?? 'No Medical History' }}</p>
-                            <!-- Display Owner's Name in Modal -->
                             <p><strong>Owner:</strong> {{ $pet->user->name }}</p>
                         </div>
                         <div class="modal-footer">

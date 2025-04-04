@@ -14,10 +14,15 @@ class Employee extends Model
         'job_title',
         'salary',
         'status',
+        'service_id'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function service()
+    {
+        return $this->belongsTo(Service::class); // Each employee belongs to one service
     }
 }

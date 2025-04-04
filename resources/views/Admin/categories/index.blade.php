@@ -22,7 +22,6 @@
 
 <div class="container-fluid">
 
-    <!-- Filter and Search -->
     <form method="GET" action="{{ route('admin.categories.index') }}" class="row mb-4">
         <div class="col-md-3">
             <input type="text" name="name" class="form-control" placeholder="Search by name..." value="{{ request('name') }}">
@@ -45,14 +44,12 @@
         </div>
     </form>
 
-    <!-- Add Category Button -->
     <div class="mb-4">
         <a href="{{ route('admin.categories.create') }}" class="btn btn-lg" style="background-color: #FF5B2E; color: white;">
             <i class="fas fa-plus-circle"></i> Add Category
         </a>
     </div>
 
-    <!-- Category Cards -->
     <div class="row" id="categoryList">
     @if($categories->isEmpty())
         <div class="col-12 text-center">
