@@ -1,6 +1,28 @@
+
 @extends('layouts.Admin-layout')
 
 @section('content')
+<style>
+    .form-check-input:checked {
+        background-color: #FF5B2E; 
+        border-color: #FF5B2E;
+    }
+
+    .form-check-input {
+        width: 3rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+
+    .form-check-input:focus {
+        box-shadow: none;
+    }
+
+    .form-check-label {
+        font-weight: 500;
+    }
+</style>
+
 <div class="container-fluid d-flex justify-content-center mt-4">
     <div class="col-md-6">
         <div class="card shadow" style="border: 2px solid #FF5B2E; background-color: white;">
@@ -72,6 +94,18 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="mb-3">
+    <label class="form-label d-block">Status</label>
+    <div class="form-check form-switch d-flex align-items-center gap-2">
+        <input class="form-check-input" type="checkbox" id="status" name="status"
+            {{ (isset($employee) && $employee->status == 'active') || !isset($employee) ? 'checked' : '' }}>
+        <span id="status-label">
+            {{ (isset($employee) && $employee->status == 'active') || !isset($employee) ? 'Active' : 'Inactive' }}
+        </span>
+    </div>
+</div>
+
+
                     </div>
                     
                     <div class="mb-3">
@@ -79,6 +113,7 @@
                         <input type="password" id="password" name="password" class="form-control" 
                                @if(!isset($user)) required @endif placeholder="Leave blank to keep current password">
                     </div>
+                   
                     
                     <div class="mb-3">
                         <label for="image" class="form-label">Profile Image</label>
@@ -123,6 +158,16 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         toggleEmployeeFields();
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const statusCheckbox = document.getElementById('status');
+        const statusLabel = document.getElementById('status-label');
+
+        if (statusCheckbox) {
+            statusCheckbox.addEventListener('change', function () {
+                statusLabel.textContent = this.checked ? 'Active' : 'Inactive';
+            });
+        }
     });
 </script>
 @endsection

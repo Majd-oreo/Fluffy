@@ -61,43 +61,30 @@
                         <input type="datetime-local" name="start_time" id="start_time" class="form-control" required min="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
                     </div>
                     <div class="form-group col-md-6">
-                    @if(auth()->check()) 
-    <label for="pet">Pet</label>
-    <select name="pet_id" id="pet" class="form-control" required>
-        @foreach (auth()->user()->pets as $pet)
-            <option value="{{ $pet->id }}">{{ $pet->name }}</option>
-        @endforeach
-    </select>
-@else
-    <div class="alert alert-warning">
-        You need to <a href="{{ route('login') }}">log in</a> to book an appointment.
-    </div>
-@endif
-</div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="client_name">Your Name</label>
-                        <input type="text" name="client_name" id="client_name" class="form-control" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="client_email">Your Email</label>
-                        <input type="email" name="client_email" id="client_email" class="form-control" required>
+                        @if(auth()->check()) 
+                            <label for="pet">Pet</label>
+                            <select name="pet_id" id="pet" class="form-control" required>
+                                @foreach (auth()->user()->pets as $pet)
+                                    <option value="{{ $pet->id }}">{{ $pet->name }}</option>
+                                @endforeach
+                            </select>
+                        @else
+                            <div class="alert alert-warning">
+                                You need to <a href="{{ route('login') }}">log in</a> to book an appointment.
+                            </div>
+                        @endif
                     </div>
                 </div>
+
+                
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                    <label for="category">Select Category</label>
-<select name="category_id" id="category" class="form-control" required>
-    @foreach ($service->categories as $category)
-        <option value="{{ $category->id }}">{{ $category->name }}</option>
-    @endforeach
-</select>
-
-
-
-
+                        <label for="category">Select Category</label>
+                        <select name="category_id" id="category" class="form-control" required>
+                            @foreach ($service->categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-orange-primary">Book Appointment</button>
@@ -143,11 +130,12 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4">
                                             <div class="grooming-showcase-right">
-                                            @if($service->images->count() > 0)
-    <div class="gallery-item">
-        <img src="{{ asset('storage/' . $service->images->first()->image_path) }}" alt="{{ $service->name }} Image" width="300">
-    </div>
-@endif                                                <h3>Figure: <span>{{ $service->name }} Pet</span></h3>
+                                                @if($service->images->count() > 0)
+                                                    <div class="gallery-item">
+                                                        <img src="{{ asset('storage/' . $service->images->first()->image_path) }}" alt="{{ $service->name }} Image" width="300">
+                                                    </div>
+                                                @endif
+                                                <h3>Figure: <span>{{ $service->name }} Pet</span></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -155,72 +143,105 @@
                             </div>
 
                             <div class="tab-pane fade petnest-des-reviews" id="petnest-review-page" role="tabpanel"
-     aria-labelledby="petnest-rev-tab" tabindex="0">
-    <div class="petnest-product-reviews">
-    @if ($service->reviews->isEmpty())
-            <p>There are no reviews yet.</p>
-        @else
-            <!-- Loop through all reviews related to the service -->
-            @foreach ($service->reviews as $review)
-                <div class="single-review-process">
-                    <div class="single-review-process-left">
-                        <figure>
-                            <img src="{{ $review->user->image ? asset('storage/' . $review->user->image) : asset('assets/images/Default.png') }}" alt="Profile Picture">
-                        </figure>
-                    </div>
-                    <div class="single-review-process-right">
-                        <h4><span>{{ $review->user->name }}</span> - {{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</h4>
-                        <div class="single-review-process-star">
-                            @for ($i = 0; $i < 5; $i++)
-                                <span><i class="flaticon-star-2 {{ $i < $review->rating ? 'filled' : '' }}"></i></span>
-                            @endfor
-                        </div>
-                        <p>{{ $review->comment }}</p>
-                    </div>
-                </div>
-            @endforeach
-        @endif
-                                    <!-- Add Product Review Form Start -->
-                                    <div class="col-lg-8">
-                                        <div class="blog-comments-petnest product-add-rev">
-                                            <h3>Add a review</h3>
-                                            <form action="{{ route('appointment.review', ['service_id' => $service->id]) }}" method="POST">
-                                            @csrf
-            <input type="hidden" name="service_id" value="{{ $service->id }}">
+                                 aria-labelledby="petnest-rev-tab" tabindex="0">
+                                <div class="petnest-product-reviews">
+                                    @if ($service->reviews->isEmpty())
+                                        <p>There are no reviews yet.</p>
+                                    @else
+                                        @foreach ($service->reviews as $review)
+                                            <div class="single-review-process">
+                                                <div class="single-review-process-left">
+                                                    <figure>
+                                                        <img src="{{ $review->user->image ? asset('storage/' . $review->user->image) : asset('assets/images/Default.png') }}" alt="Profile Picture">
+                                                    </figure>
+                                                </div>
+                                                <div class="single-review-process-right">
+                                                    <h4><span>{{ $review->user->name }}</span> - {{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</h4>
+                                                    <div class="single-review-process-star">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <span><i class="flaticon-star-2 {{ $i < $review->rating ? 'filled' : '' }}"></i></span>
+                                                        @endfor
+                                                    </div>
+                                                    <p>{{ $review->comment }}</p>
 
-            <div class="comment-flex">
-                <div>
-                    <label for="name">Your full name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Your email*</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-            </div>
+                                                    @if(auth()->check() && auth()->id() == $review->user_id)
+                                                        <div class="d-flex gap-2 mt-3">
+                                                        <form action="{{ route('appointment.review.delete', ['review' => $review->id]) }}" method="POST" class="delete-review-form" onsubmit="return confirmDelete(event)">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-sm btn-danger">
+        <i class="fas fa-trash-alt"></i> Delete
+    </button>
+</form>
 
-            <label for="comment">Write your review*</label>
-            <textarea id="comment" name="comment" required></textarea>
+                                                            
+                                                        </div>
 
-            <h4>Your Rating</h4>
-            <div class="give-rating">
-                <div class="single-review-process-star" id="starRating">
-                    <span data-value="1"><i class="flaticon-star-2"></i></span>
-                    <span data-value="2"><i class="flaticon-star-2"></i></span>
-                    <span data-value="3"><i class="flaticon-star-2"></i></span>
-                    <span data-value="4"><i class="flaticon-star-2"></i></span>
-                    <span data-value="5"><i class="flaticon-star-2"></i></span>
-                </div>
-                <input type="hidden" name="rating" id="rating" required>
-            </div>
-
-            <input type="submit" value="Post Review">
-        </form>
-                                        </div>
-                                    </div>
-                                    <!-- Add Product Review Form End -->
+                                                        
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
-                            </div>
+
+                                <!-- Add or Update Review Form -->
+                                @if(auth()->check() && $existingReview = $service->reviews->where('user_id', auth()->id())->first())
+    <div class="col-lg-8">
+        <div class="blog-comments-petnest product-add-rev">
+            <h3>Update your review</h3>
+            <form action="{{ route('appointment.review', ['service_id' => $service->id]) }}" method="POST">
+            @csrf
+                @method('PUT')
+                <input type="hidden" name="service_id" value="{{ $service->id }}">
+
+                <label for="comment">Write your review*</label>
+                <textarea id="comment" name="comment" required>{{ $existingReview->comment }}</textarea>
+
+                <h4>Your Rating</h4>
+                <div class="give-rating">
+                    <div class="single-review-process-star" id="starRating">
+                        @for ($i = 1; $i <= 5; $i++)
+                            <span data-value="{{ $i }}"><i class="flaticon-star-2 {{ $i <= $existingReview->rating ? 'filled' : '' }}"></i></span>
+                        @endfor
+                    </div>
+                    <input type="hidden" name="rating" id="rating" value="{{ $existingReview->rating }}" required>
+                </div>
+
+                <input type="submit" value="Update Review">
+            </form>
+        </div>
+    </div>
+@else
+    <div class="col-lg-8">
+        <div class="blog-comments-petnest product-add-rev">
+            <h3>Add a review</h3>
+            <form action="{{ route('appointment.review', ['service_id' => $service->id]) }}" method="POST">
+                @csrf
+                <input type="hidden" name="service_id" value="{{ $service->id }}">
+
+                <label for="comment">Write your review*</label>
+                <textarea id="comment" name="comment" required></textarea>
+
+                <h4>Your Rating</h4>
+                <div class="give-rating">
+                    <div class="single-review-process-star" id="starRating">
+                        <span data-value="1"><i class="flaticon-star-2"></i></span>
+                        <span data-value="2"><i class="flaticon-star-2"></i></span>
+                        <span data-value="3"><i class="flaticon-star-2"></i></span>
+                        <span data-value="4"><i class="flaticon-star-2"></i></span>
+                        <span data-value="5"><i class="flaticon-star-2"></i></span>
+                    </div>
+                    <input type="hidden" name="rating" id="rating" required>
+                </div>
+
+                <input type="submit" value="Post Review">
+            </form>
+        </div>
+    </div>
+@endif
+
+                            </div> <!-- Review Tab End -->
                         </div>
                     </div>
                 </div>
@@ -229,7 +250,7 @@
     </section>
     <!-- Service Walking Tab End -->
 
-    <!-- Petnest Newsletter Start -->
+    <!-- Newsletter Start -->
     <section class="petnest-newsletter petnest-newsletter-about">
         <div class="container">
             <div class="row">
@@ -253,183 +274,78 @@
             </div>
         </div>
     </section>
-    <!-- Petnest Newsletter End -->
-    @if(session('error'))
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Booking Error',
-            text: '{{ session('error') }}',
-        });
-    </script>
-@endif
+    <!-- Newsletter End -->
 
-
-<script>
-   document.addEventListener("DOMContentLoaded", function () {
     @if(session('error'))
-        Swal.fire({
-            icon: 'error',
-            title: 'Booking Error',
-            text: '{{ session('error') }}',
-        });
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Booking Error',
+                text: '{{ session("error") }}',
+            });
+        </script>
     @endif
 
-    const appointmentForm = document.getElementById('appointmentForm');
-    const startTimeInput = document.getElementById('start_time');
-    const categorySelect = document.getElementById('category');
-    const clientNameInput = document.getElementById('client_name');
-    const clientEmailInput = document.getElementById('client_email');
-
-    appointmentForm.addEventListener('submit', function(event) {
-        let isValid = true;
-
-        const startTime = new Date(startTimeInput.value); // Local time from the input
-        const selectedHour = startTime.getHours(); // Local hours
-        const selectedMinute = startTime.getMinutes(); // Local minutes
-
-        // Validate the time selection (between 10 AM and 6 PM)
-        if (selectedHour < 10 || (selectedHour === 18 && selectedMinute > 0) || selectedHour > 18) {
-            isValid = false;
-            Swal.fire({
-                icon: 'error',
-                title: 'Invalid Appointment Time',
-                text: 'Please select a time between 10 AM and 6 PM.',
-            });
+    <script>
+        function toggleEditForm(id) {
+            const form = document.getElementById('edit-form-' + id);
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
         }
 
-        // Validate category selection
-        if (!categorySelect.value) {
-            isValid = false;
-            Swal.fire({
-                icon: 'error',
-                title: 'Category Required',
-                text: 'Please select a category for the service.',
-            });
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const appointmentForm = document.getElementById('appointmentForm');
+            const startTimeInput = document.getElementById('start_time');
 
-        // Validate client name
-        if (!clientNameInput.value.trim()) {
-            isValid = false;
-            Swal.fire({
-                icon: 'error',
-                title: 'Name Required',
-                text: 'Please enter your name.',
-            });
-        }
+            appointmentForm?.addEventListener('submit', function (event) {
+                const startTime = new Date(startTimeInput.value);
+                const hour = startTime.getHours();
+                const minute = startTime.getMinutes();
 
-        // Validate client email
-        if (!clientEmailInput.value.trim() || !/\S+@\S+\.\S+/.test(clientEmailInput.value)) {
-            isValid = false;
-            Swal.fire({
-                icon: 'error',
-                title: 'Invalid Email',
-                text: 'Please enter a valid email address.',
+                if (hour < 10 || (hour === 18 && minute > 0) || hour > 18) {
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Time',
+                        text: 'Appointments must be between 10:00 AM and 6:00 PM',
+                    });
+                }
             });
-        }
 
-        // Prevent form submission if validation fails
-        if (!isValid) {
-            event.preventDefault();
+            // Star rating script
+            document.querySelectorAll('#starRating span').forEach(function (star) {
+                star.addEventListener('click', function () {
+                    const value = this.getAttribute('data-value');
+                    document.getElementById('rating').value = value;
+
+                    document.querySelectorAll('#starRating i').forEach(function (icon, index) {
+                        if (index < value) {
+                            icon.classList.add('filled');
+                        } else {
+                            icon.classList.remove('filled');
+                        }
+                    });
+                });
+            });
+        });
+        function confirmDelete(event) {
+    event.preventDefault(); // Stop form from submitting right away
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won’t be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#e3342f',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.submit(); 
         }
     });
 
-    @if(auth()->check())
-        const stars = document.querySelectorAll("#starRating span");
-        const ratingInput = document.getElementById("rating");
-        const reviewForm = document.querySelector('form[action="{{ route('appointment.review', ['service_id' => $service->id]) }}"]');
+    return false;
+}
 
-        const hasAppointment = {{ $hasAppointment ? 'true' : 'false' }};
-
-        if (!hasAppointment) {
-            reviewForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'No Appointment Found',
-                    text: 'You must have an appointment before you can submit a review. Please book an appointment first.',
-                });
-            });
-        }
-
-        stars.forEach(star => {
-            star.addEventListener("click", function () {
-                const ratingValue = this.getAttribute("data-value");
-                ratingInput.value = ratingValue;
-
-                stars.forEach(s => s.classList.remove("active"));
-                for (let i = 0; i < ratingValue; i++) {
-                    stars[i].classList.add("active");
-                }
-            });
-        });
-    @else
-        Swal.fire({
-            icon: 'warning',
-            title: 'Login Required',
-            text: 'You must be logged in to book an appointment. Please login first.',
-        }).then(function () {
-            window.location.href = "{{ route('login') }}";
-        });
-    @endif
-});
-</script>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    </script>
 @endsection
-
-<style>
-    .single-review-process-star span {
-    cursor: pointer;
-    color: gray;
-}
-
-.single-review-process-star span.active {
-    color: gold;
-}
-
-input[type="datetime-local"] {
-    font-size: 1.2rem; 
-    padding: 10px; 
-    width: 100%;
-}
-
-.form-row {
-    display: flex;
-    justify-content: space-between; 
-    gap: 20px;
-}
-
-.form-group {
-    width: 48%; 
-}
-
-.form-group input {
-    width: 100%; 
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-.btn.btn-orange-primary {
-    background-color: var(--orange-primary); 
-    color: white;
-
-}
-.form-group select {
-    font-size: 1.2rem;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.form-group select:focus {
-    border-color: var(--orange-primary);
-}
-
-
-</style>

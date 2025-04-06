@@ -10,7 +10,7 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'service_id', 'title', 'content', 'image','pet_id','long_desc'];
+    protected $fillable = ['user_id', 'service_id', 'title', 'content', 'image','long_desc'];
 
     public function user()
     {
@@ -21,8 +21,5 @@ class Blog extends Model
     {
         return $this->belongsTo(Service::class, 'service_id');
     }
-    public function pet()
-    {
-        return $this->belongsTo(Pet::class);
-    }
+
 }

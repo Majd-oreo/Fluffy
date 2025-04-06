@@ -122,42 +122,89 @@ public function bookAppointment(Request $request)
 
     return view('user.appointment', compact('service', 'bookedTimes', 'appointment', 'user', 'hasAppointment'));
 }
-    public function storeReview(Request $request, $service_id)
-    {
-        $request->validate([
-            'rating' => 'required|integer|min:1|max:5',
-            'comment' => 'required|string|max:500',
-        ]);
-    
-        $existingReview = Review::where('user_id', auth()->id())
-                                ->where('service_id', $service_id)
-                                ->exists();
-    
-        if ($existingReview) {
-            return redirect()->back()->with('error', 'You have already reviewed this service.');
-        }
-    
-        $appointment = Appointment::where('service_id', $service_id)
-                                  ->where('user_id', auth()->id())
-                                  ->latest()
-                                  ->first();
-    
-        if (!$appointment) {
-            return redirect()->back()->with('error', 'You can only review a service after booking an appointment.');
-        }
-    
-        Review::create([
-            'user_id' => auth()->id(),
-            'service_id' => $service_id,
-            'appointment_id' => $appointment->id, 
+public function storeReview(Request $request, $service_id)
+{
+    $request->validate([
+        'rating' => 'required|integer|min:1|max:5',
+        'comment' => 'required|string|max:500',
+    ]);
+
+    $appointment = Appointment::where('service_id', $service_id)
+                              ->where('user_id', auth()->id())
+                              ->latest()
+                              ->first();
+
+    if (!$appointment) {
+        return redirect()->back()->with('error', 'You can only review a service after booking an appointment.');
+    }
+
+    // Check if the user has already submitted a review
+    $review = Review::where('user_id', auth()->id())
+                    ->where('service_id', $service_id)
+                    ->first();
+
+    if ($review) {
+        // Update existing review
+        $review->update([
             'rating' => $request->rating,
             'comment' => $request->comment,
         ]);
-    
-        return redirect()->back()->with('success', 'Review submitted successfully!');
+
+        return redirect()->back()->with('success', 'Review updated successfully!');
     }
-    
-   
+
+    // Create new review if no existing review
+    Review::create([
+        'user_id' => auth()->id(),
+        'service_id' => $service_id,
+        'appointment_id' => $appointment->id,
+        'rating' => $request->rating,
+        'comment' => $request->comment,
+    ]);
+
+    return redirect()->back()->with('success', 'Review submitted successfully!');
+}
+
+public function editReview($review_id)
+{
+    $review = Review::find($review_id);
+
+    if (!$review || $review->user_id != auth()->id()) {
+        return redirect()->back()->with('error', 'You are not authorized to edit this review.');
+    }
+
+    return view('user.editreview', compact('review'));
+}
+
+public function updateReview(Request $request, $review_id)
+{
+    $request->validate([
+        'rating' => 'required|integer|min:1|max:5',
+        'comment' => 'required|string|max:500',
+    ]);
+
+    $review = Review::find($review_id);
+
+    if (!$review || $review->user_id != auth()->id()) {
+        return redirect()->back()->with('error', 'You are not authorized to update this review.');
+    }
+
+    $review->update([
+        'rating' => $request->rating,
+        'comment' => $request->comment,
+    ]);
+
+    return redirect()->route('service.show', $review->service_id)->with('success', 'Review updated successfully!');
+}
+public function deleteReview(Review $review)
+{
+    if ($review->user_id !== auth()->id()) {
+        return redirect()->back()->with('error', 'You are not authorized to delete this review.');
+    }
+
+    $review->delete();
+    return redirect()->back()->with('success', 'Review deleted successfully.');
+}
 
     public function userappointments(Request $request)
 {

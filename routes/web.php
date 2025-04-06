@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AppointmentsController;
 use App\Http\Controllers\Admin\BlogsController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Employee\DashboardEmController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
@@ -17,6 +18,10 @@ use App\Http\Controllers\Admin\PetsController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\ServicesController;
+use App\Http\Controllers\Employee\AppointmentEmController;
+use App\Http\Controllers\employee\BlogsEmController;
+use App\Http\Controllers\Employee\PetEmController;
+use App\Http\Controllers\employee\ReviewEmController;
 use App\Models\Blog;
 use App\Models\User;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -59,7 +64,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/appointment/{id}', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/{id}', [AppointmentController::class, 'showAppointment'])->name('appointment.show');
     Route::post('/appointments/book', [AppointmentController::class, 'bookAppointment'])->name('book.appointment'); 
+    Route::put('/appointments/{service_id}/review', [AppointmentController::class, 'storeReview'])->name('appointment.review');
     Route::post('/appointments/{service_id}/review', [AppointmentController::class, 'storeReview'])->name('appointment.review');
+
+    Route::delete('/appointment/review/{review}', [AppointmentController::class, 'deleteReview'])->name('appointment.review.delete');
+
     Route::get('/userappointment', [AppointmentController::class, 'userappointments'])->name('userappointment');
     Route::resource('pets', controller: PetController::class);
 });
@@ -83,9 +92,25 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
 });
 
-Route::middleware(['auth', 'role:employee'])->group(function () {
-});
+Route::middleware(['auth', 'role:employee'])->prefix('employee')->name('employee.')->group(function () {
+    Route::get('/', [DashboardEmController::class, 'index'])->name('dashboard');
+    Route::resource('pets', PetEmController::class);
+    Route::resource('blogs', BlogsEmController::class);
+    Route::resource('appointments',AppointmentEmController::class);
+    Route::resource('reviews',ReviewEmController::class);
 
+    
+
+
+
+
+
+
+
+
+
+
+});
 
 
 

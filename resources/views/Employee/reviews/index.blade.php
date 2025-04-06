@@ -1,22 +1,15 @@
 
-@extends('layouts.Admin-layout')
+@extends('layouts.employee-layout')
 
 @section('content')
 
 <div class="container-fluid">
 
-    <form method="GET" action="{{ route('admin.reviews.index') }}" class="row mb-4">
+    <form method="GET" action="{{ route('employee.reviews.index') }}" class="row mb-4">
         <div class="col-md-3">
             <input type="text" name="name" class="form-control" placeholder="Search by user..." value="{{ request('name') }}">
         </div>
-        <div class="col-md-3">
-            <select name="service_id" class="form-control" onchange="this.form.submit()">
-                <option value="">Filter by service</option>
-                @foreach($services as $service)
-                    <option value="{{ $service->id }}" {{ request('service_id') == $service->id ? 'selected' : '' }}>{{ $service->name }}</option>
-                @endforeach
-            </select>
-        </div>
+        
         <div class="col-md-2">
         <select name="rating_sort" class="form-control" onchange="this.form.submit()">
             <option value="">Sort by Rating</option>
@@ -26,7 +19,7 @@
     </div>
         <div class="col-md-2">
             <button class="btn" style="background-color: #FF5B2E; color: white;">Filter</button>
-            <a href="{{ route('admin.reviews.index') }}" class="btn" style="background-color: #FF5B2E;color:white">Reset</a>
+            <a href="{{ route('employee.reviews.index') }}" class="btn" style="background-color: #FF5B2E;color:white">Reset</a>
         </div>
         
     </form>
@@ -54,13 +47,7 @@
                                 <i class="fas fa-eye"></i> View
                             </button>
 
-                            <form action="{{ route('admin.reviews.destroy', $review->id) }}" method="POST" class="d-inline-block" id="deleteForm-{{ $review->id }}">
-                                @csrf
-                                @method('DELETE')
-                                <button type="button" class="btn btn-danger btn-sm mx-2 delete-btn" data-id="{{ $review->id }}">
-                                    <i class="fas fa-trash-alt"></i> Delete
-                                </button>
-                            </form>
+                           
                         </div>
                     </div>
                 </div>

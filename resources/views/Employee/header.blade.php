@@ -65,7 +65,7 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
               
                 <div class="sidebar-brand-text mx-4"> 
-                  Admin {{ Auth::user()->name }}
+                 {{ optional(optional(Auth::user()->employee)->service)->name ?? 'Service Not Assigned' }}
                 </div>
             </a>
 
@@ -74,8 +74,8 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item ">
-                <a class="nav-link" href="{{ route('admin.dashboard') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <a class="nav-link" href="{{ route('employee.dashboard') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -85,17 +85,11 @@
             <!-- Heading -->
             
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.users.index') }}" >
-                <i class="fa fa-users" aria-hidden="true"></i>
-                <span>users</span>
-                </a>
-                
-            </li>
+          
 
           
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.pets.index') }}">
+                <a class="nav-link collapsed" href="{{ route('employee.pets.index') }}" >
                 <i class="fa fa-paw" aria-hidden="true"></i>
                 <span>Pets</span>
                 </a>
@@ -112,24 +106,12 @@
           
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.categories.index') }}" >
-                <i class="fa fa-cogs" aria-hidden="true"></i>
-                <span>Categories</span>
-                </a>
-                
-            </li>
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.services.index') }}">
-                <i class="fa fa-medkit" aria-hidden="true"></i>
-                <span>Services</span></a>
-            </li>
+          
 
             <!-- Nav Item - Tables -->
           
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.blogs.index') }}">
+                <a class="nav-link collapsed" href="{{ route('employee.blogs.index') }}" >
                 <i class="fa fa-th" aria-hidden="true"></i>
                 <span>Blogs</span>
                 </a>
@@ -138,12 +120,12 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.appointments.index') }}">
+                <a class="nav-link" href="{{ route('employee.appointments.index') }}">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
                 <span>Appointments</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.reviews.index') }}">
+                <a class="nav-link" href="{{ route('employee.reviews.index') }}">
                 <i class="fa fa-comment" aria-hidden="true"></i>
                 <span>Reviews</span></a>
             </li>
@@ -175,7 +157,7 @@
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         
                         <!-- Nav Item - Alerts -->
-                        <!-- <li class="nav-item dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
@@ -221,7 +203,7 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
-                        </li> -->
+                        </li>
 
                         <!-- Nav Item - Messages -->
                         <div class="user-top dropdown">

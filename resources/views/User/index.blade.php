@@ -550,7 +550,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                                     <figure>
                                         <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}">
                                     </figure>
-                                    <span class="category-blog">{{ $blog->pet->type }}</span>
+                                    <span class="category-blog">{{ $blog->user->employee->service->name }}</span>
 
                                     <!-- Service Name Start -->
                                     <!-- Service Name End -->

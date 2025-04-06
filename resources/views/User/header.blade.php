@@ -36,6 +36,65 @@
     <title>Fluffy Friends</title>
     
 </head>
+<style>
+    .single-review-process-star span {
+    cursor: pointer;
+    color: #ccc; /* Default gray for unfilled stars */
+}
+
+.single-review-process-star span.active {
+    color: gold; /* Gold for filled stars */
+}
+
+
+
+input[type="datetime-local"] {
+    font-size: 1.2rem; 
+    padding: 10px; 
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+}
+
+.form-group {
+    width: 48%; 
+}
+
+.form-group input {
+    width: 100%; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.btn.btn-orange-primary {
+    background-color: var(--orange-primary); 
+    color: white;
+
+}
+.form-group select {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group select:focus {
+    border-color: var(--orange-primary);
+}
+.flaticon-star-2 {
+    color: #ccc; 
+}
+
+.flaticon-star-2.filled {
+    color: gold; 
+}
+</style>
 
 <body class="home-bg">
     <!-- Petnest Search Bar Start -->

@@ -1,20 +1,4 @@
-<style>
-    .pagination .page-link {
-    color: #ff5b2e;
-    border: 1px solid #ddd;
-}
 
-.pagination .page-link:hover {
-    background-color: #ff5b2e;
-    color: white;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #ff5b2e;
-    border-color: #ff5b2e;
-    color: white;
-}
-</style>
 
 @extends('layouts.Admin-layout')
 

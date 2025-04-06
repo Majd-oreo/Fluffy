@@ -20,8 +20,5 @@ class Pet extends Model
     {
         return $this->hasMany(Appointment::class);
     }
-    public function blogs()
-    {
-        return $this->hasMany(Blog::class);
-    }
+   
 }

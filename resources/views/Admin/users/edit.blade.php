@@ -1,6 +1,27 @@
+
 @extends('layouts.Admin-layout')
 
 @section('content')
+<style>
+    .form-check-input:checked {
+        background-color: #FF5B2E; 
+        border-color: #FF5B2E;
+    }
+
+    .form-check-input {
+        width: 3rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+
+    .form-check-input:focus {
+        box-shadow: none;
+    }
+
+    .form-check-label {
+        font-weight: 500;
+    }
+</style>
 <div class="container-fluid d-flex justify-content-center mt-4">
     <div class="col-md-6">
         <div class="card shadow" style="border: 2px solid #FF5B2E; background-color: white;">
@@ -19,7 +40,7 @@
                             <div class="text-danger">{{ $errors->first('name') }}</div>
                         @endif
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" id="email" name="email" class="form-control" value="{{ old('email', $user->email) }}" required>
@@ -65,7 +86,7 @@
                                 <div class="text-danger">{{ $errors->first('job_title') }}</div>
                             @endif
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="salary" class="form-label">Salary</label>
                             <input type="number" id="salary" name="salary" class="form-control" value="{{ old('salary', $user->employee ? $user->employee->salary : '') }}">
@@ -88,7 +109,22 @@
                         </div>
 
                     </div>
-                    
+
+                    <div class="mb-3">
+    <label class="form-label">Status</label>
+    <div class="form-check form-switch">
+        <!-- Retain old value or use the user's current status -->
+        <input class="form-check-input" type="checkbox" id="status" name="status" {{ old('status', $user->employee->status) == 'active' ? 'checked' : '' }}>
+        <label class="form-check-label" for="status">
+            {{ old('status', $user->employee->status) == 'active' ? 'Active' : 'Inactive' }}
+        </label>
+    </div>
+    <!-- Add hidden input to ensure status is always passed, even if checkbox is unchecked -->
+    <input type="hidden" name="status" value="inactive">
+</div>
+
+
+
                     <div class="mb-3">
                         <label for="image" class="form-label">Profile Image</label>
                         <input type="file" id="image" name="image" class="form-control">

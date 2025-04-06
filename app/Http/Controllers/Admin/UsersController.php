@@ -74,10 +74,14 @@ class UsersController extends Controller
     ]);
 
     if ($request->role === 'employee') {
+        $status = $request->has('status') ? 'active' : 'inactive';
+
         $employee = $user->employee()->create([
             'job_title' => $request->job_title,
             'salary' => $request->salary,
-            'service_id' => $request->service_id,  // Add the service_id here
+            'service_id' => $request->service_id,  
+            'status' => $status,
+
         ]);
     }
 
@@ -94,7 +98,7 @@ public function update(Request $request, User $user)
         'role' => 'required|in:user,admin,employee',
         'job_title' => 'nullable|string|max:255',
         'salary' => 'nullable|numeric|min:0',
-        'service_id' => 'nullable|exists:services,id',  // Ensure the service exists
+        'service_id' => 'nullable|exists:services,id', 
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
     ]);
 
@@ -114,10 +118,14 @@ public function update(Request $request, User $user)
     ]);
 
     if ($request->role === 'employee') {
+        // Use the status from the form
+        $status = $request->has('status') && $request->status == 'active' ? 'active' : 'inactive';
+
         $user->employee()->update([
             'job_title' => $request->job_title,
             'salary' => $request->salary,
-            'service_id' => $request->service_id,  
+            'service_id' => $request->service_id,
+            'status' => $status,
         ]);
     }
 
