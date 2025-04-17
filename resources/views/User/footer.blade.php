@@ -26,9 +26,9 @@
                     <div class="petnest-footer-link">
                         <h4>Pages</h4>
                         <ul>
-                            <li><a href="#">Services</a></li>
+                            <li><a href="{{ route('user.services') }}">Services</a></li>
                             <li><a href="shop.html">Shop</a></li>
-                            <li><a href="our-team.html">Our Team</a></li>
+                            <li><a href="{{ route('team.index') }}">Our Team</a></li>
                             <li><a href="login.html">Sign In</a></li>
                             <li><a href="signup.html">Sign up</a></li>
                         </ul>

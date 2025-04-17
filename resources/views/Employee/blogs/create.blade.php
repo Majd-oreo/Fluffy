@@ -44,6 +44,10 @@
                         <label for="content" class="form-label">Blog Content</label>
                         <textarea id="content" name="content" class="form-control" rows="4" required>{{ isset($blog) ? $blog->content : '' }}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Blog Content +</label>
+                        <textarea id="content" name="content_other" class="form-control" rows="4" >{{ isset($blog) ? $blog->content_other : '' }}</textarea>
+                    </div>
 
                     <!-- Author (Owner) Dropdown (Set to Auth User and disabled) -->
                     <div class="mb-3">

@@ -125,6 +125,8 @@
                         </figure>                           
                             <div class="divider"></div>
                             <h3>{{ $employee->name }}</h3>
+                            <h5>{{ $employee->employee->job_title }}</h5>
+
                         </div>
                     @endforeach
                 </div>

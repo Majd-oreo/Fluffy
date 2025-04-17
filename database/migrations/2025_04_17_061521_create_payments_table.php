@@ -11,19 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->text('long_description')->nullable();
-
-            $table->string('icon');
-            $table->integer('duration')->nullable(); 
-            $table->softDeletes(); 
-
-            // $table->string('url');
             $table->timestamps();
-
         });
     }
 
@@ -32,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('payments');
     }
 };

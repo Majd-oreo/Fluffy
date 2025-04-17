@@ -45,6 +45,10 @@
                         <label for="content" class="form-label">Content</label>
                         <textarea id="content" name="content" class="form-control" rows="4" required>{{ old('content', $blog->content) }}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Other Content</label>
+                        <textarea id="content" name="content_other" class="form-control" rows="4" >{{ old('content_other', $blog->content_other) }}</textarea>
+                    </div>
 
                     <!-- Long Description -->
                     

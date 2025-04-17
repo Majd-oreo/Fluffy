@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('icon')->nullable(); 
             $table->string('description')->nullable;
             $table->foreignId('service_id')->constrained()->onDelete('cascade'); 
+            $table->decimal('price', 8, 2);
+            $table->softDeletes(); 
+
+
 
             $table->timestamps();
         });

@@ -3,6 +3,7 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #f9f9f9;
+        color: #333;
     }
 
     /* Service card styles */
@@ -14,6 +15,7 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.3s ease;
+        height: 100%;
     }
 
     .appointment-card:hover {
@@ -32,27 +34,51 @@
     }
 
     .appointment-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-top: 15px;
     }
 
-    /* Status color styles */
+    .appointment-footer a {
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    /* Modal styles */
+    .modal-footer {
+        border-top: 1px solid #ddd;
+        padding: 15px;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+
+    /* Status styles */
     .status {
-    font-weight: bold;
-    text-transform: capitalize;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
+        font-weight: bold;
+        text-transform: capitalize;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
 
-/* Status pending (green) */
+    .status-pending {
+        background-color: #fff3cd;
+        color: #856404;
+    }
 
+    .status-canceled {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
 
-/* Hover effects for status colors */
-.status:hover {
-    opacity: 0.8;
-}
+    .status-completed {
+        background-color: #d4edda;
+        color: #155724;
+    }
 
-   
     /* Filters section */
     .user-appointments-filter {
         background-color: #fff;
@@ -68,7 +94,8 @@
         display: block;
     }
 
-    .user-appointments-filter select, .user-appointments-filter input {
+    .user-appointments-filter select, 
+    .user-appointments-filter input {
         width: 100%;
         padding: 10px;
         margin-bottom: 20px;
@@ -78,17 +105,18 @@
     }
 
     .user-appointments-filter input[type="submit"] {
-        background-color: #3498db;
+        background-color: #ff5b2e;
         color: white;
         border: none;
         cursor: pointer;
         padding: 10px 15px;
         border-radius: 5px;
         font-weight: bold;
+        transition: background-color 0.3s ease;
     }
 
     .user-appointments-filter input[type="submit"]:hover {
-        background-color: #2980b9;
+        background-color: #e04a1c;
     }
 
     /* Hero section */
@@ -98,14 +126,16 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .petnest-about-us .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .about-petnest-left h5 {
+        color: #ff5b2e;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
-    .about-petnest-left h5, .about-petnest-left h1 {
+    .about-petnest-left h1 {
         color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
     }
 
     .about-petnest-left p {
@@ -113,12 +143,13 @@
         color: #555;
     }
 
-    .about-petnest-right figure {
+    .about-petnest-right figure img {
         max-width: 100%;
         height: auto;
+        border-radius: 8px;
     }
 
-    /* Newsletter Section */
+    /* Newsletter section */
     .petnest-newsletter {
         background-color: #f1f1f1;
         padding: 40px 0;
@@ -131,6 +162,13 @@
         color: #333;
     }
 
+    .petnest-news-form form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
     .petnest-news-form form input[type="email"] {
         width: 70%;
         padding: 15px;
@@ -140,35 +178,52 @@
     }
 
     .petnest-news-form form input[type="submit"] {
-        background-color: #3498db;
+        background-color: #ff5b2e;
         color: white;
         border: none;
         cursor: pointer;
         padding: 15px 20px;
         border-radius: 5px;
         font-weight: bold;
+        transition: background-color 0.3s ease;
     }
 
     .petnest-news-form form input[type="submit"]:hover {
-        background-color: #2980b9;
+        background-color: #e04a1c;
     }
-    /* Pagination Styles */
-.pagination .page-link {
-    color: #ff5b2e;
-    border: 1px solid #ddd;
-}
 
-.pagination .page-link:hover {
-    background-color: #ff5b2e;
-    color: white;
-}
+    /* Pagination styles */
+    .pagination {
+        justify-content: center;
+        margin-top: 30px;
+    }
 
-.pagination .page-item.active .page-link {
-    background-color: #ff5b2e;
-    border-color: #ff5b2e;
-    color: white;
-}
+    .pagination .page-link {
+        color: #ff5b2e;
+        border: 1px solid #ddd;
+    }
 
+    .pagination .page-link:hover {
+        background-color: #ff5b2e;
+        color: white;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #ff5b2e;
+        border-color: #ff5b2e;
+        color: white;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .petnest-news-form form input[type="email"] {
+            width: 100%;
+        }
+        
+        .about-petnest-left h1 {
+            font-size: 2rem;
+        }
+    }
 </style>
 
 @extends('layouts.User-layout')
@@ -189,7 +244,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="about-petnest-right-wrapper">
                         <div class="about-petnest-right">
-                            <figure><img src="./assets/images/team/hero-team.png" alt=""></figure>
+                            <figure><img src="./assets/images/team/appointment.png" alt=""></figure>
                         </div>
                     </div>
                 </div>
@@ -253,10 +308,14 @@
                                 <div class="appointment-card">
                                     <div class="appointment-header">
                                         <h3>{{ $appointment->service->name }}</h3>
+                                        <h6 style="color: gray;">{{ $appointment->category->name }}</h6>
+
                                     </div>
                                     <div class="appointment-body">
                                         <p><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
                                         <p><strong>Appointment Time:</strong> {{ $appointment->start_time }}</p>
+
+                                        
                                     </div>
                                     <div class="appointment-footer">
                                         <p><strong>Status:</strong> 
@@ -269,6 +328,25 @@
                                             </span>
                                         </p>
                                         <a  type="button"  data-bs-toggle="modal"data-bs-target="#modal-{{ $appointment->id }}"><i class="fa-solid fa-eye" style="color: #ff5b2e;"></i></a>
+                                        @php
+    $appointmentDate = \Carbon\Carbon::parse($appointment->start_time);
+    $now = \Carbon\Carbon::now();
+    
+@endphp
+
+@if($appointmentDate->diffInDays($now, false) < -2)
+
+    <a type="button" class="delete-appointment" data-id="{{ $appointment->id }}">
+        <i class="fa-solid fa-trash" style="color: #e7230d;"></i>
+    </a>
+   "2 Days"
+
+    <form id="delete-form-{{ $appointment->id }}" action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" style="display: none;">
+        @csrf
+        @method('DELETE')
+    </form>
+@endif
+
                                     </div>
                                 </div>
                             </div>
@@ -282,6 +360,10 @@
                 <div class="modal-body">
                 <p><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
                     <p><strong>Appointment Time:</strong> {{ $appointment->start_time }}</p>
+                    <p><strong>Price:</strong> {{ $appointment->category->price }}</p>
+                    <p><strong>Duration:</strong> {{ $appointment->service->duration }} minutes</p>
+
+
                     <p><strong>Status:</strong> {{ ucfirst($appointment->status) }}</p>
                 </div>
                 <div class="modal-footer">
@@ -324,6 +406,28 @@
     </section>
     <!-- Petnest Newsletter End -->
 
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".delete-Appointment").forEach(button => {
+                button.addEventListener("click", function() {
+                    let appointmentId = this.getAttribute("data-id");
+                    
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#ff5b2e",
+                        cancelButtonColor: "#6c757d",
+                        confirmButtonText: "Yes, delete it!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById("delete-form-" + appointmentId).submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
   
 @endsection

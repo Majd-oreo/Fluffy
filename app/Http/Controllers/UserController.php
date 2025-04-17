@@ -44,7 +44,13 @@ class UserController extends Controller
     }
     public function showAboutUs()
 {
-    $employees = User::where('role', 'employee')->get();
+    $employees = User::where('role', 'employee')
+        ->whereHas('employee', function ($query) {
+            $query->where('status', 'active');
+        })
+        ->with('employee') // eager load the employee relationship
+        ->get();
+
     return view('User.about-us', compact('employees'));
 }
 

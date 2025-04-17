@@ -38,7 +38,7 @@ class ReviewEmController extends Controller
         }
     
         // Only get the reviews for that service
-        $reviews = $query->paginate(8);
+        $reviews = $query->paginate(12);
     
         // For filters
         $users = User::all();

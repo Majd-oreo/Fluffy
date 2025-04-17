@@ -170,9 +170,9 @@ input[type="datetime-local"] {
                 </div>
                 <div class="col-lg-4">
                     <div class="petnest-header-user-info">
-                        <div class="search-top">
+                        <!-- <div class="search-top">
                             <button class="search-trigger"><span><i class="flaticon-search"></i></span></button>
-                        </div>
+                        </div> -->
                         <div class="user-top dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="flaticon-user"></i>

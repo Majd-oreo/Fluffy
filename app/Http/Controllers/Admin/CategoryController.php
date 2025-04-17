@@ -28,7 +28,7 @@ class CategoryController extends Controller
         $query->where('service_id', $request->service_id);
     }
 
-    $categories = $query->paginate(8);  
+    $categories = $query->paginate(12);  
     return view('admin.categories.index', compact('categories', 'services'));
 }
 
@@ -48,15 +48,21 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
             'description' => 'nullable|string',
             'service_id' => 'required|exists:services,id',
+            'price' => 'required|numeric|min:0',
+
         ]);
         
         $category = new Category();
         $category->name = $request->name;
         $category->description = $request->description;
+        $category->price = $request->price;
+
+
         $category->service_id = $request->service_id;
+        
         
         // Handle icon upload
         if ($request->hasFile('icon')) {
@@ -87,12 +93,16 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'description' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+
             'service_id' => 'required|exists:services,id',
         ]);
         
         $category->name = $request->name;
         $category->description = $request->description;
         $category->service_id = $request->service_id;
+        $category->price = $request->price;
+
         
         // Handle icon upload
         if ($request->hasFile('icon')) {

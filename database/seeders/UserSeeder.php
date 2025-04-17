@@ -47,6 +47,26 @@ class UserSeeder extends Seeder
                 'role' => 'user',
                 'remember_token' => null,
             ],
+            [
+                'name' => 'Sondos',
+                'email' => 'sondos@gmail.com',
+                'password' => Hash::make('0777631727Majd@'),
+                'phone' => '0770047319',
+                'address' => 'Mahis',
+                'image' => null,
+                'role' => 'user',
+                'remember_token' => null,
+            ],
+            [
+                'name' => 'Ashjan',
+                'email' => 'ashjan@gmail.com',
+                'password' => Hash::make('0777631727Majd@'),
+                'phone' => '0770047310',
+                'address' => 'Swelih',
+                'image' => null,
+                'role' => 'user',
+                'remember_token' => null,
+            ],
         ];
 
         foreach ($users as $userData) {

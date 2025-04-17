@@ -33,16 +33,19 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', 'min:8',  // Minimum 8 characters
+            'password' => ['required', 'confirmed', 'min:8', 
         'regex:/[a-z]/', 
         'regex:/[A-Z]/', 
         'regex:/[0-9]/', 
         'regex:/[@$!%*?&#]/', ],
        'phone' => [
         'required',
-        'regex:/^07[7-9][0-9]{7}$/', // Jordanian phone format
-        'unique:users', // Ensure unique phone number
+        'regex:/^07[7-9][0-9]{7}$/', 
+        'unique:users', 
+
     ],
+    'address'=>['string','nullable','max:255'],
+'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif', 'max:2048'],
 
         ]);
 
@@ -51,9 +54,16 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
+            'address'=>$request->address,
+            
 
         ]);
-
+        if ($request->hasFile('image')) {
+            $user->image = $request->file('image')->store('users', 'public');
+            $user->save();
+        }
+        
+    
         event(new Registered($user));
 
         Auth::login($user);

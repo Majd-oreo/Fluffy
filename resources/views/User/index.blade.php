@@ -24,7 +24,7 @@
                                             grooming, feeding, medication administration, and comfortable boarding
                                             accommodations with 24/7 supervision by our trained and loving staff</p>
                                         <div class="petnest-hero-btns">
-                                            <a href="services.html" class="btn-primay">Our Services</a>
+                                            <a href="{{ route('user.services') }}" class="btn-primay">Our Services</a>
                                             <a href="book-schedule.html" class="btn-primay btn-primay-white">Book a
                                                 Schedule</a>
                                         </div>
@@ -148,9 +148,10 @@
                     <div class="petnest-member-single">
                     <figure>
             <img src="{{ asset('storage/' . ($employee->image ?: 'Default-image.png')) }}" alt="">
-        </figure>                                <h4>{{ $employee->role }}</h4>
+        </figure>                               
                         <div class="divider"></div>
                         <h3>{{ $employee->name }}</h3>
+                        <h5>{{ $employee->job_title}}</h5>
                     </div>
                     @endforeach
                 </div>
@@ -259,7 +260,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
     <!-- Trusted By Greatest Company End -->
 
     <!-- Client Feedback Start -->
-    <!-- <section class="petnest-client-feedback">
+    <section class="petnest-client-feedback">
         <div class="petnest-feedback-animation">
             <div>
                 <figure><img src="./assets/images/icon/paws01.svg" alt=""></figure>
@@ -269,100 +270,46 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="petnest-client-feedback-slide owl-carousel">
-                        <div class="petnest-client-single-slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8">
-                                    <div class="petnest-client-feedback-left">
-                                        <h5>Customers Feedback</h5>
-                                        <p>I have been using this pet care agency for over a year now and I am
-                                            thoroughly impressed with their service. My pets are always happy and well
-                                            taken care of when I return home</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="petnest-client-feedback-right">
-                                        <figure><img src="./assets/images/home/client01.png" alt=""></figure>
-                                        <div class="petnest-client-feedback-description">
-                                            <h3>Anton</h3>
-                                            <p>Product Manager</p>
-                                        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="petnest-client-feedback-slide owl-carousel">
+                    @foreach ($reviews as $review)
+                    <div class="petnest-client-single-slider">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                                <div class="petnest-client-feedback-left">
+                                    <h5>User Feedback</h5>
+                                    <h2>{{ $review->service->name ?? 'General Service' }}</h2>
+                                    <p>{{ $review->comment }}</p>
+                                    <div class="text-warning">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            <i class="fa{{ $i < $review->rating ? 's' : 'r' }} fa-star"></i>
+                                        @endfor
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="petnest-client-single-slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8">
-                                    <div class="petnest-client-feedback-left">
-                                        <h5>Clients Feedback</h5>
-                                        <h2>The Best Pet Care for <br class="d-lg-block d-none"> My Furry Friend</h2>
-                                        <p>I have been so impressed with this pet care agency. The staff is kind,
-                                            knowledgeable and clearly loves animals. I never have to worry about my pets
-                                            while I am away</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="petnest-client-feedback-right">
-                                        <figure><img src="./assets/images/home/client02.png" alt=""></figure>
-                                        <div class="petnest-client-feedback-description">
-                                            <h3>Lina</h3>
-                                            <p>Retail Marketer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="petnest-client-single-slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8">
-                                    <div class="petnest-client-feedback-left">
-                                        <h5>Clients Feedback</h5>
-                                        <h2>My Trusted Pet Care <br class="d-xl-block d-none"> Partner</h2>
-                                        <p>I highly recommend this pet care agency! They have a professional and caring
-                                            approach, and my pets have been very happy and comfortable in their care</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="petnest-client-feedback-right">
-                                        <figure><img src="./assets/images/home/client03.png" alt=""></figure>
-                                        <div class="petnest-client-feedback-description">
-                                            <h3>Mikel</h3>
-                                            <p>Music Specialist</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="petnest-client-single-slider">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8">
-                                    <div class="petnest-client-feedback-left">
-                                        <h5>Clients Feedback</h5>
-                                        <h2>My Reliable Pet Care <br class="d-xl-block d-none"> Solution</h2>
-                                        <p>I have never felt so confident leaving my pets in someone else's care. This
-                                            pet care agency always goes above and beyond to make sure my pets are happy
-                                            and healthy</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="petnest-client-feedback-right">
-                                        <figure><img src="./assets/images/home/client04.png" alt=""></figure>
-                                        <div class="petnest-client-feedback-description">
-                                            <h3>Jordan</h3>
-                                            <p>VFX Specialist</p>
-                                        </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="petnest-client-feedback-right text-center">
+                                    <figure>
+                                        <img src="{{ asset('storage/' . ($review->user->image ?? 'default.png')) }}" 
+                                             alt="{{ $review->user->name }}" 
+                                             class="rounded-circle" 
+                                             style="width: 100px; height: 100px; object-fit: cover;">
+                                    </figure>
+                                    <div class="petnest-client-feedback-description">
+                                        <h3>{{ $review->user->name }}</h3>
+                                        <p>{{ $review->user->role ?? 'Customer' }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </section> -->
+    </div>
+    </section>
     <!-- Client Feedback End -->
 
     <!-- Petnest Faq Start -->

@@ -18,7 +18,12 @@ return new class extends Migration
 
             $table->string('title');
             $table->text('content');
+            $table->enum('type', ['Cat', 'Dog', 'Bird', 'Rabbit'])->nullable();
+            $table->text('content_other')->nullable();
+
             $table->string('image')->nullable(); 
+            $table->softDeletes(); 
+
             $table->timestamps();
         });
     }

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('service_id')->nullable()->constrained('services');
             $table->text('comment')->nullable();
             $table->integer('rating')->check('rating >= 1 AND rating <= 5');
+            $table->softDeletes(); 
+
             $table->timestamps();
         });
     }

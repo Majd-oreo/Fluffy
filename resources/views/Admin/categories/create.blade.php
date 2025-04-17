@@ -44,7 +44,10 @@
                         <label for="description" class="form-label">Description</label>
                         <textarea id="description" name="description" class="form-control">{{ isset($category) ? $category->description : '' }}</textarea>
                     </div>
-
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" id="price" name="price" class="form-control" value="{{ isset($category) ? $category->price : '' }}" required min="0">
+                    </div>
                     <div class="mb-3">
                         <label for="icon" class="form-label">Category Icon</label>
                         <input type="file" id="icon" name="icon" class="form-control">

@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Blog extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
 
-    protected $fillable = ['user_id', 'service_id', 'title', 'content', 'image','long_desc'];
+    protected $fillable = ['user_id', 'service_id', 'title', 'content', 'image','long_desc','content_other','type'];
 
     public function user()
     {

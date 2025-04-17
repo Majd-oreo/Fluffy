@@ -24,6 +24,10 @@ use App\Http\Controllers\Employee\PetEmController;
 use App\Http\Controllers\employee\ReviewEmController;
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Employee;
+
+use App\Models\Review;
+
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -38,13 +42,26 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    $blogs = Blog::all(); 
-    $employees = User::where('role', 'employee')->get(); 
+    $blogs = Blog::all();
 
-    return view('user.index', compact('blogs', 'employees'));
+    $employees = User::where('role', 'employee')
+    ->whereHas('employee', function ($query) {
+        $query->where('status', 'active');
+    })
+    ->with('employee') 
+    ->get();
+
+
+
+
+    $reviews = Review::latest()->take(4)->get();
+
+    return view('user.index', compact('blogs', 'employees', 'reviews'));
 })->name('home');
+
 Route::get('/blogs/{id}', [IndexController::class, 'show'])->name('blog.show');
 Route::get('/team', [UserController::class, 'show'])->name('team.index');
+
 Route::get('/about', [UserController::class, 'showAboutUs'])->name('user.about-us');
 Route::get('/service', [ServiceController::class, 'index'])->name('user.services');
 // Route::get('services/{id}', [ServiceController::class, 'show'])->name('service.show');
@@ -68,9 +85,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/appointments/{service_id}/review', [AppointmentController::class, 'storeReview'])->name('appointment.review');
 
     Route::delete('/appointment/review/{review}', [AppointmentController::class, 'deleteReview'])->name('appointment.review.delete');
+    Route::delete('/appointments/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 
     Route::get('/userappointment', [AppointmentController::class, 'userappointments'])->name('userappointment');
     Route::resource('pets', controller: PetController::class);
+    Route::get('/get-category-price/{id}', [AppointmentController::class, 'getCategoryPrice'])->name('getCategoryPrice');
+
 });
 
 
@@ -92,7 +112,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
 });
 
-Route::middleware(['auth', 'role:employee'])->prefix('employee')->name('employee.')->group(function () {
+Route::middleware(['auth', 'role:employee', 'check.employee.status'])->prefix('employee')->name('employee.')->group(function () {
     Route::get('/', [DashboardEmController::class, 'index'])->name('dashboard');
     Route::resource('pets', PetEmController::class);
     Route::resource('blogs', BlogsEmController::class);
@@ -112,6 +132,9 @@ Route::middleware(['auth', 'role:employee'])->prefix('employee')->name('employee
 
 });
 
+Route::get('/not-available', function () {
+    return view('employee.not-available'); 
+})->name('not-available');
 
 
 

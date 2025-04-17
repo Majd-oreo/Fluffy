@@ -41,7 +41,6 @@ class AppointmentController extends Controller
  */
 public function bookAppointment(Request $request)
 {
-    // Ensure the user is logged in before proceeding
     if (!auth()->check()) {
         return redirect()->back()->with('error', 'You must be logged in to book an appointment.');
     }
@@ -61,10 +60,8 @@ public function bookAppointment(Request $request)
         return redirect()->back()->with('error', 'Invalid pet selected.');
     }
 
-    // Parse the start_time to a Carbon instance
     $start_time = Carbon::parse($request->start_time);
 
-    // Check if the selected time slot is already booked
     $existingBooking = Appointment::where('service_id', $request->service_id)
         ->where('start_time', $start_time)
         ->exists();
@@ -73,7 +70,6 @@ public function bookAppointment(Request $request)
         return redirect()->back()->with('error', 'The selected time is already booked for this service. Please choose another time.');
     }
 
-    // Ensure the service exists before accessing its category_id
     $service = Service::with('categories')->find($request->service_id);
 
     if (!$service->categories->contains('id', $request->category_id)) {
@@ -81,14 +77,13 @@ public function bookAppointment(Request $request)
     }
     
 
-    // Create a new appointment instance
     $appointment = new Appointment();
     $appointment->user_id = auth()->id();
     $appointment->service_id = $request->service_id;
     $appointment->pet_id = $request->pet_id;
     $appointment->start_time = Carbon::parse($request->start_time);
     $appointment->status = 'Pending';
-    $appointment->category_id = $request->category_id; // Save the user-selected category
+    $appointment->category_id = $request->category_id; 
     
     $appointment->save();
 
@@ -106,7 +101,7 @@ public function bookAppointment(Request $request)
     }
 
     $user = auth()->user();
-    $service = Service::with('categories', 'images', 'reviews.user')->findOrFail($id);
+    $service = Service::with('categories', 'images')->findOrFail($id);
 
     $appointment = Appointment::where('service_id', $id)
                               ->where('user_id', $user->id)
@@ -114,6 +109,7 @@ public function bookAppointment(Request $request)
                               ->first();
 
     $hasAppointment = $appointment ? true : false;
+ 
 
     $bookedTimes = Appointment::where('service_id', $id)
         ->pluck('start_time')
@@ -208,7 +204,10 @@ public function deleteReview(Review $review)
 
     public function userappointments(Request $request)
 {
-    $appointments = Appointment::where('user_id', auth()->id());
+    $appointments = Appointment::with(['category', 'pet'])
+    ->where('user_id', auth()->id());
+
+
 
     if ($request->has('status') && in_array($request->status, ['pending', 'canceled', 'completed'])) {
         $appointments = $appointments->where('status', $request->status);
@@ -234,6 +233,16 @@ public function deleteReview(Review $review)
 
     return view('user.user-appointments', compact('appointments'));
 }
+public function getCategoryPrice($id)
+{
+    $category = Category::find($id);
+
+    if (!$category) {
+        return response()->json(['error' => 'Category not found'], 404);
+    }
+
+    return response()->json(['price' => $category->price]);
+}
 
     
 
@@ -249,7 +258,16 @@ public function deleteReview(Review $review)
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-    {
-        //
+{
+    $appointment = Appointment::findOrFail($id);
+
+    if ($appointment->user_id !== auth()->id()) {
+        return redirect()->back()->with('error', 'Unauthorized action.');
     }
+
+    $appointment->delete();
+
+    return redirect()->route('userappointment')->with('success', 'Appointment deleted successfully.');
+}
+
 }

@@ -38,7 +38,7 @@ class AppointmentsController extends Controller
         }
     
         $services = Service::all();
-        $appointments = $query->with(['user', 'pet', 'service', 'category'])->paginate(8);
+        $appointments = $query->with(['user', 'pet', 'service', 'category'])->paginate(12);
     
         return view('admin.appointments.index', compact('appointments', 'services'));
     }

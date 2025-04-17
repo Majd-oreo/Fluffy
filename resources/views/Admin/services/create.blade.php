@@ -38,10 +38,7 @@
                         <textarea id="long_description" name="long_description" class="form-control">{{ isset($service) ? $service->long_description : '' }}</textarea>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="price" class="form-label">Price</label>
-                        <input type="number" id="price" name="price" class="form-control" value="{{ isset($service) ? $service->price : '' }}" required min="0">
-                    </div>
+              
 
                     <div class="mb-3">
                         <label for="duration" class="form-label">Duration (in minutes)</label>

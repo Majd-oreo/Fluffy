@@ -22,6 +22,8 @@ return new class extends Migration
             $table->dateTime('start_time');
 
             $table->enum('status', ['Pending', 'Completed', 'Canceled'])->default('Pending');
+            $table->softDeletes(); 
+
 
             $table->timestamps();
 

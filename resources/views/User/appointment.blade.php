@@ -1,6 +1,7 @@
 @extends('layouts.User-layout')
 
 @section('content')
+
     <!-- Header End -->
 
     <!-- Service Walking Hero Start -->
@@ -23,10 +24,12 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="about-petnest-right-wrapper about-petnest-walking">
-                        <div class="about-petnest-right">
-                            <figure><img src="{{ asset('assets/images/services/services-hero03.png') }}" alt=""></figure>
-                        </div>
-                    </div>
+                    <div class="about-petnest-right">
+    <figure>
+        <img src="{{ $service->categories->isNotEmpty() ? asset('storage/' . $service->categories->first()->image) : asset('storage/Default.png') }}" alt="{{ $service->categories->first()->name ?? 'Category' }}" class="i">
+        </figure>
+</div>
+
                 </div>
             </div>
         </div>
@@ -34,69 +37,80 @@
     <!-- Service Walking Hero End -->
 
     <!-- Petnest Walking Showcase Start -->
-    <section class="petnest-grooming-showcase">
-        <div class="container">
-            <h1>{{ $service->name }}</h1>
-            <p>{{ $service->description }}</p>
-            <p><strong>Price:</strong> ${{ $service->price }}</p>
-            <p><strong>Duration:</strong> {{ $service->duration }} minutes</p>
+    <!-- Petnest Walking Showcase Start -->
+<section class="petnest-grooming-showcase py-5">
+    <div class="container">
+        <h1 class="mb-4">{{ $service->name }}</h1>
+        <p class="lead">{{ $service->description }}</p>
 
-            <h3>Gallery</h3>
-            <div class="gallery">
-                @foreach($service->images as $image)
-                    <div class="gallery-item">
-                        <img src="{{ asset('storage/' . $image->image_path) }}" alt="Service Image" width="300">
-                    </div>
-                @endforeach
-            </div>
+        <!-- <h3 class="mt-5">Gallery</h3>
+        <div class="row gallery mb-4">
+            @foreach($service->images as $image)
+                <div class="col-md-4 col-sm-6 mb-3 gallery-item">
+                    <img src="{{ asset('storage/' . $image->image_path) }}" alt="Service Image" class="img-fluid rounded shadow-sm">
+                </div>
+            @endforeach
+        </div> -->
 
-            <h3>Book an Appointment</h3>
-            <form action="{{ route('book.appointment') }}" method="POST" id="appointmentForm">
-                @csrf
-                <input type="hidden" name="service_id" value="{{ $service->id }}">
+        <h3 class="mt-5">Book an Appointment</h3>
+        <form action="{{ route('book.appointment') }}" method="POST" id="appointmentForm" class="p-4 bg-light rounded shadow-sm">
+            @csrf
+            <input type="hidden" name="service_id" value="{{ $service->id }}">
 
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="start_time">Start Time</label>
-                        <input type="datetime-local" name="start_time" id="start_time" class="form-control" required min="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
-                    </div>
-                    <div class="form-group col-md-6">
-                        @if(auth()->check()) 
-                            <label for="pet">Pet</label>
-                            <select name="pet_id" id="pet" class="form-control" required>
-                                @foreach (auth()->user()->pets as $pet)
-                                    <option value="{{ $pet->id }}">{{ $pet->name }}</option>
-                                @endforeach
-                            </select>
-                        @else
-                            <div class="alert alert-warning">
-                                You need to <a href="{{ route('login') }}">log in</a> to book an appointment.
-                            </div>
-                        @endif
-                    </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="start_time" class="form-label">Start Time</label>
+                    <input type="datetime-local" name="start_time" id="start_time" class="form-control" required min="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
                 </div>
 
-                
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="category">Select Category</label>
-                        <select name="category_id" id="category" class="form-control" required>
-                            @foreach ($service->categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                <div class="col-md-6 mb-3">
+                    @if(auth()->check()) 
+                        <label for="pet" class="form-label">Select Pet</label>
+                        <select name="pet_id" id="pet" class="form-control" required>
+                            @foreach (auth()->user()->pets as $pet)
+                                <option value="{{ $pet->id }}">{{ $pet->name }}</option>
                             @endforeach
                         </select>
-                    </div>
+                    @else
+                        <div class="alert alert-warning mt-2">
+                            You need to <a href="{{ route('login') }}">log in</a> to book an appointment.
+                        </div>
+                    @endif
                 </div>
-                <button type="submit" class="btn btn-orange-primary">Book Appointment</button>
-            </form>
+            </div>
 
-            @if(session('success'))
-                <div class="alert alert-success mt-3">
-                    {{ session('success') }}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="category-select" class="form-label">Select Category</label>
+                    <select id="category-select" name="category_id" class="form-control">
+                        <option value="">-- Select a Category --</option>
+                        @foreach($service->categories as $category)
+                            <option value="{{ $category->id }}" data-price="{{ $category->price }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                    <p class="mt-2">
+                        <strong>Price:</strong> $<span id="category-price">_</span>
+                    </p>
                 </div>
-            @endif
-        </div>
-    </section>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label d-block">Duration</label>
+                    <p class="form-control-plaintext">{{ $service->duration }} minutes</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-orange-primary w-75 mt-5 center" >Book Appointment</button>
+        </form>
+
+        @if(session('success'))
+            <div class="alert alert-success mt-4">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
+</section>
+<!-- Petnest Walking Showcase End -->
+
     <!-- Petnest Walking Showcase End -->
 
     <!-- Service Walking Tab Start -->
@@ -182,7 +196,9 @@
                                                 </div>
                                             </div>
                                         @endforeach
+                                        
                                     @endif
+                                
                                 </div>
 
                                 <!-- Add or Update Review Form -->
@@ -293,43 +309,51 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            const appointmentForm = document.getElementById('appointmentForm');
-            const startTimeInput = document.getElementById('start_time');
+    const appointmentForm = document.getElementById('appointmentForm');
+    const startTimeInput = document.getElementById('start_time');
+    const categorySelect = document.getElementById('category-select');
+    const priceSpan = document.getElementById('category-price');
 
-            appointmentForm?.addEventListener('submit', function (event) {
-                const startTime = new Date(startTimeInput.value);
-                const hour = startTime.getHours();
-                const minute = startTime.getMinutes();
+    // ⭐ Move this OUTSIDE the submit handler
+    categorySelect.addEventListener('change', function () {
+        const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+        const price = selectedOption.getAttribute('data-price');
+        priceSpan.textContent = price ? price : 'N/A';
+    });
 
-                if (hour < 10 || (hour === 18 && minute > 0) || hour > 18) {
-                    event.preventDefault();
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Invalid Time',
-                        text: 'Appointments must be between 10:00 AM and 6:00 PM',
-                    });
+    appointmentForm?.addEventListener('submit', function (event) {
+        const startTime = new Date(startTimeInput.value);
+        const hour = startTime.getHours();
+        const minute = startTime.getMinutes();
+
+        if (hour < 10 || (hour === 18 && minute > 0) || hour > 18) {
+            event.preventDefault();
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Time',
+                text: 'Appointments must be between 10:00 AM and 6:00 PM',
+            });
+        }
+    });
+
+    // Star rating script
+    document.querySelectorAll('#starRating span').forEach(function (star) {
+        star.addEventListener('click', function () {
+            const value = this.getAttribute('data-value');
+            document.getElementById('rating').value = value;
+
+            document.querySelectorAll('#starRating i').forEach(function (icon, index) {
+                if (index < value) {
+                    icon.classList.add('filled');
+                } else {
+                    icon.classList.remove('filled');
                 }
             });
-
-            // Star rating script
-            document.querySelectorAll('#starRating span').forEach(function (star) {
-                star.addEventListener('click', function () {
-                    const value = this.getAttribute('data-value');
-                    document.getElementById('rating').value = value;
-
-                    document.querySelectorAll('#starRating i').forEach(function (icon, index) {
-                        if (index < value) {
-                            icon.classList.add('filled');
-                        } else {
-                            icon.classList.remove('filled');
-                        }
-                    });
-                });
-            });
         });
+    });
+});
         function confirmDelete(event) {
-    event.preventDefault(); // Stop form from submitting right away
-
+    event.preventDefault(); 
     Swal.fire({
         title: 'Are you sure?',
         text: "You won’t be able to revert this!",

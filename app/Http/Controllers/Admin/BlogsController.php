@@ -37,7 +37,7 @@ class BlogsController extends Controller
         }
 
         // Fetch the blogs with pagination
-        $blogs = $query->paginate(8);
+        $blogs = $query->paginate(12);
 
         // Fetching all users (for filtering by user_id) and services (for filtering by service type)
         $users = User::where('role', 'employee')->get();

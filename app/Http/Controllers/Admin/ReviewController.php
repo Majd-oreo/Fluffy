@@ -29,7 +29,7 @@ class ReviewController extends Controller
             $query->where('rating', $request->rating);
         }
 
-        $reviews = $query->paginate(8);
+        $reviews = $query->paginate(12);
 
         $users = User::all();
         $services = Service::all();

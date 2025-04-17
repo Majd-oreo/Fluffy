@@ -29,7 +29,7 @@ class PetEmController extends Controller
         }
         
         
-        $pets = $query->paginate(8);  
+        $pets = $query->paginate(12);  
         $users = User::all(); 
         return view('employee.pets.index', compact('pets','users'));
     }

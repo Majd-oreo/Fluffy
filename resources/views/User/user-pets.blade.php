@@ -100,7 +100,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="about-petnest-right-wrapper">
                         <div class="about-petnest-right">
-                            <figure><img src="./assets/images/team/hero-team.png" alt=""></figure>
+                            <figure><img src="./assets/images/team/petall.png" alt="" ></figure>
                         </div>
                     </div>
                 </div>
@@ -141,10 +141,8 @@
                                         </div>
                                         <div class="card-footer">
                                             <a type="button" data-bs-toggle="modal" data-bs-target="#modal-{{ $pet->id }}" class="btn btn-info">View Details
-                                                <i class="fa-solid fa-eye" style="color: #fff;"></i>
                                             </a>
                                             <button type="button" class="btn btn-danger delete-pet" data-id="{{ $pet->id }}">Delete {{ $pet->name }}
-                                                <i class="fa-regular fa-trash" style="color: #fff;"></i>
                                             </button>
                                             
                                             <form id="delete-form-{{ $pet->id }}" action="{{ route('pets.destroy', $pet->id) }}" method="POST" style="display: none;">

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Service;
 use App\Models\User;
+use App\Models\Review;
+
 
 
 
@@ -17,12 +19,24 @@ class IndexController extends Controller
      * Display a listing of the resource.
      */
     
-     public function indexBlog()
+     public function show($id)
      {
-         $blogs = Blog::all(); 
-         return view('home', compact('blogs')); 
+         $blog = Blog::with('user.employee.service')->findOrFail($id);
+         return view('user.blog-single', compact('blog'));
      }
      
+
+public function index()
+{
+    $reviews = Review::with(['user', 'service'])
+                ->orderByDesc('rating')
+                ->latest()
+                ->take(4)
+                ->get();
+
+    return view('user.index', compact('reviews'));
+}
+
 
      public function indexService()
     {
@@ -46,10 +60,7 @@ class IndexController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+  
 
     /**
      * Show the form for editing the specified resource.

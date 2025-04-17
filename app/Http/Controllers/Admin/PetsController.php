@@ -32,7 +32,7 @@ class PetsController extends Controller
         }
         
         
-        $pets = $query->paginate(8);  
+        $pets = $query->paginate(12);  
         $users = User::all(); 
         return view('admin.pets.index', compact('pets','users'));
     }

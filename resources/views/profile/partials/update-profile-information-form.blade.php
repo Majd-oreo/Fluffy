@@ -9,7 +9,7 @@
         </p>
     </header>
 
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+    <form id="send-verification" method="post" action="{{ route('verification.send') }}" enctype="multipart/form-data">
         @csrf
     </form>
 
@@ -22,7 +22,30 @@
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
+        <div>
+            <x-input-label for="phone" :value="__('phone')" />
+            <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
+        </div>
+        <div>
+            <x-input-label for="address" :value="__('address')" />
+            <x-text-input id="address" name="address" type="text" class="mt-1 block w-full" :value="old('address', $user->address)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('address')" />
+        </div>
+        <div class="mt-4">
+            <x-input-label for="image" :value="__('image')" />
 
+            <div class="mb-4">
+                @if($user->image)
+                    <img src="{{ asset('storage/' . $user->image) }}" alt="Profile Image" class="w-24 h-24 rounded-full object-cover">
+                @else
+                    <p class="text-sm text-gray-600">{{ __('No image set.') }}</p>
+                @endif
+            </div>
+
+            <input id="image" name="image" type="file" class="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" />
+            <x-input-error class="mt-2" :messages="$errors->get('image')" />
+        </div>
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />

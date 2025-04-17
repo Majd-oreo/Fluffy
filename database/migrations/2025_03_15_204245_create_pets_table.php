@@ -21,6 +21,8 @@ return new class extends Migration
             $table->float('weight')->nullable();
             $table->text('medical_history')->nullable();
             $table->string('image')->nullable(); 
+            $table->softDeletes(); 
+
 
 
             $table->timestamps();

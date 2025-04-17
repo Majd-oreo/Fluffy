@@ -47,7 +47,7 @@ class AppointmentEmController extends Controller
         }
     
         $services = Service::where('id', $employee->service_id)->get();
-        $appointments = $query->with(['user', 'pet', 'service', 'category'])->paginate(8);
+        $appointments = $query->with(['user', 'pet', 'service', 'category'])->paginate(12);
     
         return view('employee.appointments.index', compact('appointments', 'services'));
     }

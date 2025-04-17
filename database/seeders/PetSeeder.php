@@ -21,6 +21,10 @@ class PetSeeder extends Seeder
             ['user_id' => 3, 'name' => 'Buddy', 'type' => 'Dog', 'breed' => 'Golden Retriever', 'age' => 5, 'weight' => 30.0, 'medical_history' => null, 'image' => 'storage/buddy.jpeg'],
             ['user_id' => 3, 'name' => 'Tweety', 'type' => 'Bird', 'breed' => 'Canary', 'age' => 1, 'weight' => 0.1, 'medical_history' => null, 'image' => 'storage/tweety.jpeg'],
             ['user_id' => 3, 'name' => 'Thumper', 'type' => 'Rabbit', 'breed' => 'Holland Lop', 'age' => 2, 'weight' => 1.5, 'medical_history' => null, 'image' => 'storage/thumper.jpeg'],
+            ['user_id' => 4, 'name' => 'Simsem', 'type' => 'Dog', 'breed' => 'Bichon Frisé', 'age' => 1, 'weight' => 1.5, 'medical_history' => null, 'image' => 'storage/thumper.jpeg'],
+            ['user_id' => 5, 'name' => 'roro', 'type' => 'Rabbit', 'breed' => 'white', 'age' => 2, 'weight' => 1.5, 'medical_history' => null, 'image' => 'storage/thumper.jpeg'],
+
+
         ];
 
         foreach ($pets as $petData) {

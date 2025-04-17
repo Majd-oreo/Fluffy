@@ -30,8 +30,8 @@ class BlogsEmController extends Controller
 
       
 
-        $blogs = $query->paginate(8);
-        $services = Service::all(); // Still needed for the filter dropdown or display
+        $blogs = $query->paginate(12);
+        $services = Service::all();
 
         return view('employee.blogs.index', compact('blogs', 'services'));
     }
@@ -69,11 +69,14 @@ class BlogsEmController extends Controller
             'content' => 'required|string',
             'service_id' => 'required|exists:services,id',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            'content_other'=>'nullable|string',
         ]);
 
         $blog = new Blog();
         $blog->title = $request->title;
         $blog->content = $request->content;
+        $blog->content_other = $request->content;
+
         $blog->user_id = Auth::id();
         $blog->service_id = $request->service_id;
 
@@ -113,11 +116,15 @@ class BlogsEmController extends Controller
             'content' => 'required|string',
             'service_id' => 'required|exists:services,id',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            'content_other'=>'nullable|string',
+
 
         ]);
 
         $blog->title = $request->title;
         $blog->content = $request->content;
+        $blog->content_other = $request->content_other;
+
         $blog->service_id = $request->service_id;
 
         if ($request->hasFile('image')) {
