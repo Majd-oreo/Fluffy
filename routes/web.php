@@ -83,6 +83,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/appointments/book', [AppointmentController::class, 'bookAppointment'])->name('book.appointment'); 
     Route::put('/appointments/{service_id}/review', [AppointmentController::class, 'storeReview'])->name('appointment.review');
     Route::post('/appointments/{service_id}/review', [AppointmentController::class, 'storeReview'])->name('appointment.review');
+    Route::get('/appointment/view/{appointment}', [AppointmentController::class, 'viewAppointment'])->name('appointment.view');
+    Route::get('/appointments/book/{service_id}', [AppointmentController::class, 'showBookingPage'])->name('appointment.booking.page');
+    Route::get('/appointment/{id}/download', [AppointmentController::class, 'downloadPDF'])->name('appointment.download.pdf');
+
 
     Route::delete('/appointment/review/{review}', [AppointmentController::class, 'deleteReview'])->name('appointment.review.delete');
     Route::delete('/appointments/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');

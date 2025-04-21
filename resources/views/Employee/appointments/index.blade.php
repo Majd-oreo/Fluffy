@@ -6,13 +6,17 @@
 
     <!-- Search and Filter Form -->
     <form method="GET" action="{{ route('employee.appointments.index') }}" class="row g-3 mb-4">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-2">
             <input type="text" name="name" class="form-control" placeholder="Search by user name..." value="{{ request('name') }}">
         </div>
         <div class="col-12 col-md-3">
             <input type="date" name="date" class="form-control" value="{{ request('date') }}">
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-2">
+    <input type="text" name="appointment_id" class="form-control" placeholder="Appointment ID..." value="{{ request('appointment_id') }}">
+</div>
+
+        <div class="col-12 col-md-2">
             <select name="status" class="form-select">
                 <option value="">All Status</option>
                 <option value="Pending" {{ request('status') == 'Pending' ? 'selected' : '' }}>Pending</option>
@@ -55,6 +59,7 @@
                                 <span class="badge bg-primary rounded-pill">
                                     {{ $appointment->service->name }}
                                 </span>
+                                
                                 <span class="badge rounded-pill 
                                     @if($appointment->status == 'Completed') bg-success
                                     @elseif($appointment->status == 'Canceled') bg-danger
@@ -65,6 +70,7 @@
                             
                             <p class="mb-1"><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
                             <p class="mb-3"><strong>Time:</strong> {{ $appointment->start_time->format('M j, Y g:i A') }}</p>
+                            <p class="mb-1"><strong>ID:</strong> {{ $appointment->id }}</p>
 
                             <!-- Action Buttons -->
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-auto">
@@ -131,7 +137,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <p><strong><i class="fas fa-clock me-2"></i>Time:</strong></p>
-                                        <p class="text-muted">{{ $appointment->start_time->format('M j, Y g:i A') }}</p>
+                                        <p class="mb-3"><strong>Time:</strong> {{ \Carbon\Carbon::parse($appointment->start_time)->format('M j, Y g:i A') }}</p>
                                         
                                         <p><strong><i class="fas fa-info-circle me-2"></i>Status:</strong></p>
                                         <p>

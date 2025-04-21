@@ -1,7 +1,10 @@
 @include('user.header')
 
 <x-guest-layout>
+<h1 style="font-size: 2rem; padding-bottom: 26px; text-align: center; font-weight: bold; color: #ff5b2e;">Sign Up</h1>
+
 <div>
+
 <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 

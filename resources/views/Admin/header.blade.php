@@ -166,7 +166,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <img src="{{ asset(path: 'assets/images/fluffy-logo.png')}}" style="width: 8%; height: 70%;"> 
+                    <img src="{{ asset(path: 'assets/images/fluffy-logo.png')}}" style=" height: 100%;"> 
 
 
                     <!-- Topbar Navbar -->

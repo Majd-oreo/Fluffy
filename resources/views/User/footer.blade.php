@@ -40,9 +40,9 @@
                         <ul>
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="#">Our Story</a></li>
-                            <li><a href="#">Review</a></li>
-                            <li><a href="our-gallery.html">Gallery</a></li>
-                            <li><a href="#">Our Peters</a></li>
+                            <!-- <li><a href="#">Review</a></li> -->
+                            <!-- <li><a href="our-gallery.html">Gallery</a></li> -->
+                            <!-- <li><a href="#">Our Peters</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -51,8 +51,8 @@
                         <h4>Quick Links</h4>
                         <ul>
                             <li><a href="cart.html">Cart</a></li>
-                            <li><a href="wishlist.html">Wish list</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
+                            <!-- <li><a href="wishlist.html">Wish list</a></li> -->
+                            <!-- <li><a href="faq.html">FAQ</a></li> -->
                             <li><a href="blog-grid.html">Blog</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
@@ -60,12 +60,12 @@
                 </div>
                 <div class="col-lg-3 col-md-9">
                     <div class="petnest-address-footer">
-                        <p><strong>Address:</strong> <span>1/31 Shuvecha Gardean, Road No: 12 , House No: 3 , Dhaka
+                        <p><strong>Address:</strong> <span>1/31 Al-Salt/Jordan, Road No: 12 , House No: 3 , Dhaka
                                 - 1364</span></p>
                         <h4>Opening Hours</h4>
-                        <p><strong>Mon - Fri :</strong> <span>10 am to 6 pm</span></p>
+                        <p><strong>Sun - Tu :</strong> <span>10 am to 6 pm</span></p>
                         <h4>Contact Number</h4>
-                        <a href="tel:+012348658910">+0123 4865 8910</a>
+                        <a href="tel:+012348658910">0770047312</a>
                     </div>
                 </div>
             </div>

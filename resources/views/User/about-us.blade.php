@@ -56,36 +56,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="petnest-success-count">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-1-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-medal"></i></span>
-                                    <h3 class="petnest-counter"><span>75</span>+</h3>
-                                    <p>Award</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-2-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-group"></i></span>
-                                    <h3 class="petnest-counter"><span>55</span>+</h3>
-                                    <p>Employee</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-3-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-costumer"></i></span>
-                                    <h3 class="petnest-counter"><span>85</span>+</h3>
-                                    <p>Client</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-4-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-shield"></i></span>
-                                    <h3 class="petnest-counter"><span>99</span>%</h3>
-                                    <p>Protection</p>
-                                </div>
-                            </div>
-                        </div>
+<p>                    Our mission goes beyond providing services—it’s about building a community rooted in kindness. Whether it's a gentle grooming session, a warm bath, or simply a listening ear for a concerned pet parent, we approach every interaction with empathy and dedication.
+</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3">

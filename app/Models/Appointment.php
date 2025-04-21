@@ -12,7 +12,9 @@ class Appointment extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable = ['user_id', 'pet_id', 'service_id', 'start_time', 'status','category_id'];
-
+    protected $casts = [
+        'start_time' => 'datetime',
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);

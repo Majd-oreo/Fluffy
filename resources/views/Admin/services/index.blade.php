@@ -46,12 +46,8 @@
                             <!-- Service Info -->
                             <h5 class="card-title mb-1">{{ $service->name }}</h5>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
-                                <span class="badge bg-primary rounded-pill">
-                                    {{ $service->duration }} mins
-                                </span>
-                                <span class="badge bg-success rounded-pill">
-                                    {{ $service->employees_count }} staff
-                                </span>
+                                
+                              
                             </div>
 
                             <!-- Action Buttons -->
@@ -106,12 +102,10 @@
                                              style="width: 150px; height: 150px; object-fit: cover;" 
                                              alt="Service Icon">
                                         <div class="d-flex justify-content-center gap-2 mb-3">
-                                            <span class="badge bg-primary rounded-pill">
-                                                {{ $service->duration }} mins
-                                            </span>
-                                            <span class="badge bg-success rounded-pill">
+                                           
+                                            <!-- <span class="badge bg-success rounded-pill">
                                                 {{ $service->employees_count }} staff
-                                            </span>
+                                            </span> -->
                                         </div>
                                     </div>
                                     <div class="col-md-8">

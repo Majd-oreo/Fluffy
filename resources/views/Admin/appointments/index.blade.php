@@ -6,10 +6,10 @@
 
     <!-- Search and Filter Form -->
     <form method="GET" action="{{ route('admin.appointments.index') }}" class="row g-3 mb-4">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
             <input type="text" name="name" class="form-control" placeholder="Search by user name..." value="{{ request('name') }}">
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-2">
             <input type="date" name="date" class="form-control" value="{{ request('date') }}">
         </div>
         <div class="col-12 col-md-3">
@@ -22,6 +22,9 @@
                 @endforeach
             </select>
         </div>
+        <div class="col-12 col-md-2">
+    <input type="text" name="appointment_id" class="form-control" placeholder="Appointment ID..." value="{{ request('appointment_id') }}">
+</div>
         <div class="col-12 col-md-2 d-flex gap-2">
             <button class="btn flex-grow-1" style="background-color: #FF5B2E; color: white;">
                 <i class="fas fa-filter me-1"></i> Filter
@@ -49,7 +52,7 @@
                     <div class="card shadow h-100">
                         <div class="card-body d-flex flex-column p-3">
                             <!-- Appointment Info -->
-                            <h5 class="card-title mb-2">{{ $appointment->user->name }}</h5>
+                            <h5 class="card-title mb-2">{{ $appointment->user->name }} </h5>
                             
                             <div class="d-flex flex-wrap gap-2 mb-2">
                                 <span class="badge bg-primary rounded-pill">
@@ -65,6 +68,8 @@
                             
                             <p class="mb-1"><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
                             <p class="mb-3"><strong>Time:</strong> {{ $appointment->start_time}}</p>
+                            
+                            <p class="mb-3"><strong>ID:</strong> {{ $appointment->id}}</p>
 
                             <!-- Action Buttons -->
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-auto">
@@ -106,7 +111,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="appointmentModalLabel-{{ $appointment->id }}" style="color: #FF5B2E;">
-                                    <i class="fas fa-calendar-check me-2"></i>Appointment Details
+                                    <i class="fas fa-calendar-check me-2"></i>Appointment Details({{ $appointment->id }})
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>

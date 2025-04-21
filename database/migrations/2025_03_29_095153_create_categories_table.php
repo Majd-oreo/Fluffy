@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('description')->nullable;
             $table->foreignId('service_id')->constrained()->onDelete('cascade'); 
             $table->decimal('price', 8, 2);
+            $table->integer('duration')->nullable(); 
+
             $table->softDeletes(); 
 
 

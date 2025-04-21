@@ -11,7 +11,7 @@ class Category extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $fillable = ['name', 'icon', 'service_id','price'];
+    protected $fillable = ['name', 'icon', 'service_id','price','duration'];
 
     public function service()
     {

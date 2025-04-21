@@ -38,10 +38,7 @@
 
                   
 
-                    <div class="mb-3">
-                        <label for="duration" class="form-label">Duration (minutes)</label>
-                        <input type="number" id="duration" name="duration" class="form-control" value="{{ $service->duration }}" min="1">
-                    </div>
+                   
 
                     <div class="mb-3">
                         <label for="icon" class="form-label">Service Icon</label>

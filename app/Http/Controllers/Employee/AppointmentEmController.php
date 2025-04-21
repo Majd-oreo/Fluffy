@@ -25,13 +25,19 @@ class AppointmentEmController extends Controller
 
     public function index(Request $request)
     {
+        auth()->user()->unreadNotifications->markAsRead();
+
         $employee = Auth::user()->employee;
     
         if (!$employee) {
             abort(403, 'Unauthorized'); 
         }
     
-        $query = Appointment::where('service_id', $employee->service_id);  
+        $query = Appointment::where('service_id', $employee->service_id); 
+        if ($request->has('appointment_id') && !empty($request->appointment_id)) {
+            $query->where('id', $request->appointment_id);
+        }
+     
     
         if ($request->has('user_id') && !empty($request->user_id)) {
             $query->where('user_id', $request->user_id);

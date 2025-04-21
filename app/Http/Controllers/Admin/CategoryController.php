@@ -52,6 +52,8 @@ class CategoryController extends Controller
             'description' => 'nullable|string',
             'service_id' => 'required|exists:services,id',
             'price' => 'required|numeric|min:0',
+            'duration' => 'nullable|integer|min:1',
+
 
         ]);
         
@@ -59,6 +61,8 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->description = $request->description;
         $category->price = $request->price;
+        $category->duration = $request->duration;
+
 
 
         $category->service_id = $request->service_id;
@@ -94,7 +98,7 @@ class CategoryController extends Controller
             'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
-
+            'duration' => 'nullable|integer|min:1',
             'service_id' => 'required|exists:services,id',
         ]);
         
@@ -102,6 +106,8 @@ class CategoryController extends Controller
         $category->description = $request->description;
         $category->service_id = $request->service_id;
         $category->price = $request->price;
+        $category->duration = $request->duration;
+
 
         
         // Handle icon upload

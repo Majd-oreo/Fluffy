@@ -62,6 +62,9 @@
                                 <span class="badge bg-success rounded-pill">
                                     ${{ number_format($category->price, 2) }}
                                 </span>
+                                <span class="badge bg-primary rounded-pill">
+                                                {{ $category->duration }} mins
+                                            </span>
                             </div>
 
                             <!-- Action Buttons -->
@@ -122,6 +125,9 @@
                                         <span class="badge bg-success rounded-pill">
                                             ${{ number_format($category->price, 2) }}
                                         </span>
+                                        <span class="badge bg-primary rounded-pill">
+                                                {{ $category->duration }} mins
+                                            </span>
                                     </div>
                                 </div>
 

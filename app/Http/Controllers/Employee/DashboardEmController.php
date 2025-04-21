@@ -46,6 +46,8 @@ class DashboardEmController extends Controller
     $dogsPercentage = $totalPets ? (Pet::where('type', 'dog')->count() / $totalPets) * 100 : 0;
     $rabbitsPercentage = $totalPets ? (Pet::where('type', 'rabbit')->count() / $totalPets) * 100 : 0;
     $birdsPercentage = $totalPets ? (Pet::where('type', 'bird')->count() / $totalPets) * 100 : 0;
+    $notifications = Auth::user()->unreadNotifications;
+
 
     // Working days since user creation
     $workingDays = now()->diffInDays($user->created_at);
@@ -61,7 +63,7 @@ class DashboardEmController extends Controller
         'dogsPercentage',
         'rabbitsPercentage',
         'birdsPercentage',
-        'workingDays'
+        'workingDays','notifications'
     ));
 }
 }

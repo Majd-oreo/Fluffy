@@ -1,6 +1,8 @@
 @extends('layouts.User-layout')
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <!-- Header End -->
 
@@ -17,8 +19,8 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="about-petnest-left inner-page">
-                        <h5><a {{ route('user.services') }} style="cursor: pointer;">Services</a>/ <span>{{ $service->name }}</span></h5>
-                        <h1>Professional Pet <br class="d-xl-block d-none"> {{ $service->name }} Services for <br class="d-xl-block d-none"> Your Furry Friend</h1>
+                    <h5><a href="{{ route('user.services') }}" style="cursor: pointer; color:dimgray;">Services</a> / <span>{{ $service->name }}</span></h5>
+                    <h1>Professional Pet <br class="d-xl-block d-none"> {{ $service->name }} Services for <br class="d-xl-block d-none"> Your Furry Friend</h1>
                         <p>We believe that every pet deserves love and care, and we are dedicated to providing just that.</p>
                     </div>
                 </div>
@@ -26,7 +28,7 @@
                     <div class="about-petnest-right-wrapper about-petnest-walking">
                     <div class="about-petnest-right">
     <figure>
-        <img src="{{ $service->categories->isNotEmpty() ? asset('storage/' . $service->categories->first()->image) : asset('storage/Default.png') }}" alt="{{ $service->categories->first()->name ?? 'Category' }}" class="i">
+        <img src="{{ $service->categories->isNotEmpty() ? asset('storage/' . $service->categories->first()->icon) : asset('storage/Default.png') }}" alt="{{ $service->categories->first()->name ?? 'Category' }}" class="i">
         </figure>
 </div>
 
@@ -85,28 +87,35 @@
                     <select id="category-select" name="category_id" class="form-control">
                         <option value="">-- Select a Category --</option>
                         @foreach($service->categories as $category)
-                            <option value="{{ $category->id }}" data-price="{{ $category->price }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}" data-price="{{ $category->price }}"  data-duration="{{$category->duration  }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                     <p class="mt-2">
-                        <strong>Price:</strong> $<span id="category-price">_</span>
+                        <strong>Price:</strong> <span id="category-price">_</span>$
+                    </p>
+                    <p class="mt-2">
+                        <strong>Duration:</strong><span id="category-duration"></span> Minutes
                     </p>
                 </div>
 
-                <div class="col-md-6 mb-3">
-                    <label class="form-label d-block">Duration</label>
-                    <p class="form-control-plaintext">{{ $service->duration }} minutes</p>
-                </div>
-            </div>
+               
 
             <button type="submit" class="btn btn-orange-primary w-75 mt-5 center" >Book Appointment</button>
+            @if(session('booking_error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Booking Conflict',
+            text: '{{ session("booking_error") }}',
+            confirmButtonColor: '#2bcc91'
+        });
+    </script>
+@endif
+
+
         </form>
 
-        @if(session('success'))
-            <div class="alert alert-success mt-4">
-                {{ session('success') }}
-            </div>
-        @endif
+  
     </div>
 </section>
 <!-- Petnest Walking Showcase End -->
@@ -196,6 +205,7 @@
                                                 </div>
                                             </div>
                                         @endforeach
+
                                         
                                     @endif
                                 
@@ -293,83 +303,105 @@
     <!-- Newsletter End -->
 
     @if(session('error'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Booking Error',
-                text: '{{ session("error") }}',
-            });
-        </script>
-    @endif
-
     <script>
-        function toggleEditForm(id) {
-            const form = document.getElementById('edit-form-' + id);
-            form.style.display = form.style.display === 'none' ? 'block' : 'none';
-        }
+        Swal.fire({
+            icon: 'error',
+            title: 'Booking Error',
+            text: '{{ session("error") }}',
+        });
+    </script>
+@endif
 
-        document.addEventListener("DOMContentLoaded", function () {
-    const appointmentForm = document.getElementById('appointmentForm');
-    const startTimeInput = document.getElementById('start_time');
-    const categorySelect = document.getElementById('category-select');
-    const priceSpan = document.getElementById('category-price');
+@if(session('booking_error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Booking Conflict',
+            text: '{{ session("booking_error") }}',
+            confirmButtonColor: ' #ff5b2e'
+        });
+    </script>
+@endif
 
-    // ⭐ Move this OUTSIDE the submit handler
-    categorySelect.addEventListener('change', function () {
-        const selectedOption = categorySelect.options[categorySelect.selectedIndex];
-        const price = selectedOption.getAttribute('data-price');
-        priceSpan.textContent = price ? price : 'N/A';
-    });
+@if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Appointment Booked!',
+            text: '{{ session("success") }}',
+            confirmButtonColor: '#2bcc91'
+        });
+    </script>
+@endif
 
-    appointmentForm?.addEventListener('submit', function (event) {
-        const startTime = new Date(startTimeInput.value);
-        const hour = startTime.getHours();
-        const minute = startTime.getMinutes();
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const appointmentForm = document.getElementById('appointmentForm');
+        const startTimeInput = document.getElementById('start_time');
+        const categorySelect = document.getElementById('category-select');
+        const priceSpan = document.getElementById('category-price');
+        const durationSpan = document.getElementById('category-duration');
 
-        if (hour < 10 || (hour === 18 && minute > 0) || hour > 18) {
-            event.preventDefault();
-            Swal.fire({
-                icon: 'error',
-                title: 'Invalid Time',
-                text: 'Appointments must be between 10:00 AM and 6:00 PM',
-            });
-        }
-    });
 
-    // Star rating script
-    document.querySelectorAll('#starRating span').forEach(function (star) {
-        star.addEventListener('click', function () {
-            const value = this.getAttribute('data-value');
-            document.getElementById('rating').value = value;
+        categorySelect.addEventListener('change', function () {
+            const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+            const duration = selectedOption.getAttribute('data-duration');
 
-            document.querySelectorAll('#starRating i').forEach(function (icon, index) {
-                if (index < value) {
-                    icon.classList.add('filled');
-                } else {
-                    icon.classList.remove('filled');
-                }
+            priceSpan.textContent = price ? price : 'N/A';
+            durationSpan.textContent = duration ? duration : 'N/A';
+
+        });
+
+        // Form submission validation
+        appointmentForm?.addEventListener('submit', function (event) {
+            const startTime = new Date(startTimeInput.value);
+            const hour = startTime.getHours();
+            const minute = startTime.getMinutes();
+
+            if (hour < 10 || (hour === 18 && minute > 0) || hour > 18) {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Time',
+                    text: 'Appointments must be between 10:00 AM and 6:00 PM',
+                });
+            }
+        });
+
+        // Star rating
+        document.querySelectorAll('#starRating span').forEach(function (star) {
+            star.addEventListener('click', function () {
+                const value = this.getAttribute('data-value');
+                document.getElementById('rating').value = value;
+
+                document.querySelectorAll('#starRating i').forEach(function (icon, index) {
+                    if (index < value) {
+                        icon.classList.add('filled');
+                    } else {
+                        icon.classList.remove('filled');
+                    }
+                });
             });
         });
     });
-});
-        function confirmDelete(event) {
-    event.preventDefault(); 
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won’t be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#e3342f',
-        cancelButtonColor: '#6c757d',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            event.target.submit(); 
-        }
-    });
 
-    return false;
-}
+    function confirmDelete(event) {
+        event.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won’t be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#e3342f',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                event.target.submit();
+            }
+        });
+    }
+</script>
 
-    </script>
 @endsection

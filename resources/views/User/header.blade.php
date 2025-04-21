@@ -94,6 +94,29 @@ input[type="datetime-local"] {
 .flaticon-star-2.filled {
     color: gold; 
 }
+/* WhatsApp button style to match profile button */
+.whatsapp-btn {
+        background-color: #6c757d; /* Bootstrap's secondary color */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+        background-color: #5a6268; /* Darker shade for hover */
+        color: white;
+    }
+
+    .whatsapp-btn i {
+        font-size: 1.2rem;
+    }
 </style>
 
 <body class="home-bg">
@@ -121,7 +144,7 @@ input[type="datetime-local"] {
                 <div class="col-lg-2">
                     <!-- Logo Start -->
                     <div class="petnest-logo">
-                        <figure><a href="index.html"><img src="{{ asset('assets/images/fluffy-logo.png') }}" alt="PetNest"></a></figure>
+                        <figure><a href="{{ route('home') }}"><img src="{{ asset('assets/images/fluffy-logo.png') }}" alt="PetNest"></a></figure>
                     </div>
                      <!-- Logo End -->
                 </div>
@@ -169,11 +192,21 @@ input[type="datetime-local"] {
                     <div class="mobile-menu"></div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="petnest-header-user-info">
+    <div class="petnest-header-user-info">
+    
+    <div>
+    <a href="https://wa.me/962770047312" target="_blank" class="btn  whatsapp-btn  " style="background-color: #FFEFEA;"type="button">
+        <i class="fa-brands fa-whatsapp" style="color: black;"></i>
+    </a>
+</div>
+
+
+
                         <!-- <div class="search-top">
                             <button class="search-trigger"><span><i class="flaticon-search"></i></span></button>
                         </div> -->
                         <div class="user-top dropdown">
+                            
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="flaticon-user"></i>
                             </button>

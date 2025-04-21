@@ -23,20 +23,15 @@
 
                     <div class="mb-3">
                         <label for="user_id" class="form-label">User</label>
-                        <select id="user_id" name="user_id" class="form-control" required>
-                            @foreach($users as $user)
-                                <option value="{{ $user->id }}" {{ $appointment->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
-                            @endforeach
-                        </select>
+                        <p class="form-control-plaintext">{{ $appointment->user->name }}</p>
+
                     </div>
 
                     <div class="mb-3">
-                        <label for="pet_id" class="form-label">Pet</label>
-                        <select id="pet_id" name="pet_id" class="form-control" required>
-                            @foreach($pets as $pet)
-                                <option value="{{ $pet->id }}" {{ $appointment->pet_id == $pet->id ? 'selected' : '' }}>{{ $pet->name }}</option>
-                            @endforeach
-                        </select>
+                    <div class="mb-3">
+    <label class="form-label">Pet</label>
+    <p class="form-control-plaintext">{{ $appointment->pet->name }}</p>
+</div>
                     </div>
 
                     <div class="mb-3">
@@ -59,7 +54,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="start_time" class="form-label">Start Time</label>
+                        <label for="start_time" class="form-label">Time</label>
                         <input type="datetime-local" id="start_time" name="start_time" class="form-control" value="{{ date('Y-m-d\TH:i', strtotime($appointment->start_time)) }}" required>
                     </div>
 

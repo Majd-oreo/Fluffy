@@ -52,14 +52,12 @@ class ServicesController extends Controller
             'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
             'description' => 'nullable|string',
             'long_description' => 'nullable|string',
-            'duration' => 'nullable|integer|min:1',
         ]);
         
         $service = new Service();
         $service->name = $request->name;
         $service->description = $request->description;
         $service->long_description = $request->long_description;
-        $service->duration = $request->duration;
         
         // Handle icon upload
         if ($request->hasFile('icon')) {
@@ -90,13 +88,11 @@ class ServicesController extends Controller
 'icon' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
             'description' => 'nullable|string',
             'long_description' => 'nullable|string',
-            'duration' => 'nullable|integer|min:1',
         ]);
         
         $service->name = $request->name;
         $service->description = $request->description;
         $service->long_description = $request->long_description;
-        $service->duration = $request->duration;
         
         // Handle icon upload
         if ($request->hasFile('icon')) {

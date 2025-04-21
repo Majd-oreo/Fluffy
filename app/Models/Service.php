@@ -11,7 +11,7 @@ class Service extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $fillable = ['name', 'description','icon','duration','long_description'];
+    protected $fillable = ['name', 'description','icon','long_description'];
 
     public function appointments()
     {

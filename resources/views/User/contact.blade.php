@@ -136,9 +136,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="petnest-contact-map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41671.680576354214!2d-123.14794936749854!3d49.24834668546389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb3%3A0xbb9196ea9b81f38b!2sVancouver%2C%20BC%2C%20Canada!5e0!3m2!1sen!2sbd!4v1677163972165!5m2!1sen!2sbd"
-                        width="100" height="445" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.028148987351!2d35.6939088!3d32.0123833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151cbd005a25ff41%3A0x14897dc66dd85669!2sFluffy%20Friends!5e0!3m2!1sen!2sjo!4v1713348901993!5m2!1sen!2sjo" 
+    width="100%" height="445" style="border:0;" allowfullscreen="" loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
                 </div>
             </div>
         </div>

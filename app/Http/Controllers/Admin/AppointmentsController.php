@@ -27,7 +27,10 @@ class AppointmentsController extends Controller
         if ($request->has('service') && !empty($request->service)) {
             $query->where('service_id', $request->service);
         }
-    
+        if ($request->has('appointment_id') && !empty($request->appointment_id)) {
+            $query->where('id', $request->appointment_id);
+        }
+     
         // Filter by date
         if ($request->has('date') && !empty($request->date)) {
             $query->whereDate('start_time', $request->date);

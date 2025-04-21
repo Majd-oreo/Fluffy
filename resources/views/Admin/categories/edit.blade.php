@@ -47,6 +47,10 @@
                         <input type="number" id="price" name="price" class="form-control" value="{{ $category->price }}" min="0" required>
                     </div>
                     <div class="mb-3">
+                        <label for="duration" class="form-label">Duration (minutes)</label>
+                        <input type="number" id="duration" name="duration" class="form-control" value="{{ $category->duration }}" min="1">
+                    </div>
+                    <div class="mb-3">
                         <label for="icon" class="form-label">Category Icon</label>
                         <input type="file" id="icon" name="icon" class="form-control">
                         @if($category->icon)

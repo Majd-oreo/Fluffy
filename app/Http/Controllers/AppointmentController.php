@@ -10,6 +10,10 @@ use App\Models\Appointment;
 use Carbon\Carbon;
 use App\Models\Review;
 use App\Models\Pet;
+use App\Models\Employee;
+use App\Notifications\AppointmentBooked;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 
 
@@ -19,6 +23,14 @@ class AppointmentController extends Controller
     /**
      * Display a listing of the resource.
      */
+    
+public function downloadPDF($id)
+{
+    $appointment = Appointment::with(['service', 'pet', 'category'])->findOrFail($id);
+
+    $pdf = Pdf::loadView('User.pdf-appointment', compact('appointment'));
+    return $pdf->download('Appointment_' . $appointment->id . '.pdf');
+}
     public function index()
     {
         //
@@ -39,6 +51,22 @@ class AppointmentController extends Controller
     /**
  * Store a newly created resource in storage.
  */
+public function showBookingPage($service_id)
+{
+    $service = Service::findOrFail($service_id);
+
+    return view('user.appointment', compact('service'));  // Change 'appoinment' to 'appointment'
+}
+
+
+public function viewAppointment(Appointment $appointment)
+{
+    if (auth()->id() !== $appointment->user_id) {
+        abort(403);
+    }
+
+    return view('user.appointment-view', compact('appointment'));
+}
 public function bookAppointment(Request $request)
 {
     if (!auth()->check()) {
@@ -63,12 +91,16 @@ public function bookAppointment(Request $request)
     $start_time = Carbon::parse($request->start_time);
 
     $existingBooking = Appointment::where('service_id', $request->service_id)
-        ->where('start_time', $start_time)
+        ->whereBetween('start_time', [
+            $start_time->copy()->subHours(30),
+            $start_time->copy()->addHours(30),
+        ])
         ->exists();
-
+    
     if ($existingBooking) {
-        return redirect()->back()->with('error', 'The selected time is already booked for this service. Please choose another time.');
+        return redirect()->back()->with('booking_error', 'The selected time is already booked or overlaps with another booking. Please choose a different time.');
     }
+    
 
     $service = Service::with('categories')->find($request->service_id);
 
@@ -87,9 +119,12 @@ public function bookAppointment(Request $request)
     
     $appointment->save();
 
-
-    return redirect()->back()->with('success', 'Your appointment has been successfully booked.');
-}
+    $employee = Employee::where('service_id', $appointment->service_id)->first();
+    if ($employee && $employee->user) {
+        $employee->user->notify(new AppointmentBooked($appointment));
+    }
+    return redirect()->route('appointment.view', $appointment->id)
+    ->with('success', 'Your appointment has been successfully booked.');}
 
     /**
      * Display the specified resource.
@@ -116,8 +151,12 @@ public function bookAppointment(Request $request)
         ->map(fn($startTime) => Carbon::parse($startTime)->format('Y-m-d\TH:i'))
         ->toArray();
 
-    return view('user.appointment', compact('service', 'bookedTimes', 'appointment', 'user', 'hasAppointment'));
+
+        return view('user.appointment', compact('service', 'appointment', 'bookedTimes'));
+       
 }
+
+
 public function storeReview(Request $request, $service_id)
 {
     $request->validate([
@@ -125,6 +164,7 @@ public function storeReview(Request $request, $service_id)
         'comment' => 'required|string|max:500',
     ]);
 
+    // Fetch the latest appointment for the given service and user
     $appointment = Appointment::where('service_id', $service_id)
                               ->where('user_id', auth()->id())
                               ->latest()
@@ -134,7 +174,17 @@ public function storeReview(Request $request, $service_id)
         return redirect()->back()->with('error', 'You can only review a service after booking an appointment.');
     }
 
-    // Check if the user has already submitted a review
+    // Check if the user has at least one completed appointment for the service
+    $completedAppointment = Appointment::where('service_id', $service_id)
+                                       ->where('user_id', auth()->id())
+                                       ->where('status', 'completed')
+                                       ->first();
+
+    if (!$completedAppointment) {
+        return redirect()->back()->with('error', 'You can only review a service after completing at least one appointment.');
+    }
+
+    // Check if the user has already submitted a review for this service
     $review = Review::where('user_id', auth()->id())
                     ->where('service_id', $service_id)
                     ->first();
@@ -149,7 +199,7 @@ public function storeReview(Request $request, $service_id)
         return redirect()->back()->with('success', 'Review updated successfully!');
     }
 
-    // Create new review if no existing review
+    // Create a new review if no existing review
     Review::create([
         'user_id' => auth()->id(),
         'service_id' => $service_id,
@@ -224,6 +274,8 @@ public function deleteReview(Review $review)
             $query->where('name', 'like', '%' . $request->pet . '%');
         });
     }
+
+
 
     if ($request->has('date') && !empty($request->date)) {
         $appointments = $appointments->whereDate('start_time', $request->date);

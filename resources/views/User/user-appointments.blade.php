@@ -224,6 +224,172 @@
             font-size: 2rem;
         }
     }
+  
+    /* Appointment Cards Styles */
+    .appointment-card {
+        background-color: #fff;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 25px;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .appointment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .appointment-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: #ff5b2e;
+    }
+
+    .appointment-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .appointment-header h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .appointment-header h6 {
+        color: #777;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .appointment-body {
+        margin-bottom: 20px;
+    }
+
+    .appointment-body p {
+        margin: 8px 0;
+        font-size: 0.95rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .appointment-body strong {
+        color: #555;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+    .appointment-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .status {
+        font-weight: 600;
+        text-transform: capitalize;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+    }
+
+    .status-pending {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+
+    .status-canceled {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .status-completed {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .appointment-actions {
+        display: flex;
+        gap: 12px;
+    }
+
+    .appointment-actions a {
+        color: #777;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+    }
+
+    .appointment-actions a:hover {
+        color: #ff5b2e;
+        transform: scale(1.1);
+    }
+
+    /* Modal Styles */
+    .modal-content {
+        border-radius: 12px;
+        border: none;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-weight: 700;
+        color: #333;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-body p {
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .modal-body strong {
+        color: #555;
+        font-weight: 600;
+    }
+
+    .modal-footer {
+        border-top: 1px solid #f0f0f0;
+        padding: 15px 20px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .appointment-card {
+            padding: 20px;
+        }
+        
+        .appointment-header h3 {
+            font-size: 1.2rem;
+        }
+        
+        .appointment-actions {
+            gap: 15px;
+        }
+    }
+</style>
 </style>
 
 @extends('layouts.User-layout')
@@ -283,7 +449,7 @@
                         <input type="date" name="date" id="date" class="form-control" value="{{ request('date') }}">
                     </div>
                 </div>
-
+               
                 <div class="text-center">
                     <input type="submit" value="Apply Filters" style="background-color: #ff5b2e;"></i>
                 </div>
@@ -308,7 +474,7 @@
                                 <div class="appointment-card">
                                     <div class="appointment-header">
                                         <h3>{{ $appointment->service->name }}</h3>
-                                        <h6 style="color: gray;">{{ $appointment->category->name }}</h6>
+                                        <h6 style="color: gray;">{{ $appointment->category->name }}<small>({{ $appointment->id }})</small></h6>
 
                                     </div>
                                     <div class="appointment-body">
@@ -358,6 +524,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                <p><strong>Appointment ID:</strong> {{ $appointment->id }}</p>
+
                 <p><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
                     <p><strong>Appointment Time:</strong> {{ $appointment->start_time }}</p>
                     <p><strong>Price:</strong> {{ $appointment->category->price }}</p>
