@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
     window.onload = function() {
-        emailjs.init("BRs0kbe3r9Y6oaM0A"); 
+        emailjs.init("EWdaHBHiCG-OHfbaL"); 
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -24,7 +24,7 @@
                 return;
             }
             
-            emailjs.sendForm('service_55lp8lt', 'template_a2jnec4', this)
+            emailjs.sendForm('service_9lu61cc', 'template_x41pavo', this)
                 .then(() => {
                     Swal.fire({
                         icon: 'success',
