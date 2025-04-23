@@ -87,7 +87,7 @@
 
                         <div class="mb-3">
                             <label for="service_id" class="form-label">Service</label>
-                            <select id="service_id" name="service_id" class="form-control">
+                            <select id="service_id" name="service_id" class="form-control" required>
                                 <option value="">Select Service</option>
                                 @foreach($services as $service)
                                     <option value="{{ $service->id }}" {{ isset($employee) && $employee->service_id == $service->id ? 'selected' : '' }}>{{ $service->name }}</option>

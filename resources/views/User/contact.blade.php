@@ -150,7 +150,7 @@
 <!-- Petnest Contact Map End -->
 
 <!-- Petnest Newsletter Start -->
-<section class="petnest-newsletter petnest-newsletter-contact">
+<!-- <section class="petnest-newsletter petnest-newsletter-contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -172,7 +172,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Petnest Newsletter End -->
 
 @endsection

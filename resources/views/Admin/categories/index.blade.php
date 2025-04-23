@@ -14,7 +14,7 @@
                 <option value="">Filter by service</option>
                 @foreach($services as $service)
                     <option value="{{ $service->id }}" {{ request('service_id') == $service->id ? 'selected' : '' }}>
-                        {{ $service->name }}
+                        {{ $service->name?? 'Deleted Service' }}
                     </option>
                 @endforeach
             </select>
@@ -57,7 +57,7 @@
                             <h5 class="card-title mb-1">{{ $category->name }}</h5>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
                                 <span class="badge bg-primary rounded-pill">
-                                    {{ $category->service->name }}
+                                    {{ $category->service->name ??'Deleted Service' }}
                                 </span>
                                 <span class="badge bg-success rounded-pill">
                                     ${{ number_format($category->price, 2) }}
@@ -120,7 +120,7 @@
                                     <h5>{{ $category->name }}</h5>
                                     <div class="d-flex justify-content-center gap-2">
                                         <span class="badge bg-primary rounded-pill">
-                                            {{ $category->service->name }}
+                                            {{ $category->service->name ??'Deleted Service' }}
                                         </span>
                                         <span class="badge bg-success rounded-pill">
                                             ${{ number_format($category->price, 2) }}

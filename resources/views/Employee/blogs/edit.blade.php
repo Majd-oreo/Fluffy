@@ -32,7 +32,7 @@
                     <div class="mb-3">
                         <label for="service_id" class="form-label">Service Type</label>
                         <select id="service_id" name="service_id" class="form-control" required>
-    <option value="{{ $service->id }}" selected>{{ $service->name }}</option>
+    <option value="{{ $service->id }}" selected>{{ $service->name??"Deleted Service" }}</option>
 </select>
 
                     </div>

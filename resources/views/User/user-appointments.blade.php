@@ -478,7 +478,7 @@
 
                                     </div>
                                     <div class="appointment-body">
-                                        <p><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
+                                        <p><strong>Pet:</strong> {{ $appointment->pet->name??'Deleted Pet' }}</p>
                                         <p><strong>Appointment Time:</strong> {{ $appointment->start_time }}</p>
 
                                         
@@ -499,19 +499,16 @@
     $now = \Carbon\Carbon::now();
     
 @endphp
-
-@if($appointmentDate->diffInDays($now, false) < -2)
-
-    <a type="button" class="delete-appointment" data-id="{{ $appointment->id }}">
-        <i class="fa-solid fa-trash" style="color: #e7230d;"></i>
+@if($appointment->status != 'canceled' && $appointmentDate->diffInDays($now, false) < -2)
+    <a type="button" class="cancel-appointment" data-id="{{ $appointment->id }}">
+        <i class="fa-solid fa-ban" style="color: #e7230d;"></i>
     </a>
-   "2 Days"
-
-    <form id="delete-form-{{ $appointment->id }}" action="{{ route('appointments.destroy', $appointment->id) }}" method="POST" style="display: none;">
+    <form id="cancel-form-{{ $appointment->id }}" action="{{ route('appointments.cancel', $appointment->id) }}" method="POST" style="display: none;">
         @csrf
-        @method('DELETE')
+        @method('PATCH')
     </form>
 @endif
+
 
                                     </div>
                                 </div>
@@ -520,16 +517,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalLabel-{{ $appointment->id }}">{{ $appointment->service->name }}</h1>
+                    <h1 class="modal-title fs-5" id="modalLabel-{{ $appointment->id }}">{{ $appointment->service->name??"Deleted service" }}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                 <p><strong>Appointment ID:</strong> {{ $appointment->id }}</p>
 
-                <p><strong>Pet:</strong> {{ $appointment->pet->name }}</p>
+                <p><strong>Pet:</strong> {{ $appointment->pet->name??"Deleted Pet" }}</p>
                     <p><strong>Appointment Time:</strong> {{ $appointment->start_time }}</p>
-                    <p><strong>Price:</strong> {{ $appointment->category->price }}</p>
-                    <p><strong>Duration:</strong> {{ $appointment->service->duration }} minutes</p>
+                    <p><strong>Price:</strong> {{ $appointment->category->price??"Deleted Category" }}</p>
+                    <p><strong>Duration:</strong> {{ $appointment->category->duration??"Deleted Category" }} minutes</p>
 
 
                     <p><strong>Status:</strong> {{ ucfirst($appointment->status) }}</p>
@@ -557,7 +554,7 @@
 
 
     <!-- Petnest Newsletter Start -->
-    <section class="petnest-newsletter petnest-newsletter-contact">
+    <!-- <section class="petnest-newsletter petnest-newsletter-contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -571,31 +568,32 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Petnest Newsletter End -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".delete-Appointment").forEach(button => {
-                button.addEventListener("click", function() {
-                    let appointmentId = this.getAttribute("data-id");
-                    
-                    Swal.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#ff5b2e",
-                        cancelButtonColor: "#6c757d",
-                        confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            document.getElementById("delete-form-" + appointmentId).submit();
-                        }
-                    });
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".cancel-appointment").forEach(button => {
+            button.addEventListener("click", function() {
+                let appointmentId = this.getAttribute("data-id");
+                
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to undo this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#ff5b2e",
+                    cancelButtonColor: "#6c757d",
+                    confirmButtonText: "Yes, cancel it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById("cancel-form-" + appointmentId).submit();
+                    }
                 });
             });
         });
-    </script>
+    });
+</script>
+
   
 @endsection

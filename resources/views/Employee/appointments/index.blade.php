@@ -49,15 +49,18 @@
             </div>
         @else
             @foreach($appointments as $appointment)
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 appointment-card" data-name="{{ strtolower($appointment->user->name) }}">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 appointment-card" data-name="{{ strtolower($appointment->user->name??"Deleted User") }}">
                     <div class="card shadow h-100">
                         <div class="card-body d-flex flex-column p-3">
                             <!-- Appointment Info -->
-                            <h5 class="card-title mb-2">{{ $appointment->user->name }}</h5>
+                            <h5 class="card-title mb-2">{{ $appointment->user->name??"Deleted User" }}</h5>
                             
                             <div class="d-flex flex-wrap gap-2 mb-2">
                                 <span class="badge bg-primary rounded-pill">
-                                    {{ $appointment->service->name }}
+                                    {{ $appointment->service->name??"Deleted Service" }}
+                                </span>
+                                <span class="badge bg-primary rounded-pill">
+                                    {{ $appointment->category->name??"Deleted Category" }}
                                 </span>
                                 
                                 <span class="badge rounded-pill 
@@ -118,22 +121,22 @@
                             </div>
                             <div class="modal-body">
                                 <div class="text-center mb-4">
-                                    @if($appointment->pet->image)
-                                        <img src="{{ asset('storage/' . $appointment->pet->image) }}" 
+                                    @if($appointment->pet->image??"Deleted image")
+                                        <img src="{{ asset('storage/' . $appointment->pet->image??"Deleted Pet") }}" 
                                              class="img-fluid rounded mb-3" 
                                              style="max-height: 150px; width: auto;" 
-                                             alt="{{ $appointment->pet->name }}">
+                                             alt="{{ $appointment->pet->name??"Deleted Pet" }}">
                                     @endif
-                                    <h5>{{ $appointment->user->name }}</h5>
+                                    <h5>{{ $appointment->user->name??"Deleted User" }}</h5>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p><strong><i class="fas fa-paw me-2"></i>Pet:</strong></p>
-                                        <p class="text-muted">{{ $appointment->pet->name }}</p>
+                                        <p class="text-muted">{{ $appointment->pet->name??"Deleted Pet" }}</p>
                                         
                                         <p><strong><i class="fas fa-concierge-bell me-2"></i>Service:</strong></p>
-                                        <p class="text-muted">{{ $appointment->service->name }}</p>
+                                        <p class="text-muted">{{ $appointment->service->name??"Deleted Service" }}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <p><strong><i class="fas fa-clock me-2"></i>Time:</strong></p>

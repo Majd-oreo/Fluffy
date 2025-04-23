@@ -7,7 +7,11 @@ use App\Http\Controllers\Employee\DashboardEmController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ShopController;
+
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CartController;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\IndexController;
@@ -59,8 +63,9 @@ Route::get('/', function () {
     return view('user.index', compact('blogs', 'employees', 'reviews'));
 })->name('home');
 
-Route::get('/blogs/{id}', [IndexController::class, 'show'])->name('blog.show');
-Route::get('/team', [UserController::class, 'show'])->name('team.index');
+
+
+
 
 Route::get('/about', [UserController::class, 'showAboutUs'])->name('user.about-us');
 Route::get('/service', [ServiceController::class, 'index'])->name('user.services');
@@ -68,6 +73,7 @@ Route::get('/service', [ServiceController::class, 'index'])->name('user.services
 Route::get('/gallary', function () {
     return view('user.our-gallery');  
 })->name('gallary');
+
 Route::get('/rescue', function () {
     return view('user.service-rescue');  
 })->name('rescue');
@@ -77,6 +83,16 @@ Route::get('/contact', function () {
 Route::get('/grooming', function () {
     return view('user.service-grooming');  
 })->name('grooming');
+
+
+
+Route::get('/blogs/{id}', [IndexController::class, 'show'])->name('blog.show');
+Route::get('/team', [UserController::class, 'show'])->name('team.index');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/shop/{product}', [ShopController::class, 'show'])->name('shop.show');
+
+
+
 Route::middleware(['auth'])->group(function () {
     Route::post('/appointment/{id}', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/{id}', [AppointmentController::class, 'showAppointment'])->name('appointment.show');
@@ -86,14 +102,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/appointment/view/{appointment}', [AppointmentController::class, 'viewAppointment'])->name('appointment.view');
     Route::get('/appointments/book/{service_id}', [AppointmentController::class, 'showBookingPage'])->name('appointment.booking.page');
     Route::get('/appointment/{id}/download', [AppointmentController::class, 'downloadPDF'])->name('appointment.download.pdf');
-
-
+    Route::patch('/appointments/{appointment}/cancel', [AppointmentController::class, 'cancel'])->name('appointments.cancel');
     Route::delete('/appointment/review/{review}', [AppointmentController::class, 'deleteReview'])->name('appointment.review.delete');
     Route::delete('/appointments/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
-
     Route::get('/userappointment', [AppointmentController::class, 'userappointments'])->name('userappointment');
     Route::resource('pets', controller: PetController::class);
     Route::get('/get-category-price/{id}', [AppointmentController::class, 'getCategoryPrice'])->name('getCategoryPrice');
+    Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('/shop/{id}/review', [CartController::class, 'storeReview'])->name('review.store');
+    Route::get('/shop/{id}/review', [CartController::class, 'storeReview'])->name('review.store');
+
+
 
 });
 

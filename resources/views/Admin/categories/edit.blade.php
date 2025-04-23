@@ -32,7 +32,7 @@
                             <option value="">Select Service</option>
                             @foreach($services as $service)
                                 <option value="{{ $service->id }}" {{ $category->service_id == $service->id ? 'selected' : '' }}>
-                                    {{ $service->name }}
+                                    {{ $service->name??'Deleted Service' }}
                                 </option>
                             @endforeach
                         </select>

@@ -53,7 +53,7 @@ class UsersController extends Controller
         'role' => 'required|in:user,admin,employee',
         'job_title' => 'nullable|string|max:255',
         'salary' => 'nullable|numeric|min:0',
-        'service_id' => 'nullable|exists:services,id',  // Ensure the service exists
+        'service_id' => 'nullable|exists:services,id',  
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
     ]);
 
@@ -71,6 +71,7 @@ class UsersController extends Controller
         'address' => $request->address,
         'image' => $imagePath,
         'role' => $request->role,
+        
     ]);
 
     if ($request->role === 'employee') {

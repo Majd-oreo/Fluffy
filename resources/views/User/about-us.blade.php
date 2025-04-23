@@ -256,7 +256,7 @@
 
 
     <!-- Petnest Newsletter Start -->
-    <section class="petnest-newsletter petnest-newsletter-about">
+    <!-- <section class="petnest-newsletter petnest-newsletter-about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -278,7 +278,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Petnest Newsletter End -->
 
 

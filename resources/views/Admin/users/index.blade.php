@@ -153,7 +153,9 @@
                                             </p>
                                             
                                             <p><strong>Salary:</strong></p>
-                                            <p class="text-muted">{{ $user->employee->salary ? '$'.number_format($user->employee->salary, 2) : 'N/A' }}</p>
+                                            <p class="text-muted">
+    {{ optional($user->employee)->salary ? '$' . number_format(optional($user->employee)->salary, 2) : 'N/A' }}
+</p>
                                         </div>
                                         <div class="col-md-6">
                                             <p><strong>Job Title:</strong></p>

@@ -49,7 +49,7 @@
                             <h5 class="card-title mb-2">{{ $blog->title }}</h5>
                             <div class="d-flex flex-wrap gap-2 mb-2">
                                 <span class="badge bg-primary rounded-pill">
-                                    {{ $blog->service->name }}
+                                    {{ $blog->service->name??"Deleted  Service" }}
                                 </span>
                                 <span class="badge bg-secondary rounded-pill">
                                     {{ $blog->user->name }}

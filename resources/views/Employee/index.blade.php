@@ -1,7 +1,6 @@
 @extends('layouts.Employee-layout')
 
 @section('content')
-
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -91,19 +90,19 @@
                     <h6 class="m-0 font-weight-bold text-primary">{{ $totalAppointments }} Appointments Summary</h6>
                 </div>
                 <div class="card-body">
-                    <h4 class="small font-weight-bold">Canceled <span class="float-right">{{ number_format($canceledPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Canceled <span class="float-right canceled-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $canceledPercentage }}%" aria-valuenow="{{ $canceledPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-danger canceled-bar" role="progressbar" style="width: 0%" data-value="{{ $canceledPercentage }}"></div>
                     </div>
 
-                    <h4 class="small font-weight-bold">Pending <span class="float-right">{{ number_format($pendingPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Pending <span class="float-right pending-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ $pendingPercentage }}%" aria-valuenow="{{ $pendingPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-warning pending-bar" role="progressbar" style="width: 0%" data-value="{{ $pendingPercentage }}"></div>
                     </div>
 
-                    <h4 class="small font-weight-bold">Completed <span class="float-right">{{ number_format($completedPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Completed <span class="float-right completed-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: {{ $completedPercentage }}%" aria-valuenow="{{ $completedPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success completed-bar" role="progressbar" style="width: 0%" data-value="{{ $completedPercentage }}"></div>
                     </div>
                 </div>
             </div>
@@ -116,24 +115,24 @@
                     <h6 class="m-0 font-weight-bold text-primary">Pet Types</h6>
                 </div>
                 <div class="card-body">
-                    <h4 class="small font-weight-bold">Cats <span class="float-right">{{ number_format($catsPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Cats <span class="float-right cats-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $catsPercentage }}%" aria-valuenow="{{ $catsPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-danger cats-bar" role="progressbar" style="width: 0%" data-value="{{ $catsPercentage }}"></div>
                     </div>
 
-                    <h4 class="small font-weight-bold">Dogs <span class="float-right">{{ number_format($dogsPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Dogs <span class="float-right dogs-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ $dogsPercentage }}%" aria-valuenow="{{ $dogsPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-warning dogs-bar" role="progressbar" style="width: 0%" data-value="{{ $dogsPercentage }}"></div>
                     </div>
 
-                    <h4 class="small font-weight-bold">Rabbits <span class="float-right">{{ number_format($rabbitsPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Rabbits <span class="float-right rabbits-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $rabbitsPercentage }}%" aria-valuenow="{{ $rabbitsPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-primary rabbits-bar" role="progressbar" style="width: 0%" data-value="{{ $rabbitsPercentage }}"></div>
                     </div>
 
-                    <h4 class="small font-weight-bold">Birds <span class="float-right">{{ number_format($birdsPercentage, 1) }}%</span></h4>
+                    <h4 class="small font-weight-bold">Birds <span class="float-right birds-text"></span></h4>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: {{ $birdsPercentage }}%" aria-valuenow="{{ $birdsPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success birds-bar" role="progressbar" style="width: 0%" data-value="{{ $birdsPercentage }}"></div>
                     </div>
                 </div>
             </div>
@@ -141,4 +140,30 @@
     </div>
 </div>
 
+<!-- JavaScript to update progress bars -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function animateBars(className) {
+            const bars = document.querySelectorAll(`.${className}-bar`);
+            const texts = document.querySelectorAll(`.${className}-text`);
+
+            bars.forEach((bar, index) => {
+                const value = parseFloat(bar.getAttribute('data-value')).toFixed(1);
+                bar.style.width = value + '%';
+                bar.setAttribute('aria-valuenow', value);
+                if (texts[index]) {
+                    texts[index].innerText = `${value}%`;
+                }
+            });
+        }
+
+        animateBars('canceled');
+        animateBars('pending');
+        animateBars('completed');
+        animateBars('cats');
+        animateBars('dogs');
+        animateBars('rabbits');
+        animateBars('birds');
+    });
+</script>
 @endsection

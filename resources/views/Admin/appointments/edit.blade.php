@@ -23,14 +23,14 @@
 
                     <div class="mb-3">
                         <label for="user_id" class="form-label">User</label>
-                        <p class="form-control-plaintext">{{ $appointment->user->name }}</p>
+                        <p class="form-control-plaintext">{{ $appointment->user->name??'Deleted User' }}</p>
 
                     </div>
 
                     <div class="mb-3">
                     <div class="mb-3">
     <label class="form-label">Pet</label>
-    <p class="form-control-plaintext">{{ $appointment->pet->name }}</p>
+    <p class="form-control-plaintext">{{ $appointment->pet->name??'Deleted Pet' }}</p>
 </div>
                     </div>
 

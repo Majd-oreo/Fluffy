@@ -23,7 +23,7 @@
                 <option value="">Select Owner</option>
                 @foreach($users as $user)
                     <option value="{{ $user->id }}" {{ request('user_id') == $user->id ? 'selected' : '' }}>
-                        {{ $user->name }}
+                        {{ $user->name?? 'Deleted User' }}
                     </option>
                 @endforeach
             </select>
@@ -74,7 +74,7 @@
                                     {{ $pet->type }}
                                 </span>
                                 <span class="badge bg-dark rounded-pill">
-                                    {{ $pet->user->name }}
+                                    {{ $pet->user->name?? 'Deleted User' }}
                                 </span>
                             </div>
 
@@ -147,7 +147,7 @@
                                         <p class="text-muted">{{ $pet->weight ? $pet->weight.' kg' : 'N/A' }}</p>
                                         
                                         <p><strong><i class="fas fa-user me-2"></i>Owner:</strong></p>
-                                        <p class="text-muted">{{ $pet->user->name }}</p>
+                                        <p class="text-muted">{{ $pet->user->name?? 'Deleted User' }}</p>
                                     </div>
                                 </div>
 

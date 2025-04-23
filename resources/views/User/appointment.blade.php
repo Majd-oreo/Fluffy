@@ -175,11 +175,11 @@
                                             <div class="single-review-process">
                                                 <div class="single-review-process-left">
                                                     <figure>
-                                                        <img src="{{ $review->user->image ? asset('storage/' . $review->user->image) : asset('assets/images/Default.png') }}" alt="Profile Picture">
+                                                    <img src="{{ isset($review->user) && $review->user->image ? asset('storage/' . $review->user->image) : asset('assets/images/Default.png') }}" alt="Profile Picture">
                                                     </figure>
                                                 </div>
                                                 <div class="single-review-process-right">
-                                                    <h4><span>{{ $review->user->name }}</span> - {{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</h4>
+                                                    <h4><span>{{ $review->user->name??'User' }}</span> - {{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</h4>
                                                     <div class="single-review-process-star">
                                                         @for ($i = 0; $i < 5; $i++)
                                                             <span><i class="flaticon-star-2 {{ $i < $review->rating ? 'filled' : '' }}"></i></span>
@@ -277,7 +277,7 @@
     <!-- Service Walking Tab End -->
 
     <!-- Newsletter Start -->
-    <section class="petnest-newsletter petnest-newsletter-about">
+    <!-- <section class="petnest-newsletter petnest-newsletter-about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -299,7 +299,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Newsletter End -->
 
     @if(session('error'))

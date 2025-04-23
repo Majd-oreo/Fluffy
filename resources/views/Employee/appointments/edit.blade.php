@@ -38,7 +38,7 @@
                         <label for="user_id" class="form-label">User</label>
                         <select id="user_id" name="user_id" class="form-control" required>
                             @foreach($users as $user)
-                                <option value="{{ $user->id }}" {{ $appointment->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                                <option value="{{ $user->id }}" {{ $appointment->user_id == $user->id ? 'selected' : '' }}>{{ $user->name??"Deleted User" }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -47,7 +47,7 @@
                         <label for="pet_id" class="form-label">Pet</label>
                         <select id="pet_id" name="pet_id" class="form-control" required>
                             @foreach($pets as $pet)
-                                <option value="{{ $pet->id }}" {{ $appointment->pet_id == $pet->id ? 'selected' : '' }}>{{ $pet->name }}</option>
+                                <option value="{{ $pet->id }}" {{ $appointment->pet_id == $pet->id ? 'selected' : '' }}>{{ $pet->name??"Deleted Pet" }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -56,7 +56,7 @@
                         <label for="service_id" class="form-label">Service</label>
                         <select id="service_id" name="service_id" class="form-control" required>
                             @foreach($services as $service)
-                                <option value="{{ $service->id }}" {{ $appointment->service_id == $service->id ? 'selected' : '' }}>{{ $service->name }}</option>
+                                <option value="{{ $service->id }}" {{ $appointment->service_id == $service->id ? 'selected' : '' }}>{{ $service->name??"Deleted Service" }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -66,7 +66,7 @@
                         <select id="category_id" name="category_id" class="form-control">
                             <option value="">None</option>
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ $appointment->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" {{ $appointment->category_id == $category->id ? 'selected' : '' }}>{{ $category->name??"Deleted Category" }}</option>
                             @endforeach
                         </select>
                     </div>

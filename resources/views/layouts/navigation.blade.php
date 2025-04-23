@@ -5,7 +5,16 @@
            <!-- Logo -->
 <div class="shrink-0 flex items-center">
     <figure>
-        <a href="index.html">
+@php
+    $role = Auth::user()->role; // adjust if your role field is named differently
+    $logoRoute = match($role) {
+        'admin' => route('admin.dashboard'),
+        'employee' => route('employee.dashboard'),
+        default => route('home'),
+    };
+@endphp
+
+<a href="{{ $logoRoute }}">
             <img src="./assets/images/fluffy-logo.png" alt="PetNest" class="w-20 h-16"> {{-- Adjust size using Tailwind classes --}}
         </a>
     </figure>

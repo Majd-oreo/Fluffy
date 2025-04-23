@@ -22,7 +22,7 @@
                                     <div class="petnest-hero-description">
                                         <p>At Pet Care, we offer a variety of services including daily walks, playtime,
                                             grooming, feeding, medication administration, and comfortable boarding
-                                            accommodations with 24/7 supervision by our trained and loving staff</p>
+                                            accommodations with every day supervision by our trained and loving staff</p>
                                         <div class="petnest-hero-btns">
                                             <a href="{{ route('user.services') }}" class="btn-primay">Our Services</a>
                                             <a href="book-schedule.html" class="btn-primay btn-primay-white">Book a
@@ -186,38 +186,7 @@
 
 Today, that vision has grown into a trusted space for pet owners, where every furry friend is treated like family.</p>
                     </div>
-                    <div class="petnest-journey-count">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-1-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-medal"></i></span>
-                                    <h3 class="petnest-counter"><span>75</span>+</h3>
-                                    <p>Award</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-2-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-group"></i></span>
-                                    <h3 class="petnest-counter"><span>55</span>+</h3>
-                                    <p>Employee</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-3-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-costumer"></i></span>
-                                    <h3 class="petnest-counter"><span>85</span>+</h3>
-                                    <p>Client</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-6">
-                                <div class="petnest-wrapper-count petnest-cl-4-count text-center">
-                                    <span class="award-petnest"><i class="flaticon-shield"></i></span>
-                                    <h3 class="petnest-counter"><span>99</span>%</h3>
-                                    <p>Protection</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -292,12 +261,12 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                                 <div class="petnest-client-feedback-right text-center">
                                     <figure>
                                         <img src="{{ asset('storage/' . ($review->user->image ?? 'default.png')) }}" 
-                                             alt="{{ $review->user->name }}" 
+                                             alt="{{ $review->user->name??'User' }}" 
                                              class="rounded-circle" 
                                              style="width: 100px; height: 100px; object-fit: cover;">
                                     </figure>
                                     <div class="petnest-client-feedback-description">
-                                        <h3>{{ $review->user->name }}</h3>
+                                        <h3>{{ $review->user->name ??'User'}}</h3>
                                         <p>{{ $review->user->role ?? 'Customer' }}</p>
                                     </div>
                                 </div>
@@ -453,7 +422,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
     <!-- Petnest Faq End -->
 
     <!-- Petnest Newsletter Start -->
-    <section class="petnest-newsletter">
+    <!-- <section class="petnest-newsletter">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -475,7 +444,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Petnest Newsletter End -->
 
     <!-- Blog Stories Start -->

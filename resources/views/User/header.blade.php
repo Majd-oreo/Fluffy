@@ -117,6 +117,81 @@ input[type="datetime-local"] {
     .whatsapp-btn i {
         font-size: 1.2rem;
     }
+    /* Filter Section Styles */
+.filter-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.category-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.category-list .form-check {
+    margin-bottom: 10px;
+}
+
+.category-list .form-check-label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.price-range-inputs .form-control {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.filter-buttons .btn {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons .btn i {
+    vertical-align: middle;
+}
+
+/* Search Box */
+.petnest-shop-search .input-group {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.petnest-shop-search .form-control {
+    border-right: 0;
+}
+
+.petnest-shop-search .btn {
+    background-color: #4e54c8;
+    border-color: #4e54c8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .filter-card {
+        padding: 15px;
+    }
+    
+    .category-list {
+        max-height: 150px;
+    }
+}
 </style>
 
 <body class="home-bg">
@@ -157,36 +232,10 @@ input[type="datetime-local"] {
                                 </li>
                                 <li><a href="{{ route('user.about-us') }}">About Us</li>
                                 <li><a href="{{ route('user.services') }}">Services</a>
-                                    <ul class="submenu">
-                                        <li><a href="service-grooming.html">Grooming</a></li>
-                                        <li><a href="service-walking.html">Walking</a></li>
-                                        <li><a href="service-rescue.html">Rescue</a></li>
-                                        <li><a href="service-training.html">Training</a></li>
-                                        <li><a href="service-daycare.html">Daycare</a></li>
-                                        <li><a href="service-veterinary.html">Veterinary</a></li>
-                                    </ul>
+                                   
                                 </li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="submenu">
-                                        <li><a href="shop.html">Shop Side bar</a></li>
-                                        <li><a href="shop-grid.html">Shop grid</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="wishlist.html">Wish list</a></li>
-                                        <li><a href="checkout.html">Checkout page</a></li>
-                                        <li><a href="our-gallery.html">Gallery</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-standard.html">Blog Standard</a></li>
-                                        <li><a href="our-team.html">Our Team</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="faq.html">Faq</a></li>
-                                        <li><a href="signup.html">Sign Up</a></li>
-                                        <li><a href="login.html">Log In</a></li>
-                                        <li><a href="404.html">Error</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                                <li><a  href="{{ route('shop.index') }}">Shop</a></li>
+                                                            </ul>
                         </nav>
                     </div>
                     <div class="mobile-menu"></div>

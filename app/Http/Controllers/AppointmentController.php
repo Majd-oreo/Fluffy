@@ -322,4 +322,14 @@ public function getCategoryPrice($id)
     return redirect()->route('userappointment')->with('success', 'Appointment deleted successfully.');
 }
 
+public function cancel(Appointment $appointment)
+{
+    if ($appointment->status != 'canceled') {
+        $appointment->status = 'canceled';
+        $appointment->save();
+    }
+
+    return redirect()->route('userappointment')->with('status', 'Appointment has been canceled.');
+}
+
 }
