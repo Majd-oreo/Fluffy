@@ -16,7 +16,7 @@
 
     <p class="section-title">Service Information</p>
     <p><strong>Service:</strong> {{ $appointment->service->name }}</p>
-    <p><strong>Duration:</strong> {{ $appointment->service->duration }} minutes</p>
+    <p><strong>Duration:</strong> {{ $appointment->category->duration }} minutes</p>
     <p><strong>Description:</strong> {{ $appointment->service->description }}</p>
 
     <p class="section-title">Pet Details</p>

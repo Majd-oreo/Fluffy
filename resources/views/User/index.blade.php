@@ -228,46 +228,50 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
     </section> -->
     <!-- Trusted By Greatest Company End -->
 
-    <!-- Client Feedback Start -->
-    <section class="petnest-client-feedback">
-        <div class="petnest-feedback-animation">
-            <div>
-                <figure><img src="./assets/images/icon/paws01.svg" alt=""></figure>
-            </div>
-            <div>
-                <figure><img src="./assets/images/icon/pet-love01.svg" alt=""></figure>
-            </div>
+<!-- Client Feedback Start -->
+<section class="petnest-client-feedback py-4">
+    <div class="petnest-feedback-animation d-flex justify-content-center gap-3 mb-4">
+        <div>
+            <figure><img src="./assets/images/icon/paws01.svg" alt="Paw icon" style="width: 30px;"></figure>
         </div>
-        <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+        <div>
+            <figure><img src="./assets/images/icon/pet-love01.svg" alt="Pet love icon" style="width: 30px;"></figure>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+        <h1 class="text-center mb-5">Users Feedback</h1>
+
+            <div class="col-lg-10 col-xl-9">
                 <div class="petnest-client-feedback-slide owl-carousel">
+
                     @foreach ($reviews as $review)
-                    <div class="petnest-client-single-slider">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8">
-                                <div class="petnest-client-feedback-left">
-                                    <h5>User Feedback</h5>
-                                    <h2>{{ $review->service->name ?? 'General Service' }}</h2>
-                                    <p>{{ $review->comment }}</p>
-                                    <div class="text-warning">
+                    <div class="petnest-client-single-slider p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="petnest-client-feedback-left pe-md-4">
+                                    <h2 class="h4 mb-5">{{ $review->service->name ?? 'General Service' }}</h2>
+                                    <p class="mb-3">{{ $review->comment }}</p>
+                                    <div class="text-warning" style="font-size: 1.1rem;">
                                         @for ($i = 0; $i < 5; $i++)
                                             <i class="fa{{ $i < $review->rating ? 's' : 'r' }} fa-star"></i>
                                         @endfor
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-md-4 mt-3 mt-md-0">
                                 <div class="petnest-client-feedback-right text-center">
-                                    <figure>
+                                    <figure class="mb-3">
                                         <img src="{{ asset('storage/' . ($review->user->image ?? 'default.png')) }}" 
                                              alt="{{ $review->user->name??'User' }}" 
                                              class="rounded-circle" 
-                                             style="width: 100px; height: 100px; object-fit: cover;">
+                                             style="width: 80px; height: 80px; object-fit: cover;">
                                     </figure>
                                     <div class="petnest-client-feedback-description">
-                                        <h3>{{ $review->user->name ??'User'}}</h3>
-                                        <p>{{ $review->user->role ?? 'Customer' }}</p>
+                                        <h3 class="h5 mb-1">{{ $review->user->name ??'User'}}</h3>
+                                        <p class="small text-muted">{{ $review->user->role ?? 'Customer' }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -278,9 +282,9 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
             </div>
         </div>
     </div>
-    </section>
+</section>
     <!-- Client Feedback End -->
-
+<br>
     <!-- Petnest Faq Start -->
     <section class="petnest-faq">
         <div class="container">

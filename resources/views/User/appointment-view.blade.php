@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p class="mb-2"><strong><i class="fas fa-clock me-2 text-muted"></i>Duration:</strong></p>
-                                <p class="text-muted ps-4">{{ $appointment->service->duration }} minutes</p>
+                                <p class="text-muted ps-4">{{ $appointment->category->duration }} minutes</p>
                             </div>
                         </div>
                         <p class="mb-2"><strong><i class="fas fa-align-left me-2 text-muted"></i>Description:</strong></p>

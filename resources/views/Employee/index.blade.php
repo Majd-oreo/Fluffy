@@ -1,6 +1,16 @@
 @extends('layouts.Employee-layout')
 
 @section('content')
+<style>
+    /* Custom styling for the table */
+.table th, .table td {
+    text-align: center;
+}
+.table .badge {
+    font-size: 0.9rem;
+}
+
+</style>
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -138,6 +148,59 @@
             </div>
         </div>
     </div>
+    <div class="row">
+    <!-- Appointments for Today Table -->
+    <div class="col-lg-12 mb-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Today's Appointments</h6>
+            </div>
+            <div class="card-body">
+                @if ($appointments->isEmpty())
+                    <p>No appointments for today.</p>
+                @else
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Pet Name</th>
+                                <th>Service</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($appointments as $appointment)
+                                <tr>
+                                    <td>{{ $appointment->id }}</td>
+                                    <td>{{ $appointment->pet->name }}</td>
+                                    <td>{{ $appointment->service->name }}</td>
+                                    <td>
+                                        <span class="badge 
+                                            @if($appointment->status == 'Canceled') badge-danger
+                                            @elseif($appointment->status == 'Pending') badge-warning
+                                            @elseif($appointment->status == 'Completed') badge-success
+                                            @endif
+                                        ">
+                                            {{ $appointment->status }}
+                                        </span>
+                                    </td>
+                                    <td>{{ $appointment->start_time->format('H:i A') }}</td>
+                                    <td>
+                                        <!-- Add any action buttons if needed -->
+                                        {{ $appointment->category->name }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 
 <!-- JavaScript to update progress bars -->

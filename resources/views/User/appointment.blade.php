@@ -58,10 +58,14 @@
         <form action="{{ route('book.appointment') }}" method="POST" id="appointmentForm" class="p-4 bg-light rounded shadow-sm">
             @csrf
             <input type="hidden" name="service_id" value="{{ $service->id }}">
+            <div class="alert alert-danger mb-4">
+                <i class="fas fa-clock me-2"></i> Please note our working hours are between 10:00 AM and 6:00 PM. Appointments outside these hours cannot be booked.
+            </div>
+
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="start_time" class="form-label">Start Time</label>
+                    <label for="start_time" class="form-label">Appointment Time</label>
                     <input type="datetime-local" name="start_time" id="start_time" class="form-control" required min="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
                 </div>
 
@@ -84,7 +88,7 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="category-select" class="form-label">Select Category</label>
-                    <select id="category-select" name="category_id" class="form-control">
+                    <select id="category-select" name="category_id" class="form-control" required>
                         <option value="">-- Select a Category --</option>
                         @foreach($service->categories as $category)
                             <option value="{{ $category->id }}" data-price="{{ $category->price }}"  data-duration="{{$category->duration  }}">{{ $category->name }}</option>

@@ -58,16 +58,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="user_id" class="form-label">Owner</label>
-                        <select id="user_id" name="user_id" class="form-control" required>
-                            <option value="">Select Owner</option>
-                            @foreach($users as $user)
-                                <option value="{{ $user->id }}" {{ $pet->user_id == $user->id ? 'selected' : '' }}>
-                                    {{ $user->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+    <p for="user_id" class="form-label">Owner</p>
+    @if ($pet->user)
+        {{ $pet->user->name }}
+    @else
+        <span style="color: gray;">No owner assigned</span>
+    @endif
+</div>
 
                     <div class="mb-3">
                         <label for="image" class="form-label">Pet Image</label>

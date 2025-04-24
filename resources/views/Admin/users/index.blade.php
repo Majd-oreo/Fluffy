@@ -104,84 +104,95 @@
                 </div>
 
                 <!-- Modal for user details -->
-                <div class="modal fade" id="userModal-{{ $user->id }}" tabindex="-1" 
-                     aria-labelledby="userModalLabel-{{ $user->id }}" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="userModalLabel-{{ $user->id }}" style="color: #FF5B2E;">
-                                    <i class="fas fa-user-circle me-2"></i>{{ $user->name }}
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="text-center mb-4">
-                                    <img src="{{ $user->image ? asset('storage/'.$user->image) : asset('assets/images/Default.png') }}" 
-                                         class="rounded-circle mb-2" 
-                                         style="width: 120px; height: 120px; object-fit: cover;" 
-                                         alt="User Image">
-                                    <h5>{{ $user->name }}</h5>
-                                    <span class="badge bg-{{ $user->role == 'admin' ? 'danger' : ($user->role == 'employee' ? 'primary' : 'success') }}">
-                                        {{ ucfirst($user->role) }}
-                                    </span>
-                                </div>
+             <!-- Modal for user details -->
+<div class="modal fade" id="userModal-{{ $user->id }}" tabindex="-1" aria-labelledby="userModalLabel-{{ $user->id }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userModalLabel-{{ $user->id }}" style="color: #FF5B2E;">
+                    <i class="fas fa-user-circle me-2"></i>{{ $user->name }}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <img src="{{ $user->image ? asset('storage/'.$user->image) : asset('assets/images/Default.png') }}" 
+                         class="rounded-circle mb-2" 
+                         style="width: 120px; height: 120px; object-fit: cover;" 
+                         alt="User Image">
+                    <h5>{{ $user->name }}</h5>
+                    <span class="badge bg-{{ $user->role == 'admin' ? 'danger' : ($user->role == 'employee' ? 'primary' : 'success') }}">
+                        {{ ucfirst($user->role) }}
+                    </span>
+                </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong><i class="fas fa-envelope me-2"></i>Email:</strong></p>
-                                        <p class="text-muted">{{ $user->email }}</p>
-                                        
-                                        <p><strong><i class="fas fa-phone me-2"></i>Phone:</strong></p>
-                                        <p class="text-muted">{{ $user->phone ?? 'N/A' }}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><strong><i class="fas fa-map-marker-alt me-2"></i>Address:</strong></p>
-                                        <p class="text-muted">{{ $user->address ?? 'N/A' }}</p>
-                                    </div>
-                                </div>
-
-                                @if($user->role == 'employee')
-                                    <hr>
-                                    <h6 class="mb-3"><i class="fas fa-briefcase me-2"></i>Employee Details</h6>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p><strong>Status:</strong></p>
-                                            <p>
-                                                <span class="badge bg-{{ optional($user->employee)->status == 'active' ? 'success' : 'secondary' }}">
-                                                    {{ optional($user->employee)->status == 'active' ? 'Active' : 'Inactive' }}
-                                                </span>
-                                            </p>
-                                            
-                                            <p><strong>Salary:</strong></p>
-                                            <p class="text-muted">
-    {{ optional($user->employee)->salary ? '$' . number_format(optional($user->employee)->salary, 2) : 'N/A' }}
-</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p><strong>Job Title:</strong></p>
-                                            <p class="text-muted">{{ $user->employee->job_title ?? 'N/A' }}</p>
-                                            
-                                            <p><strong>Service:</strong></p>
-                                            <p class="text-muted">
-                                                @if($user->employee && $user->employee->service_id)
-                                                    {{ $user->employee->service->name ?? 'No Service' }}
-                                                @else
-                                                    Not Assigned
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn" style="background-color: #FF5B2E; color: white;">
-                                    <i class="fas fa-edit me-1"></i> Edit
-                                </a>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong><i class="fas fa-envelope me-2"></i>Email:</strong></p>
+                        <p class="text-muted">{{ $user->email }}</p>
+                        
+                        <p><strong><i class="fas fa-phone me-2"></i>Phone:</strong></p>
+                        <p class="text-muted">{{ $user->phone ?? 'N/A' }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong><i class="fas fa-map-marker-alt me-2"></i>Address:</strong></p>
+                        <p class="text-muted">{{ $user->address ?? 'N/A' }}</p>
                     </div>
                 </div>
+
+                @if($user->role == 'employee')
+                    <hr>
+                    <h6 class="mb-3"><i class="fas fa-briefcase me-2"></i>Employee Details</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Status:</strong></p>
+                            <p>
+                                <span class="badge bg-{{ optional($user->employee)->status == 'active' ? 'success' : 'secondary' }}">
+                                    {{ optional($user->employee)->status == 'active' ? 'Active' : 'Inactive' }}
+                                </span>
+                            </p>
+                            
+                            <p><strong>Salary:</strong></p>
+                            <p class="text-muted">
+                                {{ optional($user->employee)->salary ? '$' . number_format(optional($user->employee)->salary, 2) : 'N/A' }}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Job Title:</strong></p>
+                            <p class="text-muted">{{ $user->employee->job_title ?? 'N/A' }}</p>
+                            
+                            <p><strong>Service:</strong></p>
+                            <p class="text-muted">
+                                @if($user->employee && $user->employee->service_id)
+                                    {{ $user->employee->service->name ?? 'No Service' }}
+                                @else
+                                    Not Assigned
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                @endif
+
+                <hr>
+                <h6 class="mb-3"><i class="fas fa-paw me-2"></i>Animals</h6>
+                <ul>
+                    @forelse($user->pets as $pet)
+                        <li>{{ $pet->name }} ({{ $pet->type }})</li>
+                    @empty
+                        <li>No animals found.</li>
+                    @endforelse
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn" style="background-color: #FF5B2E; color: white;">
+                    <i class="fas fa-edit me-1"></i> Edit
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
             @endforeach
         @endif
     </div>

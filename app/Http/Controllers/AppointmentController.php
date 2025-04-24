@@ -77,55 +77,63 @@ public function bookAppointment(Request $request)
 
     $validatedData = $request->validate([
         'start_time' => 'required|date|after:now',
-        'category_id' => 'required|exists:categories,id', 
+        'category_id' => 'required|exists:categories,id',
         'service_id' => 'required|exists:services,id',
         'pet_id' => 'required|exists:pets,id',
     ]);
 
-    $pet = $user->pets()->find($request->pet_id);  
-
+    $pet = $user->pets()->find($request->pet_id);
     if (!$pet) {
         return redirect()->back()->with('error', 'Invalid pet selected.');
     }
 
     $start_time = Carbon::parse($request->start_time);
 
-    $existingBooking = Appointment::where('service_id', $request->service_id)
-        ->whereBetween('start_time', [
-            $start_time->copy()->subHours(30),
-            $start_time->copy()->addHours(30),
-        ])
-        ->exists();
-    
-    if ($existingBooking) {
-        return redirect()->back()->with('booking_error', 'The selected time is already booked or overlaps with another booking. Please choose a different time.');
+    // Check working hours (10:00 AM to 6:00 PM)
+    if ($start_time->hour < 10 || $start_time->hour >= 18) {
+        return redirect()->back()->with('error', 'Appointments can only be booked between 10:00 AM and 6:00 PM.');
     }
-    
+
+    $category = Category::find($request->category_id);
+    $durationMinutes = $category->duration ?? 30;
+    $end_time = $start_time->copy()->addMinutes($durationMinutes);
+
+    $existingBooking = Appointment::where('service_id', $request->service_id)
+        ->where('status', '!=', 'Canceled')
+        ->where(function ($query) use ($start_time, $end_time) {
+            $query->where(function ($q) use ($start_time, $end_time) {
+                $q->where('start_time', '<', $end_time)
+                  ->whereRaw("DATE_ADD(start_time, INTERVAL (SELECT duration FROM categories WHERE categories.id = appointments.category_id) MINUTE) > ?", [$start_time]);
+            });
+        })
+        ->exists();
+
+    if ($existingBooking) {
+        return redirect()->back()->with('booking_error', 'The selected time overlaps with another active appointment. Please choose a different time.');
+    }
 
     $service = Service::with('categories')->find($request->service_id);
-
     if (!$service->categories->contains('id', $request->category_id)) {
         return redirect()->back()->with('error', 'Invalid category selected for this service.');
     }
-    
 
     $appointment = new Appointment();
     $appointment->user_id = auth()->id();
     $appointment->service_id = $request->service_id;
     $appointment->pet_id = $request->pet_id;
-    $appointment->start_time = Carbon::parse($request->start_time);
+    $appointment->start_time = $start_time;
     $appointment->status = 'Pending';
-    $appointment->category_id = $request->category_id; 
-    
+    $appointment->category_id = $request->category_id;
     $appointment->save();
 
     $employee = Employee::where('service_id', $appointment->service_id)->first();
     if ($employee && $employee->user) {
         $employee->user->notify(new AppointmentBooked($appointment));
     }
-    return redirect()->route('appointment.view', $appointment->id)
-    ->with('success', 'Your appointment has been successfully booked.');}
 
+    return redirect()->route('appointment.view', $appointment->id)
+        ->with('success', 'Your appointment has been successfully booked.');
+}
     /**
      * Display the specified resource.
      */

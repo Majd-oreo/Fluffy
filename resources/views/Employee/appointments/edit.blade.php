@@ -35,13 +35,13 @@
                     @method('PUT')  
 
                     <div class="mb-3">
-                        <label for="user_id" class="form-label">User</label>
-                        <select id="user_id" name="user_id" class="form-control" required>
-                            @foreach($users as $user)
-                                <option value="{{ $user->id }}" {{ $appointment->user_id == $user->id ? 'selected' : '' }}>{{ $user->name??"Deleted User" }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+    <p for="user_id" class="form-label">User</p>
+    @if ($appointment->user)
+        {{ $appointment->user->name }}
+    @else
+        <span style="color: gray;">Deleted User</span>
+    @endif
+</div>
 
                     <div class="mb-3">
                         <label for="pet_id" class="form-label">Pet</label>

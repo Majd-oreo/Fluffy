@@ -214,20 +214,32 @@ input[type="datetime-local"] {
 
     <!-- Header Start -->
     <header id="header-sticky" class="petnest-header">
+        
         <div class="container position-relative">
             <div class="row d-flex align-items-center">
+                
                 <div class="col-lg-2">
+                    
                     <!-- Logo Start -->
                     <div class="petnest-logo">
                         <figure><a href="{{ route('home') }}"><img src="{{ asset('assets/images/fluffy-logo.png') }}" alt="PetNest"></a></figure>
+                    
                     </div>
+       
                      <!-- Logo End -->
                 </div>
                 <div class="col-lg-6">
+                    
                     <div class="petnest-header-menu">
+                  
+                        
                         <nav id="mobile-menu">
+                            
                             <ul>
-                                <li class="active"><a href="{{ route('home') }}">Home</a>
+                            @auth
+        <li > Welcome <span style="color:#ff5b2e ; font-weight: bold;">{{ Auth::user()->name }}</span></li>
+    @endauth
+                                <li ><a href="{{ route('home') }}">Home</a>
                                   
                                 </li>
                                 <li><a href="{{ route('user.about-us') }}">About Us</li>
@@ -255,8 +267,8 @@ input[type="datetime-local"] {
                             <button class="search-trigger"><span><i class="flaticon-search"></i></span></button>
                         </div> -->
                         <div class="user-top dropdown">
-                            
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  
+                            <button class="btn btn-secondary " type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="flaticon-user"></i>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">

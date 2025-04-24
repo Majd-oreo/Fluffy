@@ -1644,7 +1644,7 @@ input[type=number] {
 }
 
 .petnest-client-feedback-right figure {
-    width: 357px;
+    width: 180px !important;
     float: right;
 }
 
