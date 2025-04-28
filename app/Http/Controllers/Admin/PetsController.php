@@ -105,7 +105,6 @@ class PetsController extends Controller
             'weight' => 'nullable|numeric|min:0',
             'medical_history' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'user_id' => 'required|exists:users,id', // Validate the user_id
         ]);
         
         $pet->name = $request->name;
@@ -114,7 +113,6 @@ class PetsController extends Controller
         $pet->age = $request->age;
         $pet->weight = $request->weight;
         $pet->medical_history = $request->medical_history;
-        $pet->user_id = $request->user_id;  // Update the user_id
         
         // Handle image upload
         if ($request->hasFile('image')) {

@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-petnest">
-                        <p>&copy; 2023 Copyright PetNest</p>
+                        <p>&copy; 2025 Copyright FluffyFriends</p>
                     </div>
                 </div>
             </div>

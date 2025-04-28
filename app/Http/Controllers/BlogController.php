@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\User;
+
 
 
 class BlogController extends Controller
@@ -14,10 +16,15 @@ class BlogController extends Controller
      */
     
      public function index()
-     {
-         $blogs = Blog::all(); 
-         return view('home', compact('blogs')); 
-     }
+{
+    $blogs = Blog::whereHas('user.employee', function ($query) {
+            $query->where('status', 'active');
+        })
+        ->paginate(6);
+
+    return view('user.blog-grid', compact('blogs'));
+}
+
 
     /**
      * Show the form for creating a new resource.

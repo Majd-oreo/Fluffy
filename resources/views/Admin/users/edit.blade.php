@@ -100,16 +100,14 @@
                         <div class="mb-3">
     <label class="form-label">Status</label>
     <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="status" name="status"
-    {{ old('status', optional($user->employee)->status) == 'active' ? 'checked' : '' }}>
-
-<label class="form-check-label" for="status">
-    {{ old('status', optional($user->employee)->status) == 'active' ? 'Active' : 'Inactive' }}
-</label>
-
+        <input class="form-check-input" type="checkbox" id="status" name="status" value="active"
+            {{ old('status', optional($user->employee)->status) == 'active' ? 'checked' : '' }}>
+        <label class="form-check-label" for="status">
+            {{ old('status', optional($user->employee)->status) == 'active' ? 'Active' : 'Inactive' }}
+        </label>
     </div>
-    <input type="hidden" name="status" value="inactive">
 </div>
+
 
 
                         <div class="mb-3">

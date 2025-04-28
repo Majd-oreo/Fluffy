@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
     window.onload = function() {
-        emailjs.init("EWdaHBHiCG-OHfbaL"); 
+        emailjs.init("d9_DxVu3e_9NxnNPa"); 
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -24,7 +24,7 @@
                 return;
             }
             
-            emailjs.sendForm('service_9lu61cc', 'template_x41pavo', this)
+            emailjs.sendForm('service_ap8mtxr', 'template_gdbl4dz', this)
                 .then(() => {
                     Swal.fire({
                         icon: 'success',
@@ -81,14 +81,15 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="petnest-contact-left">
                                 <form id="contact-form">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" id="name" name="user_name" placeholder="Your Name" required>
+                                <label for="name">Your Name</label>
+<input type="text" id="name" name="name" placeholder="Your Name" required>
 
-                                    <label for="mail">Mail</label>
-                                    <input type="email" id="mail" name="user_email" placeholder="youremail@gmail.com" required>
+<label for="mail">Mail</label>
+<input type="email" id="mail" name="email" placeholder="youremail@gmail.com" required>
 
-                                    <label for="message">Message</label>
-                                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Message" required></textarea>
+
 
                                     <input type="submit" value="Send Message">
                                 </form>

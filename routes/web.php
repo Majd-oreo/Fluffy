@@ -44,8 +44,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    $blogs = Blog::all();
-
+    $blogs = Blog::whereHas('user.employee', function ($query) {
+        $query->where('status', 'active');
+    })->get();
+    
     $employees = User::where('role', 'employee')
     ->whereHas('employee', function ($query) {
         $query->where('status', 'active');
@@ -82,6 +84,7 @@ Route::get('/grooming', function () {
     return view('user.service-grooming');  
 })->name('grooming');
 
+Route::get('/blogs', [BlogController::class, 'index'])->name('user.blog-grid');
 
 
 Route::get('/blogs/{id}', [IndexController::class, 'show'])->name('blog.show');

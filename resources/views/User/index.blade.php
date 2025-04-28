@@ -25,8 +25,8 @@
                                             accommodations with every day supervision by our trained and loving staff</p>
                                         <div class="petnest-hero-btns">
                                             <a href="{{ route('user.services') }}" class="btn-primay">Our Services</a>
-                                            <a href="book-schedule.html" class="btn-primay btn-primay-white">Book a
-                                                Schedule</a>
+                                            <!-- <a href="book-schedule.html" class="btn-primay btn-primay-white">Book a
+                                                Schedule</a> -->
                                         </div>
                                     </div>
                                 </div>

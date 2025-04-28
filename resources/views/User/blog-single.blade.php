@@ -31,7 +31,7 @@
             <!-- Blog Content -->
             <div class="col-lg-8">
                 <div class="bg-white rounded-4 shadow p-4">
-                    <img src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('storage/defaults/blog-default.png') }}" alt="{{ $blog->title }}" class="img-fluid rounded mb-4" style="height:500px;" width="100%">
+                    <img src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('storage/defaults/blog-default.png') }}" alt="{{ $blog->title }}" class="img-fluid rounded mb-4" style=" height:700px;width:100%">
 
                     <div class="d-flex align-items-center gap-3 mb-3 text-muted small">
                         <span><i class="bi bi-calendar-event"></i> {{ $blog->created_at->format('F j, Y') }}</span>

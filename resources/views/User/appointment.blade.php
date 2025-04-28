@@ -353,7 +353,7 @@
             const duration = selectedOption.getAttribute('data-duration');
 
             priceSpan.textContent = price ? price : 'N/A';
-            durationSpan.textContent = duration ? duration : 'N/A';
+            durationSpan.textContent = duration ? duration : 'No Time Selected//';
 
         });
 

@@ -40,7 +40,7 @@ class PetEmController extends Controller
     public function create()
     {
         $users = User::all();  
-        return view('admin.pets.create', compact('users'));   
+        return view('employee.pets.create', compact('users'));   
     }
 
     /**
@@ -51,7 +51,7 @@ class PetEmController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|in:Cat,Dog,Bird,Rabbit',
-            'breed' => 'nullable|string|max:255',
+            'breed' => 'string|max:255',
             'age' => 'nullable|integer|min:0',
             'weight' => 'nullable|numeric|min:0',
             'medical_history' => 'nullable|string',

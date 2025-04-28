@@ -105,28 +105,35 @@ public function update(Request $request, User $user)
 
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('uploads', 'public');
-    } else {
-        $imagePath = null;
+        $user->image = $imagePath;
     }
-
+    
     $user->update([
         'name' => $request->name,
         'email' => $request->email,
         'phone' => $request->phone,
         'address' => $request->address,
-        'image' => $imagePath,
+        // 'image' => $imagePath,
         'role' => $request->role,
     ]);
 
-    if ($request->role === 'employee') {
-        // Use the status from the form
-        $status = $request->has('status') && $request->status == 'active' ? 'active' : 'inactive';
+     // If the user is an employee, update employee-specific fields
+     if ($request->role === 'employee') {
+        // Check what status was passed
 
+       
+            // Set the status depending on whether the checkbox is checked or not
+            $status = $request->has('status') ? 'active' : 'inactive';
+
+
+
+        // Debugging: check the status value being passed
+        
         $user->employee()->update([
             'job_title' => $request->job_title,
             'salary' => $request->salary,
             'service_id' => $request->service_id,
-            'status' => $status,
+            'status' => $status,  // Updating the status based on what was passed
         ]);
     }
 

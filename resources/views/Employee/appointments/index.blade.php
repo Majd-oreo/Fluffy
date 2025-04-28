@@ -35,11 +35,11 @@
     </form>
 
     <!-- Add Appointment Button -->
-    <div class="mb-4">
+    <!-- <div class="mb-4">
         <a href="{{ route('employee.appointments.create') }}" class="btn" style="background-color: #FF5B2E; color: white;">
             <i class="fas fa-plus-circle me-2"></i> Add Appointment
         </a>
-    </div>
+    </div> -->
 
     <!-- Appointments Grid -->
     <div class="row g-4" id="appointmentList">

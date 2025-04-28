@@ -117,6 +117,26 @@ input[type="datetime-local"] {
     .whatsapp-btn i {
         font-size: 1.2rem;
     }
+    .grid-btn:hover {
+        background-color: #5a6268; /* Darker shade for hover */
+        color: white;
+    }
+    .grid-btn {
+        background-color: #6c757d; /* Bootstrap's secondary color */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+    .grid-btn i {
+        font-size: 1.2rem;
+    }
     /* Filter Section Styles */
 .filter-card {
     background: #ffffff;
@@ -237,7 +257,7 @@ input[type="datetime-local"] {
                             
                             <ul>
                             @auth
-        <li > Welcome <span style="color:#ff5b2e ; font-weight: bold;">{{ Auth::user()->name }}</span></li>
+        <li style="color:#ff5b2e"> <span style="color:#ff5b2e ; font-weight: bold;"> Welcome, {{ Auth::user()->name }}</span></li>
     @endauth
                                 <li ><a href="{{ route('home') }}">Home</a>
                                   
@@ -246,7 +266,7 @@ input[type="datetime-local"] {
                                 <li><a href="{{ route('user.services') }}">Services</a>
                                    
                                 </li>
-                                <li><a  href="{{ route('shop.index') }}">Shop</a></li>
+                                <!-- <li><a  href="{{ route('shop.index') }}">Shop</a></li> -->
                                                             </ul>
                         </nav>
                     </div>
@@ -294,7 +314,12 @@ input[type="datetime-local"] {
                                 @endauth
                             </ul>
                         </div>
-                        <div class="basket-top">
+                        <div>
+    <a  href="{{ route('user.blog-grid') }}"  class="btn  grid-btn  " style="background-color: #FFEFEA;"type="button">
+    <i class="fa-solid fa-blog" style="color: #000000;"></i>   </a>
+</div>
+
+                        <!-- <div class="basket-top">
                             <button><span class="on-basket"><i class="flaticon-bag"></i></span></button>
                             <div class="petnest-basket">
                                 <div class="row">
@@ -351,7 +376,7 @@ input[type="datetime-local"] {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="contact-us-top d-md-block d-none">
                             <a  href="{{ route('contact') }}" class="btn-primay">Contact Us</a>
                         </div>
