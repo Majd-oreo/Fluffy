@@ -17,21 +17,18 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('admin.appointments.update', $appointment->id) }}" method="POST">
+                <form action="{{ route('admin.appointments.update', $appointment->id) }}" method="POST" onsubmit="return validateForm()">
                     @csrf
-                    @method('PUT')  
+                    @method('PUT')
 
                     <div class="mb-3">
                         <label for="user_id" class="form-label">User</label>
                         <p class="form-control-plaintext">{{ $appointment->user->name??'Deleted User' }}</p>
-
                     </div>
 
                     <div class="mb-3">
-                    <div class="mb-3">
-    <label class="form-label">Pet</label>
-    <p class="form-control-plaintext">{{ $appointment->pet->name??'Deleted Pet' }}</p>
-</div>
+                        <label class="form-label">Pet</label>
+                        <p class="form-control-plaintext">{{ $appointment->pet->name??'Deleted Pet' }}</p>
                     </div>
 
                     <div class="mb-3">
@@ -76,4 +73,53 @@
         </div>
     </div>
 </div>
+
+<script>
+    function validateForm() {
+        // Clear previous error messages
+        let errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => msg.remove());
+
+        // Get form elements
+        let serviceId = document.getElementById('service_id').value.trim();
+        let categoryId = document.getElementById('category_id').value.trim();
+        let startTime = document.getElementById('start_time').value.trim();
+        let status = document.getElementById('status').value.trim();
+
+        let isValid = true;
+
+        // Validate Service Selection
+        if (!serviceId) {
+            isValid = false;
+            let serviceField = document.getElementById('service_id');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Service is required.';
+            serviceField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        // Validate Time Selection
+        if (!startTime) {
+            isValid = false;
+            let startTimeField = document.getElementById('start_time');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Start Time is required.';
+            startTimeField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        // Validate Status Selection
+        if (!status) {
+            isValid = false;
+            let statusField = document.getElementById('status');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Status is required.';
+            statusField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        return isValid;
+    }
+</script>
+
 @endsection

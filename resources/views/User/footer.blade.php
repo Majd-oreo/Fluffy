@@ -26,11 +26,11 @@
                     <div class="petnest-footer-link">
                         <h4>Pages</h4>
                         <ul>
-                            <li><a href="{{ route('user.services') }}">Services</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="{{ route('team.index') }}">Our Team</a></li>
-                            <li><a href="login.html">Sign In</a></li>
-                            <li><a href="signup.html">Sign up</a></li>
+                            <!-- <li><a href="{{ route('user.services') }}">Services</a></li> -->
+                            <!-- <li><a href="shop.html">Shop</a></li> -->
+                            <!-- <li><a href="{{ route('team.index') }}">Our Team</a></li> -->
+                            <li><a href="{{ route('login') }}">Sign In</a></li>
+                            <li><a href="{{ route('register') }}">Sign up</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +39,11 @@
                         <h4>Useful Links</h4>
                         <ul>
                             <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="#">Our Story</a></li>
+                            <li><a href="{{ route('user.services') }}">Services</a></li>
+                            <li><a href="{{ route('team.index') }}">Our Team</a></li>
+
+
+                            <!-- <li><a href="#">Our Story</a></li> -->
                             <!-- <li><a href="#">Review</a></li> -->
                             <!-- <li><a href="our-gallery.html">Gallery</a></li> -->
                             <!-- <li><a href="#">Our Peters</a></li> -->
@@ -50,10 +54,10 @@
                     <div class="petnest-footer-link">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="cart.html">Cart</a></li>
+                            <!-- <li><a href="cart.html">Cart</a></li> -->
                             <!-- <li><a href="wishlist.html">Wish list</a></li> -->
                             <!-- <li><a href="faq.html">FAQ</a></li> -->
-                            <li><a href="blog-grid.html">Blog</a></li>
+                            <li><a href="{{ route('user.blog-grid') }}">Blog</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>

@@ -26,6 +26,7 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Category Name</label>
                         <input type="text" id="name" name="name" class="form-control" value="{{ isset($category) ? $category->name : '' }}" required>
+                        <small class="text-danger d-none" id="nameError">Category name is required.</small>
                     </div>
 
                     <div class="mb-3">
@@ -38,20 +39,26 @@
                                 </option>
                             @endforeach
                         </select>
+                        <small class="text-danger d-none" id="serviceError">Please select a service.</small>
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
                         <textarea id="description" name="description" class="form-control">{{ isset($category) ? $category->description : '' }}</textarea>
                     </div>
+
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
                         <input type="number" id="price" name="price" class="form-control" value="{{ isset($category) ? $category->price : '' }}" required min="0">
+                        <small class="text-danger d-none" id="priceError">Price is required and must be a positive number.</small>
                     </div>
+
                     <div class="mb-3">
                         <label for="duration" class="form-label">Duration (in minutes)</label>
                         <input type="number" id="duration" name="duration" class="form-control" value="{{ isset($category) ? $category->duration : '' }}" min="1">
+                        <small class="text-danger d-none" id="durationError">Duration must be a positive number.</small>
                     </div>
+
                     <div class="mb-3">
                         <label for="icon" class="form-label">Category Icon</label>
                         <input type="file" id="icon" name="icon" class="form-control">
@@ -60,6 +67,7 @@
                                 <img src="{{ asset('storage/'.$category->icon) }}" alt="Category Icon" class="rounded" style="width: 100px; height: 100px;">
                             </div>
                         @endif
+                        <small class="text-danger d-none" id="iconError">Please upload a valid image (jpg, jpeg, png, gif, svg) up to 2MB.</small>
                     </div>
 
                     <div class="text-center">
@@ -74,8 +82,71 @@
 
 <script>
     function validateForm() {
-        let name = document.getElementById('name').value.trim();
-        return true;
+        let valid = true;
+        
+        // Validate Category Name
+        const name = document.getElementById('name').value.trim();
+        const nameError = document.getElementById('nameError');
+        if (name === '') {
+            nameError.classList.remove('d-none');
+            valid = false;
+        } else {
+            nameError.classList.add('d-none');
+        }
+
+        // Validate Service Selection
+        const serviceId = document.getElementById('service_id').value;
+        const serviceError = document.getElementById('serviceError');
+        if (serviceId === '') {
+            serviceError.classList.remove('d-none');
+            valid = false;
+        } else {
+            serviceError.classList.add('d-none');
+        }
+
+        // Validate Price
+        const price = document.getElementById('price').value.trim();
+        const priceError = document.getElementById('priceError');
+        if (price === '' || isNaN(price) || price < 0) {
+            priceError.classList.remove('d-none');
+            valid = false;
+        } else {
+            priceError.classList.add('d-none');
+        }
+
+        // Validate Duration
+        const duration = document.getElementById('duration').value.trim();
+        const durationError = document.getElementById('durationError');
+        if (duration && (isNaN(duration) || duration < 1)) {
+            durationError.classList.remove('d-none');
+            valid = false;
+        } else {
+            durationError.classList.add('d-none');
+        }
+
+        // Validate Icon File (optional)
+        const iconInput = document.getElementById('icon');
+        const iconError = document.getElementById('iconError');
+        const file = iconInput.files[0];
+        
+        if (file) {
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (!allowedTypes.includes(file.type)) {
+                iconError.textContent = "Please upload a valid image (jpg, jpeg, png, gif, svg).";
+                iconError.classList.remove('d-none');
+                valid = false;
+            } else if (file.size > maxSize) {
+                iconError.textContent = "The file size must be less than 2MB.";
+                iconError.classList.remove('d-none');
+                valid = false;
+            } else {
+                iconError.classList.add('d-none');
+            }
+        }
+
+        return valid;
     }
 </script>
 @endsection

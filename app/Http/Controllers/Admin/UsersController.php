@@ -71,6 +71,9 @@ class UsersController extends Controller
         'address' => $request->address,
         'image' => $imagePath,
         'role' => $request->role,
+        'job_title' => $request->job_title,
+        'salary' => $request->salary,
+        'service_id' => $request->service_id,  
         
     ]);
 

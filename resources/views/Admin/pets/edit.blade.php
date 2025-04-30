@@ -17,6 +17,11 @@
                         </ul>
                     </div>
                 @endif
+
+                <div id="clientErrors" class="alert alert-danger d-none">
+                    <ul id="clientErrorList"></ul>
+                </div>
+
                 <form action="{{ route('admin.pets.update', $pet->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                     @csrf
                     @method('PUT')  
@@ -58,13 +63,13 @@
                     </div>
 
                     <div class="mb-3">
-    <p for="user_id" class="form-label">User</p>
-    @if ($pet->user)
-        {{ $pet->user->name }}
-    @else
-        <span style="color: gray;">Deleted User</span>
-    @endif
-</div>
+                        <p for="user_id" class="form-label">User</p>
+                        @if ($pet->user)
+                            {{ $pet->user->name }}
+                        @else
+                            <span style="color: gray;">Deleted User</span>
+                        @endif
+                    </div>
 
                     <div class="mb-3">
                         <label for="image" class="form-label">Pet Image</label>
@@ -88,8 +93,50 @@
 
 <script>
     function validateForm() {
-        let name = document.getElementById('name').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const type = document.getElementById('type').value.trim();
+        const age = document.getElementById('age').value.trim();
+        const weight = document.getElementById('weight').value.trim();
+        const image = document.getElementById('image').value;
+
+        const errorBox = document.getElementById('clientErrors');
+        const errorList = document.getElementById('clientErrorList');
+        errorList.innerHTML = '';
+        errorBox.classList.add('d-none');
+
+        let errors = [];
+
+        if (name === '') errors.push("Pet name is required.");
+        if (type === '') errors.push("Pet type is required.");
+        if (age !== '' && (isNaN(age) || parseInt(age) < 0)) errors.push("Age must be a non-negative number.");
+        if (weight !== '' && (isNaN(weight) || parseFloat(weight) < 0)) errors.push("Weight must be a non-negative number.");
+
+        if (image) {
+            const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+            const fileExtension = image.split('.').pop().toLowerCase();
+            const fileSize = document.getElementById('image').files[0].size;
+
+            if (!allowedExtensions.includes(fileExtension)) {
+                errors.push("Only JPG, JPEG, PNG, and GIF files are allowed.");
+            }
+
+            if (fileSize > 2 * 1024 * 1024) {
+                errors.push("Image size should not exceed 2MB.");
+            }
+        }
+
+        if (errors.length > 0) {
+            errors.forEach(function(error) {
+                const li = document.createElement('li');
+                li.textContent = error;
+                errorList.appendChild(li);
+            });
+            errorBox.classList.remove('d-none');
+            return false;
+        }
+
         return true;
     }
 </script>
+
 @endsection

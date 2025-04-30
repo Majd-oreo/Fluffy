@@ -1,4 +1,3 @@
-
 @extends('layouts.Admin-layout')
 
 @section('content')
@@ -94,18 +93,17 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <div class="mb-3">
-    <label class="form-label d-block">Status</label>
-    <div class="form-check form-switch d-flex align-items-center gap-2">
-        <input class="form-check-input" type="checkbox" id="status" name="status"
-            {{ (isset($employee) && $employee->status == 'active') || !isset($employee) ? 'checked' : '' }}>
-        <span id="status-label">
-            {{ (isset($employee) && $employee->status == 'active') || !isset($employee) ? 'Active' : 'Inactive' }}
-        </span>
-    </div>
-</div>
-
-
+                            <label class="form-label d-block">Status</label>
+                            <div class="form-check form-switch d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="checkbox" id="status" name="status"
+                                    {{ (isset($employee) && $employee->status == 'active') || !isset($employee) ? 'checked' : '' }}>
+                                <span id="status-label">
+                                    {{ (isset($employee) && $employee->status == 'active') || !isset($employee) ? 'Active' : 'Inactive' }}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="mb-3">
@@ -114,7 +112,6 @@
                                @if(!isset($user)) required @endif placeholder="Leave blank to keep current password">
                     </div>
                    
-                    
                     <div class="mb-3">
                         <label for="image" class="form-label">Profile Image</label>
                         <input type="file" id="image" name="image" class="form-control">
@@ -139,10 +136,76 @@
     function validateForm() {
         let name = document.getElementById('name').value.trim();
         let email = document.getElementById('email').value.trim();
-        if (name === "" || email === "") {
-            alert("Name and Email are required fields.");
+        let phone = document.getElementById('phone').value.trim();
+        let password = document.getElementById('password').value;
+        let role = document.getElementById('role').value;
+
+        // Validate Name
+        if (name === "") {
+            alert("Name is required.");
             return false;
         }
+
+        // Validate Email
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (email === "") {
+            alert("Email is required.");
+            return false;
+        } else if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        // Validate Phone
+        const phoneRegex = /^07[7-9]{1}[0-9]{7}$/;
+        if (phone === "") {
+            alert("Phone number is required.");
+            return false;
+        } else if (!phoneRegex.test(phone)) {
+            alert("Please enter a valid phone number (e.g., 0771234567).");
+            return false;
+        }
+
+        // Validate Password
+        if (password === "") {
+            alert("Password is required.");
+            return false;
+        } else if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return false;
+        } else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[@$!%*?&]/.test(password)) {
+            alert("Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.");
+            return false;
+        }
+
+        // Validate Role
+        if (role === "") {
+            alert("Please select a role.");
+            return false;
+        }
+
+        // For employee role, additional fields must be validated
+        if (role === 'employee') {
+            let jobTitle = document.getElementById('job_title').value.trim();
+            let salary = document.getElementById('salary').value.trim();
+            let serviceId = document.getElementById('service_id').value.trim();
+
+            if (jobTitle === "") {
+                alert("Job Title is required for employees.");
+                return false;
+            }
+
+            if (salary === "") {
+                alert("Salary is required for employees.");
+                return false;
+            }
+
+            if (serviceId === "") {
+                alert("Please select a service for the employee.");
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -159,6 +222,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         toggleEmployeeFields();
     });
+
     document.addEventListener("DOMContentLoaded", function () {
         const statusCheckbox = document.getElementById('status');
         const statusLabel = document.getElementById('status-label');

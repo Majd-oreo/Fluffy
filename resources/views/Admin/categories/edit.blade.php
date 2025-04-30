@@ -72,8 +72,60 @@
 
 <script>
     function validateForm() {
+        // Get form elements
         let name = document.getElementById('name').value.trim();
-        return true;
+        let serviceId = document.getElementById('service_id').value.trim();
+        let price = document.getElementById('price').value.trim();
+        let duration = document.getElementById('duration').value.trim();
+
+        // Flag to check if form is valid
+        let isValid = true;
+
+        // Clear previous error messages
+        let errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => msg.remove());
+
+        // Validate Category Name
+        if (!name) {
+            isValid = false;
+            let nameField = document.getElementById('name');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Category Name is required.';
+            nameField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        // Validate Service Selection
+        if (!serviceId) {
+            isValid = false;
+            let serviceField = document.getElementById('service_id');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Service is required.';
+            serviceField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        // Validate Price
+        if (!price || price <= 0) {
+            isValid = false;
+            let priceField = document.getElementById('price');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Price is required and must be greater than zero.';
+            priceField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        // Validate Duration (optional, but should be greater than 0 if filled)
+        if (duration && duration <= 0) {
+            isValid = false;
+            let durationField = document.getElementById('duration');
+            let errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message', 'text-danger');
+            errorMessage.textContent = 'Duration should be greater than zero.';
+            durationField.insertAdjacentElement('afterend', errorMessage);
+        }
+
+        return isValid;
     }
 </script>
 @endsection

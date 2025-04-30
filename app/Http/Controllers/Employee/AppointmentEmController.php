@@ -39,9 +39,13 @@ class AppointmentEmController extends Controller
         }
      
     
-        if ($request->has('user_id') && !empty($request->user_id)) {
-            $query->where('user_id', $request->user_id);
-        }
+    // Filter by user name
+if ($request->has('name') && !empty($request->name)) {
+    $query->whereHas('user', function ($q) use ($request) {
+        $q->where('name', 'LIKE', '%' . $request->name . '%');
+    });
+}
+
     
        
         if ($request->has('date') && !empty($request->date)) {
@@ -145,8 +149,8 @@ class AppointmentEmController extends Controller
         }
     
         $request->validate([
-            'user_id' => 'required|exists:users,id',
-            'pet_id' => 'required|exists:pets,id',
+            // 'user_id' => 'required|exists:users,id',
+            // 'pet_id' => 'required|exists:pets,id',
             'service_id' => 'required|exists:services,id',
             'category_id' => 'nullable|exists:categories,id',
             'start_time' => 'required|date',

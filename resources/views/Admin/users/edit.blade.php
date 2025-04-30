@@ -1,10 +1,9 @@
-
 @extends('layouts.Admin-layout')
 
 @section('content')
 <style>
     .form-check-input:checked {
-        background-color: #FF5B2E; 
+        background-color: #FF5B2E;
         border-color: #FF5B2E;
     }
 
@@ -22,6 +21,7 @@
         font-weight: 500;
     }
 </style>
+
 <div class="container-fluid d-flex justify-content-center mt-4">
     <div class="col-md-6">
         <div class="card shadow" style="border: 2px solid #FF5B2E; background-color: white;">
@@ -29,7 +29,7 @@
                 <h4>Edit User</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+                <form id="editUserForm" action="{{ route('admin.users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -78,7 +78,6 @@
                     </div>
 
                     <div id="employeeFields" @if(old('role', $user->role) == 'employee') style="display: block;" @else style="display: none;" @endif>
-
                         <div class="mb-3">
                             <label for="job_title" class="form-label">Job Title</label>
                             <input type="text" id="job_title" name="job_title" class="form-control" value="{{ old('job_title', $user->employee ? $user->employee->job_title : '') }}">
@@ -86,10 +85,7 @@
                                 <div class="text-danger">{{ $errors->first('job_title') }}</div>
                             @endif
                         </div>
-                        
-                    <div class="mb-3">
-   
-    
+
                         <div class="mb-3">
                             <label for="salary" class="form-label">Salary</label>
                             <input type="number" id="salary" name="salary" class="form-control" value="{{ old('salary', $user->employee ? $user->employee->salary : '') }}">
@@ -97,18 +93,16 @@
                                 <div class="text-danger">{{ $errors->first('salary') }}</div>
                             @endif
                         </div>
+
                         <div class="mb-3">
-    <label class="form-label">Status</label>
-    <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="status" name="status" value="active"
-            {{ old('status', optional($user->employee)->status) == 'active' ? 'checked' : '' }}>
-        <label class="form-check-label" for="status">
-            {{ old('status', optional($user->employee)->status) == 'active' ? 'Active' : 'Inactive' }}
-        </label>
-    </div>
-</div>
-
-
+                            <label class="form-label">Status</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="status" name="status" value="active" {{ old('status', optional($user->employee)->status) == 'active' ? 'checked' : '' }}>
+                                <label class="form-check-label" for="status">
+                                    {{ old('status', optional($user->employee)->status) == 'active' ? 'Active' : 'Inactive' }}
+                                </label>
+                            </div>
+                        </div>
 
                         <div class="mb-3">
                             <label for="service_id" class="form-label">Service</label>
@@ -122,15 +116,10 @@
                                 <div class="text-danger">{{ $errors->first('service_id') }}</div>
                             @endif
                         </div>
-
                     </div>
 
-
-    <!-- Add hidden input to ensure status is always passed, even if checkbox is unchecked -->
-    <input type="hidden" name="status" value="inactive">
-</div>
-
-
+                    <!-- Add hidden input to ensure status is always passed, even if checkbox is unchecked -->
+                    <input type="hidden" name="status" value="inactive">
 
                     <div class="mb-3">
                         <label for="image" class="form-label">Profile Image</label>
@@ -141,6 +130,9 @@
                             </div>
                         @endif
                     </div>
+                    @if ($errors->has('image'))
+                                <div class="text-danger">{{ $errors->first('image') }}</div>
+                            @endif
 
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -173,6 +165,21 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         toggleEmployeeFields();
+    });
+
+    document.getElementById('editUserForm').addEventListener('submit', function(event) {
+        // Custom validation script
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var role = document.getElementById('role').value;
+        var image = document.getElementById('image').value;
+
+
+        if (!name || !email || (role === 'employee' && !phone)) {
+            event.preventDefault();
+            alert('Please fill in all required fields.');
+        }
     });
 </script>
 

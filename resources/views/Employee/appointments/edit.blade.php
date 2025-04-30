@@ -30,33 +30,33 @@
                     </div>
                 @endif
 
-                <form action="{{ route('employee.appointments.update', $appointment->id) }}" method="POST">
+                <form id="editAppointmentForm" action="{{ route('employee.appointments.update', $appointment->id) }}" method="POST">
                     @csrf
                     @method('PUT')  
 
                     <div class="mb-3">
-    <p for="user_id" class="form-label">User</p>
-    @if ($appointment->user)
-        {{ $appointment->user->name }}
-    @else
-        <span style="color: gray;">Deleted User</span>
-    @endif
-</div>
+                        <p for="user_id" class="form-label">User</p>
+                        @if ($appointment->user)
+                            {{ $appointment->user->name }}
+                        @else
+                            <span style="color: gray;">Deleted User</span>
+                        @endif
+                    </div>
 
                     <div class="mb-3">
-                        <label for="pet_id" class="form-label">Pet</label>
-                        <select id="pet_id" name="pet_id" class="form-control" required>
-                            @foreach($pets as $pet)
-                                <option value="{{ $pet->id }}" {{ $appointment->pet_id == $pet->id ? 'selected' : '' }}>{{ $pet->name??"Deleted Pet" }}</option>
-                            @endforeach
-                        </select>
+                        <p for="pet_id" class="form-label">Pet</p>
+                        @if ($appointment->pet)
+                            {{ $appointment->pet->name }}
+                        @else
+                            <span style="color: gray;">Deleted Pet</span>
+                        @endif
                     </div>
 
                     <div class="mb-3">
                         <label for="service_id" class="form-label">Service</label>
                         <select id="service_id" name="service_id" class="form-control" required>
                             @foreach($services as $service)
-                                <option value="{{ $service->id }}" {{ $appointment->service_id == $service->id ? 'selected' : '' }}>{{ $service->name??"Deleted Service" }}</option>
+                                <option value="{{ $service->id }}" {{ $appointment->service_id == $service->id ? 'selected' : '' }}>{{ $service->name ?? "Deleted Service" }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -66,7 +66,7 @@
                         <select id="category_id" name="category_id" class="form-control">
                             <option value="">None</option>
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ $appointment->category_id == $category->id ? 'selected' : '' }}>{{ $category->name??"Deleted Category" }}</option>
+                                <option value="{{ $category->id }}" {{ $appointment->category_id == $category->id ? 'selected' : '' }}>{{ $category->name ?? "Deleted Category" }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -94,5 +94,55 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('editAppointmentForm').addEventListener('submit', function(event) {
+        const startTime = document.getElementById('start_time').value;
+        const status = document.getElementById('status').value;
+        const service = document.getElementById('service_id').value;
+        const errorContainer = document.querySelector('.client-error-message');
+
+        if (errorContainer) {
+            errorContainer.remove();
+        }
+
+        const errors = [];
+
+        if (!startTime) {
+            errors.push("Start time is required.");
+        } else {
+            const date = new Date(startTime);
+            const hour = date.getHours();
+            if (hour < 10 || hour >= 18) {
+                errors.push("Appointment must be between 10 AM and 6 PM.");
+            }
+        }
+
+        if (!status) {
+            errors.push("Status is required.");
+        }
+
+        if (!service) {
+            errors.push("Service is required.");
+        }
+
+        if (errors.length > 0) {
+            event.preventDefault();
+
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-danger client-error-message';
+            const ul = document.createElement('ul');
+
+            errors.forEach(function(error) {
+                const li = document.createElement('li');
+                li.textContent = error;
+                ul.appendChild(li);
+            });
+
+            alertDiv.appendChild(ul);
+            document.querySelector('.card-body').prepend(alertDiv);
+        }
+    });
+</script>
 
 @endsection

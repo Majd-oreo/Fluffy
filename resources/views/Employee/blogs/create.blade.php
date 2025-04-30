@@ -17,7 +17,8 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ isset($blog) ? route('employee.blogs.update', $blog->id) : route('employee.blogs.store') }}" method="POST" enctype="multipart/form-data">
+
+                <form id="blogForm" action="{{ isset($blog) ? route('employee.blogs.update', $blog->id) : route('employee.blogs.store') }}" method="POST" enctype="multipart/form-data" novalidate>
                     @csrf
                     @if(isset($blog))
                         @method('PUT')
@@ -27,37 +28,41 @@
                     <div class="mb-3">
                         <label for="title" class="form-label">Blog Title</label>
                         <input type="text" id="title" name="title" class="form-control" value="{{ isset($blog) ? $blog->title : '' }}" required>
+                        <div class="invalid-feedback">Title is required.</div>
                     </div>
-                 
-                    <!-- Service Type Dropdown (Set to Auth User's Service) -->
+
+                    <!-- Service Type Dropdown -->
                     <div class="mb-3">
-    <label for="service_id" class="form-label">Service Type</label>
-    <select id="service_id" name="service_id" class="form-control" required>
-        <option value="{{ Auth::user()->employee->service->id }}" selected>
-            {{ Auth::user()->employee->service->name }}
-        </option>
-    </select>
-</div>
+                        <label for="service_id" class="form-label">Service Type</label>
+                        <select id="service_id" name="service_id" class="form-control" required>
+                            <option value="{{ Auth::user()->employee->service->id }}" selected>
+                                {{ Auth::user()->employee->service->name }}
+                            </option>
+                        </select>
+                    </div>
 
                     <!-- Blog Content -->
                     <div class="mb-3">
                         <label for="content" class="form-label">Blog Content</label>
                         <textarea id="content" name="content" class="form-control" rows="4" required>{{ isset($blog) ? $blog->content : '' }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="content" class="form-label">Blog Content +</label>
-                        <textarea id="content" name="content_other" class="form-control" rows="4" >{{ isset($blog) ? $blog->content_other : '' }}</textarea>
+                        <div class="invalid-feedback">Blog content is required.</div>
                     </div>
 
-                    <!-- Author (Owner) Dropdown (Set to Auth User and disabled) -->
+                    <!-- Blog Content + -->
+                    <div class="mb-3">
+                        <label for="content_other" class="form-label">Blog Content +</label>
+                        <textarea id="content_other" name="content_other" class="form-control" rows="4">{{ isset($blog) ? $blog->content_other : '' }}</textarea>
+                    </div>
+
+                    <!-- Author Dropdown (disabled) -->
                     <div class="mb-3">
                         <label for="user_id" class="form-label">Author</label>
-                        <select id="user_id" name="user_id" class="form-control" required disabled>
+                        <select id="user_id" name="user_id" class="form-control" disabled>
                             <option value="{{ Auth::id() }}" selected>{{ Auth::user()->name }}</option>
                         </select>
                     </div>
 
-                    <!-- Blog Image Upload -->
+                    <!-- Blog Image -->
                     <div class="mb-3">
                         <label for="image" class="form-label">Blog Image</label>
                         <input type="file" id="image" name="image" class="form-control">
@@ -68,6 +73,7 @@
                         @endif
                     </div>
 
+                    <!-- Buttons -->
                     <div class="text-center">
                         <button type="submit" class="btn text-white btn-lg" style="background-color: #FF5B2E; padding: 12px 24px; font-size: 18px;">{{ isset($blog) ? 'Update Blog' : 'Create Blog' }}</button>
                         <a href="{{ route('employee.blogs.index') }}" class="btn btn-secondary btn-lg" style="padding: 12px 24px; font-size: 18px;">Cancel</a>
@@ -79,10 +85,38 @@
 </div>
 @endsection
 
+@section('scripts')
 <script>
-    // Optional: Additional JS for form validation
-    function validateForm() {
-        let title = document.getElementById('title').value.trim();
-        return true;
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('blogForm');
+
+        form.addEventListener('submit', function (e) {
+            let valid = true;
+
+            const title = document.getElementById('title');
+            const content = document.getElementById('content');
+
+            // Reset all
+            [title, content].forEach(input => {
+                input.classList.remove('is-invalid');
+            });
+
+            // Title validation
+            if (title.value.trim() === '') {
+                title.classList.add('is-invalid');
+                valid = false;
+            }
+
+            // Content validation
+            if (content.value.trim() === '') {
+                content.classList.add('is-invalid');
+                valid = false;
+            }
+
+            if (!valid) {
+                e.preventDefault();
+            }
+        });
+    });
 </script>
+@endsection
