@@ -18,7 +18,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\PetsController;
 use App\Http\Controllers\Admin\ReviewController;
-use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Employee\AppointmentEmController;
 use App\Http\Controllers\employee\BlogsEmController;
@@ -26,22 +25,10 @@ use App\Http\Controllers\Employee\PetEmController;
 use App\Http\Controllers\employee\ReviewEmController;
 use App\Models\Blog;
 use App\Models\User;
-use App\Models\Employee;
 
 use App\Models\Review;
 
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     $blogs = Blog::whereHas('user.employee', function ($query) {
@@ -62,38 +49,20 @@ Route::get('/', function () {
 
     return view('user.index', compact('blogs', 'employees', 'reviews'));
 })->name('home');
-
-
-
-
-
 Route::get('/about', [UserController::class, 'showAboutUs'])->name('user.about-us');
 Route::get('/service', [ServiceController::class, 'index'])->name('user.services');
-// Route::get('services/{id}', [ServiceController::class, 'show'])->name('service.show');
 Route::get('/gallary', function () {
     return view('user.our-gallery');  
 })->name('gallary');
-
-Route::get('/rescue', function () {
-    return view('user.service-rescue');  
-})->name('rescue');
 Route::get('/contact', function () {
     return view('user.contact');  
 })->name('contact');
-Route::get('/grooming', function () {
-    return view('user.service-grooming');  
-})->name('grooming');
-
+Route::get('/team', [UserController::class, 'showTeam']);
 Route::get('/blogs', [BlogController::class, 'index'])->name('user.blog-grid');
-
-
 Route::get('/blogs/{id}', [IndexController::class, 'show'])->name('blog.show');
 Route::get('/team', [UserController::class, 'show'])->name('team.index');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/shop/{product}', [ShopController::class, 'show'])->name('shop.show');
-
-
-
 Route::middleware(['auth'])->group(function () {
     Route::post('/appointment/{id}', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/{id}', [AppointmentController::class, 'showAppointment'])->name('appointment.show');

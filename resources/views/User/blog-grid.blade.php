@@ -35,6 +35,21 @@
     <!-- Blog Grid Start -->
     <section class="blog-grid">
         <div class="container">
+        <form action="{{ route('user.blog-grid') }}" method="GET" class="mb-4">
+    <div class="row">
+        <div class="col-md-4">
+            <select name="service_id" class="form-select" onchange="this.form.submit()">
+                <option value="">Filter by Service</option>
+                @foreach($services as $service)
+                    <option value="{{ $service->id }}" {{ request('service_id') == $service->id ? 'selected' : '' }}>
+                        {{ $service->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+</form>
+
             <div class="row">
 
                 @foreach($blogs as $blog)
@@ -42,7 +57,7 @@
                         <a href="{{ route('blog.show', $blog->id) }}" class="single-petnest-blog single-petnest-blog-page">
                             <div class="petnest-blog-short-top">
                                 <figure>
-                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}">
+                                <img src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('assets/images/default-blog.jpeg') }}" alt="{{ $blog->title }}">
                                 </figure>
                                 <!-- Category Start -->
                                 <span class="category-blog">{{ $blog->user->employee->service->name ?? 'General' }}</span>

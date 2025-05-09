@@ -38,9 +38,14 @@ class UserController extends Controller
      */
     public function show()
     {
-        $employees = User::where('role', 'employee')->get();
+        $employees = User::where('role', 'employee')
+        ->whereHas('employee', function ($query) {
+            $query->where('status', 'active');
+        })
+        ->with('employee') 
+        ->get();
 
-        return view('user.team', compact('employees'));
+    return view('User.team', compact('employees'));
     }
     public function showAboutUs()
 {

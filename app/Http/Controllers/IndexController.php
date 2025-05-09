@@ -18,13 +18,24 @@ class IndexController extends Controller
     /**
      * Display a listing of the resource.
      */
-    
-     public function show($id)
-     {
-         $blog = Blog::with('user.employee.service')->findOrFail($id);
-         return view('user.blog-single', compact('blog'));
-     }
-     
+    public function show($id)
+{
+    $blog = Blog::with('user.employee.service')->findOrFail($id);
+
+    $serviceId = optional($blog->user->employee->service)->id;
+
+    // Get related blogs (by same service) excluding the current one
+    $relatedBlogs = Blog::where('id', '!=', $blog->id)
+        ->whereHas('user.employee', function ($query) use ($serviceId) {
+            $query->where('service_id', $serviceId);
+        })
+        ->latest()
+        ->take(4)
+        ->get();
+
+    return view('user.blog-single', compact('blog', 'relatedBlogs'));
+}
+
 
 public function index()
 {

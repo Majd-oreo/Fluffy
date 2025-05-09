@@ -23,30 +23,19 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3">
-                    <div class="petnest-footer-link">
-                        <h4>Pages</h4>
-                        <ul>
-                            <!-- <li><a href="{{ route('user.services') }}">Services</a></li> -->
-                            <!-- <li><a href="shop.html">Shop</a></li> -->
-                            <!-- <li><a href="{{ route('team.index') }}">Our Team</a></li> -->
-                            <li><a href="{{ route('login') }}">Sign In</a></li>
-                            <li><a href="{{ route('register') }}">Sign up</a></li>
-                        </ul>
-                    </div>
+                   
                 </div>
                 <div class="col-lg-2 col-md-3">
                     <div class="petnest-footer-link">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href={{ route('user.about-us') }}>About Us</a></li>
                             <li><a href="{{ route('user.services') }}">Services</a></li>
                             <li><a href="{{ route('team.index') }}">Our Team</a></li>
 
 
-                            <!-- <li><a href="#">Our Story</a></li> -->
-                            <!-- <li><a href="#">Review</a></li> -->
+                          
                             <!-- <li><a href="our-gallery.html">Gallery</a></li> -->
-                            <!-- <li><a href="#">Our Peters</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -58,7 +47,7 @@
                             <!-- <li><a href="wishlist.html">Wish list</a></li> -->
                             <!-- <li><a href="faq.html">FAQ</a></li> -->
                             <li><a href="{{ route('user.blog-grid') }}">Blog</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

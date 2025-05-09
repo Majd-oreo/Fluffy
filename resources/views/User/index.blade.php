@@ -75,53 +75,56 @@
             <!-- Pet Toys End -->
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="petnest-heading petnest-heading-services">
-                        <h5>Our Services</h5>
-                        <h2>Complete Pet <br class="d-lg-block d-md-block d-none"> Wellness Services</h2>
-                    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="petnest-heading petnest-heading-services">
+                <h5>Our Services</h5>
+                <h2>Complete Pet <br class="d-lg-block d-md-block d-none"> Wellness Services</h2>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="petnest-options-list petnest-options-list-left">
+                <div class="petnest-options-info">
+                    <span><i class="flaticon-pet-grooming"></i></span>
+                    <h3>Grooming</h3>
                 </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="petnest-options-list petnest-options-list-left">
-                        <a href="service-grooming.html" class="petnest-options-info">
-                            <span><i class="flaticon-pet-grooming"></i></span>
-                            <h3>Grooming</h3>
-                        </a>
-                        <a href="service-walking.html" class="petnest-options-info">
-                            <span><i class="flaticon-walking-with-dog"></i></span>
-                            <h3>Walking</h3>
-                        </a>
-                        <a href="service-rescue.html" class="petnest-options-info">
-                            <span><i class="flaticon-rescue-dog"></i></span>
-                            <h3>Rescue</h3>
-                        </a>
-                    </div>
+                <div class="petnest-options-info">
+                    <span><i class="flaticon-walking-with-dog"></i></span>
+                    <h3>Walking</h3>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="petnest-options text-center">
-                        <figure class="friendly-pet"><img src="./assets/images/home/home3.jpeg" alt="">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="petnest-options-list petnest-options-list-right">
-                        <a href="service-training.html" class="petnest-options-info">
-                            <span><i class="flaticon-dog-training"></i></span>
-                            <h3>Training</h3>
-                        </a>
-                        <a href="service-daycare.html" class="petnest-options-info">
-                            <span><i class="flaticon-dog-house"></i></span>
-                            <h3>Daycare</h3>
-                        </a>
-                        <a href="service-veterinary.html" class="petnest-options-info">
-                            <span><i class="flaticon-paw"></i></span>
-                            <h3>Veterinary</h3>
-                        </a>
-                    </div>
+                <div class="petnest-options-info">
+                    <span><i class="flaticon-rescue-dog"></i></span>
+                    <h3>Rescue</h3>
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="petnest-options text-center">
+                <figure class="friendly-pet"><img src="./assets/images/home/home3.jpeg" alt=""></figure>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="petnest-options-list petnest-options-list-right">
+                <div class="petnest-options-info">
+                    <span><i class="flaticon-dog-training"></i></span>
+                    <h3>Training</h3>
+                </div>
+                <div class="petnest-options-info">
+                    <span><i class="flaticon-dog-house"></i></span>
+                    <h3>Daycare</h3>
+                </div>
+                <div class="petnest-options-info">
+                    <span><i class="flaticon-paw"></i></span>
+                    <h3>Veterinary</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
     </section>
     <!-- Petnest Services End -->
 
