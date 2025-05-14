@@ -190,12 +190,191 @@
         </form>
     </div>
 </section>
+<!-- Petnest Walking Showcase End -->
 
-<!-- Service Walking Tab Start -->
-<section class="product-desc-page services-desc-page">
-    <!-- ... (keep your existing tab content) ... -->
-</section>
+    <!-- Petnest Walking Showcase End -->
 
+    <!-- Service Walking Tab Start -->
+    <section class="product-desc-page services-desc-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="prduct-desc-wrap services-desc-wrap">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="petnest-des-tab" data-bs-toggle="pill"
+                                    data-bs-target="#petnest-desc" type="button" role="tab" aria-controls="petnest-desc"
+                                    aria-selected="true">Description</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="petnest-rev-tab" data-bs-toggle="pill"
+                                    data-bs-target="#petnest-review-page" type="button" role="tab"
+                                    aria-controls="petnest-review-page" aria-selected="false">Reviews </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show product-description active" id="petnest-desc" role="tabpanel"
+                                aria-labelledby="petnest-des-tab" tabindex="0">
+                                <p>{{ $service->description }}</p>
+                                <div class="grooming-showcase">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-8">
+                                            <div class="grooming-showcase-left">
+                                                <p>{{ $service->long_description }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="grooming-showcase-right">
+                                                @if($service->images->count() > 0)
+                                                    <div class="gallery-item">
+                                                        <img src="{{ asset('storage/' . $service->images->first()->image_path) }}" alt="{{ $service->name }} Image" width="300">
+                                                    </div>
+                                                @endif
+                                                <h3>Figure: <span>{{ $service->name }} Pet</span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade petnest-des-reviews" id="petnest-review-page" role="tabpanel"
+                                 aria-labelledby="petnest-rev-tab" tabindex="0">
+                                <div class="petnest-product-reviews">
+                                    @if ($service->reviews->isEmpty())
+                                        <p>There are no reviews yet.</p>
+                                    @else
+                                        @foreach ($service->reviews as $review)
+                                            <div class="single-review-process">
+                                                <div class="single-review-process-left">
+                                                    <figure>
+                                                    <img src="{{ isset($review->user) && $review->user->image ? asset('storage/' . $review->user->image) : asset('assets/images/Default.png') }}" alt="Profile Picture">
+                                                    </figure>
+                                                </div>
+                                                <div class="single-review-process-right">
+                                                    <h4><span>{{ $review->user->name??'User' }}</span> - {{ \Carbon\Carbon::parse($review->created_at)->diffForHumans() }}</h4>
+                                                    <div class="single-review-process-star">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <span><i class="flaticon-star-2 {{ $i < $review->rating ? 'filled' : '' }}"></i></span>
+                                                        @endfor
+                                                    </div>
+                                                    <p>{{ $review->comment }}</p>
+
+                                                    @if(auth()->check() && auth()->id() == $review->user_id)
+                                                        <div class="d-flex gap-2 mt-3">
+                                                        <form action="{{ route('appointment.review.delete', ['review' => $review->id]) }}" method="POST" class="delete-review-form" onsubmit="return confirmDelete(event)">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-sm btn-danger">
+        <i class="fas fa-trash-alt"></i> Delete
+    </button>
+</form>
+
+                                                            
+                                                        </div>
+
+                                                        
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        @endforeach
+
+                                        
+                                    @endif
+                                
+                                </div>
+
+                                <!-- Add or Update Review Form -->
+                                @if(auth()->check() && $existingReview = $service->reviews->where('user_id', auth()->id())->first())
+    <div class="col-lg-8">
+        <div class="blog-comments-petnest product-add-rev">
+            <h3>Update your review</h3>
+            <form action="{{ route('appointment.review', ['service_id' => $service->id]) }}" method="POST">
+            @csrf
+                @method('PUT')
+                <input type="hidden" name="service_id" value="{{ $service->id }}">
+
+                <label for="comment">Write your review*</label>
+                <textarea id="comment" name="comment" required>{{ $existingReview->comment }}</textarea>
+
+                <h4>Your Rating</h4>
+                <div class="give-rating">
+                    <div class="single-review-process-star" id="starRating">
+                        @for ($i = 1; $i <= 5; $i++)
+                            <span data-value="{{ $i }}"><i class="flaticon-star-2 {{ $i <= $existingReview->rating ? 'filled' : '' }}"></i></span>
+                        @endfor
+                    </div>
+                    <input type="hidden" name="rating" id="rating" value="{{ $existingReview->rating }}" required>
+                </div>
+
+                <input type="submit" value="Update Review">
+            </form>
+        </div>
+    </div>
+@else
+    <div class="col-lg-8">
+        <div class="blog-comments-petnest product-add-rev">
+            <h3>Add a review</h3>
+            <form action="{{ route('appointment.review', ['service_id' => $service->id]) }}" method="POST">
+                @csrf
+                <input type="hidden" name="service_id" value="{{ $service->id }}">
+
+                <label for="comment">Write your review*</label>
+                <textarea id="comment" name="comment" required></textarea>
+
+                <h4>Your Rating</h4>
+                <div class="give-rating">
+                    <div class="single-review-process-star" id="starRating">
+                        <span data-value="1"><i class="flaticon-star-2"></i></span>
+                        <span data-value="2"><i class="flaticon-star-2"></i></span>
+                        <span data-value="3"><i class="flaticon-star-2"></i></span>
+                        <span data-value="4"><i class="flaticon-star-2"></i></span>
+                        <span data-value="5"><i class="flaticon-star-2"></i></span>
+                    </div>
+                    <input type="hidden" name="rating" id="rating" required>
+                </div>
+
+                <input type="submit" value="Post Review">
+            </form>
+        </div>
+    </div>
+@endif
+
+                            </div> <!-- Review Tab End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Walking Tab End -->
+
+    <!-- Newsletter Start -->
+    <!-- <section class="petnest-newsletter petnest-newsletter-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="petnest-news-form">
+                        <div class="petnest-newsletter-animation">
+                            <div class="petnest-bounce-animate">
+                                <figure><img src="{{ asset('assets/images/icon/training01.svg') }}" alt=""></figure>
+                            </div>
+                            <div class="petnest-bounce-animate">
+                                <figure><img src="{{ asset('assets/images/icon/pet-food.svg') }}" alt=""></figure>
+                            </div>
+                        </div>
+                        <h2>Subscribe Newsletter <br class="d-md-block d-none"> & get News</h2>
+                        <form action="#">
+                            <input type="email" placeholder="Enter your E-mail">
+                            <input type="submit" value="Subscribe Now">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Newsletter End -->
+
+  
 @if(session('error'))
     <script>
         Swal.fire({

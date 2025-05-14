@@ -299,8 +299,6 @@
                             <span><i class="bi bi-calendar-event"></i> {{ $blog->created_at->format('F j, Y') }}</span>
                             <span class="mx-2">•</span>
                             <span><i class="bi bi-person-circle"></i> By {{ $blog->user->name }}</span>
-                            <span class="mx-2">•</span>
-                            <span><i class="bi bi-clock-history"></i> {{ round(str_word_count(strip_tags($blog->content))) / 200 }} min read</span>
                         </div>
                         
                         <h2 class="article-title">{{ $blog->title }}</h2>
@@ -308,12 +306,13 @@
                         <div class="article-content">
                             {!! $blog->content !!}
                             
+                           
+                            {!! $blog->content_other !!}
                             <div class="service-highlight">
                                 <h5 class="text-primary mb-2">{{ $blog->user->employee->service->name ?? 'Our Services' }}</h5>
                                 <p class="mb-0">{{ $blog->user->employee->service->long_description ?? 'We provide comprehensive care for your beloved pets with our expert team.' }}</p>
                             </div>
                             
-                            {!! $blog->content_other !!}
                         </div>
                     </div>
                 </article>

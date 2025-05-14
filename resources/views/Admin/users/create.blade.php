@@ -210,28 +210,24 @@
     }
 
     function toggleEmployeeFields() {
-        let role = document.getElementById('role').value;
-        let employeeFields = document.getElementById('employeeFields');
-        if (role === 'employee') {
-            employeeFields.style.display = 'block';
-        } else {
-            employeeFields.style.display = 'none';
-        }
+        const role = document.getElementById("role").value;
+        const employeeFields = document.getElementById("employeeFields");
+        employeeFields.style.display = (role === "employee") ? "block" : "none";
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        toggleEmployeeFields();
-    });
-
+    // Run on page load
     document.addEventListener("DOMContentLoaded", function () {
-        const statusCheckbox = document.getElementById('status');
-        const statusLabel = document.getElementById('status-label');
+        toggleEmployeeFields();
 
-        if (statusCheckbox) {
-            statusCheckbox.addEventListener('change', function () {
+        // Update label text on toggle
+        const statusToggle = document.getElementById('status');
+        const statusLabel = document.getElementById('status-label');
+        if (statusToggle) {
+            statusToggle.addEventListener('change', function () {
                 statusLabel.textContent = this.checked ? 'Active' : 'Inactive';
             });
         }
     });
+
 </script>
 @endsection

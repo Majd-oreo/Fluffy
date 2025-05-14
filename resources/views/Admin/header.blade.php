@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+<link rel="stylesheet" href="{{ asset('assets/fonts/flaticon.css') }}">
+
     <style>
         .bg-gradient-primary {
     background-color: #FF5B2E!important; /* Use your desired color */

@@ -55,6 +55,8 @@ class UsersController extends Controller
         'salary' => 'nullable|numeric|min:0',
         'service_id' => 'nullable|exists:services,id',  
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+        'address' => 'nullable|string|max:255',
+
     ]);
 
     if ($request->hasFile('image')) {
@@ -62,6 +64,8 @@ class UsersController extends Controller
     } else {
         $imagePath = null;
     }
+    dd($request->all());
+
 
     $user = User::create([
         'name' => $request->name,
@@ -71,21 +75,17 @@ class UsersController extends Controller
         'address' => $request->address,
         'image' => $imagePath,
         'role' => $request->role,
-        'job_title' => $request->job_title,
-        'salary' => $request->salary,
-        'service_id' => $request->service_id,  
-        
+       
     ]);
 
-    if ($request->role === 'employee') {
+if ($request->role === 'employee') {
         $status = $request->has('status') ? 'active' : 'inactive';
-
+    
         $employee = $user->employee()->create([
             'job_title' => $request->job_title,
             'salary' => $request->salary,
             'service_id' => $request->service_id,  
             'status' => $status,
-
         ]);
     }
 
@@ -104,6 +104,7 @@ public function update(Request $request, User $user)
         'salary' => 'nullable|numeric|min:0',
         'service_id' => 'nullable|exists:services,id', 
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+        
     ]);
 
     if ($request->hasFile('image')) {

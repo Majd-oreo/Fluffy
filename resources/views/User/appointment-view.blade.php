@@ -1,6 +1,16 @@
 @extends('layouts.User-layout')
 
 @section('content')
+<style>
+      .pet-avatar {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+</style>
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
@@ -16,6 +26,16 @@
                     <h4 class="mb-0 fw-semibold"><i class="fas fa-calendar-check me-2"></i>Appointment Detail({{ $appointment->id }})</h4>
                 </div>
                 <div class="card-body p-4">
+                <div class="col-md-6">
+                            <!-- Pet Information -->
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="{{ asset('storage/' . $appointment->pet->image) }}" alt="Pet Avatar" class="pet-avatar me-3">
+                                <div>
+                                    <h5 class="mb-1">{{ $appointment->pet->name }}</h5>
+                                    <p class="text-muted mb-0">{{ $appointment->pet->species }}</p>
+                                </div>
+                            </div>
+                        </div>
                     <div class="mb-4">
                         <h5 class=" mb-3 fw-semibold border-bottom pb-2" style="color:#ff5b2e">Service Information</h5>
                         <div class="row mb-3">

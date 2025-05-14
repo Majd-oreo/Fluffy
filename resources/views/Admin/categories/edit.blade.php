@@ -106,12 +106,12 @@
         }
 
         // Validate Price
-        if (!price || price <= 0) {
+        if (!price || price < 0) {
             isValid = false;
             let priceField = document.getElementById('price');
             let errorMessage = document.createElement('div');
             errorMessage.classList.add('error-message', 'text-danger');
-            errorMessage.textContent = 'Price is required and must be greater than zero.';
+            errorMessage.textContent = 'Price is required and must be greater than minus.';
             priceField.insertAdjacentElement('afterend', errorMessage);
         }
 

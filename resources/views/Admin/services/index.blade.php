@@ -1,6 +1,8 @@
 @extends('layouts.Admin-layout')
 
+
 @section('content')
+
 
 <div class="container-fluid py-4" style="min-height: 100vh">
 
@@ -38,10 +40,18 @@
                     <div class="card shadow h-100">
                         <div class="card-body d-flex flex-column align-items-center text-center p-3">
                             <!-- Service Icon -->
-                            <img src="{{ $service->icon ? asset('storage/'.$service->icon) : asset('assets/images/Default.png') }}" 
-                                 class="rounded-circle mb-3 object-fit-cover" 
-                                 style="width: 80px; height: 80px;" 
-                                 alt="Service Icon">
+                            @if ($service->icon)
+    <div class="rounded-circle mb-3 d-flex justify-content-center align-items-center" 
+         style="width: 80px; height: 80px; font-size: 2.5rem; background-color: #f8f9fa;">
+        <i class="{{ $service->icon }}"></i>
+    </div>
+@else
+    <img src="{{ asset('assets/images/Default.png') }}" 
+         class="rounded-circle mb-3 object-fit-cover" 
+         style="width: 80px; height: 80px;" 
+         alt="Service Icon">
+@endif
+
 
                             <!-- Service Info -->
                             <h5 class="card-title mb-1">{{ $service->name }}</h5>
@@ -97,10 +107,18 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-md-4 text-center">
-                                        <img src="{{ $service->icon ? asset('storage/'.$service->icon) : asset('assets/images/Default.png') }}" 
-                                             class="rounded-circle mb-3" 
-                                             style="width: 150px; height: 150px; object-fit: cover;" 
-                                             alt="Service Icon">
+                                    @if ($service->icon)
+    <div class="rounded-circle mb-3 d-flex justify-content-center align-items-center" 
+         style="width: 80px; height: 80px; font-size: 2.5rem; background-color: #f8f9fa;">
+        <i class="{{ $service->icon }}"></i>
+    </div>
+@else
+    <img src="{{ asset('assets/images/Default.png') }}" 
+         class="rounded-circle mb-3 object-fit-cover" 
+         style="width: 80px; height: 80px;" 
+         alt="Service Icon">
+@endif
+
                                         <div class="d-flex justify-content-center gap-2 mb-3">
                                            
                                             <!-- <span class="badge bg-success rounded-pill">

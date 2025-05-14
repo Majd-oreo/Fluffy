@@ -36,6 +36,14 @@ class ReviewEmController extends Controller
         if ($request->has('rating') && !empty($request->rating)) {
             $query->where('rating', $request->rating);
         }
+        if ($request->has('rating_sort') && in_array($request->rating_sort, ['asc', 'desc'])) {
+            $query->orderBy('rating', $request->rating_sort);
+        }
+        if ($request->has('name') && !empty($request->name)) {
+            $query->whereHas('user', function ($q) use ($request) {
+                $q->where('name', 'like', '%' . $request->name . '%');
+            });
+        }
     
         // Only get the reviews for that service
         $reviews = $query->paginate(12);

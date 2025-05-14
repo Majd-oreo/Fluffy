@@ -117,13 +117,15 @@
                             </div>
                             <div class="modal-body">
                                 <div class="text-center mb-4">
-                                    @if($appointment->pet->image?? 'Deleted Pet')
-                                        <img src="{{ asset('storage/' . $appointment->pet->image) }}" 
-                                             class="img-fluid rounded mb-3" 
-                                             style="max-height: 150px; width: auto;" 
-                                             alt="{{ $appointment->pet->name?? 'Deleted Pet' }}">
-                                    @endif
-                                    <h5>{{ optional($appointment->user)->name ?? 'Deleted User' }}</h5>
+                                @if ($appointment->pet)
+    <img src="{{ asset('storage/' . $appointment->pet->image) }}"
+         class="img-fluid rounded mb-3"
+         style="max-height: 150px; width: auto;"
+         alt="{{ $appointment->pet->name }}">
+@else
+    <p class="text-muted">Deleted Pet</p>
+@endif
+
                                     </div>
 
                                 <div class="row">
