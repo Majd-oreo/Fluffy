@@ -44,53 +44,52 @@ class UsersController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|string|email|max:255|unique:users,email',
-        'phone' => ['required', 'regex:/^07[7-9]{1}[0-9]{7}$/'],
-        'password' => 'required|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*?&]/',
-        'role' => 'required|in:user,admin,employee',
-        'job_title' => 'nullable|string|max:255',
-        'salary' => 'nullable|numeric|min:0',
-        'service_id' => 'nullable|exists:services,id',  
-        'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-        'address' => 'nullable|string|max:255',
-
-    ]);
-
-    if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('uploads', 'public');
-    } else {
-        $imagePath = null;
-    }
-    dd($request->all());
-
-
-    $user = User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-        'phone' => $request->phone,
-        'address' => $request->address,
-        'image' => $imagePath,
-        'role' => $request->role,
-       
-    ]);
-
-if ($request->role === 'employee') {
-        $status = $request->has('status') ? 'active' : 'inactive';
+    {
+        $baseRules = [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'phone' => ['required', 'regex:/^07[7-9][0-9]{7}$/'],
+            'password' => 'required|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*?&]/',
+            'role' => 'required|in:user,admin,employee',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'address' => 'nullable|string|max:255',
+        ];
     
-        $employee = $user->employee()->create([
-            'job_title' => $request->job_title,
-            'salary' => $request->salary,
-            'service_id' => $request->service_id,  
-            'status' => $status,
+        if ($request->role === 'employee') {
+            $baseRules['job_title'] = 'required|string|max:255';
+            $baseRules['salary'] = 'required|numeric|min:0';
+            $baseRules['service_id'] = 'required|exists:services,id';
+        }
+    
+        $validated = $request->validate($baseRules);
+    
+        $imagePath = $request->hasFile('image') 
+            ? $request->file('image')->store('uploads', 'public') 
+            : null;
+    
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'role' => $request->role,
+            'image' => $imagePath,
         ]);
+    
+        if ($request->role === 'employee') {
+            $user->employee()->create([
+                'job_title' => $request->job_title,
+                'salary' => $request->salary,
+                'service_id' => $request->service_id,
+                'status' => $request->has('status') ? 'active' : 'inactive',
+            ]);
+        }
+    
+        return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
     }
+    
 
-    return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
-}
 
 public function update(Request $request, User $user)
 {
