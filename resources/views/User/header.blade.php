@@ -211,7 +211,21 @@ input[type="datetime-local"] {
     .category-list {
         max-height: 150px;
     }
+    
 }
+@media (max-width: 992px) {
+        .petnest-logo img {
+            max-width: 120px; /* Adjust this value as needed */
+            height: auto;
+            transition: all 0.3s ease;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .petnest-logo img {
+            max-width: 100px; /* Smaller size for mobile */
+        }
+    }
 </style>
 
 <body class="home-bg">

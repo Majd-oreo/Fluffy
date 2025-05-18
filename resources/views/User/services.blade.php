@@ -71,7 +71,6 @@
     </div>
 @endforeach
 
-{{-- Add this to check if services exist --}}
 @if($services->isEmpty())
     <p>No services available.</p>
 @endif

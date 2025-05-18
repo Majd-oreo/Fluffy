@@ -96,7 +96,6 @@
     }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <!-- Header End -->
 
@@ -150,6 +149,8 @@
                 <div class="col-md-6 mb-3">
                     <label for="start_time" class="form-label">Appointment Time</label>
                     <input type="datetime-local" name="start_time" id="start_time" class="form-control" required min="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
+                    <p id="selectedTimeOutput" class="mt-2 text-primary"></p>
+
                 </div>
 
                 <div class="col-md-6 mb-3">
@@ -283,7 +284,6 @@
                                 
                                 </div>
 
-                                <!-- Add or Update Review Form -->
                                 @if(auth()->check() && $existingReview = $service->reviews->where('user_id', auth()->id())->first())
     <div class="col-lg-8">
         <div class="blog-comments-petnest product-add-rev">
@@ -348,31 +348,7 @@
     </section>
     <!-- Service Walking Tab End -->
 
-    <!-- Newsletter Start -->
-    <!-- <section class="petnest-newsletter petnest-newsletter-about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="petnest-news-form">
-                        <div class="petnest-newsletter-animation">
-                            <div class="petnest-bounce-animate">
-                                <figure><img src="{{ asset('assets/images/icon/training01.svg') }}" alt=""></figure>
-                            </div>
-                            <div class="petnest-bounce-animate">
-                                <figure><img src="{{ asset('assets/images/icon/pet-food.svg') }}" alt=""></figure>
-                            </div>
-                        </div>
-                        <h2>Subscribe Newsletter <br class="d-md-block d-none"> & get News</h2>
-                        <form action="#">
-                            <input type="email" placeholder="Enter your E-mail">
-                            <input type="submit" value="Subscribe Now">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Newsletter End -->
+    
 
   
 @if(session('error'))
@@ -409,29 +385,74 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Flatpickr with custom configuration
         const startTimeInput = flatpickr("#start_time", {
-            enableTime: true,
-            dateFormat: "Y-m-d H:i",
-            minDate: "today",
-            minTime: "10:00",
-            maxTime: "18:00",
-            time_24hr: false,
-            minuteIncrement: 15,
-            allowInput: true,
-            clickOpens: true,
-            onClose: function(selectedDates, dateStr, instance) {
-                // Calendar will automatically close after selection
-            },
-            onDayCreate: function(dObj, dStr, fp, dayElem) {
-                // Highlight today's date
-                if (dayElem.dateObj.getDate() === (new Date()).getDate() && 
-                    dayElem.dateObj.getMonth() === (new Date()).getMonth() && 
-                    dayElem.dateObj.getFullYear() === (new Date()).getFullYear()) {
-                    dayElem.classList.add("today");
-                }
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minDate: "today",
+    defaultHour: 10,
+    minTime: "10:00",
+    maxTime: "18:00",
+    time_24hr: false,
+    minuteIncrement: 15,
+    allowInput: true,
+    clickOpens: true,
+
+    onOpen: function (selectedDates, dateStr, instance) {
+        updateMinTime(instance);
+    },
+
+    onChange: function (selectedDates, dateStr, instance) {
+        updateMinTime(instance);
+    },
+
+    onReady: function (selectedDates, dateStr, instance) {
+        updateMinTime(instance);
+
+        // Create the "Select" button
+        const confirmBtn = document.createElement("button");
+        confirmBtn.type = "button";
+        confirmBtn.textContent = "Select";
+        confirmBtn.style.cssText = `
+            display: block;
+            margin: 8px auto;
+            padding: 6px 12px;
+            background-color: #2bcc91;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        `;
+
+        confirmBtn.addEventListener("click", function () {
+            const selected = instance.selectedDates[0];
+            if (selected) {
+                const formatted = selected.toLocaleString('en-US', {
+                    weekday: 'long', year: 'numeric', month: 'long',
+                    day: 'numeric', hour: '2-digit', minute: '2-digit'
+                });
+                document.getElementById('selectedTimeOutput').textContent = "Selected Time: " + formatted;
+                instance.close();
             }
         });
+
+        instance.calendarContainer.appendChild(confirmBtn);
+    }
+});
+
+function updateMinTime(instance) {
+    const selectedDate = instance.selectedDates[0] || new Date();
+    const today = new Date();
+
+    const isToday = selectedDate.toDateString() === today.toDateString();
+
+    if (isToday) {
+        const currentTime = today.getHours().toString().padStart(2, '0') + ":" + today.getMinutes().toString().padStart(2, '0');
+        instance.set('minTime', currentTime);
+    } else {
+        instance.set('minTime', "10:00");
+    }
+}
+
 
         const categorySelect = document.getElementById('category-select');
         const priceSpan = document.getElementById('category-price');
@@ -446,7 +467,6 @@
             durationSpan.textContent = duration ? duration : 'N/A';
         });
 
-        // Form submission validation
         document.getElementById('appointmentForm')?.addEventListener('submit', function (event) {
             const startTime = new Date(document.getElementById('start_time').value);
             const hour = startTime.getHours();
@@ -463,7 +483,6 @@
             }
         });
 
-        // Star rating functionality (keep your existing code)
         document.querySelectorAll('#starRating span').forEach(function (star) {
             star.addEventListener('click', function () {
                 const value = this.getAttribute('data-value');

@@ -428,31 +428,6 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
     </section>
     <!-- Petnest Faq End -->
 
-    <!-- Petnest Newsletter Start -->
-    <!-- <section class="petnest-newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="petnest-news-form">
-                        <div class="petnest-newsletter-animation">
-                            <div class="petnest-bounce-animate">
-                                <figure><img src="./assets/images/icon/training01.svg" alt=""></figure>
-                            </div>
-                            <div class="petnest-bounce-animate">
-                                <figure><img src="./assets/images/icon/pet-food.svg" alt=""></figure>
-                            </div>
-                        </div>
-                        <h2>Subscribe Newsletter <br class="d-md-block d-none"> & get News</h2>
-                        <form action="#">
-                            <input type="email" placeholder="Enter your E-mail">
-                            <input type="submit" value="Subscribe Now">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Petnest Newsletter End -->
 
     <!-- Blog Stories Start -->
     <section class="petnest-blog petnest-blog-v2">
