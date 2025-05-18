@@ -82,7 +82,7 @@ public function bookAppointment(Request $request)
         'pet_id' => 'required|exists:pets,id',
     ]);
 
-    $pet = $user->pets()->find($request->pet_id);
+    $pet = $user->pets->find($request->pet_id);
     if (!$pet) {
         return redirect()->back()->with('error', 'Invalid pet selected.');
     }

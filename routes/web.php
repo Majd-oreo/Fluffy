@@ -45,7 +45,7 @@ Route::get('/', function () {
 
 
 
-    $reviews = Review::latest()->take(4)->get();
+    $reviews = Review::orderBy('rating', 'desc')->take(4)->get();
 
     return view('user.index', compact('blogs', 'employees', 'reviews'));
 })->name('home');

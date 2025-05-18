@@ -150,6 +150,7 @@
                     <label for="start_time" class="form-label">Appointment Time</label>
                     <input type="datetime-local" name="start_time" id="start_time" class="form-control" required min="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
                     <p id="selectedTimeOutput" class="mt-2 text-primary"></p>
+                    <p id="timeValidationMsg" class="text-danger mt-2" style="display: none;"></p>
 
                 </div>
 
@@ -469,8 +470,20 @@ function updateMinTime(instance) {
 
         document.getElementById('appointmentForm')?.addEventListener('submit', function (event) {
             const startTime = new Date(document.getElementById('start_time').value);
+            const now = new Date(); 
             const hour = startTime.getHours();
             const minute = startTime.getMinutes();
+            const validationMsg = document.getElementById('timeValidationMsg');
+
+  
+            validationMsg.style.display = 'none';
+    validationMsg.textContent = '';
+       if (startTime < now) {
+        event.preventDefault();
+        validationMsg.textContent = 'Please select a time in the future.';
+        validationMsg.style.display = 'block';
+        return;
+    }
 
             if (hour < 10 || (hour === 18 && minute > 0) || hour > 18) {
                 event.preventDefault();
