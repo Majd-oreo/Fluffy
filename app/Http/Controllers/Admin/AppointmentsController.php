@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
@@ -8,6 +9,8 @@ use App\Models\User;
 use App\Models\Pet;
 use App\Models\Service;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
+
 
 class AppointmentsController extends Controller
 {
@@ -25,7 +28,6 @@ if ($request->has('name') && !empty($request->name)) {
 }
 
     
-        // Filter by service
         if ($request->has('service') && !empty($request->service)) {
             $query->where('service_id', $request->service);
         }
@@ -33,7 +35,6 @@ if ($request->has('name') && !empty($request->name)) {
             $query->where('id', $request->appointment_id);
         }
      
-        // Filter by date
         if ($request->has('date') && !empty($request->date)) {
             $query->whereDate('start_time', $request->date);
         }
@@ -107,7 +108,7 @@ if ($request->has('name') && !empty($request->name)) {
             'category_id' => 'nullable|exists:categories,id',
             'start_time' => 'required|date',
             'status' => 'required|in:Pending,Completed,Canceled',
-        ]);
+        ]); 
 
         $appointment->update($request->all());
 
@@ -131,4 +132,6 @@ if ($request->has('name') && !empty($request->name)) {
         $appointment->delete();
         return redirect()->route('admin.appointments.index')->with('success', 'Appointment deleted successfully.');
     }
+
+
 }

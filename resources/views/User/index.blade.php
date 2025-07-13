@@ -456,7 +456,7 @@ Today, that vision has grown into a trusted space for pet owners, where every fu
                                 <div class="petnest-blog-short-description">
                                     <h5>{{ $blog->created_at }}</h5>
                                     <h3>{{ $blog->title }}</h3>
-                                    <h4>By <span>{{ $blog->user->name }}</span></h4>
+                                    <h4 >By <span style="color:orangered">{{ $blog->user->name }}</span></h4>
                                 </div>
                             </a>
                         @endforeach
